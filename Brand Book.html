@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Caspian Coast Coffee — Brand Book</title>
+<link rel="icon" type="image/png" href="img/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* neutrals */
+    --ink:#1b1916; --espresso:#3a352e; --sand:#e9e3d6; --cream:#f1ede4; --paper:#f8f5ee;
+    /* accents */
+    --clay:#c0653a; --clay-deep:#a8542e; --pine:#2e6b50; --saffron:#d99a2b;
+    --nazar:#2c6e8f; --rose:#b23a5e; --pistachio:#9fbf8f;
+    --line:rgba(27,25,22,.16);
+    --display:'Archivo',sans-serif; --serif:'Cinzel',serif; --body:'Jost',sans-serif; --edit:'Cormorant Garamond',serif;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-height:1.02;}
+  p{margin:0;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .eyebrow{font-family:var(--display);text-transform:uppercase;letter-spacing:.3em;font-size:11px;font-weight:600;color:var(--clay);}
+  .rule{width:46px;height:2px;background:var(--clay);border:0;margin:16px 0 0;}
+  .sec{padding:clamp(64px,9vw,118px) 0;}
+  .sec-num{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--clay);}
+  .lede{font-family:var(--edit);font-style:italic;font-size:clamp(20px,2.4vw,30px);line-height:1.4;color:var(--espresso);}
+
+  /* cover */
+  .cover{min-height:100vh;background:var(--cream);color:var(--ink);display:flex;flex-direction:column;padding:42px 0 0;position:relative;overflow:hidden;}
+  .cover .eye-bg{position:absolute;right:-6%;top:14%;width:min(40vw,440px);opacity:.07;filter:none;}
+  .cover-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
+  .cover-top .mark{display:flex;align-items:center;gap:14px;}
+  .cover-top .mark img{width:42px;filter:none;}
+  .cover-top .name{font-family:var(--serif);letter-spacing:.22em;font-size:15px;color:var(--ink);}
+  .cover-top .tag{font-family:var(--display);text-transform:uppercase;letter-spacing:.26em;font-size:10.5px;color:var(--clay);}
+  .cover-mid{position:relative;z-index:2;padding:clamp(38px,6vw,82px) 0 clamp(26px,3vw,40px);}
+  .cover-mid .kicker{font-family:var(--display);text-transform:uppercase;letter-spacing:.3em;font-size:12px;color:var(--clay);margin-bottom:24px;}
+  .cover-mid h1{font-size:clamp(44px,8vw,116px);text-transform:uppercase;font-weight:900;line-height:.92;color:var(--ink);}
+  .cover-mid h1 em{display:block;font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;color:var(--clay);font-size:clamp(28px,5vw,66px);letter-spacing:0;margin-top:12px;}
+  .cover-mid .cover-sub{font-family:var(--body);font-size:clamp(15px,1.4vw,18px);color:var(--espresso);max-width:46ch;margin-top:26px;line-height:1.6;}
+  .cover-photo{position:relative;margin-top:auto;width:100%;height:clamp(260px,40vh,460px);}
+  .cover-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;border-radius:10px 10px 0 0;}
+  .cover-photo .persian{position:absolute;right:28px;bottom:22px;direction:rtl;font-family:var(--edit);font-size:22px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.55);}
+  .cover-photo .cap{position:absolute;left:28px;bottom:22px;font-family:var(--display);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6);}
+
+  /* essence */
+  .essence{background:var(--clay);color:var(--paper);}
+  .essence .eyebrow{color:rgba(248,245,238,.7);}
+  .essence .rule{background:var(--paper);}
+  .essence h2{font-size:clamp(30px,4.4vw,60px);text-transform:uppercase;margin-top:18px;max-width:18ch;}
+  .essence .three{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:54px;}
+  .essence .three h3{font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;font-size:clamp(22px,2.4vw,30px);}
+  .essence .three p{color:rgba(248,245,238,.85);margin-top:12px;font-size:15.5px;line-height:1.65;}
+  .essence .three .n{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:rgba(248,245,238,.6);}
+
+  /* generic section head */
+  .head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;margin-bottom:46px;}
+  .head h2{font-size:clamp(28px,3.6vw,48px);text-transform:uppercase;}
+  .head .sec-num{white-space:nowrap;}
+
+  /* logo / eye */
+  .eye-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;}
+  .eye-stage{background:var(--ink);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:4px;position:relative;}
+  .eye-stage img{width:62%;filter:brightness(0) invert(1);}
+  .eye-stage .cs{position:absolute;inset:11% ;border:1px dashed rgba(241,237,228,.28);}
+  .eye-copy h3{font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;font-size:clamp(24px,2.8vw,34px);color:var(--pine);}
+  .eye-copy p{color:var(--espresso);margin-top:16px;max-width:42ch;}
+  .eye-copy .nazar-note{margin-top:24px;font-family:var(--body);font-size:14px;color:var(--clay-deep);}
+  .lockups{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px;}
+  .lockup{border:1px solid var(--line);border-radius:4px;padding:28px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;background:var(--paper);}
+  .lockup.dark{background:var(--ink);color:var(--cream);border-color:transparent;}
+  .lockup.clay{background:var(--clay);color:var(--paper);border-color:transparent;}
+  .lockup img{width:40px;}
+  .lockup.dark img,.lockup.clay img{filter:brightness(0) invert(1);}
+  .lockup .nm{font-family:var(--serif);letter-spacing:.2em;font-size:13px;}
+  .lockup .sub{font-family:var(--display);text-transform:uppercase;letter-spacing:.28em;font-size:7.5px;opacity:.7;}
+  .lockup small{font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:9px;color:var(--clay);margin-top:6px;}
+  .lockup.dark small,.lockup.clay small{color:inherit;opacity:.65;}
+
+  /* color */
+  .colors{background:var(--paper);}
+  .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .sw{border-radius:5px;overflow:hidden;border:1px solid var(--line);background:#fff;}
+  .sw .chip{height:120px;}
+  .sw .meta{padding:14px 16px;}
+  .sw .nm{font-family:var(--display);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;}
+  .sw .hex{font-family:var(--body);font-size:12.5px;color:var(--espresso);margin-top:3px;letter-spacing:.04em;}
+  .sw .role{font-size:12px;color:var(--clay);margin-top:8px;line-height:1.4;}
+  .grp-label{font-family:var(--display);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:600;color:var(--espresso);margin:42px 0 18px;}
+  .grp-label:first-of-type{margin-top:8px;}
+  .green-fix{margin-top:54px;background:var(--ink);color:var(--cream);border-radius:6px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .green-fix h3{font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;font-size:clamp(22px,2.6vw,32px);color:var(--saffron);}
+  .green-fix p{color:rgba(241,237,228,.82);margin-top:14px;font-size:15.5px;}
+  .gf-demo{display:flex;flex-direction:column;gap:14px;}
+  .gf-row{background:var(--cream);border-radius:5px;padding:18px 20px;color:var(--ink);}
+  .gf-row .lab{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:9.5px;color:var(--espresso);}
+  .gf-row .big{font-family:var(--display);font-weight:800;font-size:23px;text-transform:uppercase;margin-top:6px;}
+  .gf-old .big{color:#9fbf8f;}
+  .gf-new .big{color:#2e6b50;}
+  .gf-row .tagx{font-size:11px;margin-top:6px;font-family:var(--body);}
+  .gf-old .tagx{color:#b9543e;}
+  .gf-new .tagx{color:var(--pine);}
+
+  /* type */
+  .type-row{display:grid;grid-template-columns:200px 1fr;gap:36px;padding:32px 0;border-top:1px solid var(--line);align-items:baseline;}
+  .type-row:first-of-type{border-top:0;}
+  .type-meta .role{font-family:var(--display);text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:600;color:var(--clay);}
+  .type-meta .fam{font-family:var(--display);font-weight:800;font-size:22px;margin-top:8px;}
+  .type-meta .use{font-size:13px;color:var(--espresso);margin-top:8px;line-height:1.5;}
+  .spec-archivo{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,64px);text-transform:uppercase;line-height:.95;}
+  .spec-cinzel{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,42px);letter-spacing:.14em;}
+  .spec-jost{font-family:var(--body);font-weight:400;font-size:clamp(17px,1.6vw,20px);line-height:1.55;max-width:48ch;}
+  .spec-cormorant{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(26px,3.4vw,42px);line-height:1.25;color:var(--espresso);}
+  .glyphs{font-family:var(--body);font-size:14px;color:var(--espresso);margin-top:10px;letter-spacing:.06em;}
+
+  /* quote exploration */
+  .quote-explore{margin-top:64px;background:var(--sand);border-radius:6px;padding:clamp(30px,4vw,52px);}
+  .quote-explore .eyebrow{color:var(--clay-deep);}
+  .quote-explore h3{font-size:clamp(22px,2.6vw,32px);text-transform:uppercase;margin-top:14px;}
+  .quote-explore .intro-line{color:var(--espresso);margin-top:14px;max-width:54ch;}
+  .qopts{display:grid;gap:16px;margin-top:34px;}
+  .qopt{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:26px 30px;position:relative;}
+  .qopt.pick{border-color:var(--pine);border-width:2px;box-shadow:0 18px 40px -26px rgba(46,107,80,.6);}
+  .qopt .badge{position:absolute;top:-11px;right:22px;background:var(--pine);color:#fff;font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:9.5px;font-weight:700;padding:5px 12px;border-radius:999px;}
+  .qopt .fname{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;color:var(--clay);margin-bottom:14px;}
+  .q-cormorant{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(24px,3vw,38px);line-height:1.3;color:var(--ink);}
+  .q-spectral{font-family:'Spectral',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.5vw,31px);line-height:1.35;color:var(--ink);}
+  .q-news{font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.5vw,31px);line-height:1.35;color:var(--ink);}
+  .q-cinzel{font-family:var(--serif);font-weight:500;font-size:clamp(17px,2vw,26px);letter-spacing:.06em;line-height:1.4;color:var(--espresso);}
+  .qopt.reject{opacity:.62;}
+  .qopt .why{font-family:var(--body);font-size:13px;color:var(--espresso);margin-top:14px;}
+  .qopt.pick .why{color:var(--pine);}
+
+  /* voice */
+  .voice{background:var(--ink);color:var(--cream);}
+  .voice .eyebrow{color:var(--saffron);}
+  .voice .head h2{color:var(--cream);}
+  .vprinc{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(241,237,228,.14);border:1px solid rgba(241,237,228,.14);border-radius:6px;overflow:hidden;}
+  .vp{background:var(--ink);padding:30px 32px;}
+  .vp .n{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--saffron);}
+  .vp h3{font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;font-size:clamp(22px,2.4vw,28px);margin-top:10px;color:var(--cream);}
+  .vp p{color:rgba(241,237,228,.74);margin-top:10px;font-size:14.5px;line-height:1.6;}
+  .words{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:42px;}
+  .wcol{border:1px solid rgba(241,237,228,.16);border-radius:6px;padding:26px 28px;}
+  .wcol .t{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:600;margin-bottom:16px;}
+  .wcol.love .t{color:var(--pistachio);}
+  .wcol.avoid .t{color:var(--rose);}
+  .wcol ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .wcol li{font-family:var(--edit);font-style:italic;font-size:18px;color:rgba(241,237,228,.88);}
+  .wcol.avoid li{text-decoration:line-through;text-decoration-color:rgba(178,58,94,.6);color:rgba(241,237,228,.5);}
+
+  /* imagery */
+  .img-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+  .img-grid figure{margin:0;border-radius:5px;overflow:hidden;position:relative;aspect-ratio:4/5;background:var(--sand);}
+  .img-grid img{width:100%;height:100%;object-fit:cover;}
+  .img-grid figcaption{position:absolute;left:14px;bottom:12px;font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6);}
+  .img-do{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px;}
+  .img-do .col .t{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:600;margin-bottom:12px;}
+  .img-do .yes .t{color:var(--pine);}
+  .img-do .no .t{color:var(--rose);}
+  .img-do p{color:var(--espresso);font-size:15px;line-height:1.6;}
+
+  /* closing */
+  .closing{background:var(--clay-deep);color:var(--paper);text-align:center;padding:clamp(70px,10vw,130px) 0;}
+  .closing img{width:64px;margin:0 auto 28px;filter:brightness(0) invert(1);}
+  .closing blockquote{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(26px,4vw,48px);line-height:1.25;max-width:18ch;margin:0 auto;}
+  .closing .persian{direction:rtl;font-family:var(--edit);font-size:22px;margin-top:26px;color:rgba(248,245,238,.8);}
+
+  @media (max-width:860px){
+    .essence .three,.lockups,.palette{grid-template-columns:1fr 1fr;}
+    .eye-grid,.green-fix,.vprinc,.words,.img-do{grid-template-columns:1fr;}
+    .type-row{grid-template-columns:1fr;gap:16px;}
+    .img-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 24px;}
+    .palette,.essence .three,.lockups,.img-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======= COVER ======= -->
+<section class="cover">
+  <img class="eye-bg" src="img/eye-mark.png" alt="" aria-hidden="true" />
+  <div class="wrap cover-top">
+    <div class="mark">
+      <img src="img/eye-mark.png" alt="Caspian Coast eye emblem" />
+      <span class="name">CASPIAN COAST</span>
+    </div>
+    <span class="tag">Brand Book · v1</span>
+  </div>
+  <div class="wrap cover-mid">
+    <p class="kicker">The Brand Book</p>
+    <h1>Persian roots,<em>California light, Venice soul</em></h1>
+    <p class="cover-sub">How Caspian Coast looks, sounds &amp; feels — a sunlit café and a living room in Venice, California.</p>
+  </div>
+  <figure class="cover-photo">
+    <img src="img/hero-interior.jpg" alt="The bright, sunlit space at Caspian Coast Coffee in Venice — mural, lion flag and the window bench" />
+    <span class="cap">The space · Main St, Venice</span>
+    <span class="persian">از ساحل خزر تا اقیانوس آرام</span>
+  </figure>
+</section>
+
+<!-- ======= ESSENCE ======= -->
+<section class="sec essence">
+  <div class="wrap">
+    <span class="eyebrow">01 — The Idea</span>
+    <hr class="rule" />
+    <h2>A CAFÉ AND A LIVING ROOM, WHERE THE CASPIAN MEETS THE PACIFIC</h2>
+    <div class="three">
+      <div>
+        <span class="n">i.</span>
+        <h3>Persian roots</h3>
+        <p>Saffron, cardamom, rosewater, the nazar on every cup, and a host's welcome. Heritage carried west — worn lightly, never as a costume.</p>
+      </div>
+      <div>
+        <span class="n">ii.</span>
+        <h3>California light</h3>
+        <p>Espresso roasted in LA, citrus, salt air, the easy pace of the coast. Bright, clean, sun-warmed — never fussy.</p>
+      </div>
+      <div>
+        <span class="n">iii.</span>
+        <h3>Venice soul</h3>
+        <p>A mural on the wall, neighbors at the window bench, records on Friday. Creative, communal, a little bohemian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= LOGO / THE EYE ======= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">02 — The Mark</span><hr class="rule" /></div>
+      <span class="sec-num">The Eye · Nazar</span>
+    </div>
+    <div class="eye-grid">
+      <div class="eye-stage"><span class="cs"></span><img src="img/eye-mark.png" alt="Caspian Coast radiant eye emblem" /></div>
+      <div class="eye-copy">
+        <h3>The eye watches over the guest.</h3>
+        <p>Our mark is the <strong>nazar</strong> — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Radiating lashes, a dotted fan, a steady pupil. It is the heart of the brand: use it on cups, as a favicon, as a quiet watermark, and as a stamp of hospitality.</p>
+        <p class="nazar-note">Clearspace = the height of the pupil on all sides. Never recolor the iris, stretch, rotate, or add effects. Minimum size 24px (digital).</p>
+      </div>
+    </div>
+    <div class="lockups">
+      <div class="lockup">
+        <img src="img/eye-mark.png" alt="" />
+        <span class="nm">CASPIAN COAST</span>
+        <span class="sub">Coffee &amp; Culture</span>
+        <small>Primary · ink on cream</small>
+      </div>
+      <div class="lockup dark">
+        <img src="img/eye-mark.png" alt="" />
+        <span class="nm">CASPIAN COAST</span>
+        <span class="sub">Coffee &amp; Culture</span>
+        <small>Reversed · cream on ink</small>
+      </div>
+      <div class="lockup clay">
+        <img src="img/eye-mark.png" alt="" />
+        <span class="nm">CASPIAN COAST</span>
+        <span class="sub">Coffee &amp; Culture</span>
+        <small>Accent · cream on clay</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= COLOR ======= -->
+<section class="sec colors">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">03 — Color</span><hr class="rule" /></div>
+      <span class="sec-num">Clay leads · the green, deepened</span>
+    </div>
+    <p class="lede" style="max-width:30ch;">Warm earth, saffron sun, and a deep Persian green — grounded by ink and cream.</p>
+
+    <div class="grp-label">Foundation — neutrals</div>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#1b1916;"></div><div class="meta"><div class="nm">Ink</div><div class="hex">#1B1916</div><div class="role">Primary text, dark sections</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3a352e;"></div><div class="meta"><div class="nm">Espresso</div><div class="hex">#3A352E</div><div class="role">Secondary text, captions</div></div></div>
+      <div class="sw"><div class="chip" style="background:#e9e3d6;"></div><div class="meta"><div class="nm">Sand</div><div class="hex">#E9E3D6</div><div class="role">Warm bands, cards</div></div></div>
+      <div class="sw"><div class="chip" style="background:#f1ede4;border-bottom:1px solid var(--line);"></div><div class="meta"><div class="nm">Cream</div><div class="hex">#F1EDE4</div><div class="role">Primary background</div></div></div>
+    </div>
+
+    <div class="grp-label">Lead accent — the warmth you loved</div>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#c0653a;"></div><div class="meta"><div class="nm">Clay</div><div class="hex">#C0653A</div><div class="role">Primary accent — links, buttons, key moments</div></div></div>
+      <div class="sw"><div class="chip" style="background:#a8542e;"></div><div class="meta"><div class="nm">Burnt Clay</div><div class="hex">#A8542E</div><div class="role">Deep accent bands, hovers</div></div></div>
+      <div class="sw"><div class="chip" style="background:#d99a2b;"></div><div class="meta"><div class="nm">Saffron</div><div class="hex">#D99A2B</div><div class="role">Highlights, tape, small pops</div></div></div>
+      <div class="sw"><div class="chip" style="background:#b23a5e;"></div><div class="meta"><div class="nm">Rosewater</div><div class="hex">#B23A5E</div><div class="role">Rare pop — sweets, hearts</div></div></div>
+    </div>
+
+    <div class="grp-label">Support — the deep green &amp; the nazar blue</div>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#2e6b50;"></div><div class="meta"><div class="nm">Caspian Pine</div><div class="hex">#2E6B50</div><div class="role">Secondary accent — confident green that holds on cream</div></div></div>
+      <div class="sw"><div class="chip" style="background:#2c6e8f;"></div><div class="meta"><div class="nm">Nazar Blue</div><div class="hex">#2C6E8F</div><div class="role">The protective eye — cool counterpoint</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9fbf8f;"></div><div class="meta"><div class="nm">Pistachio</div><div class="hex">#9FBF8F</div><div class="role">Tint only — illustration, never small text on cream</div></div></div>
+      <div class="sw"><div class="chip" style="background:#f8f5ee;border:1px solid var(--line);"></div><div class="meta"><div class="nm">Paper</div><div class="hex">#F8F5EE</div><div class="role">Lightest sections</div></div></div>
+    </div>
+
+    <div class="green-fix">
+      <div>
+        <h3>About that green…</h3>
+        <p>You were right — the soft sage <strong>got lost</strong>. At eyebrow size on cream it goes muddy and timid. The fix isn't to drop green (it's our Persian-tile, our matcha) — it's to <strong>commit</strong>: deepen it to <strong>Caspian Pine</strong> for type and accents, demote the pale Pistachio to tints only, and let <strong>Clay</strong> lead the brand. Saffron and Nazar Blue do the small sparkle.</p>
+      </div>
+      <div class="gf-demo">
+        <div class="gf-row gf-old">
+          <div class="lab">Before · Sage #9FBF8F</div>
+          <div class="big">Flavors we build with</div>
+          <div class="tagx">↑ disappears into the cream</div>
+        </div>
+        <div class="gf-row gf-new">
+          <div class="lab">After · Caspian Pine #2E6B50</div>
+          <div class="big">Flavors we build with</div>
+          <div class="tagx">↑ confident, legible, still ours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TYPOGRAPHY ======= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">04 — Typography</span><hr class="rule" /></div>
+      <span class="sec-num">Four voices, clear roles</span>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="role">Display</div>
+        <div class="fam">Archivo</div>
+        <div class="use">Headlines &amp; statements. Heavy weights (800–900), uppercase, tight. The confident voice.</div>
+      </div>
+      <div><div class="spec-archivo">Persian Coffee, Venice Soul</div></div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="role">Emblem &amp; Labels</div>
+        <div class="fam">Cinzel</div>
+        <div class="use">The wordmark and small eyebrows only — engraved Roman caps. Never full sentences.</div>
+      </div>
+      <div><div class="spec-cinzel">CASPIAN COAST</div><div class="glyphs">Coffee &amp; Culture · Est. Venice</div></div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="role">Body &amp; UI</div>
+        <div class="fam">Jost</div>
+        <div class="use">Menus, paragraphs, captions, buttons. Clean, warm, geometric humanist.</div>
+      </div>
+      <div><div class="spec-jost">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Iced or hot, you're a guest here, not a customer.</div></div>
+    </div>
+
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="role">Editorial &amp; Quotes <span style="color:var(--pine);">★ new</span></div>
+        <div class="fam">Cormorant Garamond</div>
+        <div class="use">Pull-quotes, asides, the soft poetic voice. Italic. Replaces Cinzel for anything lowercase &amp; intimate.</div>
+      </div>
+      <div><div class="spec-cormorant">“Sip your coffee. Sit. There’s nowhere you need to be.”</div></div>
+    </div>
+
+    <!-- QUOTE FONT EXPLORATION -->
+    <div class="quote-explore">
+      <span class="eyebrow">The line you flagged</span>
+      <h3>Finding the quote's voice</h3>
+      <p class="intro-line">You weren't sold on this set in Cinzel — and you were right. Cinzel is an engraved, all-caps display face; asked to whisper a lowercase aside it goes stiff and shouty. Here's the same line in three warmer candidates. My pick is called out.</p>
+      <div class="qopts">
+        <div class="qopt reject">
+          <div class="fname">Option 0 · Cinzel (current) — retire for quotes</div>
+          <div class="q-cinzel">“Sip your coffee. Sit. There’s nowhere you need to be.”</div>
+          <div class="why">Too formal and architectural. All-caps forces a shout; no true italic warmth. Keep Cinzel for the wordmark, not for feelings.</div>
+        </div>
+        <div class="qopt pick">
+          <span class="badge">Recommended</span>
+          <div class="fname">Option A · Cormorant Garamond — italic</div>
+          <div class="q-cormorant">“Sip your coffee. Sit. There’s nowhere you need to be.”</div>
+          <div class="why">Graceful, high-contrast, a little romantic — reads like Persian poetry meeting a California menu. Intimate at large sizes, our signature quote voice.</div>
+        </div>
+        <div class="qopt">
+          <div class="fname">Option B · Spectral — italic</div>
+          <div class="q-spectral">“Sip your coffee. Sit. There’s nowhere you need to be.”</div>
+          <div class="why">Sturdier, more grounded. A great fallback if Cormorant feels too delicate on signage or small screens.</div>
+        </div>
+        <div class="qopt">
+          <div class="fname">Option C · Newsreader — italic</div>
+          <div class="q-news">“Sip your coffee. Sit. There’s nowhere you need to be.”</div>
+          <div class="why">Editorial, magazine-ish. Friendly but slightly more "journal" than "café." A solid third.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= VOICE & TONE ======= -->
+<section class="sec voice">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">05 — Voice &amp; Tone</span><hr class="rule" style="background:var(--saffron);" /></div>
+      <span class="sec-num" style="color:var(--saffron);">Warm host, rooted, easy</span>
+    </div>
+    <div class="vprinc">
+      <div class="vp"><span class="n">i.</span><h3>You're a guest, not a customer</h3><p>Speak like a host welcoming you into the living room. Personal, warm, second-person. "Walk in. Pour the tea. Stay a while."</p></div>
+      <div class="vp"><span class="n">ii.</span><h3>Heritage, worn lightly</h3><p>Name the roots — saffron, the nazar, the Caspian — with pride and ease, never a history lecture. Culture as flavor, not as museum.</p></div>
+      <div class="vp"><span class="n">iii.</span><h3>Sensory &amp; specific</h3><p>Say "a thread of saffron," "salt air," "cardamom cold brew." Concrete beats generic. We make you taste it before you order.</p></div>
+      <div class="vp"><span class="n">iv.</span><h3>Easy, never fussy</h3><p>Short, sunlit sentences. Confident, a touch playful. No jargon, no hard sell, no exclamation-mark hype.</p></div>
+    </div>
+    <div class="words">
+      <div class="wcol love">
+        <div class="t">Words we love</div>
+        <ul><li>guest · host · welcome</li><li>ritual · linger · stay a while</li><li>saffron · cardamom · rosewater</li><li>roots · coast · nazar</li><li>made by hand · with care</li></ul>
+      </div>
+      <div class="wcol avoid">
+        <div class="t">Words we avoid</div>
+        <ul><li>artisanal · curated · elevated</li><li>exotic · authentic ethnic</li><li>game-changing · disrupt</li><li>grab-and-go · transaction</li><li>!!! · ALL-CAPS HYPE</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= IMAGERY ======= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">06 — Imagery</span><hr class="rule" /></div>
+      <span class="sec-num">Sun-warmed &amp; real</span>
+    </div>
+    <p class="lede" style="max-width:32ch;">Real light, real hands, real cups. The mural, the spices, the coast.</p>
+    <div class="img-grid">
+      <figure><img src="img/saffron-final.jpg" alt="Saffron latte" /><figcaption>Product · eye-cup forward</figcaption></figure>
+      <figure><img src="img/spice-jars.jpg" alt="Spice jars" /><figcaption>Flatlay · saffron &amp; rose</figcaption></figure>
+      <figure><img src="img/vibe-window.jpg" alt="Window bench" /><figcaption>Space · the living room</figcaption></figure>
+      <figure><img src="img/mural.jpg" alt="Mural" /><figcaption>Culture · Parisa Parnian</figcaption></figure>
+      <figure><img src="img/bakery-bun.jpg" alt="Persian pastry" /><figcaption>Bakery · Kouzeh</figcaption></figure>
+      <figure><img src="img/nostalgia-mercedes.jpg" alt="Vintage red Mercedes" /><figcaption>Nostalgia · film warmth</figcaption></figure>
+    </div>
+    <div class="img-do">
+      <div class="col yes"><div class="t">Do</div><p>Natural daylight, warm white balance, generous neutral backgrounds. Let the cup's eye logo face forward. Capture people, steam, hands, the mural. Crisp and clean.</p></div>
+      <div class="col no"><div class="t">Don't</div><p>No cool/blue filters, heavy vignettes, or moody underexposure. No sterile stock coffee. Don't bury the nazar or crop the logo awkwardly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CLOSING ======= -->
+<section class="closing">
+  <img src="img/eye-mark.png" alt="Caspian Coast eye emblem" />
+  <blockquote>From the Caspian to the coast.</blockquote>
+  <p class="persian">از ساحل خزر تا اقیانوس آرام</p>
+</section>
+
+</body>
+</html>
