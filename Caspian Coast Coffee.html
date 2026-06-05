@@ -23,6 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
 
 <!-- ===== AEO / SEO: FAQ structured data ===== -->
 <script type="application/ld+json">
@@ -140,7 +141,7 @@
     "opens": "07:00",
     "closes": "20:00"
   }],
-  "sameAs": ["https://instagram.com/caspiancoastcoffee"]
+  "sameAs": ["https://www.instagram.com/caspiancoastcoffee_la/?hl=en"]
 }
 </script>
 
@@ -229,9 +230,10 @@
   .lang-toggle button.active{opacity:1;}
   .lang-toggle button.fa{font-family:'Vazirmatn',var(--font-body);letter-spacing:0;}
   .lang-toggle .sep{opacity:.4;}
-  .util-right{display:flex;align-items:center;gap:16px;}
-  .util-ig{display:flex;align-items:center;}
-  .util-ig svg{width:17px;height:17px;display:block;}
+  .util-right{display:flex;align-items:center;gap:15px;}
+  .util-soc{display:flex;align-items:center;opacity:.92;transition:opacity .2s;}
+  .util-soc:hover{opacity:1;}
+  .util-soc svg{width:17px;height:17px;display:block;}
   body.lang-fa [data-fa], body.lang-fa .fa-text{font-family:'Vazirmatn',var(--font-body) !important;letter-spacing:normal !important;}
   body.lang-fa .come .info{text-align:right;}
   header.nav.solid{
@@ -475,9 +477,17 @@
   .la-mural:hover{transform:rotate(0deg);}
   .la-mural::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-2.5deg);width:122px;height:30px;background:rgba(217,154,43,.3);box-shadow:0 2px 6px rgba(0,0,0,.08);}
   .la-mural img{width:100%;display:block;}
+  .la-art{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:.86;padding:clamp(28px,6vw,60px) 18px clamp(48px,7vw,74px);}
+  .la-art .la-top{font-family:'UnifrakturCook',var(--font-serif);font-weight:700;color:var(--ink);font-size:clamp(60px,13vw,148px);display:flex;align-items:center;gap:.04em;}
+  .la-art .la-bottom{font-family:'UnifrakturCook',var(--font-serif);font-weight:700;color:var(--ink);font-size:clamp(50px,10.5vw,120px);}
+  .la-art .la-heart{color:#e23b2e;font-family:var(--font-body);font-size:.78em;line-height:1;transform:translateY(.05em);}
   .la-mural figcaption{position:absolute;left:0;right:0;bottom:16px;font-family:var(--font-body);font-style:italic;font-size:14px;color:var(--ink-soft);}
   .la-sub{font-family:var(--font-body);font-style:italic;color:var(--ink-soft);font-size:15px;margin-top:26px;letter-spacing:.04em;}
   .persian{direction:rtl;font-size:17px;color:var(--ink-soft);margin-top:14px;letter-spacing:.02em;}
+  .made-by{display:flex;align-items:center;justify-content:center;gap:7px;padding:6px 0 32px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;font-weight:600;color:var(--ink-soft);transition:opacity .2s;}
+  .made-by:hover{opacity:.65;}
+  .made-by .mb-heart{color:#e23b2e;font-size:12px;}
+  .made-by img{height:14px;width:auto;display:inline-block;}
 
   /* gentle scroll watermarks */
   .wm-host{position:relative;overflow:hidden;}
@@ -541,8 +551,14 @@
 <div class="util-bar" id="utilBar">
   <div class="util-status" id="openStatus"><span class="dot"></span><span class="txt">Open Now</span></div>
   <div class="util-right">
-    <a class="util-ig" href="https://instagram.com/caspiancoastcoffee" aria-label="Instagram" target="_blank" rel="noopener">
+    <a class="util-soc" href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="util-soc" href="https://www.tiktok.com/@caspiancoastcoffee" aria-label="TikTok" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.31 2.13 1.6 3.62 3.5 3.86v2.42c-1.3 0-2.49-.42-3.5-1.13v5.57c0 3.2-2.46 5.28-5.2 5.28-2.62 0-5.05-2.06-5.05-4.85 0-2.73 2.18-4.93 5-4.93.3 0 .59.03.88.08v2.62a2.6 2.6 0 0 0-.88-.16c-1.37 0-2.42 1.02-2.42 2.39 0 1.4 1.08 2.42 2.48 2.42 1.43 0 2.51-1.04 2.51-2.62V3h2.7z"/></svg>
+    </a>
+    <a class="util-soc" href="https://open.spotify.com/playlist/2dzTC9ufsLxBkJVKWNP1Dr?si=8c14f79f25034966&nd=1&dlsi=f1582fc465354a03" aria-label="Spotify playlist" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.59 14.43a.62.62 0 0 1-.86.21c-2.34-1.43-5.3-1.76-8.78-.96a.62.62 0 1 1-.28-1.21c3.81-.87 7.08-.49 9.71 1.11.3.18.39.57.21.85zm1.22-2.73a.78.78 0 0 1-1.07.26c-2.68-1.65-6.78-2.13-9.96-1.16a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.57 11.23 1.32.37.22.49.71.25 1.07zm.11-2.85c-3.22-1.91-8.53-2.09-11.6-1.16a.94.94 0 1 1-.54-1.79c3.53-1.07 9.39-.86 13.1 1.34a.94.94 0 0 1-.96 1.61z"/></svg>
     </a>
     <div class="lang-toggle" id="langToggle">
       <button type="button" data-lang="en" class="active">EN</button>
@@ -705,7 +721,7 @@ SERVED WITH CARE</h2>
       <span class="eyebrow">From the Caspian to the Coast</span>
       <h2>A LITTLE HOMESICK,
 IN THE BEST WAY</h2>
-      <p>Tea by the sea. A radio that only got two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.</p>
+      <p>Tea by the sea. A radio that only had two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.</p>
     </div>
     <div class="nost-grid">
       <figure class="frame n1 tape reveal">
@@ -816,7 +832,7 @@ MERCH</h2>
       </details>
       <details class="qa">
         <summary>Can I work from the café or host an event?</summary>
-        <div class="a">Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram <a href="https://instagram.com/caspiancoastcoffee" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>.</div>
+        <div class="a">Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram <a href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>.</div>
       </details>
     </div>
   </div>
@@ -856,7 +872,7 @@ MERCH</h2>
 
   <div class="la-band" aria-hidden="false">
     <figure class="la-mural">
-      <img src="img/la-postcard2.jpg" alt="LÖS Angeles — hand-lettered art with a red heart, by Parisa Parnian" />
+      <img src="img/la-postcard.png" alt="LÖS Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian" />
       <figcaption>Greetings from Venice ✶ Lös Angeles</figcaption>
     </figure>
     <p class="la-sub">Caspian Gothic: A Persian-inspired Californian blackletter that blends Tehrangeles street culture, Venice mural typography, 
@@ -867,8 +883,9 @@ and traditional Farsi forms into a distinctly Los Angeles visual language</p>
   <div class="wrap">
     <div class="legal">
       <span class="eyebrow">© 2026 Caspian Coast Coffee · Venice, California</span>
-      <a class="eyebrow" href="https://instagram.com/caspiancoastcoffee" target="_blank" rel="noopener">Instagram @caspiancoastcoffee</a>
+      <a class="eyebrow" href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" target="_blank" rel="noopener">Instagram @caspiancoastcoffee</a>
     </div>
+    <a class="made-by" href="https://www.mow.media" target="_blank" rel="noopener">Designed with <span class="mb-heart">♥</span> by&nbsp;<img src="img/mow-logo.png" alt="Man of the World Media" /></a>
   </div>
 </footer>
 
@@ -911,7 +928,7 @@ and traditional Farsi forms into a distinctly Los Angeles visual language</p>
     "\"Woman, Life, Freedom\" — mural by Parisa Parnian":"«زن، زندگی، آزادی» — نقاشی دیواری از پریسا پرنیان",
     "From the Caspian to the Coast":"از خزر تا ساحل",
     "A LITTLE HOMESICK, IN THE BEST WAY":"کمی دلتنگِ خانه،<br />به بهترین شکل",
-    "Tea by the sea. A radio that only got two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.":"چای کنار دریا. رادیویی که فقط دو ایستگاه می‌گرفت. ماشین قرمزی که همیشه بوی هل می‌داد. این‌جا را از تکه‌هایی از خانه ساختیم که نتوانستیم پشت سر بگذاریم — و آن‌ها را با خود به غرب آوردیم.",
+    "Tea by the sea. A radio that only had two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.":"چای کنار دریا. رادیویی که فقط دو ایستگاه می‌گرفت. ماشین قرمزی که همیشه بوی هل می‌داد. این‌جا را از تکه‌هایی از خانه ساختیم که نتوانستیم پشت سر بگذاریم — و آن‌ها را با خود به غرب آوردیم.",
     "Maman, before California":"مامان، پیش از کالیفرنیا",
     "Tea & static by the Caspian":"چای و خش‌خش رادیو کنار خزر",
     "The nazar, for luck":"نظر، برای خوش‌اقبالی",
