@@ -51,9 +51,12 @@
   .order-btn{font-family:var(--display);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:#fff;background:var(--clay);padding:11px 20px;border-radius:999px;white-space:nowrap;transition:background .25s,transform .25s,box-shadow .25s;box-shadow:0 10px 26px -12px rgba(192,101,58,.7);}
   .order-btn:hover{background:var(--clay-deep);transform:translateY(-2px);}
   .util-bar{position:fixed;top:0;left:0;right:0;z-index:61;display:flex;justify-content:space-between;align-items:center;padding:9px clamp(20px,4vw,36px);background:var(--cream);box-shadow:0 1px 0 var(--line);color:var(--ink);}
-  .util-status{display:flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;font-weight:600;}
+  .util-status{display:flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;font-weight:700;}
   .util-status .dot{width:9px;height:9px;border-radius:50%;background:#9aa0a6;flex:0 0 auto;}
+  .util-status.open{color:#2f9e54;}
   .util-status.open .dot{background:#3fb663;animation:opendot 2.4s ease-out infinite;}
+  .util-status.closed{color:#d23f33;}
+  .util-status.closed .dot{background:#d8453a;}
   @keyframes opendot{0%{box-shadow:0 0 0 0 rgba(63,182,99,.55);}70%{box-shadow:0 0 0 8px rgba(63,182,99,0);}100%{box-shadow:0 0 0 0 rgba(63,182,99,0);}}
   .lang-toggle{display:flex;align-items:center;gap:9px;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.12em;}
   .lang-toggle button{font:inherit;background:none;border:0;color:inherit;cursor:pointer;opacity:.5;padding:2px 0;text-transform:uppercase;transition:opacity .2s;}
@@ -153,16 +156,16 @@
 <header class="nav" id="nav">
   <nav class="nav-left">
     <a class="nav-link" href="index.html#menu" data-fa="منو">Menu</a>
-    <a class="nav-link" href="index.html#visit" data-fa="کافه">Café</a>
-    <a class="nav-link" href="index.html#story" data-fa="فرهنگ">Culture</a>
+    <a class="nav-link" href="index.html#space" data-fa="کافه">Café</a>
+    <a class="nav-link" href="index.html#merch" data-fa="کالا">Merch</a>
   </nav>
   <a class="brand" href="index.html" aria-label="Caspian Coast Coffee home">
     <span class="name" data-fa="کاسپین کوست">CASPIAN COAST</span>
     <span class="sub" data-fa="قهوه و فرهنگ">Coffee &amp; Culture</span>
   </a>
   <nav class="nav-right">
-    <a class="nav-link" href="about.html" data-fa="درباره ما">About</a>
     <a class="nav-link" href="index.html#visit" data-fa="بازدید">Visit</a>
+    <a class="nav-link" href="about.html" data-fa="درباره ما">About</a>
     <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
 </header>
@@ -293,7 +296,7 @@
     dictEls.forEach(el=>{if(l==='fa'){el.innerHTML=el._fa;el.classList.add('fa-text');el.setAttribute('dir','rtl');}else{el.innerHTML=el._enHTML;el.classList.remove('fa-text');el.removeAttribute('dir');}});
     langToggle.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));updateStatus();}
   langToggle.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
-  function updateStatus(){const el=document.getElementById('openStatus');const now=new Date();const hh=now.getHours()+now.getMinutes()/60;const open=hh>=7&&hh<20;el.classList.toggle('open',open);const t=el.querySelector('.txt');t.textContent=LANG==='fa'?(open?'باز است':'بسته است'):(open?'Open Now':'Closed');t.setAttribute('dir',LANG==='fa'?'rtl':'ltr');}
+  function updateStatus(){const el=document.getElementById('openStatus');const now=new Date();const hh=now.getHours()+now.getMinutes()/60;const open=hh>=7&&hh<20;el.classList.toggle('open',open);el.classList.toggle('closed',!open);const t=el.querySelector('.txt');t.textContent=LANG==='fa'?(open?'باز':'بسته'):(open?'Open':'Closed');t.setAttribute('dir',LANG==='fa'?'rtl':'ltr');}
   applyLang(LANG);setInterval(updateStatus,60000);
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
