@@ -7,11 +7,23 @@
 <meta name="description" content="Caspian Coast Coffee is a Persian café in Venice, California (Los Angeles). Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA — Persian roots, California light, Venice soul. Open daily 7am–8pm." />
 <link rel="icon" type="image/png" href="img/favicon.png" />
 <link rel="apple-touch-icon" href="img/favicon.png" />
+<link rel="canonical" href="https://manoftheworldmedia.github.io/caspiancoast/" />
+<meta property="og:type" content="business.business" />
+<meta property="og:site_name" content="Caspian Coast Coffee" />
+<meta property="og:title" content="Caspian Coast Coffee — Persian Café in Venice, Los Angeles" />
+<meta property="og:description" content="A Persian café in Venice, California. Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA. Persian roots, California light, Venice soul." />
+<meta property="og:image" content="https://manoftheworldmedia.github.io/caspiancoast/img/hero-interior.jpg" />
+<meta property="og:url" content="https://manoftheworldmedia.github.io/caspiancoast/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Caspian Coast Coffee — Persian Café in Venice, Los Angeles" />
+<meta name="twitter:description" content="Persian roots, California light, Venice soul. Saffron lattes, cardamom cold brew & espresso roasted in LA." />
+<meta name="twitter:image" content="https://manoftheworldmedia.github.io/caspiancoast/img/hero-interior.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet" />
 
 <!-- ===== AEO / SEO: FAQ structured data ===== -->
 <script type="application/ld+json">
@@ -103,6 +115,36 @@
 }
 </script>
 
+<!-- ===== Local SEO: business / café structured data ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Caspian Coast Coffee",
+  "image": "https://manoftheworldmedia.github.io/caspiancoast/img/hero-interior.jpg",
+  "description": "A Persian café in Venice, California. Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA by Sightglass.",
+  "servesCuisine": ["Coffee", "Persian"],
+  "priceRange": "$$",
+  "url": "https://manoftheworldmedia.github.io/caspiancoast/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1501 Main St, Unit 103",
+    "addressLocality": "Venice",
+    "addressRegion": "CA",
+    "postalCode": "90291",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 33.9889, "longitude": -118.4695 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "20:00"
+  }],
+  "sameAs": ["https://www.instagram.com/caspiancoastcoffee_la/?hl=en"]
+}
+</script>
+
 <style>
   :root{
     --ink:#1b1916;
@@ -188,9 +230,10 @@
   .lang-toggle button.active{opacity:1;}
   .lang-toggle button.fa{font-family:'Vazirmatn',var(--font-body);letter-spacing:0;}
   .lang-toggle .sep{opacity:.4;}
-  .util-right{display:flex;align-items:center;gap:16px;}
-  .util-ig{display:flex;align-items:center;}
-  .util-ig svg{width:17px;height:17px;display:block;}
+  .util-right{display:flex;align-items:center;gap:15px;}
+  .util-soc{display:flex;align-items:center;opacity:.92;transition:opacity .2s;}
+  .util-soc:hover{opacity:1;}
+  .util-soc svg{width:17px;height:17px;display:block;}
   body.lang-fa [data-fa], body.lang-fa .fa-text{font-family:'Vazirmatn',var(--font-body) !important;letter-spacing:normal !important;}
   body.lang-fa .come .info{text-align:right;}
   header.nav.solid{
@@ -276,7 +319,7 @@
   .intro .spices{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
   .intro .chip{border:1px solid rgba(27,25,22,.25);color:var(--ink);}
   .intro-figure{margin:0;}
-  .intro-spice{width:100%;max-width:none;aspect-ratio:auto;height:clamp(440px,42vw,560px);object-fit:cover;display:block;box-shadow:0 30px 64px -34px rgba(0,0,0,.42);}
+  .intro-spice{width:100%;max-width:none;aspect-ratio:auto;height:clamp(440px,42vw,560px);object-fit:cover;object-position:47% 52%;display:block;box-shadow:0 30px 64px -34px rgba(0,0,0,.42);}
   .chip{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:600;padding:9px 16px;border:1px solid rgba(241,237,228,.28);border-radius:999px;color:var(--cream);}
 
   /* ============ MENU GRID ============ */
@@ -350,8 +393,8 @@
   /* ============ MERCH ============ */
   .merch{padding:0;display:grid;grid-template-columns:1.15fr .85fr;align-items:stretch;background:var(--cream);}
   .merch-photo{background:#cfc7b6;}
-  .merch-photo img{width:100%;height:100%;object-fit:cover;min-height:520px;}
-  .merch-copy{padding:clamp(40px,6vw,96px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+  .merch-photo img{width:100%;height:100%;object-fit:cover;min-height:400px;max-height:560px;}
+  .merch-copy{padding:clamp(32px,4.5vw,68px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
   .merch-copy .wm{position:absolute;right:-60px;bottom:-40px;width:300px;opacity:.10;pointer-events:none;}
   .merch-copy h2{font-size:clamp(30px,3.6vw,52px);text-transform:uppercase;margin-top:14px;line-height:.98;position:relative;}
   .merch-copy p{color:var(--ink-soft);margin-top:22px;max-width:40ch;position:relative;}
@@ -434,9 +477,14 @@
   .la-mural:hover{transform:rotate(0deg);}
   .la-mural::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%) rotate(-2.5deg);width:122px;height:30px;background:rgba(217,154,43,.3);box-shadow:0 2px 6px rgba(0,0,0,.08);}
   .la-mural img{width:100%;display:block;}
+  .la-mural::after{content:"";position:absolute;inset:11px;border:1.5px solid rgba(27,25,22,.22);pointer-events:none;}
   .la-mural figcaption{position:absolute;left:0;right:0;bottom:16px;font-family:var(--font-body);font-style:italic;font-size:14px;color:var(--ink-soft);}
   .la-sub{font-family:var(--font-body);font-style:italic;color:var(--ink-soft);font-size:15px;margin-top:26px;letter-spacing:.04em;}
   .persian{direction:rtl;font-size:17px;color:var(--ink-soft);margin-top:14px;letter-spacing:.02em;}
+  .made-by{display:flex;align-items:center;justify-content:center;gap:7px;padding:6px 0 32px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;font-weight:600;color:var(--ink-soft);transition:opacity .2s;}
+  .made-by:hover{opacity:.65;}
+  .made-by .mb-heart{color:#e23b2e;font-size:12px;}
+  .made-by img{height:14px;width:auto;display:inline-block;}
 
   /* gentle scroll watermarks */
   .wm-host{position:relative;overflow:hidden;}
@@ -500,8 +548,14 @@
 <div class="util-bar" id="utilBar">
   <div class="util-status" id="openStatus"><span class="dot"></span><span class="txt">Open Now</span></div>
   <div class="util-right">
-    <a class="util-ig" href="https://instagram.com/caspiancoastcoffee" aria-label="Instagram" target="_blank" rel="noopener">
+    <a class="util-soc" href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" aria-label="Instagram" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="util-soc" href="https://www.tiktok.com/@caspiancoastcoffee" aria-label="TikTok" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.31 2.13 1.6 3.62 3.5 3.86v2.42c-1.3 0-2.49-.42-3.5-1.13v5.57c0 3.2-2.46 5.28-5.2 5.28-2.62 0-5.05-2.06-5.05-4.85 0-2.73 2.18-4.93 5-4.93.3 0 .59.03.88.08v2.62a2.6 2.6 0 0 0-.88-.16c-1.37 0-2.42 1.02-2.42 2.39 0 1.4 1.08 2.42 2.48 2.42 1.43 0 2.51-1.04 2.51-2.62V3h2.7z"/></svg>
+    </a>
+    <a class="util-soc" href="https://open.spotify.com/playlist/2dzTC9ufsLxBkJVKWNP1Dr?si=8c14f79f25034966&nd=1&dlsi=f1582fc465354a03" aria-label="Spotify playlist" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.59 14.43a.62.62 0 0 1-.86.21c-2.34-1.43-5.3-1.76-8.78-.96a.62.62 0 1 1-.28-1.21c3.81-.87 7.08-.49 9.71 1.11.3.18.39.57.21.85zm1.22-2.73a.78.78 0 0 1-1.07.26c-2.68-1.65-6.78-2.13-9.96-1.16a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.57 11.23 1.32.37.22.49.71.25 1.07zm.11-2.85c-3.22-1.91-8.53-2.09-11.6-1.16a.94.94 0 1 1-.54-1.79c3.53-1.07 9.39-.86 13.1 1.34a.94.94 0 0 1-.96 1.61z"/></svg>
     </a>
     <div class="lang-toggle" id="langToggle">
       <button type="button" data-lang="en" class="active">EN</button>
@@ -519,8 +573,8 @@
     <a class="nav-link" href="#story" data-fa="فرهنگ">Culture</a>
   </nav>
   <a class="brand" href="#top" aria-label="Caspian Coast Coffee home">
-    <span class="name">CASPIAN COAST</span>
-    <span class="sub">Coffee &amp; Culture</span>
+    <span class="name" data-fa="کاسپین کوست">CASPIAN COAST</span>
+    <span class="sub" data-fa="قهوه و فرهنگ">Coffee &amp; Culture</span>
   </a>
   <nav class="nav-right">
     <a class="nav-link" href="about.html" data-fa="درباره ما">About</a>
@@ -537,7 +591,7 @@
     <div class="hero-content">
       <img class="hero-mark" src="img/eye-mark-cream.png" alt="Caspian Coast Coffee eye emblem" />
       <p class="hero-eyebrow" data-fa="کافه ایرانی · ونیس بیچ، لس‌آنجلس">Persian Café · Venice Beach, Los Angeles</p>
-      <h1><span class="hl" data-fa="اصالت ایرانی،<br />روح ونیس.">PERSIAN STYLE<br />VENICE SOUL.</span><span class="sub" data-fa="کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند.">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
+      <h1><span class="hl" data-fa="اصالت ایرانی،<br />روح ونیس">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-fa="کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند.">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
       <div class="hero-meta">
         <div class="hero-hours">
           <span class="eyebrow" data-fa="هر روز باز">Open Daily</span>
@@ -556,7 +610,8 @@
   <div class="wrap">
     <div class="reveal intro-copy">
       <p class="q">Is this a Persian café?</p>
-      <h2>Yes —<br />and then some.</h2>
+      <h2>YES —
+AND THEN SOME</h2>
       <p class="body-copy">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.</p>
       <span class="eyebrow flavors-label">Flavors we build with</span>
       <div class="spices">
@@ -604,7 +659,7 @@ SERVED WITH CARE</h2>
 <!-- ===================== ORDER CTA ===================== -->
 <section class="order-cta">
   <img class="oc-eye" src="img/eye-mark-cream.png" alt="Caspian Coast eye emblem" />
-  <h2 data-fa="از صف رد شو، عزیز.">Skip the line, aziz.</h2>
+  <h2 data-fa="از صف رد شو، عزیز.">Skip the line, aziz</h2>
   <p data-fa="از قبل برای تحویل سفارش دهید · رُست‌شده در لس‌آنجلس توسط سایت‌گلس · شیرینی از کوزه و آرتلیس.">Order ahead for pickup · roasted in LA by Sightglass · pastries by Kouzeh &amp; Artelice.</p>
   <a class="oc-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش برای تحویل →">Order for pickup &nbsp;→</a>
 </section>
@@ -641,7 +696,8 @@ SERVED WITH CARE</h2>
     <div class="vibe-head reveal">
       <span class="eyebrow">The Space</span>
       <hr class="rule" />
-      <h2>Come sit<br />a while.</h2>
+      <h2>COME SIT
+A WHILE</h2>
       <p>Tiled benches, Persian murals, a Venice street rolling by the window — a corner of the Caspian on Main Street. Stay for one cup or the whole afternoon.</p>
     </div>
     <div class="vibe-grid">
@@ -664,7 +720,7 @@ SERVED WITH CARE</h2>
       <span class="eyebrow">From the Caspian to the Coast</span>
       <h2>A LITTLE HOMESICK,
 IN THE BEST WAY</h2>
-      <p>Tea by the sea. A radio that only got two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.</p>
+      <p>Tea by the sea. A radio that only had two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.</p>
     </div>
     <div class="nost-grid">
       <figure class="frame n1 tape reveal">
@@ -697,9 +753,8 @@ IN THE BEST WAY</h2>
   <div class="merch-copy reveal">
     <img class="wm" src="img/logo.webp" alt="" aria-hidden="true" />
     <span class="eyebrow">New Drop</span>
-    <h2>LOS ANGELES
-MERCH</h2>
-    <p>Exclusive Los Ángeles tees and dad hats featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
+    <h2>CASPIAN MERCH</h2>
+    <p>Exclusive Caspian tees and dad hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
     <a class="link-arrow" href="#">Shop the drop &nbsp;→</a>
   </div>
 </section>
@@ -712,7 +767,7 @@ MERCH</h2>
       <div>
         <span class="eyebrow" style="color:var(--sage);">Today at the Coast</span>
         <hr class="rule" style="background:var(--cream);" />
-        <h2>There's always<br />something on.</h2>
+        <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
       </div>
       <a class="link-arrow" href="#">View calendar &nbsp;→</a>
     </div>
@@ -775,7 +830,7 @@ MERCH</h2>
       </details>
       <details class="qa">
         <summary>Can I work from the café or host an event?</summary>
-        <div class="a">Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram <a href="https://instagram.com/caspiancoastcoffee" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>.</div>
+        <div class="a">Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram <a href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>.</div>
       </details>
     </div>
   </div>
@@ -815,19 +870,19 @@ MERCH</h2>
 
   <div class="la-band" aria-hidden="false">
     <figure class="la-mural">
-      <img src="img/la-postcard2.jpg" alt="LÖS Angeles — hand-lettered art with a red heart, by Parisa Parnian" />
+      <img src="img/la-postcard.png" alt="LÖS Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian" />
       <figcaption>Greetings from Venice ✶ Lös Angeles</figcaption>
     </figure>
-    <p class="la-sub">Caspian Gothic: A Persian-inspired Californian blackletter that blends Tehrangeles street culture, Venice mural typography, 
-and traditional Farsi forms into a distinctly Los Angeles visual language</p>
+    <p class="la-sub">Caspian Gothic: A Persian-inspired Californian blackletter that blends Tehrangeles street culture, Venice mural typography,<br />and traditional Farsi forms into a distinctly Los Angeles visual language</p>
     <p class="persian">از اینجا تا ساحل خزر</p>
   </div>
 
   <div class="wrap">
     <div class="legal">
       <span class="eyebrow">© 2026 Caspian Coast Coffee · Venice, California</span>
-      <a class="eyebrow" href="https://instagram.com/caspiancoastcoffee" target="_blank" rel="noopener">Instagram @caspiancoastcoffee</a>
+      <a class="eyebrow" href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" target="_blank" rel="noopener">Instagram @caspiancoastcoffee</a>
     </div>
+    <a class="made-by" href="https://www.mow.media" target="_blank" rel="noopener">Designed with <span class="mb-heart">♥</span> by&nbsp;<img src="img/mow-logo.png" alt="Man of the World Media" /></a>
   </div>
 </footer>
 
@@ -851,7 +906,7 @@ and traditional Farsi forms into a distinctly Los Angeles visual language</p>
   // Full-page dictionary (normalized English text -> Farsi HTML)
   const DICT = {
     "Is this a Persian café?":"اینجا یک کافه‌ی ایرانیه؟",
-    "Yes —and then some.":"بله —<br />و فراتر از آن.",
+    "YES — AND THEN SOME":"بله — و فراتر از آن",
     "We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.":"ما لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — ادویه‌ی ایرانی در دل نور کالیفرنیا. اسپرسوی ما همین‌جا در لس‌آنجلس توسط سایت‌گلس کافی رُست می‌شود، و باقی کار را به ساحل می‌سپاریم: مرکبات، نسیم شور دریا و ریتم آرام ونیس.",
     "Flavors we build with":"طعم‌هایی که با آن‌ها می‌سازیم",
     "Saffron":"زعفران","Cardamom":"هل","Rosewater":"گلاب","Date Syrup":"شیره‌ی خرما",
@@ -864,13 +919,13 @@ and traditional Farsi forms into a distinctly Los Angeles visual language</p>
     "Pillowy seeded buns, spiraled barbari, saffron-kissed sweets — our pastries are made in collaboration with the bakers we love most, then served warm beside your latte.":"نان‌های نرم کنجدی، بربری مارپیچ و شیرینی‌های آغشته به زعفران — شیرینی‌های ما با همکاری نانوایانی که عاشقشانیم پخته و گرم کنار لاته‌تان سرو می‌شوند.",
     "Curated with Artelice & Kouzeh Bakery.":"با همکاری آرتلیس و نانوایی کوزه.",
     "The Space":"فضا",
-    "Come sita while.":"بیا بنشین<br />و کمی بمان.",
+    "COME SIT A WHILE":"بیا بنشین و کمی بمان",
     "Tiled benches, Persian murals, a Venice street rolling by the window — a corner of the Caspian on Main Street. Stay for one cup or the whole afternoon.":"نیمکت‌های کاشی‌کاری، نقاشی‌های دیواری ایرانی و خیابان ونیس از پشت پنجره — گوشه‌ای از خزر روی مِین‌استریت. برای یک فنجان بمان یا تمام بعدازظهر.",
     "Window seats · Main St, Venice":"صندلی‌های کنار پنجره · مِین‌استریت، ونیس",
     "\"Woman, Life, Freedom\" — mural by Parisa Parnian":"«زن، زندگی، آزادی» — نقاشی دیواری از پریسا پرنیان",
     "From the Caspian to the Coast":"از خزر تا ساحل",
     "A LITTLE HOMESICK, IN THE BEST WAY":"کمی دلتنگِ خانه،<br />به بهترین شکل",
-    "Tea by the sea. A radio that only got two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.":"چای کنار دریا. رادیویی که فقط دو ایستگاه می‌گرفت. ماشین قرمزی که همیشه بوی هل می‌داد. این‌جا را از تکه‌هایی از خانه ساختیم که نتوانستیم پشت سر بگذاریم — و آن‌ها را با خود به غرب آوردیم.",
+    "Tea by the sea. A radio that only had two stations. The red car that always smelled of cardamom. We built this place out of the parts of home we couldn't leave behind — and carried them west.":"چای کنار دریا. رادیویی که فقط دو ایستگاه می‌گرفت. ماشین قرمزی که همیشه بوی هل می‌داد. این‌جا را از تکه‌هایی از خانه ساختیم که نتوانستیم پشت سر بگذاریم — و آن‌ها را با خود به غرب آوردیم.",
     "Maman, before California":"مامان، پیش از کالیفرنیا",
     "Tea & static by the Caspian":"چای و خش‌خش رادیو کنار خزر",
     "The nazar, for luck":"نظر، برای خوش‌اقبالی",
@@ -878,11 +933,11 @@ and traditional Farsi forms into a distinctly Los Angeles visual language</p>
     "\"Sip your coffee. Sit. There's nowhere you need to be.\"":"«قهوه‌ات را بنوش. بنشین. هیچ جای دیگری نباید باشی.»",
     "— House rule":"— قانون خانه",
     "New Drop":"کالکشن جدید",
-    "LOS ANGELES MERCH":"کالای لس‌آنجلس",
-    "Exclusive Los Ángeles tees and dad hats featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.":"تی‌شرت‌ها و کلاه‌های ویژه‌ی لس‌آنجلس با تایپوگرافی کاسپین گوتیک ما، برگرفته از نقاشی دیواری نمادین روی دیوارمان — نامه‌ای عاشقانه به این شهر، با دو الفبا.",
+    "CASPIAN MERCH":"کالای کاسپین",
+    "Exclusive Caspian tees and dad hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.":"تی‌شرت‌ها و کلاه‌های ویژه‌ی لس‌آنجلس با تایپوگرافی کاسپین گوتیک ما، برگرفته از نقاشی دیواری نمادین روی دیوارمان — نامه‌ای عاشقانه به این شهر، با دو الفبا.",
     "Shop the drop →":"خرید کالکشن →",
     "Today at the Coast":"امروز در ساحل",
-    "There's alwayssomething on.":"همیشه<br />خبری هست.",
+    "THERE'S ALWAYS SOMETHING GOING ON":"همیشه خبری هست",
     "View calendar →":"دیدن تقویم →",
     "Lazy Sunday":"یکشنبه‌ی بی‌خیال","Backgammon Club":"باشگاه تخته‌نرد","Record Night":"شب صفحه‌ی موسیقی","Saffron Sessions":"محفل زعفران",
     "All Day Sundays":"تمام یکشنبه‌ها","Weekends":"آخر هفته‌ها","Fridays 7PM":"جمعه‌ها ۷ شب","Saturdays 3PM":"شنبه‌ها ۳ بعدازظهر",
