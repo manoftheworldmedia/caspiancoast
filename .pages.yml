@@ -78,3 +78,154 @@ content:
           - { name: a_fa, label: Answer (FA), type: text }
           - { name: open, label: Open by default, type: boolean }
           - { name: instagram, label: Instagram Link (optional), type: string }
+
+  - name: content
+    label: General Content
+    type: file
+    path: content.json
+    format: json
+    fields:
+      - name: hero
+        label: Hero (homepage top)
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow line (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow line (FA), type: string }
+          - { name: titleHtml, label: "Headline (EN — use <br /> for line break)", type: string }
+          - { name: titleHtml_fa, label: "Headline (FA — use <br />)", type: string }
+          - { name: subHtml, label: Sub-headline (EN), type: text }
+          - { name: subHtml_fa, label: Sub-headline (FA), type: text }
+      - name: about
+        label: About Page — Story
+        type: object
+        fields:
+          - { name: ledeHtml, label: "Lede (EN — <em> allowed)", type: text }
+          - { name: ledeHtml_fa, label: Lede (FA), type: text }
+          - { name: p1, label: Paragraph 1 (EN), type: text }
+          - { name: p1_fa, label: Paragraph 1 (FA), type: text }
+          - { name: p2, label: Paragraph 2 (EN), type: text }
+          - { name: p2_fa, label: Paragraph 2 (FA), type: text }
+          - { name: p3, label: Paragraph 3 (EN), type: text }
+          - { name: p3_fa, label: Paragraph 3 (FA), type: text }
+          - { name: p4, label: Paragraph 4 (EN), type: text }
+          - { name: p4_fa, label: Paragraph 4 (FA), type: text }
+          - { name: p5, label: Paragraph 5 (EN), type: text }
+          - { name: p5_fa, label: Paragraph 5 (FA), type: text }
+      - name: contact
+        label: Contact & Hours
+        type: object
+        fields:
+          - { name: addressLine1, label: Address line 1 (EN), type: string }
+          - { name: addressLine2, label: Address line 2 (EN), type: string }
+          - { name: addressLine1_fa, label: Address line 1 (FA), type: string }
+          - { name: addressLine2_fa, label: Address line 2 (FA), type: string }
+          - { name: hours, label: Hours (EN), type: string }
+          - { name: hours_fa, label: Hours (FA), type: string }
+          - { name: phone, label: Phone, type: string, required: false }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: instagramHandle, label: Instagram handle, type: string }
+          - { name: mapsUrl, label: Google Maps link, type: string }
+          - { name: orderUrl, label: Online ordering link, type: string }
+      - name: images
+        label: Site Images
+        type: object
+        fields:
+          - name: heroInterior
+            label: Hero — Interior
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: spiceJars
+            label: Spice Jars
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: bakeryBun
+            label: Bakery — Bun
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: bakerySpiral
+            label: Bakery — Spiral Bread
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: vibeWindow
+            label: Vibe — Window Bench
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: vibeMural
+            label: Vibe — Mural
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: nostalgiaWoman
+            label: Nostalgia — Family Photo
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: nostalgiaRadio
+            label: Nostalgia — Radio
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: cupCeramic
+            label: Ceramic Eye Cup
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: nostalgiaMercedes
+            label: Nostalgia — Mercedes
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: merchShirt
+            label: Merch — Shirt
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: laPostcard
+            label: LA Postcard
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: aboutPoster
+            label: About — LA Mural
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+          - name: ownerPhoto
+            label: Owner Photo (Rahi)
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text (EN), type: text }
+              - { name: alt_fa, label: Alt text (FA), type: text }
+
