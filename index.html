@@ -292,8 +292,8 @@
     text-shadow:0 2px 30px rgba(0,0,0,.35);
     max-width:15ch;
   }
-  .hero-mark{width:clamp(54px,6vw,84px);height:auto;margin-bottom:clamp(12px,2.2vh,24px);display:block;
-    filter:drop-shadow(0 3px 16px rgba(0,0,0,.45));}
+  .hero-mark{width:clamp(132px,17vw,190px);height:auto;margin-bottom:clamp(14px,2.2vh,24px);display:block;
+    filter:drop-shadow(0 3px 18px rgba(0,0,0,.45));}
   .hero h1 .sub{
     display:block;font-family:var(--font-body);font-weight:400;text-transform:none;
     font-size:clamp(15px,1.7vw,21px);letter-spacing:.01em;line-height:1.5;margin-top:22px;
@@ -516,6 +516,25 @@
   .legal .eyebrow{letter-spacing:.18em;}
   .legal a:hover{color:var(--clay);}
 
+  /* ============ HAMBURGER + MOBILE MENU ============ */
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative;padding:0;color:inherit;}
+  .nav-toggle span{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform .3s ease, opacity .25s ease, top .3s ease;}
+  .nav-toggle span:nth-child(1){top:2px;}
+  .nav-toggle span:nth-child(2){top:10px;}
+  .nav-toggle span:nth-child(3){top:18px;}
+  body.menu-open .nav-toggle span:nth-child(1){top:10px;transform:rotate(45deg);}
+  body.menu-open .nav-toggle span:nth-child(2){opacity:0;}
+  body.menu-open .nav-toggle span:nth-child(3){top:10px;transform:rotate(-45deg);}
+  .mobile-menu{position:fixed;inset:0;z-index:70;background:var(--cream);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;padding:96px clamp(24px,8vw,48px) 48px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .35s ease, visibility .35s ease, transform .35s ease;}
+  body.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none;}
+  .mobile-menu .mm-eye{position:absolute;right:clamp(24px,8vw,48px);top:30px;width:42px;opacity:.9;}
+  .mobile-menu a{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.01em;font-size:clamp(34px,11vw,52px);font-weight:800;color:var(--ink);line-height:1.18;padding:6px 0;transition:color .2s;}
+  .mobile-menu a:active{color:var(--clay);}
+  .mobile-menu .mm-order{margin-top:30px;background:var(--clay);color:#fff;font-size:15px;letter-spacing:.16em;font-weight:700;padding:18px 40px;border-radius:999px;line-height:1;box-shadow:0 16px 34px -16px rgba(192,101,58,.7);}
+  .mobile-menu .mm-foot{margin-top:34px;font-family:var(--font-body);font-style:italic;color:var(--ink-soft);font-size:16px;}
+  body.lang-fa .mobile-menu{align-items:flex-end;}
+  .float-order{display:none;}
+
   /* ============ RESPONSIVE ============ */
   @media (max-width:1000px){
     .intro .wrap{grid-template-columns:1fr;gap:36px;}
@@ -530,15 +549,18 @@
     .nost-grid{display:flex;flex-direction:column;gap:26px;}
     .frame{transform:none !important;}
   }
-  @media (max-width:680px){
+  @media (max-width:900px){
     body{font-size:16px;}
     .wrap{padding:0 22px;}
-    header.nav{grid-template-columns:auto 1fr auto;padding:14px 20px;}
-    .nav-left,.nav-right .nav-link{display:none;}
-    .nav-right{gap:16px;}
-    .nav-toggle{display:flex;width:34px;height:34px;align-items:center;justify-content:center;}
+    header.nav{grid-template-columns:1fr;justify-items:start;padding:14px 20px;}
+    .nav-left,.nav-right{display:none;}
+    .brand{align-items:flex-start;text-align:left;}
+    .nav-toggle{display:block;position:absolute;right:20px;top:50%;transform:translateY(-50%);}
     .menu-grid{grid-template-columns:1fr 1fr;}
     .menu-head{grid-template-columns:1fr;gap:14px;}
+    .float-order{display:inline-flex;align-items:center;gap:8px;position:fixed;right:16px;bottom:16px;z-index:55;background:var(--clay);color:#fff;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;padding:14px 22px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(192,101,58,.75);transition:transform .25s ease;}
+    .float-order:active{transform:scale(.96);}
+    body.menu-open .float-order{opacity:0;pointer-events:none;}
     .ev-grid{grid-template-columns:1fr 1fr;}
     .hero-meta{gap:28px;}
     .hero-content{padding:0 22px 56px;}
@@ -584,7 +606,25 @@
     <a class="nav-link" href="about.html" data-fa="درباره ما">About</a>
     <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <img class="mm-eye" src="img/eye-mark.png" alt="" aria-hidden="true" />
+  <a href="#menu" data-fa="منو">Menu</a>
+  <a href="#space" data-fa="کافه">Café</a>
+  <a href="#merch" data-fa="کالا">Merch</a>
+  <a href="#visit" data-fa="بازدید">Visit</a>
+  <a href="about.html" data-fa="درباره ما">About</a>
+  <a class="mm-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
+  <span class="mm-foot" data-fa="ونیس، کالیفرنیا · هر روز ۷ صبح – ۸ شب">Venice, California · Open daily 7am–8pm</span>
+</div>
+
+<!-- floating order (mobile) -->
+<a class="float-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش ↗">Order ↗</a>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
@@ -592,7 +632,7 @@
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <img class="hero-mark" src="img/eye-mark-cream.png" alt="Caspian Coast Coffee eye emblem" />
+      <img class="hero-mark" src="img/logo-full-white.png" alt="Caspian Coast Coffee" />
       <p class="hero-eyebrow" data-fa="کافه ایرانی · ونیس بیچ، لس‌آنجلس">Persian Café · Venice Beach, Los Angeles</p>
       <h1><span class="hl" data-fa="اصالت ایرانی،<br />روح ونیس">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-fa="کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند.">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
       <div class="hero-meta">
@@ -900,6 +940,19 @@ IN THE BEST WAY</h2>
   };
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  // Mobile hamburger menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    document.body.classList.toggle('menu-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  navToggle.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') setMenu(false); });
 
   // Language toggle (EN / فارسی)
   const langToggle = document.getElementById('langToggle');

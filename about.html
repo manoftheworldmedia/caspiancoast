@@ -71,6 +71,23 @@
   .util-soc{display:flex;align-items:center;opacity:.92;transition:opacity .2s;}
   .util-soc:hover{opacity:1;}
   .util-soc svg{width:17px;height:17px;display:block;}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;width:30px;height:22px;position:relative;padding:0;color:inherit;}
+  .nav-toggle span{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform .3s ease, opacity .25s ease, top .3s ease;}
+  .nav-toggle span:nth-child(1){top:2px;}
+  .nav-toggle span:nth-child(2){top:10px;}
+  .nav-toggle span:nth-child(3){top:18px;}
+  body.menu-open .nav-toggle span:nth-child(1){top:10px;transform:rotate(45deg);}
+  body.menu-open .nav-toggle span:nth-child(2){opacity:0;}
+  body.menu-open .nav-toggle span:nth-child(3){top:10px;transform:rotate(-45deg);}
+  .mobile-menu{position:fixed;inset:0;z-index:70;background:var(--cream);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;padding:96px clamp(24px,8vw,48px) 48px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .35s ease, visibility .35s ease, transform .35s ease;}
+  body.menu-open .mobile-menu{opacity:1;visibility:visible;transform:none;}
+  .mobile-menu .mm-eye{position:absolute;right:clamp(24px,8vw,48px);top:30px;width:42px;opacity:.9;}
+  .mobile-menu a{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.01em;font-size:clamp(34px,11vw,52px);font-weight:800;color:var(--ink);line-height:1.18;padding:6px 0;}
+  .mobile-menu a:active{color:var(--clay);}
+  .mobile-menu .mm-order{margin-top:30px;background:var(--clay);color:#fff;font-size:15px;letter-spacing:.16em;font-weight:700;padding:18px 40px;border-radius:999px;line-height:1;box-shadow:0 16px 34px -16px rgba(192,101,58,.7);}
+  .mobile-menu .mm-foot{margin-top:34px;font-family:var(--font-body);font-style:italic;color:var(--ink-soft);font-size:16px;}
+  body.lang-fa .mobile-menu{align-items:flex-end;}
+  .float-order{display:none;}
   .order-btn{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:#fff;background:var(--clay);padding:11px 20px;border-radius:999px;white-space:nowrap;transition:background .25s,transform .25s;}
   .order-btn:hover{background:var(--clay-deep,#a8542e);transform:translateY(-2px);}
   body.lang-fa [data-fa], body.lang-fa .fa-text{font-family:'Vazirmatn',var(--font-body) !important;letter-spacing:normal !important;}
@@ -144,11 +161,15 @@
     .values .grid{grid-template-columns:1fr;}
     .partner-grid{grid-template-columns:1fr;}
   }
-  @media (max-width:680px){
+  @media (max-width:900px){
     .wrap{padding:0 22px;}
-    header.nav{grid-template-columns:auto 1fr auto;padding:14px 20px;}
-    .nav-left,.nav-right .nav-link{display:none;}
-    .nav-right{gap:16px;}
+    header.nav{grid-template-columns:1fr;justify-items:start;padding:14px 20px;}
+    .nav-left,.nav-right{display:none;}
+    .brand{align-items:flex-start;}
+    .nav-toggle{display:block;position:absolute;right:20px;top:50%;transform:translateY(-50%);}
+    .float-order{display:inline-flex;align-items:center;gap:8px;position:fixed;right:16px;bottom:16px;z-index:55;background:var(--clay);color:#fff;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;padding:14px 22px;border-radius:999px;box-shadow:0 14px 30px -10px rgba(192,101,58,.75);transition:transform .25s ease;}
+    .float-order:active{transform:scale(.96);}
+    body.menu-open .float-order{opacity:0;pointer-events:none;}
   }
 </style>
 </head>
@@ -179,9 +200,21 @@
     <a class="nav-link" href="about.html" data-fa="درباره ما">About</a>
     <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
 
-<!-- HERO -->
+<div class="mobile-menu" id="mobileMenu">
+  <img class="mm-eye" src="img/eye-mark.png" alt="" aria-hidden="true" />
+  <a href="index.html#menu" data-fa="منو">Menu</a>
+  <a href="index.html#space" data-fa="کافه">Café</a>
+  <a href="index.html#merch" data-fa="کالا">Merch</a>
+  <a href="index.html#visit" data-fa="بازدید">Visit</a>
+  <a href="about.html" data-fa="درباره ما">About</a>
+  <a class="mm-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
+  <span class="mm-foot" data-fa="ونیس، کالیفرنیا · هر روز ۷ صبح – ۸ شب">Venice, California · Open daily 7am–8pm</span>
+</div>
+
+<a class="float-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش ↗">Order ↗</a>
 <section class="ab-hero">
   <div class="wrap">
     <div class="reveal">
@@ -305,6 +338,11 @@
   const utilBar=document.getElementById('utilBar');
   const onScroll=()=>{const s=window.scrollY>8;nav.classList.toggle('solid',s);utilBar.classList.toggle('solid',s);};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  const navToggle=document.getElementById('navToggle');const mobileMenu=document.getElementById('mobileMenu');
+  function setMenu(open){document.body.classList.toggle('menu-open',open);navToggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';}
+  navToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
   const langToggle=document.getElementById('langToggle');
   const i18nEls=[...document.querySelectorAll('[data-fa]')];
   i18nEls.forEach(el=>{el._en=el.innerHTML;});
