@@ -459,6 +459,29 @@
   @media (max-width:680px){.ev-feature{grid-template-columns:1fr;}.ev-feature .ef-img{min-height:300px;}}
   body.lang-fa .ev-feature .ef-body{text-align:right;}
   body.lang-fa .ev-feature .ef-meta span{direction:rtl;}
+  /* add-to-calendar */
+  .ev{cursor:pointer;}
+  .ef-actions{margin-top:18px;}
+  .cal-btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;background:var(--clay);color:#fff;border:0;
+    font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;font-weight:700;
+    padding:13px 22px;border-radius:999px;transition:background .25s,transform .25s;}
+  .cal-btn:hover{background:var(--clay-deep,#a8542e);transform:translateY(-2px);}
+  .cal-btn svg{width:15px;height:15px;}
+  .ev .ev-add{position:absolute;top:12px;right:12px;z-index:3;width:34px;height:34px;border-radius:50%;
+    background:rgba(20,17,14,.55);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);color:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s,transform .25s;opacity:0;}
+  .ev:hover .ev-add{opacity:1;}
+  .ev .ev-add:hover{background:var(--clay);transform:scale(1.08);}
+  .ev .ev-add svg{width:16px;height:16px;}
+  #calPop{position:fixed;z-index:90;background:var(--cream);color:var(--ink);border-radius:12px;
+    box-shadow:0 24px 60px -18px rgba(20,17,14,.55);padding:8px;min-width:230px;display:none;border:1px solid var(--line);}
+  #calPop.open{display:block;}
+  #calPop .cp-title{font-family:var(--font-display);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);padding:10px 12px 8px;}
+  #calPop a{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:8px;font-family:var(--font-body);font-size:14.5px;color:var(--ink);transition:background .15s;}
+  #calPop a:hover{background:var(--cream-2);}
+  #calPop a svg{width:18px;height:18px;flex:0 0 auto;color:var(--clay);}
+  #calBackdrop{position:fixed;inset:0;z-index:89;display:none;}
+  #calBackdrop.open{display:block;}
 
   /* ============ FAQ ============ */
   .faq{padding:110px 0;background:var(--paper);}
@@ -858,23 +881,8 @@ IN THE BEST WAY</h2>
       </div>
       <a class="link-arrow" href="#">View calendar &nbsp;→</a>
     </div>
-    <article class="ev-feature reveal">
-      <div class="ef-img"><img src="img/event-sama.jpg" alt="Beach party, hiking and protein coffee with Sama at Caspian Coast Coffee" /></div>
-      <div class="ef-body">
-        <span class="ef-tag" data-fa="رویداد ویژه">Featured Event</span>
-        <h3 data-fa="مهمونی ساحلی، پیاده‌روی و قهوه‌ی پروتئینی با ساما">Beach Party, Hiking &amp; Protein Coffee with Sama</h3>
-        <div class="ef-meta">
-          <span data-fa="۲۰ ژوئن · ۱۰ صبح تا ۱ بعدازظهر">June 20 · 10AM–1PM</span>
-          <span data-fa="📍 ونیس بیچ — ویندوارد پلازا">📍 Venice Beach — Windward Plaza</span>
-        </div>
-      </div>
-    </article>
-    <div class="ev-grid reveal">
-      <article class="ev"><img src="img/cup-ceramic.jpg" alt="" /><div class="ev-body"><h3>Lazy Sunday</h3><div class="when">All Day Sundays</div></div></article>
-      <article class="ev"><img src="img/cups-trio.jpg" alt="" /><div class="ev-body"><h3>Backgammon Club</h3><div class="when">Weekends</div></div></article>
-      <article class="ev"><img src="img/nostalgia-radio.jpg" alt="" /><div class="ev-body"><h3>Record Night</h3><div class="when">Fridays 7PM</div></div></article>
-      <article class="ev"><img src="img/drink-saffron.jpg" alt="" /><div class="ev-body"><h3>Saffron Sessions</h3><div class="when">Saturdays 3PM</div></div></article>
-    </div>
+    <article class="ev-feature reveal" id="eventFeatured"></article>
+    <div class="ev-grid reveal" id="eventGrid"></div>
   </div>
 </section>
 
@@ -983,6 +991,9 @@ IN THE BEST WAY</h2>
     <a class="made-by" href="https://www.mow.media" target="_blank" rel="noopener">Designed with <span class="mb-heart">♥</span> by&nbsp;<img src="img/mow-logo.png" alt="Man of the World Media" /></a>
   </div>
 </footer>
+
+<div id="calBackdrop"></div>
+<div id="calPop" role="menu" aria-label="Add to calendar"></div>
 
 <script>
   // Nav + util bar solidify on scroll
@@ -1137,6 +1148,109 @@ IN THE BEST WAY</h2>
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ===== Events (data-driven) + Add to Calendar ===== */
+  const evLang = () => document.body.classList.contains('lang-fa') ? 'fa' : 'en';
+  const pad2 = n => String(n).padStart(2,'0');
+  const DAY_ABBR = ['SU','MO','TU','WE','TH','FR','SA'];
+  function resolveDates(ev){
+    if(ev.date){
+      ev._start = new Date(ev.date+'T'+ev.start+':00');
+      ev._end   = new Date(ev.date+'T'+ev.end+':00');
+    } else if(ev.recurDay != null){
+      const now = new Date();
+      const diff = (ev.recurDay - now.getDay() + 7) % 7;
+      const base = new Date(now.getFullYear(), now.getMonth(), now.getDate()+diff);
+      const [sh,sm] = ev.start.split(':'), [eh,em] = ev.end.split(':');
+      ev._start = new Date(base.getFullYear(),base.getMonth(),base.getDate(),+sh,+sm);
+      ev._end   = new Date(base.getFullYear(),base.getMonth(),base.getDate(),+eh,+em);
+      ev._rrule = 'FREQ=WEEKLY;BYDAY='+DAY_ABBR[ev.recurDay];
+    }
+  }
+  const icsStamp = d => d.getUTCFullYear()+pad2(d.getUTCMonth()+1)+pad2(d.getUTCDate())+'T'+pad2(d.getUTCHours())+pad2(d.getUTCMinutes())+'00Z';
+  function googleUrl(ev){
+    let u = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text='   + encodeURIComponent(ev.title)
+      + '&dates='  + icsStamp(ev._start) + '/' + icsStamp(ev._end)
+      + '&details='+ encodeURIComponent((ev.description||'') + '\n\nCaspian Coast Coffee')
+      + '&location='+encodeURIComponent(ev.location||'');
+    if(ev._rrule) u += '&recur=' + encodeURIComponent('RRULE:'+ev._rrule);
+    return u;
+  }
+  function icsHref(ev){
+    const L = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Caspian Coast Coffee//Events//EN','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+      'UID:'+ev.id+'@caspiancoastcoffee','DTSTAMP:'+icsStamp(new Date()),
+      'DTSTART:'+icsStamp(ev._start),'DTEND:'+icsStamp(ev._end),'SUMMARY:'+ev.title];
+    if(ev._rrule) L.push('RRULE:'+ev._rrule);
+    if(ev.location) L.push('LOCATION:'+ev.location.replace(/,/g,'\\,'));
+    if(ev.description) L.push('DESCRIPTION:'+ev.description.replace(/,/g,'\\,'));
+    L.push('END:VEVENT','END:VCALENDAR');
+    return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(L.join('\r\n'));
+  }
+  const calPop = document.getElementById('calPop');
+  const calBackdrop = document.getElementById('calBackdrop');
+  const ICON_G = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>';
+  const ICON_A = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M12 13v4M10 15h4"/></svg>';
+  function closeCal(){ calPop.classList.remove('open'); calBackdrop.classList.remove('open'); }
+  function openCal(ev, anchorRect){
+    const fa = evLang()==='fa';
+    calPop.innerHTML = '<div class="cp-title">'+(fa?'افزودن به تقویم':'Add to calendar')+'</div>'
+      + '<a href="'+googleUrl(ev)+'" target="_blank" rel="noopener">'+ICON_G+(fa?'گوگل کلندر':'Google Calendar')+'</a>'
+      + '<a href="'+icsHref(ev)+'" download="'+ev.id+'.ics">'+ICON_A+(fa?'اپل / اوت‌لوک (.ics)':'Apple / Outlook (.ics)')+'</a>';
+    calPop.classList.add('open'); calBackdrop.classList.add('open');
+    const pw = calPop.offsetWidth, ph = calPop.offsetHeight;
+    let left = anchorRect.left, top = anchorRect.bottom + 8;
+    if(left + pw > window.innerWidth - 12) left = window.innerWidth - pw - 12;
+    if(top + ph > window.innerHeight - 12) top = anchorRect.top - ph - 8;
+    calPop.style.left = Math.max(12,left)+'px';
+    calPop.style.top = Math.max(12,top)+'px';
+    if(fa){ calPop.setAttribute('dir','rtl'); } else { calPop.removeAttribute('dir'); }
+  }
+  calBackdrop.addEventListener('click', closeCal);
+  window.addEventListener('scroll', closeCal, {passive:true});
+
+  let EVENTS = null;
+  function renderEvents(){
+    if(!EVENTS) return;
+    const fa = evLang()==='fa';
+    const f = EVENTS.featured;
+    const feat = document.getElementById('eventFeatured');
+    if(feat && f){
+      feat.innerHTML =
+        '<div class="ef-img"><img src="'+f.image+'" alt="'+(f.title)+'" /></div>'
+        + '<div class="ef-body">'
+        +   '<span class="ef-tag">'+(fa?f.tag_fa:f.tag)+'</span>'
+        +   '<h3>'+(fa?f.title_fa:f.title)+'</h3>'
+        +   '<div class="ef-meta"><span>'+(fa?f.whenLabel_fa:f.whenLabel)+'</span><span>'+(fa?f.locationLabel_fa:f.locationLabel)+'</span></div>'
+        +   '<div class="ef-actions"><button class="cal-btn" type="button">'+ICON_G+(fa?'افزودن به تقویم':'Add to calendar')+'</button></div>'
+        + '</div>';
+      if(fa) feat.querySelector('.ef-body').setAttribute('dir','rtl'); else feat.querySelector('.ef-body').removeAttribute('dir');
+      feat.querySelector('.cal-btn').addEventListener('click', (e)=>{ e.stopPropagation(); openCal(f, e.currentTarget.getBoundingClientRect()); });
+    }
+    const grid = document.getElementById('eventGrid');
+    if(grid){
+      grid.innerHTML = '';
+      EVENTS.recurring.forEach(ev=>{
+        const a = document.createElement('article');
+        a.className = 'ev';
+        a.innerHTML = '<img src="'+ev.image+'" alt="" />'
+          + '<button class="ev-add" type="button" aria-label="Add to calendar">'+ICON_G+'</button>'
+          + '<div class="ev-body"><h3>'+(fa?ev.title_fa:ev.title)+'</h3><div class="when">'+(fa?ev.when_fa:ev.when)+'</div></div>';
+        const open = (e)=>{ e.stopPropagation(); openCal(ev, (e.currentTarget.closest('.ev')||e.currentTarget).getBoundingClientRect()); };
+        a.addEventListener('click', open);
+        a.querySelector('.ev-add').addEventListener('click', open);
+        grid.appendChild(a);
+      });
+    }
+    document.querySelectorAll('#eventFeatured.reveal, #eventGrid.reveal').forEach(el=>el.classList.add('in'));
+  }
+  fetch('events.json').then(r=>r.json()).then(data=>{
+    EVENTS = data;
+    resolveDates(EVENTS.featured);
+    EVENTS.recurring.forEach(resolveDates);
+    renderEvents();
+  }).catch(()=>{});
+  document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click', ()=>setTimeout(renderEvents,0)));
 </script>
 </body>
 </html>

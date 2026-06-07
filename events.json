@@ -1,0 +1,73 @@
+{
+  "featured": {
+    "id": "sama-beach-2026-06-20",
+    "tag": "Featured Event",
+    "tag_fa": "رویداد ویژه",
+    "title": "Beach Party, Hiking & Protein Coffee with Sama",
+    "title_fa": "مهمونی ساحلی، پیاده‌روی و قهوه‌ی پروتئینی با ساما",
+    "image": "img/event-sama.jpg",
+    "date": "2026-06-20",
+    "start": "10:00",
+    "end": "13:00",
+    "whenLabel": "June 20 · 10AM–1PM",
+    "whenLabel_fa": "۲۰ ژوئن · ۱۰ صبح تا ۱ بعدازظهر",
+    "locationLabel": "📍 Venice Beach — Windward Plaza",
+    "locationLabel_fa": "📍 ونیس بیچ — ویندوارد پلازا",
+    "location": "Venice Beach, Windward Plaza, Los Angeles, CA",
+    "description": "Beach party, hiking and protein coffee with Sama — hosted by Caspian Coast Coffee. Meet at Windward Plaza, Venice Beach."
+  },
+  "recurring": [
+    {
+      "id": "lazy-sunday",
+      "title": "Lazy Sunday",
+      "title_fa": "یکشنبه‌ی بی‌خیال",
+      "image": "img/cup-ceramic.jpg",
+      "when": "All Day Sundays",
+      "when_fa": "تمام یکشنبه‌ها",
+      "recurDay": 0,
+      "start": "08:00",
+      "end": "20:00",
+      "location": "Caspian Coast Coffee, 1501 Main St Unit 103, Venice, CA 90291",
+      "description": "Lazy Sunday at Caspian Coast Coffee — slow mornings, good coffee, no rush."
+    },
+    {
+      "id": "backgammon-club",
+      "title": "Backgammon Club",
+      "title_fa": "باشگاه تخته‌نرد",
+      "image": "img/cups-trio.jpg",
+      "when": "Weekends",
+      "when_fa": "آخر هفته‌ها",
+      "recurDay": 6,
+      "start": "12:00",
+      "end": "17:00",
+      "location": "Caspian Coast Coffee, 1501 Main St Unit 103, Venice, CA 90291",
+      "description": "Backgammon Club at Caspian Coast Coffee — bring a partner or find one. Tea and takhteh."
+    },
+    {
+      "id": "record-night",
+      "title": "Record Night",
+      "title_fa": "شب صفحه‌ی موسیقی",
+      "image": "img/nostalgia-radio.jpg",
+      "when": "Fridays 7PM",
+      "when_fa": "جمعه‌ها ۷ شب",
+      "recurDay": 5,
+      "start": "19:00",
+      "end": "22:00",
+      "location": "Caspian Coast Coffee, 1501 Main St Unit 103, Venice, CA 90291",
+      "description": "Record Night at Caspian Coast Coffee — vinyl, friends, and an evening cup."
+    },
+    {
+      "id": "saffron-sessions",
+      "title": "Saffron Sessions",
+      "title_fa": "محفل زعفران",
+      "image": "img/drink-saffron.jpg",
+      "when": "Saturdays 3PM",
+      "when_fa": "شنبه‌ها ۳ بعدازظهر",
+      "recurDay": 6,
+      "start": "15:00",
+      "end": "17:00",
+      "location": "Caspian Coast Coffee, 1501 Main St Unit 103, Venice, CA 90291",
+      "description": "Saffron Sessions at Caspian Coast Coffee — our signature afternoon gathering."
+    }
+  ]
+}
