@@ -1,0 +1,16 @@
+{
+  "boards": [
+    {
+      "id": "summer-specials",
+      "title": "Summer 2026 Specials",
+      "image": "img/menu-summer.jpg",
+      "alt": "Caspian Coast Coffee Summer 2026 special drink menu — Lavender Fields, Habibi Joon Hojicha, Saffron Tonic and Caspian Iced Tea"
+    },
+    {
+      "id": "full-menu",
+      "title": "Full Menu",
+      "image": "img/menu-main.jpg",
+      "alt": "Caspian Coast Coffee full menu — espresso, matcha and tea, specialty drinks, coffee, dairy and wellness boosts"
+    }
+  ]
+}

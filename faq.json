@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "q": "Is Caspian Coast Coffee a Persian café?",
+      "q_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟",
+      "a": "Yes! We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew, and rosewater matcha — right alongside a classic espresso menu roasted in LA by Sightglass Coffee. Persian roots, California light, Venice soul.",
+      "a_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم. لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — در کنار منوی کلاسیک اسپرسو که در لس‌آنجلس توسط سایت‌گلس کافی رُست شده. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس.",
+      "open": true
+    },
+    {
+      "q": "What makes the café Persian?",
+      "q_fa": "چه چیزی قهوه را ایرانی می‌کند؟",
+      "a": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup. Try our signature saffron latte or a cardamom cold brew. The hospitality is Persian too — here, you're a guest, not a customer.",
+      "a_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم: زعفران، هل، گلاب و شیره‌ی خرما. لاته‌ی زعفرانی ویژه‌ی ما یا یک کلد برو هل را امتحان کنید. مهمان‌نوازی هم ایرانی است — اینجا شما مهمان هستید، نه مشتری."
+    },
+    {
+      "q": "What are your most popular drinks?",
+      "q_fa": "محبوب‌ترین نوشیدنی‌های شما کدام‌اند؟",
+      "a": "Our signature saffron latte, Nicole's Strawberry Matcha (iced matcha with house strawberry purée), the Valentino (espresso and chocolate with a bright hint of orange), cardamom cold brew and our espresso tonic. Everything can be served iced or hot.",
+      "a_fa": "لاته‌ی زعفرانی ویژه‌ی ما، ماچا توت‌فرنگی نیکول (ماچای یخ با پوره‌ی توت‌فرنگی خانگی)، والنتینو (اسپرسو و شکلات با رایحه‌ی پرتقال)، کلد برو هل و اسپرسو تونیک ما. همه را می‌توان سرد یا گرم سرو کرد."
+    },
+    {
+      "q": "You also serve up my favorite espresso drinks too, right?",
+      "q_fa": "نوشیدنی‌های اسپرسوی محبوبم را هم سرو می‌کنید، درست است؟",
+      "a": "Absolutely! We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites, and cold brew — pulled from beans roasted in LA by Sightglass Coffee. Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew, and the Valentino, plus traditional Persian pastries from Kouzeh Bakery. The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.",
+      "a_fa": "کاملاً! ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط سایت‌گلس رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از نانوایی کوزه. بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه."
+    },
+    {
+      "q": "Who roasts your coffee, and where do the pastries come from?",
+      "q_fa": "چه کسی قهوه‌ی شما را رُست می‌کند و شیرینی‌ها از کجا می‌آیند؟",
+      "a": "Our coffee is roasted in Los Angeles by Sightglass Coffee, one of the best in the business. Our pastries and snacks are curated in collaboration with Artelice and Kouzeh Bakery.",
+      "a_fa": "قهوه‌ی ما در لس‌آنجلس توسط سایت‌گلس کافی، یکی از بهترین‌ها، رُست می‌شود. شیرینی‌ها و تنقلات ما با همکاری آرتلیس و نانوایی کوزه تهیه می‌شوند."
+    },
+    {
+      "q": "Where is Caspian Coast Coffee located?",
+      "q_fa": "کاسپین کوست کافی کجاست؟",
+      "a": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk. Walk in; everyone is welcome.",
+      "a_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱ — یک بلوک تا گذرگاه ساحلی. وارد شوید؛ همه خوش‌آمدید."
+    },
+    {
+      "q": "What are your hours?",
+      "q_fa": "ساعات کاری شما چیست؟",
+      "a": "We're open daily, 7am to 8pm.",
+      "a_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم."
+    },
+    {
+      "q": "Do you have oat milk and plant-based options?",
+      "q_fa": "آیا شیر جو دوسر و گزینه‌های گیاهی دارید؟",
+      "a": "Yes — oat milk and other alternative milks are available for any drink, with plant-based options across the menu.",
+      "a_fa": "بله — شیر جو دوسر و دیگر شیرهای جایگزین برای هر نوشیدنی موجود است، همراه با گزینه‌های گیاهی در سراسر منو."
+    },
+    {
+      "q": "What is the eye symbol on your cups?",
+      "q_fa": "نماد چشم روی فنجان‌های شما چیست؟",
+      "a": "It's the nazar — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Our handmade speckled ceramic eye cups are available in the café.",
+      "a_fa": "این نظر است — چشم ایرانی که چشم‌زخم را دور می‌کند و نماد محافظت، مراقبت و خوش‌آمدگویی است. فنجان‌های سرامیکی دست‌ساز چشمِ ما در کافه موجود است."
+    },
+    {
+      "q": "Can I work from the café or host an event?",
+      "q_fa": "می‌توانم در کافه کار کنم یا رویدادی برگزار کنم؟",
+      "a": "Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram @caspiancoastcoffee.",
+      "a_fa": "کاملاً. ما یک فضای اجتماعی هستیم — بیایید کار کنید، دیدار کنید، یا به جمع یکشنبه‌های بی‌خیال، باشگاه تخته‌نرد، شب صفحه‌ی موسیقی و محفل زعفران بپیوندید. برای رویدادهای خصوصی و اجاره‌ی فضا، در اینستاگرام به ما پیام دهید @caspiancoastcoffee.",
+      "instagram": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en"
+    }
+  ]
+}

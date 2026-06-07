@@ -879,7 +879,7 @@ IN THE BEST WAY</h2>
         <hr class="rule" style="background:var(--cream);" />
         <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
       </div>
-      <a class="link-arrow" href="#">View calendar &nbsp;→</a>
+      <a class="link-arrow" id="viewCalendar" href="#" data-fa="افزودن همه به تقویم">Add all to calendar &nbsp;→</a>
     </div>
     <article class="ev-feature reveal" id="eventFeatured"></article>
     <div class="ev-grid reveal" id="eventGrid"></div>
@@ -897,48 +897,7 @@ IN THE BEST WAY</h2>
       <p>Everything you might ask before you walk through the door.</p>
       <div class="yes"><span>✶</span> Persian café? Yes — really.</div>
     </aside>
-    <div class="faq-list reveal">
-      <details class="qa" open>
-        <summary>Is Caspian Coast Coffee a Persian café?</summary>
-        <div class="a">Yes! We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew, and rosewater matcha — right alongside a classic espresso menu roasted in LA by Sightglass Coffee. Persian roots, California light, Venice soul.</div>
-      </details>
-      <details class="qa">
-        <summary>What makes the café Persian?</summary>
-        <div class="a">We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup. Try our signature saffron latte or a cardamom cold brew. The hospitality is Persian too — here, you're a guest, not a customer.</div>
-      </details>
-      <details class="qa">
-        <summary>What are your most popular drinks?</summary>
-        <div class="a">Our signature saffron latte, Nicole's Strawberry Matcha (iced matcha with house strawberry purée), the Valentino (espresso and chocolate with a bright hint of orange), cardamom cold brew and our espresso tonic. Everything can be served iced or hot.</div>
-      </details>
-      <details class="qa">
-        <summary>You also serve up my favorite espresso drinks too, right?</summary>
-        <div class="a">Absolutely! We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites, and cold brew — pulled from beans roasted in LA by Sightglass Coffee. Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew, and the Valentino, plus traditional Persian pastries from Kouzeh Bakery. The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.</div>
-      </details>
-      <details class="qa">
-        <summary>Who roasts your coffee, and where do the pastries come from?</summary>
-        <div class="a">Our coffee is roasted in Los Angeles by Sightglass Coffee, one of the best in the business. Our pastries and snacks are curated in collaboration with Artelice and Kouzeh Bakery.</div>
-      </details>
-      <details class="qa">
-        <summary>Where is Caspian Coast Coffee located?</summary>
-        <div class="a">1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk. Walk in; everyone is welcome.</div>
-      </details>
-      <details class="qa">
-        <summary>What are your hours?</summary>
-        <div class="a">We're open daily, 7am to 8pm.</div>
-      </details>
-      <details class="qa">
-        <summary>Do you have oat milk and plant-based options?</summary>
-        <div class="a">Yes — oat milk and other alternative milks are available for any drink, with plant-based options across the menu.</div>
-      </details>
-      <details class="qa">
-        <summary>What is the eye symbol on your cups?</summary>
-        <div class="a">It's the nazar — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Our handmade speckled ceramic eye cups are available in the café.</div>
-      </details>
-      <details class="qa">
-        <summary>Can I work from the café or host an event?</summary>
-        <div class="a">Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram <a href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>.</div>
-      </details>
-    </div>
+    <div class="faq-list reveal" id="faqList"></div>
   </div>
 </section>
 
@@ -1250,7 +1209,55 @@ IN THE BEST WAY</h2>
     EVENTS.recurring.forEach(resolveDates);
     renderEvents();
   }).catch(()=>{});
-  document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click', ()=>setTimeout(renderEvents,0)));
+
+  /* ===== FAQ (data-driven) + auto JSON-LD schema ===== */
+  let FAQ=null;
+  function renderFaq(){
+    if(!FAQ) return;
+    const fa=evLang()==='fa';
+    const list=document.getElementById('faqList');
+    if(!list) return;
+    list.innerHTML='';
+    (FAQ.items||[]).forEach((it,i)=>{
+      const d=document.createElement('details'); d.className='qa'; if(it.open&&i===0) d.open=true;
+      let ans=fa?(it.a_fa||it.a):it.a;
+      if(it.instagram) ans=ans.replace('@caspiancoastcoffee','<a href="'+it.instagram+'" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>');
+      d.innerHTML='<summary>'+(fa?(it.q_fa||it.q):it.q)+'</summary><div class="a">'+ans+'</div>';
+      if(fa){d.querySelector('summary').setAttribute('dir','rtl');d.querySelector('.a').setAttribute('dir','rtl');}
+      list.appendChild(d);
+    });
+  }
+  function buildFaqSchema(){
+    if(!FAQ) return;
+    const schema={"@context":"https://schema.org","@type":"FAQPage","mainEntity":(FAQ.items||[]).map(it=>({"@type":"Question","name":it.q,"acceptedAnswer":{"@type":"Answer","text":it.a}}))};
+    let s=[...document.querySelectorAll('script[type="application/ld+json"]')].find(x=>x.textContent.includes('FAQPage'));
+    if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
+    s.textContent=JSON.stringify(schema);
+  }
+  fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
+
+  /* "Add all to calendar" — combined .ics of every event */
+  const viewCal=document.getElementById('viewCalendar');
+  if(viewCal){ viewCal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(!EVENTS) return;
+    const all=[EVENTS.featured, ...(EVENTS.recurring||[])];
+    let L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Caspian Coast Coffee//Events//EN','CALSCALE:GREGORIAN','X-WR-CALNAME:Caspian Coast Coffee'];
+    all.forEach(ev=>{ if(!ev._start) return;
+      L.push('BEGIN:VEVENT','UID:'+ev.id+'@caspiancoastcoffee','DTSTAMP:'+icsStamp(new Date()),
+        'DTSTART:'+icsStamp(ev._start),'DTEND:'+icsStamp(ev._end),'SUMMARY:'+ev.title);
+      if(ev._rrule) L.push('RRULE:'+ev._rrule);
+      if(ev.location) L.push('LOCATION:'+ev.location.replace(/,/g,'\\,'));
+      if(ev.description) L.push('DESCRIPTION:'+ev.description.replace(/,/g,'\\,'));
+      L.push('END:VEVENT');
+    });
+    L.push('END:VCALENDAR');
+    const a=document.createElement('a');
+    a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(L.join('\r\n'));
+    a.download='caspian-coast-events.ics'; a.click();
+  }); }
+
+  document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click', ()=>setTimeout(()=>{renderEvents();renderFaq();},0)));
 </script>
 </body>
 </html>

@@ -226,17 +226,7 @@
 
 <!-- MENU BOARDS (original menu artwork) -->
 <section class="menu-boards">
-  <div class="wrap">
-    <figure class="board reveal">
-      <a href="img/menu-summer.jpg" target="_blank" rel="noopener" aria-label="Open Summer 2026 drink menu full size">
-        <img src="img/menu-summer.jpg" alt="Caspian Coast Coffee Summer 2026 special drink menu — Lavender Fields, Habibi Joon Hojicha, Saffron Tonic and Caspian Iced Tea" loading="lazy" />
-      </a>
-    </figure>
-    <figure class="board reveal">
-      <a href="img/menu-main.jpg" target="_blank" rel="noopener" aria-label="Open full menu full size">
-        <img src="img/menu-main.jpg" alt="Caspian Coast Coffee full menu — espresso, matcha and tea, specialty drinks, coffee, dairy and wellness boosts" loading="lazy" />
-      </a>
-    </figure>
+  <div class="wrap" id="menuBoards">
     <p class="board-hint reveal" data-fa="برای بزرگ‌نمایی روی منو ضربه بزنید">Tap a menu to view full size ↗</p>
   </div>
 </section>
@@ -268,6 +258,17 @@
   applyLang(LANG);setInterval(updateStatus,60000);
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Menu boards from menu.json (CMS-editable)
+  fetch('menu.json').then(r=>r.json()).then(data=>{
+    const wrap=document.getElementById('menuBoards');
+    const hint=wrap.querySelector('.board-hint');
+    (data.boards||[]).forEach(b=>{
+      const fig=document.createElement('figure');
+      fig.className='board reveal in';
+      fig.innerHTML='<a href="'+b.image+'" target="_blank" rel="noopener" aria-label="Open '+(b.title||'menu')+' full size"><img src="'+b.image+'" alt="'+(b.alt||b.title||'Menu')+'" loading="lazy" /></a>';
+      wrap.insertBefore(fig, hint);
+    });
+  }).catch(()=>{});
   const navToggle=document.getElementById('navToggle');const mobileMenu=document.getElementById('mobileMenu');
   function setMenu(open){document.body.classList.toggle('menu-open',open);navToggle.setAttribute('aria-expanded',open?'true':'false');document.body.style.overflow=open?'hidden':'';}
   navToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
