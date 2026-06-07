@@ -239,6 +239,39 @@
   .util-soc svg{width:17px;height:17px;display:block;}
   body.lang-fa [data-fa], body.lang-fa .fa-text{font-family:'Vazirmatn',var(--font-body) !important;letter-spacing:normal !important;}
   body.lang-fa .come .info{text-align:right;}
+  body.lang-fa .menu-head{text-align:right;}
+  body.lang-fa .menu-head .rule{margin-left:auto;margin-right:0;}
+  body.lang-fa .menu-lead{direction:rtl;margin-left:auto;margin-right:0;}
+  body.lang-fa .menu-lead p{margin-left:auto;margin-right:0;}
+  body.lang-fa .menu-lead .link-arrow{flex-direction:row-reverse;}
+  /* Farsi RTL: right-align section headers + their sub content */
+  body.lang-fa .bakery-copy{text-align:right;}
+  body.lang-fa .bakery-copy .rule{margin-left:auto;margin-right:0;}
+  body.lang-fa .bakery-copy p{margin-left:auto;margin-right:0;}
+  body.lang-fa .bakery-copy .baker{flex-direction:row-reverse;}
+  body.lang-fa .faq-aside{text-align:right;}
+  body.lang-fa .faq-aside .rule{margin-left:auto;margin-right:0;}
+  body.lang-fa .faq-aside p{margin-left:auto;margin-right:0;}
+  body.lang-fa .faq-aside .yes{justify-content:flex-start;}
+  body.lang-fa .vibe-head{text-align:right;}
+  body.lang-fa .vibe-head .rule{margin-left:auto;margin-right:0;}
+  body.lang-fa .vibe-head p{margin-left:auto;margin-right:0;}
+  .come .welcome-h{display:flex;flex-direction:column;align-items:flex-start;gap:2px;}
+  .come .welcome-h .w-fa{font-family:'Vazirmatn',var(--font-display);}
+  body.lang-fa .come .welcome-h{align-items:flex-end;}
+  body.lang-fa .come .welcome-h .w-en{order:2;}
+  body.lang-fa .come .welcome-h .w-fa{order:1;}
+  body.lang-fa .intro .spices{justify-content:flex-end;}
+  body.lang-fa .intro-copy .body-copy{margin-left:auto;margin-right:0;}
+  body.lang-fa .hero-content{display:flex;flex-direction:column;align-items:flex-end;max-width:min(520px,88vw);margin-left:0;margin-right:auto;}
+  body.lang-fa .hero-mark{margin-right:0;}
+  body.lang-fa .hero-eyebrow{width:100%;text-align:right;}
+  body.lang-fa .hero h1{max-width:none;text-align:right;}
+  body.lang-fa .hero h1 .hl{display:block;text-align:right;}
+  body.lang-fa .hero h1 .sub{max-width:none !important;width:100% !important;margin:22px 0 0 !important;text-align:right;}
+  body.lang-fa .hero-meta{align-self:stretch;justify-content:flex-end;}
+  body.lang-fa .come > .reveal:first-child{text-align:right;}
+  body.lang-fa .come > .reveal:first-child .rule{margin-left:auto;margin-right:0;}
   header.nav.solid{
     background:var(--cream);
     color:var(--ink);
@@ -292,7 +325,7 @@
     text-shadow:0 2px 30px rgba(0,0,0,.35);
     max-width:15ch;
   }
-  .hero-mark{width:clamp(132px,17vw,190px);height:auto;margin-bottom:clamp(14px,2.2vh,24px);display:block;
+  .hero-mark{width:clamp(88px,11vw,122px);height:auto;margin-bottom:clamp(16px,2.4vh,26px);display:block;
     filter:drop-shadow(0 3px 18px rgba(0,0,0,.45));}
   .hero h1 .sub{
     display:block;font-family:var(--font-body);font-weight:400;text-transform:none;
@@ -347,7 +380,7 @@
 
   /* ============ ORDER CTA ============ */
   .order-cta{background:var(--ink);color:var(--cream);text-align:center;padding:clamp(54px,7vw,92px) 0 clamp(60px,8vw,104px);}
-  .order-cta .oc-eye{width:54px;margin:0 auto 22px;}
+  .order-cta .oc-eye{width:66px;margin:0 auto 22px;}
   .order-cta h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;text-transform:none;font-size:clamp(30px,4.4vw,54px);letter-spacing:0;line-height:1.1;}
   .order-cta p{color:rgba(241,237,228,.72);margin:14px auto 0;font-size:clamp(14px,1.4vw,16px);max-width:54ch;padding:0 22px;}
   .order-cta .oc-btn{display:inline-block;margin-top:30px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.18em;font-size:14px;font-weight:700;color:#fff;background:var(--clay);padding:18px 40px;border-radius:999px;transition:background .25s,transform .25s,box-shadow .25s;box-shadow:0 16px 34px -16px rgba(192,101,58,.7);}
@@ -415,6 +448,17 @@
   .ev-body{position:relative;padding:22px;z-index:2;width:100%;background:linear-gradient(transparent,rgba(20,17,14,.85));}
   .ev-body h3{font-size:21px;text-transform:uppercase;color:#fff;}
   .ev-body .when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;font-weight:600;color:var(--sage);margin-top:8px;}
+  .ev-feature{display:grid;grid-template-columns:.78fr 1.22fr;border-radius:6px;overflow:hidden;margin-bottom:18px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);}
+  .ev-feature .ef-img{position:relative;min-height:340px;}
+  .ev-feature .ef-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
+  .ev-feature .ef-body{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px;}
+  .ev-feature .ef-tag{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:600;color:var(--clay);}
+  .ev-feature h3{font-size:clamp(23px,2.7vw,36px);text-transform:uppercase;color:#fff;line-height:1.06;}
+  .ev-feature .ef-meta{display:flex;flex-direction:column;gap:7px;margin-top:6px;}
+  .ev-feature .ef-meta span{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--sage);letter-spacing:.02em;}
+  @media (max-width:680px){.ev-feature{grid-template-columns:1fr;}.ev-feature .ef-img{min-height:300px;}}
+  body.lang-fa .ev-feature .ef-body{text-align:right;}
+  body.lang-fa .ev-feature .ef-meta span{direction:rtl;}
 
   /* ============ FAQ ============ */
   .faq{padding:110px 0;background:var(--paper);}
@@ -632,8 +676,8 @@
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <img class="hero-mark" src="img/logo-hero-white.png" alt="Caspian Coast Coffee" />
-      <p class="hero-eyebrow" data-fa="کافه ایرانی · ونیس بیچ، لس‌آنجلس">Persian Café · Venice Beach, Los Angeles</p>
+      <img class="hero-mark" src="img/eye-white.png" alt="Caspian Coast Coffee" style="padding: 0px; margin: 0px -20px 16px 0px; border-width: 0px; border-style: solid" />
+      <p class="hero-eyebrow" data-fa="کافه ایرانی · ونیس بیچ، لس‌آنجلس" style="margin: 0px 0px 20px 5px">Persian Café · Venice Beach, Los Angeles</p>
       <h1><span class="hl" data-fa="اصالت ایرانی،<br />روح ونیس">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-fa="کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند.">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
       <div class="hero-meta">
         <div class="hero-hours">
@@ -701,7 +745,7 @@ SERVED WITH CARE</h2>
 
 <!-- ===================== ORDER CTA ===================== -->
 <section class="order-cta">
-  <img class="oc-eye" src="img/eye-mark-cream.png" alt="Caspian Coast eye emblem" />
+  <img class="oc-eye" src="img/eye-white.png" alt="Caspian Coast eye emblem" />
   <h2 data-fa="از صف رد شو، عزیزم.">Skip the line, azizam</h2>
   <p data-fa="از قبل برای تحویل سفارش دهید · رُست‌شده در لس‌آنجلس توسط سایت‌گلس · شیرینی از کوزه و آرتلیس.">Order ahead for pickup · roasted in LA by Sightglass · pastries by Kouzeh &amp; Artelice.</p>
   <a class="oc-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش برای تحویل →">Order for pickup &nbsp;→</a>
@@ -814,6 +858,17 @@ IN THE BEST WAY</h2>
       </div>
       <a class="link-arrow" href="#">View calendar &nbsp;→</a>
     </div>
+    <article class="ev-feature reveal">
+      <div class="ef-img"><img src="img/event-sama.jpg" alt="Beach party, hiking and protein coffee with Sama at Caspian Coast Coffee" /></div>
+      <div class="ef-body">
+        <span class="ef-tag" data-fa="رویداد ویژه">Featured Event</span>
+        <h3 data-fa="مهمونی ساحلی، پیاده‌روی و قهوه‌ی پروتئینی با ساما">Beach Party, Hiking &amp; Protein Coffee with Sama</h3>
+        <div class="ef-meta">
+          <span data-fa="۲۰ ژوئن · ۱۰ صبح تا ۱ بعدازظهر">June 20 · 10AM–1PM</span>
+          <span data-fa="📍 ونیس بیچ — ویندوارد پلازا">📍 Venice Beach — Windward Plaza</span>
+        </div>
+      </div>
+    </article>
     <div class="ev-grid reveal">
       <article class="ev"><img src="img/cup-ceramic.jpg" alt="" /><div class="ev-body"><h3>Lazy Sunday</h3><div class="when">All Day Sundays</div></div></article>
       <article class="ev"><img src="img/cups-trio.jpg" alt="" /><div class="ev-body"><h3>Backgammon Club</h3><div class="when">Weekends</div></div></article>
@@ -886,7 +941,7 @@ IN THE BEST WAY</h2>
       <div class="reveal">
         <span class="eyebrow">Come by</span>
         <hr class="rule" />
-        <h2>WELOCOME!<br />! خوش آمدین</h2>
+        <h2 class="welcome-h"><span class="w-en">WELOCOME!</span><span class="w-fa" dir="rtl">خوش آمدین!</span></h2>
         <div class="info">
           <div class="info-row">
             <span class="eyebrow">Address</span>
@@ -1002,13 +1057,13 @@ IN THE BEST WAY</h2>
     "Everything you might ask before you walk through the door.":"هر آنچه شاید پیش از ورود بپرسید.",
     "✶ Persian café? Yes — really.":"<span>✶</span> کافه‌ی ایرانی؟ بله — واقعاً.",
     "Is Caspian Coast Coffee a Persian café?":"آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟",
-    "Yes. We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew and rosewater matcha — right alongside a classic espresso menu roasted in LA by Sightglass Coffee. Persian roots, California light, Venice soul.":"بله. ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم. لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — در کنار منوی کلاسیک اسپرسو که در لس‌آنجلس توسط سایت‌گلس کافی رُست شده. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس.",
+    "Yes! We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew, and rosewater matcha — right alongside a classic espresso menu roasted in LA by Sightglass Coffee. Persian roots, California light, Venice soul.":"بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم. لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — در کنار منوی کلاسیک اسپرسو که در لس‌آنجلس توسط سایت‌گلس کافی رُست شده. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس.",
     "What makes the café Persian?":"چه چیزی قهوه را ایرانی می‌کند؟",
     "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup. Try our signature saffron latte or a cardamom cold brew. The hospitality is Persian too — here, you're a guest, not a customer.":"ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم: زعفران، هل، گلاب و شیره‌ی خرما. لاته‌ی زعفرانی ویژه‌ی ما یا یک کلد برو هل را امتحان کنید. مهمان‌نوازی هم ایرانی است — اینجا شما مهمان هستید، نه مشتری.",
     "What are your most popular drinks?":"محبوب‌ترین نوشیدنی‌های شما کدام‌اند؟",
     "Our signature saffron latte, Nicole's Strawberry Matcha (iced matcha with house strawberry purée), the Valentino (espresso and chocolate with a bright hint of orange), cardamom cold brew and our espresso tonic. Everything can be served iced or hot.":"لاته‌ی زعفرانی ویژه‌ی ما، ماچا توت‌فرنگی نیکول (ماچای یخ با پوره‌ی توت‌فرنگی خانگی)، والنتینو (اسپرسو و شکلات با رایحه‌ی پرتقال)، کلد برو هل و اسپرسو تونیک ما. همه را می‌توان سرد یا گرم سرو کرد.",
     "You also serve up my favorite espresso drinks too, right?":"نوشیدنی‌های اسپرسوی محبوبم را هم سرو می‌کنید، درست است؟",
-    "Absolutely. We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites and cold brew — pulled from beans roasted in LA by Sightglass Coffee. Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew and the Valentino, plus traditional Persian pastries from Kouzeh Bakery. The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.":"کاملاً. ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط سایت‌گلس رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از نانوایی کوزه. بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه.",
+    "Absolutely! We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites, and cold brew — pulled from beans roasted in LA by Sightglass Coffee. Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew, and the Valentino, plus traditional Persian pastries from Kouzeh Bakery. The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.":"کاملاً! ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط سایت‌گلس رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از نانوایی کوزه. بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه.",
     "Who roasts your coffee, and where do the pastries come from?":"چه کسی قهوه‌ی شما را رُست می‌کند و شیرینی‌ها از کجا می‌آیند؟",
     "Our coffee is roasted in Los Angeles by Sightglass Coffee, one of the best in the business. Our pastries and snacks are curated in collaboration with Artelice and Kouzeh Bakery.":"قهوه‌ی ما در لس‌آنجلس توسط سایت‌گلس کافی، یکی از بهترین‌ها، رُست می‌شود. شیرینی‌ها و تنقلات ما با همکاری آرتلیس و نانوایی کوزه تهیه می‌شوند.",
     "Where is Caspian Coast Coffee located?":"کاسپین کوست کافی کجاست؟",
@@ -1020,6 +1075,7 @@ IN THE BEST WAY</h2>
     "What is the eye symbol on your cups?":"نماد چشم روی فنجان‌های شما چیست؟",
     "It's the nazar — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Our handmade speckled ceramic eye cups are available in the café.":"این نظر است — چشم ایرانی که چشم‌زخم را دور می‌کند و نماد محافظت، مراقبت و خوش‌آمدگویی است. فنجان‌های سرامیکی دست‌ساز چشمِ ما در کافه موجود است.",
     "Can I work from the café or host an event?":"می‌توانم در کافه کار کنم یا رویدادی برگزار کنم؟",
+    "Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram @caspiancoastcoffee.":"کاملاً. ما یک فضای اجتماعی هستیم — بیایید کار کنید، دیدار کنید، یا به جمع یکشنبه‌های بی‌خیال، باشگاه تخته‌نرد، شب صفحه‌ی موسیقی و محفل زعفران بپیوندید. برای رویدادهای خصوصی و اجاره‌ی فضا، در اینستاگرام به ما پیام دهید <a href=\"https://www.instagram.com/caspiancoastcoffee_la/?hl=en\" style=\"border-bottom:1px solid var(--clay);\">@caspiancoastcoffee</a>.",
     "Come by":"سری بزنید","Address":"نشانی","Hours":"ساعات کاری","Walk in":"بدون نوبت",
     "Everyone welcome":"همه خوش‌آمدید",
     "Open Daily · 7AM — 8PM":"هر روز باز · ۷ صبح — ۸ شب",
