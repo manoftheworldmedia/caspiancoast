@@ -1,0 +1,80 @@
+media:
+  input: img
+  output: img
+
+content:
+  - name: events
+    label: Events & Calendar
+    type: file
+    path: events.json
+    format: json
+    fields:
+      - name: featured
+        label: Featured Event
+        type: object
+        fields:
+          - { name: id, label: ID, type: string }
+          - { name: tag, label: Tag (EN), type: string }
+          - { name: tag_fa, label: Tag (FA), type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (FA), type: string }
+          - { name: image, label: Image, type: image }
+          - { name: date, label: Date, type: date }
+          - { name: start, label: Start Time, type: string }
+          - { name: end, label: End Time, type: string }
+          - { name: whenLabel, label: When Label (EN), type: string }
+          - { name: whenLabel_fa, label: When Label (FA), type: string }
+          - { name: locationLabel, label: Location Label (EN), type: string }
+          - { name: locationLabel_fa, label: Location Label (FA), type: string }
+          - { name: location, label: Full Location (for calendar), type: string }
+          - { name: description, label: Description, type: text }
+      - name: recurring
+        label: Recurring Events
+        type: object
+        list: true
+        fields:
+          - { name: id, label: ID, type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (FA), type: string }
+          - { name: image, label: Image, type: image }
+          - { name: when, label: When (EN), type: string }
+          - { name: when_fa, label: When (FA), type: string }
+          - { name: recurDay, label: "Day (0=Sun … 6=Sat)", type: number }
+          - { name: start, label: Start Time, type: string }
+          - { name: end, label: End Time, type: string }
+          - { name: location, label: Full Location (for calendar), type: string }
+          - { name: description, label: Description, type: text }
+
+  - name: menu
+    label: Menu Boards
+    type: file
+    path: menu.json
+    format: json
+    fields:
+      - name: boards
+        label: Menu Boards
+        type: object
+        list: true
+        fields:
+          - { name: id, label: ID, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: image, label: Menu Image, type: image }
+          - { name: alt, label: Alt Text (SEO), type: text }
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: faq.json
+    format: json
+    fields:
+      - name: items
+        label: Questions
+        type: object
+        list: true
+        fields:
+          - { name: q, label: Question (EN), type: string }
+          - { name: q_fa, label: Question (FA), type: string }
+          - { name: a, label: Answer (EN), type: text }
+          - { name: a_fa, label: Answer (FA), type: text }
+          - { name: open, label: Open by default, type: boolean }
+          - { name: instagram, label: Instagram Link (optional), type: string }
