@@ -223,7 +223,7 @@
       <p class="kicker">Persian roots, California light, Venice soul — and a mural on our wall that says it all.</p>
     </div>
     <figure class="poster reveal">
-      <img src="img/la-mural-full.jpg" alt="The LÖS Angeles mural by Parisa Parnian — a couple beside a vintage car beneath hand-painted lettering" />
+      <img data-cc-img="images.aboutPoster" src="img/la-mural-full.jpg" alt="The LÖS Angeles mural by Parisa Parnian — a couple beside a vintage car beneath hand-painted lettering" />
       <figcaption>"L♥S Angeles" — mural by Parisa Parnian</figcaption>
     </figure>
   </div>
@@ -233,20 +233,20 @@
 <section class="story">
   <div class="wrap">
     <div class="lede-row">
-      <p class="lede reveal">Caspian Coast Coffee was born from a desire to bring people together through the warmth of coffee and the richness of <em>story</em>.</p>
+      <p class="lede reveal" data-cc-html="about.ledeHtml">Caspian Coast Coffee was born from a desire to bring people together through the warmth of coffee and the richness of <em>story</em>.</p>
       <figure class="lede-photo reveal">
-        <img src="img/owner-rahi.jpg" alt="Rahi, founder of Caspian Coast Coffee, in front of the LÖS Angeles mural in Venice" />
+        <img data-cc-img="images.ownerPhoto" src="img/owner-rahi.jpg" alt="Rahi, founder of Caspian Coast Coffee, in front of the LÖS Angeles mural in Venice" />
       </figure>
     </div>
     <div class="story-body">
       <div class="reveal">
-        <p>For me, this isn't just a business — it's a continuation of a journey that began long before I was born.</p>
-        <p>My family's story is one of courage, resilience, and hope. They crossed oceans and borders to build a new life in California, carrying with them the flavors, traditions, and values of their homeland.</p>
-        <p>In our kitchen, the aroma of freshly brewed tea and the sound of laughter were constants — reminders that no matter how far we'd traveled, our heritage lived in the everyday moments we shared.</p>
+        <p data-cc-html="about.p1">For me, this isn't just a business — it's a continuation of a journey that began long before I was born.</p>
+        <p data-cc-html="about.p2">My family's story is one of courage, resilience, and hope. They crossed oceans and borders to build a new life in California, carrying with them the flavors, traditions, and values of their homeland.</p>
+        <p data-cc-html="about.p3">In our kitchen, the aroma of freshly brewed tea and the sound of laughter were constants — reminders that no matter how far we'd traveled, our heritage lived in the everyday moments we shared.</p>
       </div>
       <div class="reveal">
-        <p>This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.</p>
-        <p>At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.</p>
+        <p data-cc-html="about.p4">This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.</p>
+        <p data-cc-html="about.p5">At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.</p>
       </div>
     </div>
   </div>
@@ -347,7 +347,7 @@
   const i18nEls=[...document.querySelectorAll('[data-fa]')];
   i18nEls.forEach(el=>{el._en=el.innerHTML;});
   const DICT={"Our Story":"داستان ما","A bridgebetween worlds":"پلی<br />میان جهان‌ها","Persian roots, California light, Venice soul — and a mural on our wall that says it all.":"ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس — و نقاشی دیواری روی دیوارمان که همه‌چیز را می‌گوید.","\"L♥S Angeles\" — mural by Parisa Parnian":"«لُس آنجلس» — نقاشی دیواری از پریسا پرنیان","Caspian Coast Coffee was born from a desire to bring people together through the warmth of coffee and the richness of story.":"کاسپین کوست کافی از آرزویی زاده شد: گرد هم آوردن مردم با گرمای قهوه و غنای داستان.","For me, this isn't just a business — it's a continuation of a journey that began long before I was born.":"برای من این فقط یک کسب‌وکار نیست — ادامه‌ی سفری است که خیلی پیش از تولدم آغاز شد.","My family's story is one of courage, resilience, and hope. They crossed oceans and borders to build a new life in California, carrying with them the flavors, traditions, and values of their homeland.":"داستان خانواده‌ام داستان شجاعت، پایداری و امید است. آن‌ها از اقیانوس‌ها و مرزها گذشتند تا در کالیفرنیا زندگی تازه‌ای بسازند و طعم‌ها، سنت‌ها و ارزش‌های سرزمینشان را با خود آوردند.","In our kitchen, the aroma of freshly brewed tea and the sound of laughter were constants — reminders that no matter how far we'd traveled, our heritage lived in the everyday moments we shared.":"در آشپزخانه‌ی ما، عطر چای تازه‌دم و صدای خنده همیشگی بود — یادآور این‌که هر چقدر هم دور شده باشیم، میراث ما در لحظه‌های روزمره‌ای که با هم داشتیم زنده بود.","This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.":"این کافه جشن آن میراث است؛ جایی که فرهنگ‌ها به هم می‌رسند، جایی که دستورها و ایده‌ها به آزادیِ مردم سفر می‌کنند، و هر فنجان داستانی می‌گوید — داستان من، خانواده‌ام، و شاید داستان شما.","At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.":"در کاسپین کوست کافی می‌خواهیم فضایی بسازیم که هم جهانی و هم عمیقاً محلی باشد: ریشه در انرژی پرشور ونیس بیچ، و آغشته به گرما و مهمان‌نوازی سواحل خزر. هر جزئیات، از دانه‌ها تا موسیقی‌ای که می‌نوازیم، با قصد انتخاب شده — برای بزرگداشت گذشته، جشن اکنون و الهام به پیوند.","Honor the past":"بزرگداشت گذشته","Celebrate the present":"جشن اکنون","Inspire connection":"الهام به پیوند","Heritage in every cup":"میراث در هر فنجان","Rooted in Venice":"ریشه در ونیس","Where cultures meet":"جایی که فرهنگ‌ها به هم می‌رسند","Saffron, cardamom, rosewater — the flavors of a Persian home, carried west and poured fresh on Main Street.":"زعفران، هل، گلاب — طعم‌های یک خانه‌ی ایرانی که به غرب آمده و تازه روی مِین‌استریت سرو می‌شوند.","The vibrant energy of Venice Beach meets the warmth and hospitality of the Caspian shores.":"انرژی پرشور ونیس بیچ با گرما و مهمان‌نوازی سواحل خزر به هم می‌رسد.","A space where recipes and ideas travel as freely as people do. You're a guest here, not a customer.":"فضایی که دستورها و ایده‌ها به آزادیِ مردم سفر می‌کنند. اینجا شما مهمان هستید، نه مشتری.","Chosen with intention":"با قصد انتخاب‌شده","The peoplebehind the cup":"کسانی که<br />پشت هر فنجان‌اند","Every detail is chosen with care — starting with who we make it alongside.":"هر جزئیات با دقت انتخاب می‌شود — از همان کسانی که در کنارشان می‌سازیم.","Roaster":"رُست‌کننده","Pastry":"شیرینی","We proudly serve coffee roasted in Los Angeles by Sightglass Coffee — one of the best in the business.":"ما با افتخار قهوه‌ی رُست‌شده در لس‌آنجلس توسط سایت‌گلس کافی را سرو می‌کنیم — یکی از بهترین‌ها.","Magical Persian baked creations from Sahar Shomali — seeded buns, spiraled barbari and saffron-kissed sweets.":"خلق‌های جادویی ایرانی از سحر شمالی — نان‌های کنجدی، بربری مارپیچ و شیرینی‌های آغشته به زعفران.","Our pastries and snacks are curated in collaboration with Artelice — delicate, beautiful, and made to share.":"شیرینی‌ها و تنقلات ما با همکاری آرتلیس تهیه می‌شوند — ظریف، زیبا و برای هم‌رسانی.","Come say hi":"سلام کن","Sip a coffeeStay a while":"یک قهوه بنوش<br />و کمی بمان","Get directions →":"مسیریابی →","See the menu →":"دیدن منو →"};
-  const T_SEL=".ab-hero .eyebrow,.ab-hero h1,.ab-hero .kicker,.poster figcaption,.story .lede,.story-body p,.val .eyebrow,.val h3,.val p,.partners .head .eyebrow,.partners .head h2,.partners .head p,.partner .tag,.partner p,.visit-cta .eyebrow,.visit-cta h2,.visit-cta .actions a";
+  const T_SEL=".ab-hero .eyebrow,.ab-hero h1,.ab-hero .kicker,.poster figcaption,.val .eyebrow,.val h3,.val p,.partners .head .eyebrow,.partners .head h2,.partners .head p,.partner .tag,.partner p,.visit-cta .eyebrow,.visit-cta h2,.visit-cta .actions a";
   const dictEls=[];
   document.querySelectorAll(T_SEL).forEach(el=>{if(el.closest('[data-fa]'))return;const k=el.textContent.replace(/\s+/g,' ').trim();if(DICT[k]!==undefined){el._enHTML=el.innerHTML;el._fa=DICT[k];dictEls.push(el);}});
   let LANG=localStorage.getItem('cc_lang')||'en';
@@ -361,5 +361,6 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="cc-content.js"></script>
 </body>
 </html>
