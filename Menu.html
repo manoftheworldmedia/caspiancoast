@@ -108,6 +108,20 @@
   .s-item .pr{font-family:var(--display);font-weight:700;font-size:17px;color:var(--saffron);}
   .s-item .ds{color:rgba(248,245,238,.82);font-size:14.5px;line-height:1.55;margin-top:7px;max-width:42ch;}
 
+  /* drinks band (auto-scroll marquee) */
+  .menu-band{overflow:hidden;padding:clamp(40px,6vw,80px) 0;background:var(--cream);
+    -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+    mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+  .menu-track{display:flex;width:max-content;animation:menuscroll 40s linear infinite;}
+  .menu-band:hover .menu-track{animation-play-state:paused;}
+  .menu-track .drink{flex:0 0 auto;margin-right:20px;height:clamp(360px,42vw,480px);
+    border-radius:5px;overflow:hidden;background:var(--cream-2);
+    box-shadow:0 20px 44px -30px rgba(27,25,22,.45);}
+  .menu-track .drink img{height:100%;width:auto;display:block;transition:transform 1.1s cubic-bezier(.16,1,.3,1);}
+  .menu-track .drink:hover img{transform:scale(1.04);}
+  @keyframes menuscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.menu-track{animation:none;}.menu-band{overflow-x:auto;}}
+
   /* main menu */
   .menu-main{padding:clamp(56px,7vw,96px) 0;}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);}
@@ -232,6 +246,19 @@
 </section>
 
 <!-- ORDER CTA -->
+<div class="menu-band reveal" aria-label="Our drinks">
+  <div class="menu-track">
+    <div class="drink"><img src="img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /></div>
+    <div class="drink"><img src="img/summer-icedtea.jpg" alt="Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu" /></div>
+    <div class="drink"><img src="img/summer-hojicha.jpg" alt="Habibi Joon Hojicha — toasted Japanese green tea latte" /></div>
+    <div class="drink"><img src="img/summer-saffrontonic.jpg" alt="Saffron Tonic — Fever Tree tonic with saffron syrup and lemon" /></div>
+    <div class="drink" aria-hidden="true"><img src="img/summer-lavender.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="img/summer-icedtea.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="img/summer-hojicha.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="img/summer-saffrontonic.jpg" alt="" /></div>
+  </div>
+</div>
+
 <section class="order-cta">
   <img class="eye" src="img/eye-mark.png" alt="Caspian Coast eye emblem" />
   <h2>Skip the line, aziz</h2>
