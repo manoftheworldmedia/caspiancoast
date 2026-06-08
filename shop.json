@@ -1,0 +1,70 @@
+{
+  "intro": {
+    "eyebrow": "The Shop",
+    "eyebrow_fa": "فروشگاه",
+    "title": "Wearable bits of home",
+    "title_fa": "تکه‌هایی پوشیدنی از خانه",
+    "sub": "Hand-painted by Persian artists, sold at the café and shipped from Venice. Each piece is one of a kind.",
+    "sub_fa": "دست‌نقاشی هنرمندان ایرانی، در کافه و ارسالی از ونیس. هر قطعه یکتاست."
+  },
+  "purchaseUrl": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
+  "sections": [
+    {
+      "id": "tshirt",
+      "title": "Caspian Coast Tee",
+      "title_fa": "تی‌شرت کاسپین کوست",
+      "note": "Caspian Gothic typography, screen-printed in LA",
+      "note_fa": "تایپوگرافی کاسپین گوتیک، چاپ‌شده در لس‌آنجلس",
+      "products": [
+        {
+          "id": "tee-los-angeles",
+          "name": "Lös Angeles Tee",
+          "name_fa": "تی‌شرت لس‌آنجلس",
+          "desc": "Soft cotton tee with our mural lettering — a love letter to the city, in two alphabets.",
+          "desc_fa": "تی‌شرت نخی نرم با خط دیواری ما — نامه‌ای عاشقانه به شهر، با دو الفبا.",
+          "price": "$38",
+          "image": "img/merch-shirt.jpg",
+          "badge": "Merch"
+        }
+      ]
+    },
+    {
+      "id": "magnets",
+      "title": "Persian Artist Magnets",
+      "title_fa": "مگنت‌های هنرمند ایرانی",
+      "note": "Hand-painted ceramic — every one unique",
+      "note_fa": "سرامیک دست‌نقاشی — هر کدام یکتا",
+      "products": [
+        {
+          "id": "magnet-homeland",
+          "name": "Homeland Magnets",
+          "name_fa": "مگنت‌های وطن",
+          "desc": "Hand-painted ceramic magnets — Iran maps, hearts, and Persian sayings. Pick your favorite in the café.",
+          "desc_fa": "مگنت‌های سرامیکی دست‌نقاشی — نقشه‌ی ایران، قلب‌ها و ضرب‌المثل‌های فارسی. در کافه دلخواهت را انتخاب کن.",
+          "price": "$25",
+          "image": "img/shop-magnets.jpg",
+          "badge": "1 of a kind"
+        }
+      ]
+    },
+    {
+      "id": "necklaces",
+      "title": "Persian Artist Necklaces",
+      "title_fa": "گردنبندهای هنرمند ایرانی",
+      "note": "Ceramic pendants & vintage portraits on delicate chains",
+      "note_fa": "آویزهای سرامیکی و پرتره‌های قدیمی روی زنجیرهای ظریف",
+      "products": [
+        {
+          "id": "necklace-pendants",
+          "name": "Pendant Necklaces",
+          "name_fa": "گردنبندهای آویز",
+          "desc": "Hand-painted ceramic pendants — Iran maps, tulips, and vintage portraits — on delicate chains.",
+          "desc_fa": "آویزهای سرامیکی دست‌نقاشی — نقشه‌ی ایران، لاله‌ها و پرتره‌های قدیمی — روی زنجیرهای ظریف.",
+          "price": "$30",
+          "image": "img/shop-necklaces.jpg",
+          "badge": "1 of a kind"
+        }
+      ]
+    }
+  ]
+}
