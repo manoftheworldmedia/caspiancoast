@@ -2,9 +2,9 @@
   "intro": {
     "eyebrow": "The Shop",
     "eyebrow_fa": "فروشگاه",
-    "title": "Wearable bits of home",
+    "title": "Caspian designs",
     "title_fa": "تکه‌هایی پوشیدنی از خانه",
-    "sub": "Hand-painted artifacts by Persian artists, bold Caspian Gothic typefaces, and other koochooloos sold at the café or shipped from Venice. Each piece is one of a kind.",
+    "sub": "Hand-painted artifacts by Persian artists, bold Caspian Gothic typefaces, and other koochooloos sold at the café or shipped from Venice.",
     "sub_fa": "دست‌نقاشی هنرمندان ایرانی، در کافه و ارسالی از ونیس. هر قطعه یکتاست."
   },
   "purchaseUrl": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
@@ -24,6 +24,25 @@
           "desc_fa": "تی‌شرت نخی نرم با خط دیواری ما — نامه‌ای عاشقانه به شهر، با دو الفبا.",
           "price": "$38",
           "image": "img/merch-shirt.jpg",
+          "badge": "Merch"
+        }
+      ]
+    },
+    {
+      "id": "hats",
+      "title": "Baba Hats",
+      "title_fa": "کلاه‌های بابا",
+      "note": "Caspian Gothic dad hats, Tehrangeles style",
+      "note_fa": "کلاه‌های کاسپین گوتیک، استایل تهرانجلس",
+      "products": [
+        {
+          "id": "hat-baba",
+          "name": "Baba Hat",
+          "name_fa": "کلاه بابا",
+          "desc": "Adjustable Lös Angeles dad hat with our Caspian Gothic embroidery — Tehrangeles meets Venice.",
+          "desc_fa": "کلاه بابای قابل‌تنظیم لس‌آنجلس با گلدوزی کاسپین گوتیک — تهرانجلس به ونیس می‌رسد.",
+          "price": "$32",
+          "image": "img/shop-hat.jpg",
           "badge": "Merch"
         }
       ]
