@@ -963,7 +963,7 @@ IN THE BEST WAY</h2>
 
   <div class="la-band" aria-hidden="false">
     <figure class="la-mural" id="postcard" role="button" tabindex="0" aria-label="Send this postcard with our location">
-      <img data-cc-img="images.laPostcard" src="img/la-postcard.png" alt="LÖS Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian" />
+      <img data-cc-img="images.laPostcard" src="img/la-postcard.jpg" alt="LÖS Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian" />
       <figcaption>Greetings from Venice ✶ Los Angeles</figcaption>
       <span class="pc-send" data-fa="ارسال این کارت‌پستال">Send this postcard</span>
     </figure>
@@ -986,7 +986,7 @@ IN THE BEST WAY</h2>
 <div id="pcShare" aria-hidden="true">
   <div class="pc-sheet" role="dialog" aria-label="Send a Caspian Coast postcard">
     <button class="pc-close" type="button" aria-label="Close">×</button>
-    <img class="pc-card" src="img/la-postcard.png" alt="Caspian Coast Coffee postcard" />
+    <img class="pc-card" src="img/la-postcard.jpg" alt="Caspian Coast Coffee postcard" />
     <h3 data-fa="یک کارت‌پستال بفرست">Send a postcard</h3>
     <p data-fa="مکان ما را با یک دوست به اشتراک بگذارید — کارت‌پستال به‌همراه لینک نقشه.">Invite your friends — our doors are open, and we are waiting for them.</p>
     <div class="pc-actions">
@@ -994,7 +994,7 @@ IN THE BEST WAY</h2>
       <a class="pc-act wa" id="pcWhatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4 5.3 5.3 0 002.5.5 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
         WhatsApp</a>
-      <a class="pc-act" id="pcDownload" href="img/la-postcard.png" download="caspian-coast-postcard.png" data-fa="دانلود کارت‌پستال">
+      <a class="pc-act" id="pcDownload" href="img/la-postcard.jpg" download="caspian-coast-postcard.jpg" data-fa="دانلود کارت‌پستال">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
         Download postcard</a>
       <button class="pc-act" id="pcCopy" type="button" data-fa="کپی لینک">
@@ -1235,9 +1235,9 @@ IN THE BEST WAY</h2>
     nativeBtn.addEventListener('click', async ()=>{
       // Mobile: share the postcard IMAGE itself via the native share sheet (lets them pick Messages, WhatsApp, etc.)
       try{
-        const resp = await fetch('img/la-postcard.png');
+        const resp = await fetch('img/la-postcard.jpg');
         const blob = await resp.blob();
-        const file = new File([blob], 'caspian-coast-postcard.png', {type: blob.type});
+        const file = new File([blob], 'caspian-coast-postcard.jpg', {type: blob.type});
         if(navigator.canShare && navigator.canShare({files:[file]})){
           await navigator.share({ files:[file], title:'Caspian Coast Coffee', text:getMsg() });
           return;
