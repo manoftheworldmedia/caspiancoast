@@ -15,5 +15,18 @@
     "locationLabel_fa": "📍 ونیس بیچ — ویندوارد پلازا",
     "location": "Venice Beach, Windward Plaza, Los Angeles, CA",
     "description": "Beach party, hiking and protein coffee with Sama — hosted by Caspian Coast Coffee. Meet at Windward Plaza, Venice Beach."
-  }
+  },
+  "recurring": [
+    {
+      "id": "world-cup-viewing-party",
+      "title": "World Cup Viewing Party in Venice: Iran vs. New Zealand ",
+      "image": "img/2026_FIFA_World_Cup_emblem_Capian_Coast_Venice_Los_Angeles_Watch_Party.svg.webp",
+      "when_fa": "June 15 · 6PM–???",
+      "recurDay": 1,
+      "start": "18:00",
+      "end": "20:00",
+      "location": "📍 Caspian Coast Cafe",
+      "description": "Gather with coffee and Persian treats to watch Iran play New Zealand during  FIFA World Cup 2026™."
+    }
+  ]
 }
