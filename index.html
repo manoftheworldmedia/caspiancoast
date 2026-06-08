@@ -1241,8 +1241,8 @@ IN THE BEST WAY</h2>
           return;
         }
       }catch(e){}
-      // Desktop fallback: open the map
-      window.open(MAPS,'_blank','noopener');
+      // Fallback: open a text (SMS) composer with the message pre-loaded
+      window.location.href = 'sms:?&body=' + encodeURIComponent(msg);
     });
     copyBtn.addEventListener('click', async ()=>{
       try{ await navigator.clipboard.writeText(msg); }catch(e){}
