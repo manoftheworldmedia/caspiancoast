@@ -1,233 +1,74 @@
 media:
-  input: img
-  output: img
+  - name: images
+    label: Photos
+    input: img
+    output: img
 
 content:
   - name: events
     label: Events & Calendar
     type: file
     path: events.json
-    format: json
+    icon: calendar
     fields:
-      - name: featured
-        label: Featured Event
-        type: object
-        fields:
-          - { name: id, label: ID, type: string }
-          - { name: tag, label: Tag (EN), type: string }
-          - { name: tag_fa, label: Tag (FA), type: string }
-          - { name: title, label: Title (EN), type: string }
-          - { name: title_fa, label: Title (FA), type: string }
-          - { name: image, label: Image, type: image }
-          - { name: date, label: Date, type: date }
-          - { name: start, label: Start Time, type: string }
-          - { name: end, label: End Time, type: string }
-          - { name: whenLabel, label: When Label (EN), type: string }
-          - { name: whenLabel_fa, label: When Label (FA), type: string }
-          - { name: locationLabel, label: Location Label (EN), type: string }
-          - { name: locationLabel_fa, label: Location Label (FA), type: string }
-          - { name: location, label: Full Location (for calendar), type: string }
-          - { name: description, label: Description, type: text }
-      - name: recurring
-        label: Recurring Events
+      - name: events
+        label: Events
         type: object
         list: true
         fields:
-          - { name: id, label: ID, type: string }
-          - { name: title, label: Title (EN), type: string }
-          - { name: title_fa, label: Title (FA), type: string }
-          - { name: image, label: Image, type: image }
-          - { name: when, label: When (EN), type: string }
-          - { name: when_fa, label: When (FA), type: string }
-          - { name: recurDay, label: "Day (0=Sun … 6=Sat)", type: number }
-          - { name: start, label: Start Time, type: string }
-          - { name: end, label: End Time, type: string }
-          - { name: location, label: Full Location (for calendar), type: string }
-          - { name: description, label: Description, type: text }
+          - { name: featured, label: "★ Featured? (big event at top)", type: boolean }
+          - { name: title, label: Title (English), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: tag, label: "Tag (e.g. Featured Event, Watch Party, Weekly)", type: string }
+          - { name: tag_fa, label: Tag (Farsi), type: string }
+          - { name: image, label: Photo, type: image }
+          - { name: date, label: "Date — one-time event", type: date, options: { format: "yyyy-MM-dd" } }
+          - { name: recurDay, label: "OR Weekday 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat (blank for one-time)", type: number }
+          - { name: start, label: "Start time (24h, e.g. 10:00)", type: string }
+          - { name: end, label: "End time (24h, e.g. 13:00)", type: string }
+          - { name: whenLabel, label: "When label (EN, e.g. June 20 · 10AM)", type: string }
+          - { name: whenLabel_fa, label: "When label (Farsi)", type: string }
+          - { name: locationLabel, label: "Location label (EN)", type: string }
+          - { name: locationLabel_fa, label: "Location label (Farsi)", type: string }
+          - { name: location, label: "Full address (for Add to Calendar)", type: string }
+          - { name: description, label: Description (calendar invite), type: text }
+          - { name: archived, label: "Hide from site", type: boolean }
+          - { name: id, label: "Unique ID (lowercase)", type: string }
 
   - name: menu
-    label: Menu Boards
+    label: Menu
     type: file
     path: menu.json
-    format: json
+    icon: book-open
     fields:
       - name: boards
         label: Menu Boards
         type: object
         list: true
         fields:
-          - { name: id, label: ID, type: string }
-          - { name: title, label: Title, type: string }
-          - { name: image, label: Menu Image, type: image }
-          - { name: alt, label: Alt Text (SEO), type: text }
+          - { name: title, label: Board title, type: string }
+          - { name: image, label: Menu image, type: image }
+          - { name: alt, label: "Image description", type: string }
+          - { name: id, label: "Unique ID (lowercase)", type: string }
 
   - name: faq
     label: FAQ
     type: file
     path: faq.json
-    format: json
+    icon: help-circle
     fields:
       - name: items
-        label: Questions
+        label: Questions & Answers
         type: object
         list: true
         fields:
-          - { name: q, label: Question (EN), type: string }
-          - { name: q_fa, label: Question (FA), type: string }
-          - { name: a, label: Answer (EN), type: text }
-          - { name: a_fa, label: Answer (FA), type: text }
-          - { name: open, label: Open by default, type: boolean }
-          - { name: instagram, label: Instagram Link (optional), type: string }
+          - { name: q, label: Question (English), type: string }
+          - { name: q_fa, label: Question (Farsi), type: string }
+          - { name: a, label: Answer (English), type: text }
+          - { name: a_fa, label: Answer (Farsi), type: text }
+          - { name: open, label: "Open by default?", type: boolean }
+          - { name: instagram, label: "Instagram link (optional)", type: string }
 
-  - name: content
-    label: General Content
-    type: file
-    path: content.json
-    format: json
-    fields:
-      - name: hero
-        label: Hero (homepage top)
-        type: object
-        fields:
-          - { name: eyebrow, label: Eyebrow line (EN), type: string }
-          - { name: eyebrow_fa, label: Eyebrow line (FA), type: string }
-          - { name: titleHtml, label: "Headline (EN — use <br /> for line break)", type: string }
-          - { name: titleHtml_fa, label: "Headline (FA — use <br />)", type: string }
-          - { name: subHtml, label: Sub-headline (EN), type: text }
-          - { name: subHtml_fa, label: Sub-headline (FA), type: text }
-      - name: about
-        label: About Page — Story
-        type: object
-        fields:
-          - { name: ledeHtml, label: "Lede (EN — <em> allowed)", type: text }
-          - { name: ledeHtml_fa, label: Lede (FA), type: text }
-          - { name: p1, label: Paragraph 1 (EN), type: text }
-          - { name: p1_fa, label: Paragraph 1 (FA), type: text }
-          - { name: p2, label: Paragraph 2 (EN), type: text }
-          - { name: p2_fa, label: Paragraph 2 (FA), type: text }
-          - { name: p3, label: Paragraph 3 (EN), type: text }
-          - { name: p3_fa, label: Paragraph 3 (FA), type: text }
-          - { name: p4, label: Paragraph 4 (EN), type: text }
-          - { name: p4_fa, label: Paragraph 4 (FA), type: text }
-          - { name: p5, label: Paragraph 5 (EN), type: text }
-          - { name: p5_fa, label: Paragraph 5 (FA), type: text }
-      - name: contact
-        label: Contact & Hours
-        type: object
-        fields:
-          - { name: addressLine1, label: Address line 1 (EN), type: string }
-          - { name: addressLine2, label: Address line 2 (EN), type: string }
-          - { name: addressLine1_fa, label: Address line 1 (FA), type: string }
-          - { name: addressLine2_fa, label: Address line 2 (FA), type: string }
-          - { name: hours, label: Hours (EN), type: string }
-          - { name: hours_fa, label: Hours (FA), type: string }
-          - { name: phone, label: Phone, type: string, required: false }
-          - { name: instagram, label: Instagram URL, type: string }
-          - { name: instagramHandle, label: Instagram handle, type: string }
-          - { name: mapsUrl, label: Google Maps link, type: string }
-          - { name: orderUrl, label: Online ordering link, type: string }
-      - name: images
-        label: Site Images
-        type: object
-        fields:
-          - name: heroInterior
-            label: Hero — Interior
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: spiceJars
-            label: Spice Jars
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: bakeryBun
-            label: Bakery — Bun
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: bakerySpiral
-            label: Bakery — Spiral Bread
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: vibeWindow
-            label: Vibe — Window Bench
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: vibeMural
-            label: Vibe — Mural
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: nostalgiaWoman
-            label: Nostalgia — Family Photo
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: nostalgiaRadio
-            label: Nostalgia — Radio
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: cupCeramic
-            label: Ceramic Eye Cup
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: nostalgiaMercedes
-            label: Nostalgia — Mercedes
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: merchShirt
-            label: Merch — Shirt
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: laPostcard
-            label: LA Postcard
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: aboutPoster
-            label: About — LA Mural
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
-          - name: ownerPhoto
-            label: Owner Photo (Rahi)
-            type: object
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: alt, label: Alt text (EN), type: text }
-              - { name: alt_fa, label: Alt text (FA), type: text }
   - name: shop
     label: Shop
     type: file
@@ -244,7 +85,7 @@ content:
           - { name: title_fa, label: Title (Farsi), type: string }
           - { name: sub, label: Sub (EN), type: text }
           - { name: sub_fa, label: Sub (Farsi), type: text }
-      - { name: purchaseUrl, label: "Default Buy link (e.g. Instagram or Shopify)", type: string }
+      - { name: purchaseUrl, label: "Default Buy link", type: string }
       - name: sections
         label: Product Sections
         type: object
@@ -264,9 +105,33 @@ content:
               - { name: name_fa, label: Name (Farsi), type: string }
               - { name: desc, label: Description (EN), type: text }
               - { name: desc_fa, label: Description (Farsi), type: text }
-              - { name: price, label: Price (e.g. $38), type: string }
+              - { name: price, label: "Price (e.g. $38)", type: string }
               - { name: image, label: Photo, type: image }
               - { name: badge, label: "Badge (e.g. 1 of a kind)", type: string }
-              - { name: purchaseUrl, label: "Buy link (optional — overrides default)", type: string }
+              - { name: purchaseUrl, label: "Buy link (optional)", type: string }
               - { name: id, label: "Product ID (lowercase)", type: string }
 
+  - name: content
+    label: General Content
+    type: file
+    path: content.json
+    icon: file-text
+    fields:
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - { name: ledeHtml, label: Intro line (EN), type: text }
+          - { name: ledeHtml_fa, label: Intro line (Farsi), type: text }
+          - { name: p1, label: Paragraph 1 (EN), type: text }
+          - { name: p1_fa, label: Paragraph 1 (Farsi), type: text }
+          - { name: p2, label: Paragraph 2 (EN), type: text }
+          - { name: p2_fa, label: Paragraph 2 (Farsi), type: text }
+          - { name: p3, label: Paragraph 3 (EN), type: text }
+          - { name: p3_fa, label: Paragraph 3 (Farsi), type: text }
+          - { name: p4, label: Paragraph 4 (EN), type: text }
+          - { name: p4_fa, label: Paragraph 4 (Farsi), type: text }
+          - { name: p5, label: Paragraph 5 (EN), type: text }
+          - { name: p5_fa, label: Paragraph 5 (Farsi), type: text }
+          - { name: photoCaption, label: "Rahi & mom caption (EN)", type: string }
+          - { name: photoCaption_fa, label: "Rahi & mom caption (Farsi)", type: string }
