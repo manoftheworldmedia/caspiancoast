@@ -228,4 +228,45 @@ content:
               - { name: src, label: Image, type: image }
               - { name: alt, label: Alt text (EN), type: text }
               - { name: alt_fa, label: Alt text (FA), type: text }
+  - name: shop
+    label: Shop
+    type: file
+    path: shop.json
+    icon: shopping-bag
+    fields:
+      - name: intro
+        label: Shop intro
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: sub, label: Sub (EN), type: text }
+          - { name: sub_fa, label: Sub (Farsi), type: text }
+      - { name: purchaseUrl, label: "Default Buy link (e.g. Instagram or Shopify)", type: string }
+      - name: sections
+        label: Product Sections
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Section title (EN), type: string }
+          - { name: title_fa, label: Section title (Farsi), type: string }
+          - { name: note, label: Section note (EN), type: string }
+          - { name: note_fa, label: Section note (Farsi), type: string }
+          - { name: id, label: "Section ID (lowercase)", type: string }
+          - name: products
+            label: Products
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name (EN), type: string }
+              - { name: name_fa, label: Name (Farsi), type: string }
+              - { name: desc, label: Description (EN), type: text }
+              - { name: desc_fa, label: Description (Farsi), type: text }
+              - { name: price, label: Price (e.g. $38), type: string }
+              - { name: image, label: Photo, type: image }
+              - { name: badge, label: "Badge (e.g. 1 of a kind)", type: string }
+              - { name: purchaseUrl, label: "Buy link (optional — overrides default)", type: string }
+              - { name: id, label: "Product ID (lowercase)", type: string }
 
