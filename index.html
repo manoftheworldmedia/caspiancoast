@@ -563,7 +563,7 @@
   .pc-sheet{background:var(--cream);border-radius:16px;max-width:380px;width:100%;padding:30px 28px 26px;
     box-shadow:0 40px 90px -30px rgba(0,0,0,.6);position:relative;text-align:center;}
   .pc-sheet .pc-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;}
-  .pc-sheet .pc-card{width:100%;border-radius:8px;overflow:hidden;box-shadow:0 12px 30px -16px rgba(0,0,0,.5);margin-bottom:18px;border:1px solid var(--line);}
+  .pc-sheet .pc-card{width:100%;border-radius:4px;background:#fff;padding:10px;box-shadow:0 12px 30px -16px rgba(0,0,0,.5);margin-bottom:18px;border:1px solid var(--line);outline:1.5px solid rgba(27,25,22,.2);outline-offset:-16px;}
   .pc-sheet h3{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:18px;}
   .pc-sheet p{color:var(--ink-soft);font-size:14px;margin-top:7px;line-height:1.5;}
   .pc-actions{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
@@ -953,27 +953,10 @@ IN THE BEST WAY</h2>
           </div>
         </div>
       </div>
-      <a class="map reveal" href="https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291" target="_blank" rel="noopener" aria-label="Open Caspian Coast Coffee in Google Maps">
-        <svg class="map-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <rect width="400" height="300" fill="#e7e1d4"/>
-          <rect x="0" y="120" width="400" height="46" fill="#d8cfbd"/>
-          <rect x="150" y="0" width="40" height="300" fill="#d8cfbd"/>
-          <path d="M0 60 H400 M0 230 H400 M70 0 V300 M300 0 V300" stroke="#cdc3ad" stroke-width="3" fill="none"/>
-          <path d="M0 143 H400" stroke="#c7a86a" stroke-width="4" fill="none"/>
-          <path d="M170 0 V300" stroke="#c7a86a" stroke-width="4" fill="none"/>
-          <rect x="20" y="74" width="36" height="32" fill="#d2c8b3"/>
-          <rect x="92" y="74" width="44" height="32" fill="#d2c8b3"/>
-          <rect x="206" y="74" width="78" height="32" fill="#d2c8b3"/>
-          <rect x="20" y="180" width="120" height="36" fill="#d2c8b3"/>
-          <rect x="206" y="180" width="78" height="36" fill="#d2c8b3"/>
-          <rect x="316" y="180" width="64" height="36" fill="#d2c8b3"/>
-          <g transform="translate(170 143)">
-            <path d="M0 -30 C16 -30 24 -18 24 -6 C24 10 0 30 0 30 C0 30 -24 10 -24 -6 C-24 -18 -16 -30 0 -30 Z" fill="#c0653a" stroke="#fff" stroke-width="3"/>
-            <circle cx="0" cy="-6" r="8" fill="#fff"/>
-          </g>
-        </svg>
-        <span class="map-cta">Open in Google Maps &nbsp;↗</span>
-      </a>
+      <div class="map reveal">
+        <iframe class="map-art" title="Map showing Caspian Coast Coffee, 1501 Main St Unit 103, Venice CA 90291" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1501%20Main%20St%20Unit%20103%2C%20Venice%2C%20CA%2090291&t=m&z=17&output=embed"></iframe>
+        <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291" target="_blank" rel="noopener">Open in Google Maps &nbsp;↗</a>
+      </div>
     </div>
   </div>
 
@@ -1004,16 +987,15 @@ IN THE BEST WAY</h2>
     <button class="pc-close" type="button" aria-label="Close">×</button>
     <img class="pc-card" src="img/la-postcard.png" alt="Caspian Coast Coffee postcard" />
     <h3 data-fa="یک کارت‌پستال بفرست">Send a postcard</h3>
-    <p data-fa="مکان ما را با یک دوست به اشتراک بگذارید — کارت‌پستال به‌همراه لینک نقشه.">Drop a postcard to a friend — our doors are open, and we are happily waiting.</p>
+    <p data-fa="مکان ما را با یک دوست به اشتراک بگذارید — کارت‌پستال به‌همراه لینک نقشه.">Invite your friends — our doors are open, and we are waiting for them.</p>
     <div class="pc-actions">
       <button class="pc-act primary" id="pcNative" type="button" data-fa="ارسال کارت‌پستال (با عکس) ↗">Text the postcard ↗</button>
-      <p class="pc-hint" data-fa="«ارسال» را بزنید، سپس «پیام‌ها» را انتخاب کنید تا عکس کارت‌پستال ضمیمه شود.">Tap “Text the postcard,” then pick Messages — the photo attaches automatically.</p>
       <a class="pc-act wa" id="pcWhatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4 5.3 5.3 0 002.5.5 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
         WhatsApp</a>
-      <a class="pc-act" id="pcSms" data-fa="پیامک (فقط لینک)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 9 9 0 01-3.8-.8L3 20l1-4a8.4 8.4 0 01-1-4 8.4 8.4 0 019-8.4 8.4 8.4 0 018 7.9z"/></svg>
-        Text a link</a>
+      <a class="pc-act" id="pcDownload" href="img/la-postcard.png" download="caspian-coast-postcard.png" data-fa="دانلود کارت‌پستال">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+        Download postcard</a>
       <button class="pc-act" id="pcCopy" type="button" data-fa="کپی لینک">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
         Copy link</button>
@@ -1241,13 +1223,11 @@ IN THE BEST WAY</h2>
     const sheet = document.getElementById('pcShare');
     if(!card || !sheet) return;
     const MAPS = 'https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291';
-    const msg = 'From Caspian with ❤️ — find us on the map: ' + MAPS;
+    const msg = 'From Caspian with ❤️ — Sip a coffee, stay a while. Find us on the map: ' + MAPS;
     const nativeBtn = document.getElementById('pcNative');
     const waBtn = document.getElementById('pcWhatsapp');
-    const smsBtn = document.getElementById('pcSms');
     const copyBtn = document.getElementById('pcCopy');
     waBtn.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-    smsBtn.href = 'sms:?&body=' + encodeURIComponent(msg);
     function openSheet(){ sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); }
     function closeSheet(){ sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); }
     nativeBtn.addEventListener('click', async ()=>{
@@ -1257,12 +1237,12 @@ IN THE BEST WAY</h2>
         const blob = await resp.blob();
         const file = new File([blob], 'caspian-coast-postcard.png', {type: blob.type});
         if(navigator.canShare && navigator.canShare({files:[file]})){
-          await navigator.share({ files:[file], title:'Caspian Coast Coffee', text:'From Caspian with ❤️ — find us on the map: ' + MAPS });
+          await navigator.share({ files:[file], title:'Caspian Coast Coffee', text:msg });
           return;
         }
       }catch(e){}
-      // Desktop fallback: open a text draft with the caption + map link
-      window.open(smsBtn.href,'_blank');
+      // Desktop fallback: open the map
+      window.open(MAPS,'_blank','noopener');
     });
     copyBtn.addEventListener('click', async ()=>{
       try{ await navigator.clipboard.writeText(msg); }catch(e){}
