@@ -10,7 +10,7 @@
   "purchaseUrl": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
   "sections": [
     {
-      "title": "Caspian Coast Tee",
+      "title": "Caspian Coast Los Angeles Tee",
       "title_fa": "تی‌شرت کاسپین کوست",
       "note": "Caspian Gothic typography, screen-printed in LA",
       "note_fa": "تایپوگرافی کاسپین گوتیک، چاپ‌شده در لس‌آنجلس",
@@ -64,6 +64,14 @@
           "badge": "1 of a kind",
           "id": "necklace-pendants"
         }
+      ]
+    },
+    {
+      "title": "Baba Hat",
+      "note": "Los Angeles 'Caspian Gothic'  Hat",
+      "id": "hat",
+      "products": [
+        {}
       ]
     }
   ]
