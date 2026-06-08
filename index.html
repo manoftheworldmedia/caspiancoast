@@ -1224,12 +1224,13 @@ IN THE BEST WAY</h2>
     const sheet = document.getElementById('pcShare');
     if(!card || !sheet) return;
     const MAPS = 'https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291';
-    const msg = 'From Caspian with ❤️ — Sip a coffee, stay a while. Find us in Venice: ' + MAPS;
+    const MSG_EN = 'From Caspian with ❤️ — Sip a coffee, stay a while. Find us in Venice: ' + MAPS;
+    const MSG_FA = 'از کاسپین با ❤️ — یک قهوه بنوش و کمی بمان. ما را در ونیس پیدا کن: ' + MAPS;
+    const getMsg = () => document.body.classList.contains('lang-fa') ? MSG_FA : MSG_EN;
     const nativeBtn = document.getElementById('pcNative');
     const waBtn = document.getElementById('pcWhatsapp');
     const copyBtn = document.getElementById('pcCopy');
-    waBtn.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-    function openSheet(){ sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); }
+    function openSheet(){ waBtn.href = 'https://wa.me/?text=' + encodeURIComponent(getMsg()); sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); }
     function closeSheet(){ sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); }
     nativeBtn.addEventListener('click', async ()=>{
       // Mobile: share the postcard IMAGE itself via the native share sheet (lets them pick Messages, WhatsApp, etc.)
@@ -1238,17 +1239,17 @@ IN THE BEST WAY</h2>
         const blob = await resp.blob();
         const file = new File([blob], 'caspian-coast-postcard.png', {type: blob.type});
         if(navigator.canShare && navigator.canShare({files:[file]})){
-          await navigator.share({ files:[file], title:'Caspian Coast Coffee', text:msg });
+          await navigator.share({ files:[file], title:'Caspian Coast Coffee', text:getMsg() });
           return;
         }
       }catch(e){}
       // Fallback (desktop/no file-share): open a text composer with the message pre-loaded
       const a=document.createElement('a');
-      a.href='sms:?&body='+encodeURIComponent(msg);
+      a.href='sms:?&body='+encodeURIComponent(getMsg());
       document.body.appendChild(a); a.click(); a.remove();
     });
     copyBtn.addEventListener('click', async ()=>{
-      try{ await navigator.clipboard.writeText(msg); }catch(e){}
+      try{ await navigator.clipboard.writeText(getMsg()); }catch(e){}
       const fa = document.body.classList.contains('lang-fa');
       const orig = copyBtn.innerHTML;
       copyBtn.classList.add('copied');
