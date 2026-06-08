@@ -19,7 +19,9 @@
     "p4": "This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.",
     "p4_fa": "این کافه جشن آن میراث است؛ جایی که فرهنگ‌ها به هم می‌رسند، جایی که دستورها و ایده‌ها به آزادیِ مردم سفر می‌کنند، و هر فنجان داستانی می‌گوید — داستان من، خانواده‌ام، و شاید داستان شما.",
     "p5": "At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.",
-    "p5_fa": "در کاسپین کوست کافی می‌خواهیم فضایی بسازیم که هم جهانی و هم عمیقاً محلی باشد: ریشه در انرژی پرشور ونیس بیچ، و آغشته به گرما و مهمان‌نوازی سواحل خزر. هر جزئیات، از دانه‌ها تا موسیقی‌ای که می‌نوازیم، با قصد انتخاب شده — برای بزرگداشت گذشته، جشن اکنون و الهام به پیوند."
+    "p5_fa": "در کاسپین کوست کافی می‌خواهیم فضایی بسازیم که هم جهانی و هم عمیقاً محلی باشد: ریشه در انرژی پرشور ونیس بیچ، و آغشته به گرما و مهمان‌نوازی سواحل خزر. هر جزئیات، از دانه‌ها تا موسیقی‌ای که می‌نوازیم، با قصد انتخاب شده — برای بزرگداشت گذشته، جشن اکنون و الهام به پیوند.",
+    "photoCaption": "Rahi and his mom.",
+    "photoCaption_fa": "راهی و مادرش."
   },
   "contact": {
     "addressLine1": "1501 Main St, Unit 103",
@@ -48,6 +50,7 @@
     "merchShirt": { "src": "img/merch-shirt.jpg", "alt": "Los Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice", "alt_fa": "تی‌شرت لس‌آنجلس با تایپوگرافی کاسپین گوتیک" },
     "laPostcard": { "src": "img/la-postcard.jpg", "alt": "Los Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian", "alt_fa": "لس‌آنجلس — خوش‌نویسی دستی کاسپین گوتیک با قلب قرمز" },
     "aboutPoster": { "src": "img/la-mural-full.jpg", "alt": "The Los Angeles mural by Parisa Parnian — a couple beside a vintage car beneath hand-painted lettering", "alt_fa": "نقاشی دیواری لس‌آنجلس اثر پریسا پرنیان" },
-    "ownerPhoto": { "src": "img/owner-rahi.jpg", "alt": "Rahi, founder of Caspian Coast Coffee, in front of the Los Angeles mural in Venice", "alt_fa": "راهی، بنیان‌گذار کاسپین کوست کافی، در برابر نقاشی دیواری لس‌آنجلس" }
+    "ownerPhoto": { "src": "img/owner-rahi.jpg", "alt": "Rahi, founder of Caspian Coast Coffee, in front of the Los Angeles mural in Venice", "alt_fa": "راهی، بنیان‌گذار کاسپین کوست کافی، در برابر نقاشی دیواری لس‌آنجلس" },
+    "rahiMom": { "src": "img/rahi-mom.jpg", "alt": "Rahi as a boy with his mother, blowing out birthday candles", "alt_fa": "راهی در کودکی همراه مادرش" }
   }
 }
