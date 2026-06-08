@@ -71,7 +71,13 @@
       "note": "Los Angeles 'Caspian Gothic'  Hat",
       "id": "hat",
       "products": [
-        {}
+        {
+          "name": "Baba Hat",
+          "desc": "Los Angeles 'Caspian Gothic' Baba 'Dad' Hat",
+          "price": "$30",
+          "image": "img/Caspian_Coast_Cafe_Venice_Los_Angeles_California_Dad_Hat-1.png",
+          "id": "baba-hat"
+        }
       ]
     }
   ]
