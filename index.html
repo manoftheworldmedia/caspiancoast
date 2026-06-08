@@ -447,12 +447,26 @@
   .ev:hover img{transform:scale(1.06);filter:saturate(1) brightness(.9);}
   .ev-body{position:relative;padding:22px;z-index:2;width:100%;background:linear-gradient(transparent,rgba(20,17,14,.85));}
   .ev-body h3{font-size:21px;text-transform:uppercase;color:#fff;}
+  .ev-tag{display:inline-block;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:9px;font-weight:700;color:#fff;background:var(--clay);padding:4px 9px;border-radius:999px;margin-top:12px;}
+  .ev-when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;font-weight:600;color:var(--sage);margin-top:8px;}
+  .ev-where{font-family:var(--font-body);font-size:12.5px;color:rgba(241,237,228,.85);margin-top:5px;line-height:1.4;}
   .ev-body .when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;font-weight:600;color:var(--sage);margin-top:8px;}
+  #eventPast{margin-top:30px;}
+  .past-events{border-top:1px solid rgba(241,237,228,.16);}
+  .past-events summary{list-style:none;cursor:pointer;padding:18px 0 16px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:600;color:rgba(241,237,228,.7);display:flex;align-items:center;gap:10px;transition:color .2s;}
+  .past-events summary::-webkit-details-marker{display:none;}
+  .past-events summary::after{content:"+";margin-left:auto;font-size:18px;color:var(--clay);transition:transform .3s;}
+  .past-events[open] summary::after{transform:rotate(45deg);}
+  .past-events summary:hover{color:var(--cream);}
+  .pe-list{list-style:none;margin:0;padding:0 0 8px;}
+  .pe-list li{display:flex;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid rgba(241,237,228,.08);}
+  .pe-when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:600;color:var(--sage);flex:0 0 auto;min-width:130px;}
+  .pe-title{font-family:var(--font-body);font-size:15px;color:rgba(241,237,228,.85);}
   .ev-feature{display:grid;grid-template-columns:.78fr 1.22fr;border-radius:6px;overflow:hidden;margin-bottom:18px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);}
   .ev-feature .ef-img{position:relative;min-height:340px;}
   .ev-feature .ef-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
   .ev-feature .ef-body{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px;}
-  .ev-feature .ef-tag{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:600;color:var(--clay);}
+  .ev-feature .ef-tag{display:inline-block;width:max-content;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.24em;font-size:11px;font-weight:600;color:var(--clay);}
   .ev-feature h3{font-size:clamp(23px,2.7vw,36px);text-transform:uppercase;color:#fff;line-height:1.06;}
   .ev-feature .ef-meta{display:flex;flex-direction:column;gap:7px;margin-top:6px;}
   .ev-feature .ef-meta span{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--sage);letter-spacing:.02em;}
@@ -540,6 +554,7 @@
   .map iframe,.map .map-art{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .map .map-cta{position:absolute;left:14px;bottom:14px;z-index:2;background:var(--cream);color:var(--ink);font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;font-weight:700;padding:9px 14px;box-shadow:0 6px 18px -8px rgba(27,25,22,.5);transition:transform .25s;}
   .map:hover .map-cta{transform:translateY(-2px);}
+  .map-parking{margin-top:10px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:600;color:var(--clay);line-height:1.5;text-align:center;}
 
   /* LA postcard */
   .la-band{position:relative;text-align:center;padding:clamp(34px,5vw,66px) 0 8px;overflow:hidden;}
@@ -892,7 +907,7 @@ IN THE BEST WAY</h2>
     <img class="wm" src="img/logo.webp" alt="" aria-hidden="true" />
     <span class="eyebrow">New Drop</span>
     <h2>CASPIAN MERCH</h2>
-    <p>Exclusive Caspian tees and dad hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
+    <p>Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
     <a class="link-arrow" href="Shop.html">Shop the drop &nbsp;→</a>
   </div>
 </section>
@@ -911,6 +926,7 @@ IN THE BEST WAY</h2>
     </div>
     <article class="ev-feature reveal" id="eventFeatured"></article>
     <div class="ev-grid reveal" id="eventGrid"></div>
+    <div id="eventPast"></div>
   </div>
 </section>
 
@@ -958,6 +974,7 @@ IN THE BEST WAY</h2>
         <iframe class="map-art" title="Map showing Caspian Coast Coffee, 1501 Main St Unit 103, Venice CA 90291" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1501%20Main%20St%20Unit%20103%2C%20Venice%2C%20CA%2090291&t=m&z=17&output=embed"></iframe>
         <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
+      <p class="map-parking" data-fa="پارکینگ رایگان ۱.۵ ساعته در پارکینگ پشتی از سمت خیابان ویندوارد.">Free 1.5 hr parking in rear lot off Windward Ave.</p>
     </div>
   </div>
 
@@ -1065,7 +1082,7 @@ IN THE BEST WAY</h2>
     "— House rule":"— قانون خانه",
     "New Drop":"کالکشن جدید",
     "CASPIAN MERCH":"کالای کاسپین",
-    "Exclusive Caspian tees and dad hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.":"تی‌شرت‌ها و کلاه‌های ویژه‌ی لس‌آنجلس با تایپوگرافی کاسپین گوتیک ما، برگرفته از نقاشی دیواری نمادین روی دیوارمان — نامه‌ای عاشقانه به این شهر، با دو الفبا.",
+    "Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.":"تی‌شرت‌ها و کلاه‌های ویژه‌ی لس‌آنجلس با تایپوگرافی کاسپین گوتیک ما، برگرفته از نقاشی دیواری نمادین روی دیوارمان — نامه‌ای عاشقانه به این شهر، با دو الفبا.",
     "Shop the drop →":"خرید کالکشن →",
     "Today at the Coast":"امروز در ساحل",
     "THERE'S ALWAYS SOMETHING GOING ON":"همیشه خبری هست",
@@ -1163,10 +1180,9 @@ IN THE BEST WAY</h2>
   const pad2 = n => String(n).padStart(2,'0');
   const DAY_ABBR = ['SU','MO','TU','WE','TH','FR','SA'];
   function resolveDates(ev){
-    if(ev.date){
-      ev._start = new Date(ev.date+'T'+ev.start+':00');
-      ev._end   = new Date(ev.date+'T'+ev.end+':00');
-    } else if(ev.recurDay != null){
+    const rd = (ev.recurDay !== undefined && ev.recurDay !== null && ev.recurDay !== '') ? Number(ev.recurDay) : null;
+    if(rd !== null && !isNaN(rd) && rd >= 0 && rd <= 6){
+      ev.recurDay = rd;
       const now = new Date();
       const diff = (ev.recurDay - now.getDay() + 7) % 7;
       const base = new Date(now.getFullYear(), now.getMonth(), now.getDate()+diff);
@@ -1174,6 +1190,10 @@ IN THE BEST WAY</h2>
       ev._start = new Date(base.getFullYear(),base.getMonth(),base.getDate(),+sh,+sm);
       ev._end   = new Date(base.getFullYear(),base.getMonth(),base.getDate(),+eh,+em);
       ev._rrule = 'FREQ=WEEKLY;BYDAY='+DAY_ABBR[ev.recurDay];
+    } else if(ev.date){
+      ev.recurDay = null;
+      ev._start = new Date(ev.date+'T'+(ev.start||'00:00')+':00');
+      ev._end   = new Date(ev.date+'T'+(ev.end||ev.start||'23:59')+':00');
     }
   }
   const icsStamp = d => d.getUTCFullYear()+pad2(d.getUTCMonth()+1)+pad2(d.getUTCDate())+'T'+pad2(d.getUTCHours())+pad2(d.getUTCMinutes())+'00Z';
@@ -1264,44 +1284,80 @@ IN THE BEST WAY</h2>
   })();
 
   let EVENTS = null;
+  function evList(){ return (EVENTS && EVENTS.events) ? EVENTS.events : []; }
+  function isPastEvent(ev){
+    if(ev.recurDay != null) return false;          // recurring events never expire
+    if(!ev._end) return false;
+    return ev._end.getTime() < Date.now();          // dated event whose end has passed
+  }
   function renderEvents(){
     if(!EVENTS) return;
     const fa = evLang()==='fa';
-    const f = EVENTS.featured;
+    const all = evList();
+    const upcoming = all.filter(e => !isPastEvent(e) && !e.archived);
+    const past = all.filter(e => (isPastEvent(e) || e.archived) && e.recurDay == null);
+    // featured = first event toggled featured (and upcoming), else the first upcoming
+    let feature = upcoming.find(e => e.featured) || upcoming[0] || null;
+    const gridEvents = upcoming.filter(e => e !== feature);
+
+    // ---- featured card ----
     const feat = document.getElementById('eventFeatured');
-    if(feat && f){
-      feat.innerHTML =
-        '<div class="ef-img"><img src="'+f.image+'" alt="'+(f.title)+'" /></div>'
-        + '<div class="ef-body">'
-        +   '<span class="ef-tag">'+(fa?f.tag_fa:f.tag)+'</span>'
-        +   '<h3>'+(fa?f.title_fa:f.title)+'</h3>'
-        +   '<div class="ef-meta"><span>'+(fa?f.whenLabel_fa:f.whenLabel)+'</span><span>'+(fa?f.locationLabel_fa:f.locationLabel)+'</span></div>'
-        +   '<div class="ef-actions"><button class="cal-btn" type="button">'+ICON_G+(fa?'افزودن به تقویم':'Add to calendar')+'</button></div>'
-        + '</div>';
-      if(fa) feat.querySelector('.ef-body').setAttribute('dir','rtl'); else feat.querySelector('.ef-body').removeAttribute('dir');
-      feat.querySelector('.cal-btn').addEventListener('click', (e)=>{ e.stopPropagation(); openCal(f, e.currentTarget.getBoundingClientRect()); });
+    if(feat){
+      if(feature){
+        feat.style.display = '';
+        feat.innerHTML =
+          '<div class="ef-img"><img src="'+feature.image+'" alt="'+(fa?feature.title_fa:feature.title)+'" /></div>'
+          + '<div class="ef-body">'
+          +   '<h3>'+(fa?feature.title_fa:feature.title)+'</h3>'
+          +   '<div class="ef-meta">'+(feature.tag?'<span class="ef-tag">'+(fa?(feature.tag_fa||feature.tag):feature.tag)+'</span>':'')+'<span>'+(fa?feature.whenLabel_fa:feature.whenLabel||'')+'</span><span>'+(fa?feature.locationLabel_fa:feature.locationLabel||'')+'</span></div>'
+          +   '<div class="ef-actions"><button class="cal-btn" type="button">'+ICON_G+(fa?'افزودن به تقویم':'Add to calendar')+'</button></div>'
+          + '</div>';
+        if(fa) feat.querySelector('.ef-body').setAttribute('dir','rtl'); else feat.querySelector('.ef-body').removeAttribute('dir');
+        feat.querySelector('.cal-btn').addEventListener('click', (e)=>{ e.stopPropagation(); openCal(feature, e.currentTarget.getBoundingClientRect()); });
+      } else { feat.style.display = 'none'; feat.innerHTML=''; }
     }
+
+    // ---- grid of remaining upcoming events (full info on each) ----
     const grid = document.getElementById('eventGrid');
     if(grid){
       grid.innerHTML = '';
-      EVENTS.recurring.forEach(ev=>{
+      gridEvents.forEach(ev=>{
         const a = document.createElement('article');
         a.className = 'ev';
         a.innerHTML = '<img src="'+ev.image+'" alt="" />'
           + '<button class="ev-add" type="button" aria-label="Add to calendar">'+ICON_G+'</button>'
-          + '<div class="ev-body"><h3>'+(fa?ev.title_fa:ev.title)+'</h3><div class="when">'+(fa?ev.when_fa:ev.when)+'</div></div>';
+          + '<div class="ev-body">'
+          +   '<h3>'+(fa?ev.title_fa:ev.title)+'</h3>'
+          +   (ev.tag?'<span class="ev-tag">'+(fa?(ev.tag_fa||ev.tag):ev.tag)+'</span>':'')
+          +   '<div class="ev-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</div>'
+          +   (ev.locationLabel?'<div class="ev-where">'+(fa?ev.locationLabel_fa:ev.locationLabel)+'</div>':'')
+          + '</div>';
+        if(fa) a.querySelector('.ev-body').setAttribute('dir','rtl');
         const open = (e)=>{ e.stopPropagation(); openCal(ev, (e.currentTarget.closest('.ev')||e.currentTarget).getBoundingClientRect()); };
         a.addEventListener('click', open);
         a.querySelector('.ev-add').addEventListener('click', open);
         grid.appendChild(a);
       });
     }
+
+    // ---- past events repository (collapsible) ----
+    const pastWrap = document.getElementById('eventPast');
+    if(pastWrap){
+      if(past.length){
+        pastWrap.style.display = '';
+        const items = past.sort((a,b)=> (b._start?b._start.getTime():0) - (a._start?a._start.getTime():0)).map(ev=>
+          '<li><span class="pe-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</span><span class="pe-title">'+(fa?ev.title_fa:ev.title)+'</span></li>'
+        ).join('');
+        pastWrap.innerHTML = '<details class="past-events"><summary>'+(fa?'رویدادهای گذشته':'Past events')+' ('+past.length+')</summary><ul class="pe-list">'+items+'</ul></details>';
+        if(fa) pastWrap.querySelector('.past-events').setAttribute('dir','rtl');
+      } else { pastWrap.style.display='none'; pastWrap.innerHTML=''; }
+    }
+
     document.querySelectorAll('#eventFeatured.reveal, #eventGrid.reveal').forEach(el=>el.classList.add('in'));
   }
   fetch('events.json').then(r=>r.json()).then(data=>{
     EVENTS = data;
-    resolveDates(EVENTS.featured);
-    EVENTS.recurring.forEach(resolveDates);
+    evList().forEach(resolveDates);
     renderEvents();
   }).catch(()=>{});
 
@@ -1336,7 +1392,7 @@ IN THE BEST WAY</h2>
   if(viewCal){ viewCal.addEventListener('click', (e)=>{
     e.preventDefault();
     if(!EVENTS) return;
-    const all=[EVENTS.featured, ...(EVENTS.recurring||[])];
+    const all=evList().filter(e=>!isPastEvent(e) && !e.archived);
     let L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Caspian Coast Coffee//Events//EN','CALSCALE:GREGORIAN','X-WR-CALNAME:Caspian Coast Coffee'];
     all.forEach(ev=>{ if(!ev._start) return;
       L.push('BEGIN:VEVENT','UID:'+ev.id+'@caspiancoastcoffee','DTSTAMP:'+icsStamp(new Date()),
