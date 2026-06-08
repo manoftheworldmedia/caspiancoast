@@ -550,12 +550,13 @@
   .la-mural::after{content:"";position:absolute;inset:11px;border:1.5px solid rgba(27,25,22,.22);pointer-events:none;}
   .la-mural figcaption{position:absolute;left:0;right:0;bottom:16px;font-family:var(--font-body);font-style:italic;font-size:14px;color:var(--ink-soft);}
   .la-mural{cursor:pointer;}
-  .pc-send{position:absolute;top:13px;right:13px;z-index:3;background:var(--clay);color:#fff;
-    font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:700;
-    padding:9px 14px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(192,101,58,.7);
+  .pc-send{position:absolute;top:12px;right:12px;z-index:3;background:var(--clay);color:#fff;
+    font-family:var(--font-display);text-transform:uppercase;letter-spacing:.1em;font-size:8.5px;font-weight:700;
+    padding:6px 10px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(192,101,58,.7);
     opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s;}
   .la-mural:hover .pc-send,.la-mural:focus .pc-send{opacity:1;transform:none;}
   @media (hover:none){.pc-send{opacity:1;transform:none;}}
+  @media (max-width:680px){.pc-send{font-size:8px;padding:5px 9px;letter-spacing:.08em;}}
   /* postcard share sheet */
   #pcShare{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;
     background:rgba(20,17,14,.62);backdrop-filter:blur(3px);}
@@ -955,7 +956,7 @@ IN THE BEST WAY</h2>
       </div>
       <div class="map reveal">
         <iframe class="map-art" title="Map showing Caspian Coast Coffee, 1501 Main St Unit 103, Venice CA 90291" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1501%20Main%20St%20Unit%20103%2C%20Venice%2C%20CA%2090291&t=m&z=17&output=embed"></iframe>
-        <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291" target="_blank" rel="noopener">Open in Google Maps &nbsp;↗</a>
+        <a class="map-cta" href="https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
     </div>
   </div>
@@ -964,7 +965,7 @@ IN THE BEST WAY</h2>
     <figure class="la-mural" id="postcard" role="button" tabindex="0" aria-label="Send this postcard with our location">
       <img data-cc-img="images.laPostcard" src="img/la-postcard.png" alt="LÖS Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian" />
       <figcaption>Greetings from Venice ✶ Los Angeles</figcaption>
-      <span class="pc-send" data-fa="ارسال این کارت‌پستال ↗">Send this postcard ↗</span>
+      <span class="pc-send" data-fa="ارسال این کارت‌پستال">Send this postcard</span>
     </figure>
     <p class="la-sub">Caspian Gothic: A Persian-inspired Californian blackletter that blends Tehrangeles street culture, Venice mural typography,<br />and traditional Farsi forms into a distinctly Los Angeles visual language</p>
     <p class="persian">از اینجا تا ساحل خزر</p>
@@ -1100,7 +1101,7 @@ IN THE BEST WAY</h2>
     "Open Daily · 7AM — 8PM":"هر روز باز · ۷ صبح — ۸ شب",
     "we're here ✶":"ما اینجاییم ✶",
     "Get directions →":"مسیریابی →",
-    "Open in Google Maps ↗":"باز کردن در گوگل مپ ↗",
+    "Open in Google Maps":"باز کردن در گوگل مپ",
     "Greetings from Venice ✶ Lös Angeles":"درود از ونیس ✶ لُس‌آنجلس",
     "Caspian Gothic: A Persian-inspired Californian blackletter that blends Tehrangeles street culture, Venice mural typography, and traditional Farsi forms into a distinctly Los Angeles visual language":"کاسپین گوتیک: یک بلک‌لتر کالیفرنیایی با الهام ایرانی که فرهنگ خیابانی تهرانجلس، تایپوگرافی دیواری ونیس و فرم‌های سنتی فارسی را در یک زبان بصری کاملاً لس‌آنجلسی می‌آمیزد.",
     "Walk in →":"بدون نوبت بیایید →",
