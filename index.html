@@ -562,8 +562,8 @@
   #pcShare.open{display:flex;}
   .pc-sheet{background:var(--cream);border-radius:16px;max-width:380px;width:100%;padding:30px 28px 26px;
     box-shadow:0 40px 90px -30px rgba(0,0,0,.6);position:relative;text-align:center;}
-  .pc-sheet .pc-close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;}
-  .pc-sheet .pc-card{width:100%;border-radius:4px;background:#fff;padding:10px;box-shadow:0 12px 30px -16px rgba(0,0,0,.5);margin-bottom:18px;border:1px solid var(--line);outline:1.5px solid rgba(27,25,22,.2);outline-offset:-16px;}
+  .pc-sheet .pc-close{position:absolute;top:6px;right:8px;background:none;border:0;font-size:24px;line-height:1;color:var(--ink-soft);cursor:pointer;z-index:4;}
+  .pc-sheet .pc-card{margin-top:14px;width:100%;border-radius:4px;background:#fff;padding:10px;box-shadow:0 12px 30px -16px rgba(0,0,0,.5);margin-bottom:18px;border:1px solid var(--line);outline:1.5px solid rgba(27,25,22,.2);outline-offset:-16px;}
   .pc-sheet h3{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:18px;}
   .pc-sheet p{color:var(--ink-soft);font-size:14px;margin-top:7px;line-height:1.5;}
   .pc-actions{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
@@ -718,7 +718,7 @@
 </div>
 
 <!-- floating order (mobile) -->
-<a class="float-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش ↗">Order ↗</a>
+<a class="float-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش">Order</a>
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
@@ -989,7 +989,7 @@ IN THE BEST WAY</h2>
     <h3 data-fa="یک کارت‌پستال بفرست">Send a postcard</h3>
     <p data-fa="مکان ما را با یک دوست به اشتراک بگذارید — کارت‌پستال به‌همراه لینک نقشه.">Invite your friends — our doors are open, and we are waiting for them.</p>
     <div class="pc-actions">
-      <button class="pc-act primary" id="pcNative" type="button" data-fa="ارسال کارت‌پستال (با عکس) ↗">Text the postcard ↗</button>
+      <button class="pc-act primary" id="pcNative" type="button" data-fa="ارسال کارت‌پستال (با عکس)">Text the postcard</button>
       <a class="pc-act wa" id="pcWhatsapp" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.5 6.5 0 01-1.9-1.2 7.2 7.2 0 01-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4 5.3 5.3 0 002.5.5 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>
         WhatsApp</a>
@@ -1223,7 +1223,7 @@ IN THE BEST WAY</h2>
     const sheet = document.getElementById('pcShare');
     if(!card || !sheet) return;
     const MAPS = 'https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291';
-    const msg = 'From Caspian with ❤️ — Sip a coffee, stay a while. Find us on the map: ' + MAPS;
+    const msg = 'From Caspian with ❤️ — Sip a coffee, stay a while. Find us in Venice: ' + MAPS;
     const nativeBtn = document.getElementById('pcNative');
     const waBtn = document.getElementById('pcWhatsapp');
     const copyBtn = document.getElementById('pcCopy');
@@ -1241,8 +1241,10 @@ IN THE BEST WAY</h2>
           return;
         }
       }catch(e){}
-      // Fallback: open a text (SMS) composer with the message pre-loaded
-      window.location.href = 'sms:?&body=' + encodeURIComponent(msg);
+      // Fallback (desktop/no file-share): open a text composer with the message pre-loaded
+      const a=document.createElement('a');
+      a.href='sms:?&body='+encodeURIComponent(msg);
+      document.body.appendChild(a); a.click(); a.remove();
     });
     copyBtn.addEventListener('click', async ()=>{
       try{ await navigator.clipboard.writeText(msg); }catch(e){}
