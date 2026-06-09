@@ -379,18 +379,17 @@
   @media (prefers-reduced-motion:reduce){.menu-track{animation:none;}.menu-band{overflow-x:auto;}}
   /* secret menu item — invisible-ink reveal */
   .drink.secret{position:relative;cursor:pointer;touch-action:none;}
-  .drink.secret > img{filter:blur(15px) saturate(.6) brightness(1.05);transition:filter .5s ease;}
-  .drink.secret.revealed > img{filter:none;}
-  .secret-veil{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-    text-align:center;padding:24px;color:#fff;z-index:2;transition:opacity .5s ease;
-    background:linear-gradient(135deg,rgba(160,84,46,.5),rgba(46,46,46,.55));
-    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);}
-  .secret-veil::before{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;pointer-events:none;
+  .drink.secret > img{filter:blur(22px) saturate(.5) brightness(.9);transition:filter .6s ease;transform:scale(1.1);}
+  .drink.secret.revealed > img{filter:none;transform:none;}
+  .secret-veil{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    text-align:center;padding:24px;color:#f4f0e7;z-index:2;transition:opacity .6s ease;
+    background:linear-gradient(160deg,#2e2a26 0%,#46342c 55%,#2e2a26 100%);}
+  .secret-veil::before{content:"";position:absolute;inset:0;opacity:.4;mix-blend-mode:soft-light;pointer-events:none;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   .drink.secret.revealed .secret-veil{opacity:0;pointer-events:none;}
-  .secret-veil .sm-eye{width:34px;height:auto;filter:brightness(0) invert(1);opacity:.9;position:relative;z-index:1;}
-  .secret-veil .sm-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.22em;font-size:13px;font-weight:700;position:relative;z-index:1;}
-  .secret-veil .sm-hint{font-family:var(--font-body);font-style:italic;font-size:12.5px;opacity:.85;position:relative;z-index:1;}
+  .menu-track .drink.secret .sm-eye{width:42px;height:auto;flex:0 0 auto;filter:brightness(0) invert(1);opacity:.96;position:relative;z-index:1;}
+  .secret-veil .sm-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.32em;font-size:11px;font-weight:600;position:relative;z-index:1;color:#f4f0e7;}
+  .secret-veil .sm-hint{font-family:var(--font-editorial,'Cormorant Garamond',serif);font-style:italic;font-size:14px;letter-spacing:.02em;opacity:.78;position:relative;z-index:1;margin-top:-4px;}
 
   /* ============ ORDER CTA ============ */
   .order-cta{background:var(--ink);color:var(--cream);text-align:center;padding:clamp(54px,7vw,92px) 0 clamp(60px,8vw,104px);}
