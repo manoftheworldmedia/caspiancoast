@@ -56,7 +56,7 @@
       d.appendChild(img);
       if (it.secret) {
         var veil = document.createElement('div'); veil.className = 'secret-veil';
-        veil.innerHTML = '<img class="sm-eye" src="img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">' +
+        veil.innerHTML = '<img class="sm-eye" src="/img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">' +
           (fa ? (it.secretLabel_fa || 'آیتم مخفی منو') : (it.secretLabel || 'Secret Menu Item')) + '</span>';
         d.appendChild(veil);
       }
@@ -143,7 +143,7 @@
     }
   }
   window.ccApply = apply;
-  fetch('content.json').then(function (r) { return r.json(); }).then(function (data) {
+  fetch('/content.json').then(function (r) { return r.json(); }).then(function (data) {
     CONTENT = data; applyTheme(); apply();
   }).catch(function () {});
   // re-apply on language toggle
