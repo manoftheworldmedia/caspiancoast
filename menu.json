@@ -1,4 +1,13 @@
 {
+  "hero": {
+    "eyebrow": "The Menu",
+    "eyebrow_fa": "منو",
+    "title": "Flavors of home",
+    "title_fa": "طعم‌های خانه",
+    "sub": "Persian spice, California light — iced or hot, you're our guest.",
+    "sub_fa": "ادویه‌ی ایرانی، نور کالیفرنیا — سرد یا گرم، شما مهمان ما هستید.",
+    "address": "1501 Main St, Ste 103 · Venice, CA 90291"
+  },
   "boards": [
     {
       "id": "summer-specials",

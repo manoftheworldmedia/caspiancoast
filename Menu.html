@@ -232,10 +232,10 @@
 <!-- HERO -->
 <section class="menu-hero">
   <img class="eye" src="img/eye-mark.png" alt="Caspian Coast eye emblem" />
-  <span class="eyebrow">The Menu</span>
-  <h1>Flavors of home</h1>
-  <p class="sub">Persian spice, California light — iced or hot, you're our guest.</p>
-  <p class="addr">1501 Main St, Ste 103 · Venice, CA 90291</p>
+  <span class="eyebrow" id="mhEyebrow">The Menu</span>
+  <h1 id="mhTitle">Flavors of home</h1>
+  <p class="sub" id="mhSub">Persian spice, California light — iced or hot, you're our guest.</p>
+  <p class="addr" id="mhAddr">1501 Main St, Ste 103 · Venice, CA 90291</p>
 </section>
 
 <!-- MENU BOARDS (original menu artwork) -->
@@ -280,13 +280,24 @@
     i18nEls.forEach(el=>{if(l==='fa'){el.innerHTML=el.dataset.fa;el.setAttribute('dir','rtl');}else{el.innerHTML=el._en;el.removeAttribute('dir');}});
     dictEls.forEach(el=>{if(l==='fa'){el.innerHTML=el._fa;el.classList.add('fa-text');el.setAttribute('dir','rtl');}else{el.innerHTML=el._enHTML;el.classList.remove('fa-text');el.removeAttribute('dir');}});
     langToggle.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));updateStatus();}
-  langToggle.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+  langToggle.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.lang);renderMenuHero();}));
   function updateStatus(){const el=document.getElementById('openStatus');const now=new Date();const hh=now.getHours()+now.getMinutes()/60;const open=hh>=7&&hh<20;el.classList.toggle('open',open);el.classList.toggle('closed',!open);const t=el.querySelector('.txt');t.textContent=LANG==='fa'?(open?'باز':'بسته'):(open?'Open':'Closed');t.setAttribute('dir',LANG==='fa'?'rtl':'ltr');}
   applyLang(LANG);setInterval(updateStatus,60000);
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   // Menu boards from menu.json (CMS-editable)
+  let MENU_HERO=null;
+  function renderMenuHero(){
+    if(!MENU_HERO) return;
+    const fa=document.body.classList.contains('lang-fa');
+    const set=(id,en,faV)=>{const el=document.getElementById(id);if(!el)return;el.textContent=(fa&&faV)?faV:en;el.classList.toggle('fa-text',fa&&!!faV);};
+    set('mhEyebrow',MENU_HERO.eyebrow,MENU_HERO.eyebrow_fa);
+    set('mhTitle',MENU_HERO.title,MENU_HERO.title_fa);
+    set('mhSub',MENU_HERO.sub,MENU_HERO.sub_fa);
+    set('mhAddr',MENU_HERO.address,MENU_HERO.address_fa);
+  }
   fetch('menu.json').then(r=>r.json()).then(data=>{
+    if(data.hero){ MENU_HERO=data.hero; renderMenuHero(); }
     const wrap=document.getElementById('menuBoards');
     const hint=wrap.querySelector('.board-hint');
     (data.boards||[]).forEach(b=>{
