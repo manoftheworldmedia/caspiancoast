@@ -445,9 +445,10 @@
   .ev{position:relative;aspect-ratio:3/3.4;overflow:hidden;border-radius:2px;display:flex;align-items:flex-end;}
   .ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.78);transition:transform 1s cubic-bezier(.16,1,.3,1),filter .5s;}
   .ev:hover img{transform:scale(1.06);filter:saturate(1) brightness(.9);}
-  .ev-body{position:relative;padding:22px;z-index:2;width:100%;background:linear-gradient(transparent,rgba(20,17,14,.85));}
+  .ev-body{position:relative;padding:22px;z-index:2;width:100%;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(transparent,rgba(20,17,14,.85));}
   .ev-body h3{font-size:21px;text-transform:uppercase;color:#fff;}
-  .ev-tag{display:inline-block;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:9px;font-weight:700;color:#fff;background:var(--clay);padding:4px 9px;border-radius:999px;margin-top:12px;}
+  .ev-meta{margin-top:12px;}
+  .ev-tag{display:inline-block;font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:9px;font-weight:700;color:#fff;background:var(--clay);padding:4px 9px;border-radius:999px;}
   .ev-when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;font-weight:600;color:var(--sage);margin-top:8px;}
   .ev-where{font-family:var(--font-body);font-size:12.5px;color:rgba(241,237,228,.85);margin-top:5px;line-height:1.4;}
   .ev-body .when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.2em;font-size:10.5px;font-weight:600;color:var(--sage);margin-top:8px;}
@@ -1337,9 +1338,11 @@ IN THE BEST WAY</h2>
           + '<button class="ev-add" type="button" aria-label="Add to calendar">'+ICON_G+'</button>'
           + '<div class="ev-body">'
           +   '<h3>'+(fa?ev.title_fa:ev.title)+'</h3>'
-          +   (ev.tag?'<span class="ev-tag">'+(fa?(ev.tag_fa||ev.tag):ev.tag)+'</span>':'')
-          +   '<div class="ev-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</div>'
-          +   (ev.locationLabel?'<div class="ev-where">'+(fa?ev.locationLabel_fa:ev.locationLabel)+'</div>':'')
+          +   '<div class="ev-meta">'
+          +     (ev.tag?'<span class="ev-tag">'+(fa?(ev.tag_fa||ev.tag):ev.tag)+'</span>':'')
+          +     '<div class="ev-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</div>'
+          +     (ev.locationLabel?'<div class="ev-where">'+(fa?ev.locationLabel_fa:ev.locationLabel)+'</div>':'')
+          +   '</div>'
           + '</div>';
         if(fa) a.querySelector('.ev-body').setAttribute('dir','rtl');
         const open = (e)=>{ e.stopPropagation(); openCal(ev, (e.currentTarget.closest('.ev')||e.currentTarget).getBoundingClientRect()); };
