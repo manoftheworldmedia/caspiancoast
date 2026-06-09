@@ -1,0 +1,320 @@
+# Pages CMS configuration for Caspian Coast Coffee
+# Docs: https://pagescms.org/docs
+# Edit Events, Menu, and FAQ from a dashboard that commits to GitHub.
+
+media:
+  - name: images
+    label: Photos
+    input: img
+    output: img
+
+content:
+  - name: events
+    label: Events & Calendar
+    type: file
+    path: events.json
+    icon: calendar
+    description: "One list for everything. Tick 'Featured' to make an event the big one at top. Pick a Date for one-time events, or a Weekday for weekly ones. Past dated events move to the site's 'Past events' automatically."
+    fields:
+      - name: events
+        label: Events
+        type: object
+        list: true
+        fields:
+          - { name: featured, label: "★ Featured? (show as the big event at top)", type: boolean }
+          - { name: title, label: Title (English), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: tag, label: "Tag (e.g. Featured Event, Watch Party, Weekly)", type: string }
+          - { name: tag_fa, label: Tag (Farsi), type: string }
+          - { name: image, label: Photo, type: image }
+          - { name: date, label: "Date — for a one-time event", type: date, options: { format: "yyyy-MM-dd" } }
+          - { name: recurDay, label: "OR Weekday for a weekly event — 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat (leave blank for one-time)", type: number }
+          - { name: start, label: "Start time (24h, e.g. 10:00)", type: string }
+          - { name: end, label: "End time (24h, e.g. 13:00)", type: string }
+          - { name: whenLabel, label: "When label shown on card (English, e.g. June 20 · 10AM–1PM)", type: string }
+          - { name: whenLabel_fa, label: "When label (Farsi)", type: string }
+          - { name: locationLabel, label: "Location shown on card (English, e.g. 📍 Venice Beach)", type: string }
+          - { name: locationLabel_fa, label: "Location shown on card (Farsi)", type: string }
+          - { name: location, label: "Full address (for Add to Calendar)", type: string }
+          - { name: description, label: Description (calendar invite), type: text }
+          - { name: archived, label: "Hide from site (manual archive)", type: boolean }
+          - { name: id, label: "Unique ID (lowercase, no spaces)", type: string }
+
+  - name: menu
+    label: Menu
+    type: file
+    path: menu.json
+    icon: book-open
+    fields:
+      - name: hero
+        label: Menu page header
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: sub, label: Subheadline (EN), type: text }
+          - { name: sub_fa, label: Subheadline (Farsi), type: text }
+          - { name: address, label: Address line, type: string }
+      - name: boards
+        label: Menu Boards (the menu images shown on the Menu page)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Board title (e.g. Summer 2026 Specials), type: string }
+          - { name: image, label: Menu image, type: image }
+          - { name: alt, label: "Image description (for accessibility/SEO)", type: string }
+          - { name: id, label: "Unique ID (lowercase, no spaces)", type: string }
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: faq.json
+    icon: help-circle
+    fields:
+      - name: items
+        label: Questions & Answers
+        type: object
+        list: true
+        fields:
+          - { name: q, label: Question (English), type: string }
+          - { name: q_fa, label: Question (Farsi), type: string }
+          - { name: a, label: Answer (English), type: text }
+          - { name: a_fa, label: Answer (Farsi), type: text }
+          - { name: open, label: "Open by default? (first item only)", type: boolean }
+          - { name: instagram, label: "Instagram link (optional — turns @handle into a link)", type: string }
+
+  - name: home
+    label: Home Page
+    type: file
+    path: content.json
+    icon: home
+    fields:
+      - name: theme
+        label: Fonts
+        type: object
+        fields:
+          - { name: fontDisplay, label: "Display / headlines font", type: select, options: { values: ["Archivo","Anton","Oswald","Bebas Neue","Poppins","Montserrat"] } }
+          - { name: fontSerif, label: "Logo / labels font", type: select, options: { values: ["Cinzel","Playfair Display","Cormorant Garamond","EB Garamond"] } }
+          - { name: fontBody, label: "Body font", type: select, options: { values: ["Jost","Inter","Work Sans","Nunito Sans","Mulish"] } }
+          - { name: fontEditorial, label: "Quotes / editorial font", type: select, options: { values: ["Cormorant Garamond","Playfair Display","Spectral","Newsreader"] } }
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: titleHtml, label: "Title (EN — <br> allowed)", type: string }
+          - { name: titleHtml_fa, label: "Title (Farsi — <br> allowed)", type: string }
+          - { name: subHtml, label: Subheadline (EN), type: text }
+          - { name: subHtml_fa, label: Subheadline (Farsi), type: text }
+      - name: carousel
+        label: Drinks Carousel
+        type: object
+        list: true
+        fields:
+          - { name: image, label: Drink photo, type: image }
+          - { name: alt, label: Description / alt (EN), type: string }
+          - { name: alt_fa, label: Description / alt (Farsi), type: string }
+          - { name: show, label: "Show in carousel?", type: boolean, default: true }
+          - { name: secret, label: "Secret menu item? (blurred until rubbed)", type: boolean, default: false }
+          - { name: secretLabel, label: "Secret label (EN)", type: string }
+          - { name: secretLabel_fa, label: "Secret label (Farsi)", type: string }
+      - name: contact
+        label: Contact & Hours
+        type: object
+        fields:
+          - { name: addressLine1, label: Address line 1 (EN), type: string }
+          - { name: addressLine2, label: Address line 2 (EN), type: string }
+          - { name: addressLine1_fa, label: Address line 1 (Farsi), type: string }
+          - { name: addressLine2_fa, label: Address line 2 (Farsi), type: string }
+          - { name: hours, label: Hours (EN), type: string }
+          - { name: hours_fa, label: Hours (Farsi), type: string }
+          - { name: hoursDetail, label: "Hours detail — near map (EN, use <br> per line)", type: string }
+          - { name: hoursDetail_fa, label: "Hours detail — near map (Farsi, use <br> per line)", type: string }
+          - { name: phone, label: Phone, type: string }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: instagramHandle, label: Instagram handle, type: string }
+          - { name: mapsUrl, label: Google Maps URL, type: string }
+          - { name: orderUrl, label: Order (Dripos) URL, type: string }
+      - name: images
+        label: Home Photos (in page order)
+        type: object
+        fields:
+          - name: heroInterior
+            label: "1 · Hero — interior"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: spiceJars
+            label: "2 · Intro — spice jars"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: bakeryBun
+            label: "3 · Bakery — seeded bun"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: bakerySpiral
+            label: "4 · Bakery — spiral bread"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: vibeWindow
+            label: "5 · The Space — window bench"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: vibeMural
+            label: "6 · The Space — mural"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: nostalgiaWoman
+            label: "7 · Nostalgia — family photo"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: nostalgiaRadio
+            label: "8 · Nostalgia — radio & tea"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: cupCeramic
+            label: "9 · Nostalgia — eye cup"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: nostalgiaMercedes
+            label: "10 · Nostalgia — Mercedes"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: merchShirt
+            label: "11 · Merch — tee"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: laPostcard
+            label: "12 · Footer — postcard"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+
+  - name: aboutpage
+    label: About Page
+    type: file
+    path: content.json
+    icon: book-open
+    fields:
+      - name: about
+        label: About — words
+        type: object
+        fields:
+          - { name: ledeHtml, label: Intro line (EN), type: text }
+          - { name: ledeHtml_fa, label: Intro line (Farsi), type: text }
+          - { name: p1, label: Paragraph 1 (EN), type: text }
+          - { name: p1_fa, label: Paragraph 1 (Farsi), type: text }
+          - { name: p2, label: Paragraph 2 (EN), type: text }
+          - { name: p2_fa, label: Paragraph 2 (Farsi), type: text }
+          - { name: p3, label: Paragraph 3 (EN), type: text }
+          - { name: p3_fa, label: Paragraph 3 (Farsi), type: text }
+          - { name: p4, label: Paragraph 4 (EN), type: text }
+          - { name: p4_fa, label: Paragraph 4 (Farsi), type: text }
+          - { name: p5, label: Paragraph 5 (EN), type: text }
+          - { name: p5_fa, label: Paragraph 5 (Farsi), type: text }
+          - { name: photoCaption, label: "Rahi & mom caption (EN)", type: string }
+          - { name: photoCaption_fa, label: "Rahi & mom caption (Farsi)", type: string }
+      - name: images
+        label: About — photos
+        type: object
+        fields:
+          - name: rahiMom
+            label: "Rahi & his mom"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt text (EN), type: string }
+              - { name: alt_fa, label: Alt text (Farsi), type: string }
+          - name: ownerPhoto
+            label: "Rahi portrait"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt text (EN), type: string }
+              - { name: alt_fa, label: Alt text (Farsi), type: string }
+          - name: aboutPoster
+            label: "Mural poster"
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt text (EN), type: string }
+              - { name: alt_fa, label: Alt text (Farsi), type: string }
+
+  - name: shop
+    label: Shop
+    type: file
+    path: shop.json
+    icon: shopping-bag
+    fields:
+      - name: intro
+        label: Shop intro
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: sub, label: Sub (EN), type: text }
+          - { name: sub_fa, label: Sub (Farsi), type: text }
+      - { name: purchaseUrl, label: "Default Buy link", type: string }
+      - name: sections
+        label: Product Sections
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Section title (EN), type: string }
+          - { name: title_fa, label: Section title (Farsi), type: string }
+          - { name: note, label: Section note (EN), type: string }
+          - { name: note_fa, label: Section note (Farsi), type: string }
+          - { name: id, label: "Section ID (lowercase)", type: string }
+          - name: products
+            label: Products
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name (EN), type: string }
+              - { name: name_fa, label: Name (Farsi), type: string }
+              - { name: desc, label: Description (EN), type: text }
+              - { name: desc_fa, label: Description (Farsi), type: text }
+              - { name: price, label: "Price (e.g. $38)", type: string }
+              - { name: image, label: Photo, type: image }
+              - { name: badge, label: "Badge (e.g. 1 of a kind)", type: string }
+              - { name: purchaseUrl, label: "Buy link (optional)", type: string }
+              - { name: id, label: "Product ID (lowercase)", type: string }
