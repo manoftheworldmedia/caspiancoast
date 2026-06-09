@@ -20,6 +20,8 @@
     "addressLine2_fa": "ونیس، کالیفرنیا ۹۰۲۹۱",
     "hours": "Mon–Thu 7am–5pm Fri & Sat 7am–7pm Sun 8am–4pm",
     "hours_fa": "هر روز باز · ۷ صبح — ۸ شب",
+    "hoursDetail": "Mon–Thu 7am–5pm<br>Fri &amp; Sat 7am–7pm<br>Sun 8am–4pm",
+    "hoursDetail_fa": "دوشنبه تا پنجشنبه ۷ صبح–۵ عصر<br>جمعه و شنبه ۷ صبح–۷ عصر<br>یکشنبه ۸ صبح–۴ عصر",
     "instagram": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
     "instagramHandle": "@caspiancoastcoffee",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291",
