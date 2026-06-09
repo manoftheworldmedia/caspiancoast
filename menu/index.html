@@ -333,7 +333,8 @@
     (data.boards||[]).forEach(b=>{
       const fig=document.createElement('figure');
       fig.className='board reveal in';
-      fig.innerHTML='<a href="'+b.image+'" target="_blank" rel="noopener" aria-label="Open '+(b.title||'menu')+' full size"><img src="'+b.image+'" alt="'+(b.alt||b.title||'Menu')+'" loading="lazy" /></a>';
+      var bsrc = /^(https?:|\/)/.test(b.image) ? b.image : '../'+b.image;
+      fig.innerHTML='<a href="'+bsrc+'" target="_blank" rel="noopener" aria-label="Open '+(b.title||'menu')+' full size"><img src="'+bsrc+'" alt="'+(b.alt||b.title||'Menu')+'" loading="lazy" /></a>';
       wrap.insertBefore(fig, hint);
     });
   }).catch(()=>{});

@@ -286,7 +286,7 @@ DESIGEND IN VENICE</h1>
         const cat=txt(sec,'title')||'';
         const art=document.createElement('article');
         art.className='prod reveal';
-        art.innerHTML='<div class="prod-img"><img src="'+p.image+'" alt="'+(txt(p,'name')||'')+'" loading="lazy" />'
+        art.innerHTML='<div class="prod-img"><img src="'+(/^(https?:|\/)/.test(p.image)?p.image:'../'+p.image)+'" alt="'+(txt(p,'name')||'')+'" loading="lazy" />'
           +(p.badge?'<span class="prod-badge">'+(fa&&p.badge_fa?p.badge_fa:p.badge)+'</span>':'')+'</div>'
           +'<div class="prod-body">'+(cat?'<span class="prod-cat">'+cat+'</span>':'')+'<h3>'+(txt(p,'name')||'')+'</h3>'
           +'<p class="pdesc">'+(txt(p,'desc')||'')+'</p>'

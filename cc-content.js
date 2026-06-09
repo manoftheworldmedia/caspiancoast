@@ -9,6 +9,11 @@
     return src.replace(/cc-content\.js(\?.*)?$/, '');
   })();
   function isFa() { return document.body.classList.contains('lang-fa'); }
+  function resolveSrc(src) {
+    if (!src) return src;
+    if (/^(https?:)?\/\//.test(src) || src.charAt(0) === '/') return src; // absolute
+    return BASE + src.replace(/^\.?\//, ''); // relative -> from site root
+  }
   function get(path) {
     return path.split('.').reduce(function (o, k) { return (o && o[k] != null) ? o[k] : null; }, CONTENT);
   }
@@ -19,14 +24,14 @@
     document.querySelectorAll('[data-cc-img]').forEach(function (el) {
       var o = get(el.getAttribute('data-cc-img'));
       if (!o) return;
-      if (o.src) { el.setAttribute('src', o.src); }
+      if (o.src) { el.setAttribute('src', resolveSrc(o.src)); }
       var alt = fa ? (o.alt_fa || o.alt) : o.alt;
       if (alt != null) el.setAttribute('alt', alt);
     });
     // CSS background images: data-cc-bg="images.key"
     document.querySelectorAll('[data-cc-bg]').forEach(function (el) {
       var o = get(el.getAttribute('data-cc-bg'));
-      if (o && o.src) el.style.backgroundImage = "url('" + o.src + "')";
+      if (o && o.src) el.style.backgroundImage = "url('" + resolveSrc(o.src) + "')";
     });
     // Text: data-cc-text="contact.hours" (uses <key>_fa when Farsi)
     document.querySelectorAll('[data-cc-text]').forEach(function (el) {
@@ -59,7 +64,7 @@
       if (dup) d.setAttribute('aria-hidden', 'true');
       var alt = dup ? '' : (fa ? (it.alt_fa || it.alt || '') : (it.alt || ''));
       var img = document.createElement('img');
-      img.setAttribute('src', it.image); img.setAttribute('alt', alt);
+      img.setAttribute('src', resolveSrc(it.image)); img.setAttribute('alt', alt);
       d.appendChild(img);
       if (it.secret) {
         var veil = document.createElement('div'); veil.className = 'secret-veil';
