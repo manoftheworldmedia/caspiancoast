@@ -5,6 +5,13 @@
     "fontBody": "Jost",
     "fontEditorial": "Cormorant Garamond"
   },
+  "carousel": [
+    { "image": "img/summer-junegloom.jpg", "alt": "June Gloom — espresso shakerato shaken into a creamy cloud of foam, finished with cinnamon", "alt_fa": "جون گلوم — اسپرسو شیکراتو با کف خامه‌ای و دارچین", "secret": true, "secretLabel": "Secret Menu Item", "secretLabel_fa": "آیتم مخفی منو", "show": true },
+    { "image": "img/summer-lavender.jpg", "alt": "Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream", "alt_fa": "مزارع اسطوخودوس — لاته با شیر، عسل و اسطوخودوس", "secret": false, "show": true },
+    { "image": "img/summer-icedtea.jpg", "alt": "Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu", "alt_fa": "چای سرد کاسپین — چای ایرانی با زعفران، گل رز، عسل و یوزو", "secret": false, "show": true },
+    { "image": "img/summer-hojicha.jpg", "alt": "Habibi Joon Hojicha — toasted Japanese green tea latte", "alt_fa": "حبیبی جون هوجیچا — لاته چای سبز ژاپنی برشته", "secret": false, "show": true },
+    { "image": "img/summer-saffrontonic.jpg", "alt": "Saffron Tonic — Fever Tree tonic with saffron syrup and lemon", "alt_fa": "تونیک زعفران — تونیک فیورتری با شربت زعفران و لیمو", "secret": false, "show": true }
+  ],
   "hero": {
     "eyebrow": "Persian Café · Venice Beach, Los Angeles",
     "eyebrow_fa": "کافه ایرانی · ونیس بیچ، لس‌آنجلس",

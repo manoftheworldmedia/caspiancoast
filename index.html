@@ -819,7 +819,7 @@ SERVED WITH CARE</h2>
     </div>
   </div>
   <div class="menu-band reveal" aria-label="Our summer drinks">
-    <div class="menu-track">
+    <div class="menu-track" id="drinksTrack" data-cc-carousel>
       <div class="drink secret" data-secret><img src="img/summer-junegloom.jpg" alt="June Gloom — espresso shakerato shaken into a creamy cloud of foam, finished with cinnamon" /><div class="secret-veil"><img class="sm-eye" src="img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">Secret Menu Item</span></div></div>
       <div class="drink"><img src="img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /></div>
       <div class="drink"><img src="img/summer-icedtea.jpg" alt="Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu" /></div>
@@ -1203,7 +1203,9 @@ IN THE BEST WAY</h2>
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   /* Secret menu — invisible-ink rub to reveal */
+  window.ccInitSecret = function(){
   document.querySelectorAll('.drink.secret[data-secret]').forEach(function(card){
+    if(card._secretInit) return; card._secretInit = true;
     var rub = 0, last = null;
     var veil = card.querySelector('.secret-veil');
     var img = card.querySelector(':scope > img');
@@ -1223,6 +1225,8 @@ IN THE BEST WAY</h2>
     card.addEventListener('pointerleave', function(){ last = null; });
     card.addEventListener('click', function(){ if(!card.classList.contains('revealed')){ rub += 130; setProgress(rub/520); } });
   });
+  };
+  window.ccInitSecret();
 
   /* ===== Events (data-driven) + Add to Calendar ===== */
   const evLang = () => document.body.classList.contains('lang-fa') ? 'fa' : 'en';

@@ -38,7 +38,34 @@
       var val = get(el.getAttribute('data-cc-href'));
       if (val) el.setAttribute('href', val);
     });
+    renderCarousel(fa);
   }
+  function renderCarousel(fa) {
+    var track = document.querySelector('[data-cc-carousel]');
+    if (!track || !CONTENT || !Array.isArray(CONTENT.carousel)) return;
+    var items = CONTENT.carousel.filter(function (it) { return it && it.show !== false && it.image; });
+    if (!items.length) return;
+    function card(it, dup) {
+      var d = document.createElement('div');
+      d.className = 'drink' + (it.secret ? ' secret' : '');
+      if (it.secret) d.setAttribute('data-secret', '');
+      if (dup) d.setAttribute('aria-hidden', 'true');
+      var alt = dup ? '' : (fa ? (it.alt_fa || it.alt || '') : (it.alt || ''));
+      var img = document.createElement('img');
+      img.setAttribute('src', it.image); img.setAttribute('alt', alt);
+      d.appendChild(img);
+      if (it.secret) {
+        var veil = document.createElement('div'); veil.className = 'secret-veil';
+        veil.innerHTML = '<img class="sm-eye" src="img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">' +
+          (fa ? (it.secretLabel_fa || 'آیتم مخفی منو') : (it.secretLabel || 'Secret Menu Item')) + '</span>';
+        d.appendChild(veil);
+      }
+      return d;
+    }
+    track.innerHTML = '';
+    items.forEach(function (it) { track.appendChild(card(it, false)); });
+    items.forEach(function (it) { track.appendChild(card(it, true)); }); // duplicate set for seamless loop
+    if (window.ccInitSecret) window.ccInitSecret();
   function applyTheme() {
     if (!CONTENT || !CONTENT.theme) return;
     var t = CONTENT.theme;
