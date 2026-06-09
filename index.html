@@ -459,10 +459,14 @@
   .past-events summary::after{content:"+";margin-left:auto;font-size:18px;color:var(--clay);transition:transform .3s;}
   .past-events[open] summary::after{transform:rotate(45deg);}
   .past-events summary:hover{color:var(--cream);}
-  .pe-list{list-style:none;margin:0;padding:0 0 8px;}
-  .pe-list li{display:flex;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid rgba(241,237,228,.08);}
-  .pe-when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:600;color:var(--sage);flex:0 0 auto;min-width:130px;}
-  .pe-title{font-family:var(--font-body);font-size:15px;color:rgba(241,237,228,.85);}
+  .pe-list{list-style:none;margin:0;padding:8px 0 8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+  .pe-list li{display:flex;flex-direction:column;border:0;padding:0;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.05);}
+  .pe-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:rgba(255,255,255,.06);}
+  .pe-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.82);transition:transform .8s cubic-bezier(.16,1,.3,1),filter .4s;}
+  .pe-list li:hover .pe-thumb img{transform:scale(1.05);filter:saturate(1) brightness(.95);}
+  .pe-body{padding:14px 15px 16px;}
+  .pe-when{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:600;color:var(--sage);display:block;}
+  .pe-title{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.01em;font-size:14px;color:#fff;margin-top:6px;line-height:1.15;display:block;}
   .ev-feature{display:grid;grid-template-columns:.78fr 1.22fr;border-radius:6px;overflow:hidden;margin-bottom:18px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);}
   .ev-feature .ef-img{position:relative;min-height:340px;}
   .ev-feature .ef-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 28%;}
@@ -1358,7 +1362,7 @@ IN THE BEST WAY</h2>
       if(past.length){
         pastWrap.style.display = '';
         const items = past.sort((a,b)=> (b._start?b._start.getTime():0) - (a._start?a._start.getTime():0)).map(ev=>
-          '<li><span class="pe-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</span><span class="pe-title">'+(fa?ev.title_fa:ev.title)+'</span></li>'
+          '<li><div class="pe-thumb"><img src="'+(ev.image||'img/eye-mark.png')+'" alt="'+(fa?ev.title_fa:ev.title)+'" loading="lazy" /></div><div class="pe-body"><span class="pe-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</span><span class="pe-title">'+(fa?ev.title_fa:ev.title)+'</span></div></li>'
         ).join('');
         pastWrap.innerHTML = '<details class="past-events"><summary>'+(fa?'رویدادهای گذشته':'Past events')+' ('+past.length+')</summary><ul class="pe-list">'+items+'</ul></details>';
         if(fa) pastWrap.querySelector('.past-events').setAttribute('dir','rtl');
