@@ -39,9 +39,30 @@
       if (val) el.setAttribute('href', val);
     });
   }
+  function applyTheme() {
+    if (!CONTENT || !CONTENT.theme) return;
+    var t = CONTENT.theme;
+    var map = { fontDisplay: '--font-display', fontSerif: '--font-serif', fontBody: '--font-body', fontEditorial: '--font-edit' };
+    var fams = [];
+    Object.keys(map).forEach(function (k) {
+      if (t[k]) {
+        document.documentElement.style.setProperty(map[k], "'" + t[k] + "', sans-serif");
+        if (fams.indexOf(t[k]) === -1) fams.push(t[k]);
+      }
+    });
+    // inject a Google Fonts link for any chosen families (weights cover display/body needs)
+    if (fams.length) {
+      var href = 'https://fonts.googleapis.com/css2?' + fams.map(function (f) {
+        return 'family=' + f.replace(/ /g, '+') + ':ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500';
+      }).join('&') + '&display=swap';
+      var link = document.getElementById('cc-theme-fonts');
+      if (!link) { link = document.createElement('link'); link.id = 'cc-theme-fonts'; link.rel = 'stylesheet'; document.head.appendChild(link); }
+      link.href = href;
+    }
+  }
   window.ccApply = apply;
   fetch('content.json').then(function (r) { return r.json(); }).then(function (data) {
-    CONTENT = data; apply();
+    CONTENT = data; applyTheme(); apply();
   }).catch(function () {});
   // re-apply on language toggle
   document.querySelectorAll('#langToggle button').forEach(function (b) {

@@ -1,4 +1,10 @@
 {
+  "theme": {
+    "fontDisplay": "Archivo",
+    "fontSerif": "Cinzel",
+    "fontBody": "Jost",
+    "fontEditorial": "Cormorant Garamond"
+  },
   "hero": {
     "eyebrow": "Persian Café · Venice Beach, Los Angeles",
     "eyebrow_fa": "کافه ایرانی · ونیس بیچ، لس‌آنجلس",
