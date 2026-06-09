@@ -66,6 +66,59 @@
     items.forEach(function (it) { track.appendChild(card(it, false)); });
     items.forEach(function (it) { track.appendChild(card(it, true)); }); // duplicate set for seamless loop
     if (window.ccInitSecret) window.ccInitSecret();
+    setTimeout(initMarquees, 50);
+  }
+  /* Auto-scroll carousels + manual drag, with idle auto-resume (site-wide on .menu-band) */
+  function initMarquees() {
+    document.querySelectorAll('.menu-band').forEach(function (band) {
+      if (band._marq) { band._marq.refresh(); return; }
+      var track = band.querySelector('.menu-track');
+      if (!track) return;
+      var speed = 0.55, paused = false, idle = null, raf = null;
+      function half() { return track.scrollWidth / 2; }
+      function resumeSoon() { clearTimeout(idle); idle = setTimeout(function () { paused = false; }, 1600); }
+      function pause() { paused = true; clearTimeout(idle); }
+      function tick() {
+        if (!paused) {
+          band.scrollLeft += speed;
+          var h = half();
+          if (h > 0 && band.scrollLeft >= h) band.scrollLeft -= h;
+        }
+        raf = requestAnimationFrame(tick);
+      }
+      // wheel / native touch scroll → pause then resume
+      band.addEventListener('wheel', function () { pause(); resumeSoon(); }, { passive: true });
+      band.addEventListener('touchstart', function () { pause(); }, { passive: true });
+      band.addEventListener('touchend', function () { resumeSoon(); }, { passive: true });
+      band.addEventListener('scroll', function () {
+        var h = half();
+        if (h > 0 && band.scrollLeft >= h) band.scrollLeft -= h;
+        else if (band.scrollLeft <= 0) band.scrollLeft += h;
+      }, { passive: true });
+      // mouse drag
+      var down = false, sx = 0, sl = 0, moved = false;
+      band.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch') return;
+        down = true; moved = false; sx = e.clientX; sl = band.scrollLeft; pause();
+        band.classList.add('dragging');
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - sx;
+        if (Math.abs(dx) > 3) moved = true;
+        band.scrollLeft = sl - dx;
+      });
+      window.addEventListener('pointerup', function () {
+        if (!down) return;
+        down = false; band.classList.remove('dragging'); resumeSoon();
+      });
+      // block click-through after a drag (so secret card etc. don't fire)
+      band.addEventListener('click', function (e) { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+      band._marq = { refresh: function () {} };
+      raf = requestAnimationFrame(tick);
+    });
+  }
+  window.ccInitMarquees = initMarquees;
   function applyTheme() {
     if (!CONTENT || !CONTENT.theme) return;
     var t = CONTENT.theme;
