@@ -1,5 +1,3 @@
-The reason it isn't showing is almost certainly that .pages.yml never made it into the repo — macOS Finder hides dot-files, so it gets left out of the zip upload. The fix: paste the config directly into Pages CMS. In Pages CMS go to Settings → Configuration (the editor for .pages.yml), select-all, delete, and paste this in, then Save:
-
 media:
   - name: images
     label: Photos
