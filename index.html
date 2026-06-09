@@ -364,13 +364,12 @@
   .menu-head .menu-lead{margin-top:26px;max-width:52ch;}
   .menu-head h2{font-size:clamp(28px,3.4vw,48px);text-transform:uppercase;}
   .menu-head p{color:var(--ink-soft);max-width:34ch;}
-  /* drinks band (auto-scroll + manual drag) */
-  .menu-band{overflow-x:auto;overflow-y:hidden;padding:4px 0 6px;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;
+  /* drinks band (auto-scroll + manual drag, transform-based infinite) */
+  .menu-band{overflow:hidden;padding:4px 0 6px;cursor:grab;touch-action:pan-y;
     -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
     mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
-  .menu-band::-webkit-scrollbar{display:none;}
   .menu-band.dragging{cursor:grabbing;}
-  .menu-track{display:flex;width:max-content;}
+  .menu-track{display:flex;width:max-content;will-change:transform;}
   .menu-track .drink{flex:0 0 auto;margin-right:22px;height:clamp(420px,52vw,560px);
     border-radius:5px;overflow:hidden;background:var(--cream-2);
     box-shadow:0 20px 44px -30px rgba(27,25,22,.45);}
