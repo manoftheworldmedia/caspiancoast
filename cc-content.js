@@ -1,6 +1,13 @@
 /* Caspian Coast — general content loader (CMS-editable copy & images from content.json) */
 (function () {
   var CONTENT = null;
+  // Base URL = directory containing this script (works from / and /menu/ etc.)
+  var BASE = (function () {
+    var s = document.currentScript;
+    if (!s) { var ss = document.getElementsByTagName('script'); for (var i = 0; i < ss.length; i++) { if (/cc-content\.js/.test(ss[i].src)) { s = ss[i]; break; } } }
+    var src = s ? s.src : 'cc-content.js';
+    return src.replace(/cc-content\.js(\?.*)?$/, '');
+  })();
   function isFa() { return document.body.classList.contains('lang-fa'); }
   function get(path) {
     return path.split('.').reduce(function (o, k) { return (o && o[k] != null) ? o[k] : null; }, CONTENT);
@@ -56,7 +63,7 @@
       d.appendChild(img);
       if (it.secret) {
         var veil = document.createElement('div'); veil.className = 'secret-veil';
-        veil.innerHTML = '<img class="sm-eye" src="/img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">' +
+        veil.innerHTML = '<img class="sm-eye" src="' + BASE + 'img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">' +
           (fa ? (it.secretLabel_fa || 'آیتم مخفی منو') : (it.secretLabel || 'Secret Menu Item')) + '</span>';
         d.appendChild(veil);
       }
@@ -143,11 +150,43 @@
     }
   }
   window.ccApply = apply;
-  fetch('/content.json').then(function (r) { return r.json(); }).then(function (data) {
+  fetch(BASE + 'content.json').then(function (r) { return r.json(); }).then(function (data) {
     CONTENT = data; applyTheme(); apply();
   }).catch(function () {});
   // re-apply on language toggle
   document.querySelectorAll('#langToggle button').forEach(function (b) {
     b.addEventListener('click', function () { setTimeout(apply, 0); });
   });
+  // Clean scroll: smooth-scroll to in-page sections and never show "#" in the URL
+  (function () {
+    function navH() { var n = document.querySelector('header.nav'); return n ? n.getBoundingClientRect().height + 12 : 80; }
+    function scrollToHash(hash, smooth) {
+      var el = document.querySelector(hash);
+      if (!el) return false;
+      var y = el.getBoundingClientRect().top + window.pageYOffset - navH();
+      window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
+      return true;
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href*="#"]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var hi = href.indexOf('#'); if (hi < 0) return;
+      var hash = href.slice(hi);              // "#cafe"
+      var path = href.slice(0, hi);           // "", "/", "../" etc.
+      // only intercept if that section exists on THIS page
+      if (document.querySelector(hash)) {
+        e.preventDefault();
+        scrollToHash(hash, true);
+        history.replaceState(null, '', location.pathname + location.search);
+        var mm = document.getElementById('mobileMenu'); if (mm) mm.classList.remove('open');
+      }
+      // else: link points to a section on another page — let it navigate; that page strips the hash on load
+    });
+    // On load: if arriving with a hash (cross-page jump), scroll then strip it
+    if (location.hash && location.hash.length > 1) {
+      var h = location.hash;
+      setTimeout(function () { scrollToHash(h, false); history.replaceState(null, '', location.pathname + location.search); }, 200);
+    }
+  })();
 })();
