@@ -13,50 +13,78 @@
     "subHtml": "Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.",
     "subHtml_fa": "کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند."
   },
-  "about": {
-    "ledeHtml": "Caspian Coast Coffee was born from a desire to bring people together through the warmth of coffee and the richness of <em>story</em>.",
-    "ledeHtml_fa": "کاسپین کوست کافی از آرزویی زاده شد: گرد هم آوردن مردم با گرمای قهوه و غنای <em>داستان</em>.",
-    "p1": "For me, this isn't just a business — it's a continuation of a journey that began long before I was born.",
-    "p1_fa": "برای من این فقط یک کسب‌وکار نیست — ادامه‌ی سفری است که خیلی پیش از تولدم آغاز شد.",
-    "p2": "My family's story is one of courage, resilience, and hope. They crossed oceans and borders to build a new life in California, carrying with them the flavors, traditions, and values of their homeland.",
-    "p2_fa": "داستان خانواده‌ام داستان شجاعت، پایداری و امید است. آن‌ها از اقیانوس‌ها و مرزها گذشتند تا در کالیفرنیا زندگی تازه‌ای بسازند و طعم‌ها، سنت‌ها و ارزش‌های سرزمینشان را با خود آوردند.",
-    "p3": "In our kitchen, the aroma of freshly brewed tea and the sound of laughter were constants — reminders that no matter how far we'd traveled, our heritage lived in the everyday moments we shared.",
-    "p3_fa": "در آشپزخانه‌ی ما، عطر چای تازه‌دم و صدای خنده همیشگی بود — یادآور این‌که هر چقدر هم دور شده باشیم، میراث ما در لحظه‌های روزمره‌ای که با هم داشتیم زنده بود.",
-    "p4": "This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.",
-    "p4_fa": "این کافه جشن آن میراث است؛ جایی که فرهنگ‌ها به هم می‌رسند، جایی که دستورها و ایده‌ها به آزادیِ مردم سفر می‌کنند، و هر فنجان داستانی می‌گوید — داستان من، خانواده‌ام، و شاید داستان شما.",
-    "p5": "At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.",
-    "p5_fa": "در کاسپین کوست کافی می‌خواهیم فضایی بسازیم که هم جهانی و هم عمیقاً محلی باشد: ریشه در انرژی پرشور ونیس بیچ، و آغشته به گرما و مهمان‌نوازی سواحل خزر. هر جزئیات، از دانه‌ها تا موسیقی‌ای که می‌نوازیم، با قصد انتخاب شده — برای بزرگداشت گذشته، جشن اکنون و الهام به پیوند.",
-    "photoCaption": "Rahi and his mom.",
-    "photoCaption_fa": "راهی و مادرش."
-  },
   "contact": {
     "addressLine1": "1501 Main St, Unit 103",
     "addressLine2": "Venice, CA 90291",
     "addressLine1_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳",
     "addressLine2_fa": "ونیس، کالیفرنیا ۹۰۲۹۱",
-    "hours": "Open Daily · 7AM — 8PM",
+    "hours": "Open Daily · 7AM — 5PM",
     "hours_fa": "هر روز باز · ۷ صبح — ۸ شب",
-    "phone": "",
     "instagram": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
     "instagramHandle": "@caspiancoastcoffee",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291",
     "orderUrl": "https://order.dripos.com/Caspian-Coast"
   },
   "images": {
-    "heroInterior": { "src": "img/hero-interior.jpg", "alt": "Inside Caspian Coast Coffee, Venice — the Woman Life Freedom mural by Parisa Parnian, the Caspian Coast lion flag, and tiled bench seating", "alt_fa": "داخل کاسپین کوست کافی، ونیس — نقاشی دیواری زن زندگی آزادی اثر پریسا پرنیان" },
-    "spiceJars": { "src": "img/spice-jars.jpg", "alt": "Jars of cardamom, dried rose, pistachio, cinnamon, saffron and cocoa at Caspian Coast Coffee", "alt_fa": "ظرف‌های هل، گل رز خشک، پسته، دارچین، زعفران و کاکائو در کاسپین کوست کافی" },
-    "bakeryBun": { "src": "img/bakery-bun.jpg", "alt": "Seeded Persian bun with a heart latte in an eye cup at Caspian Coast Coffee", "alt_fa": "نان کنجدی ایرانی با لاته‌ی قلبی در فنجان چشمی" },
-    "bakerySpiral": { "src": "img/bakery-spiral.jpg", "alt": "Spiral barbari-style Persian bread with a heart latte in an eye cup", "alt_fa": "نان بربری مارپیچ ایرانی با لاته‌ی قلبی در فنجان چشمی" },
-    "vibeWindow": { "src": "img/vibe-window.jpg", "alt": "A couple on the tiled window bench at Caspian Coast Coffee, Venice, with the Persian teapot mural and Free Iran poster", "alt_fa": "زوجی روی نیمکت کاشی‌کاری کنار پنجره در کاسپین کوست کافی، ونیس" },
-    "vibeMural": { "src": "img/vibe-mural-woman.jpg", "alt": "The Woman, Life, Freedom mural by Parisa Parnian inside Caspian Coast Coffee", "alt_fa": "نقاشی دیواری زن، زندگی، آزادی اثر پریسا پرنیان در کاسپین کوست کافی" },
-    "nostalgiaWoman": { "src": "img/nostalgia-woman.jpg", "alt": "Vintage black and white family photograph", "alt_fa": "عکس قدیمی سیاه و سفید خانوادگی" },
-    "nostalgiaRadio": { "src": "img/nostalgia-radio.jpg", "alt": "Vintage radio and Persian tea by the Caspian Sea", "alt_fa": "رادیوی قدیمی و چای ایرانی کنار دریای خزر" },
-    "cupCeramic": { "src": "img/cup-ceramic.jpg", "alt": "Handmade speckled ceramic eye cup", "alt_fa": "فنجان سرامیکی دست‌ساز چشمی" },
-    "nostalgiaMercedes": { "src": "img/nostalgia-mercedes.jpg", "alt": "Vintage red Mercedes parked in front of Persian rugs", "alt_fa": "مرسدس قرمز قدیمی در برابر فرش‌های ایرانی" },
-    "merchShirt": { "src": "img/merch-shirt.jpg", "alt": "Los Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice", "alt_fa": "تی‌شرت لس‌آنجلس با تایپوگرافی کاسپین گوتیک" },
-    "laPostcard": { "src": "img/la-postcard.jpg", "alt": "Los Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian", "alt_fa": "لس‌آنجلس — خوش‌نویسی دستی کاسپین گوتیک با قلب قرمز" },
-    "aboutPoster": { "src": "img/la-mural-full.jpg", "alt": "The Los Angeles mural by Parisa Parnian — a couple beside a vintage car beneath hand-painted lettering", "alt_fa": "نقاشی دیواری لس‌آنجلس اثر پریسا پرنیان" },
-    "ownerPhoto": { "src": "img/owner-rahi.jpg", "alt": "Rahi, founder of Caspian Coast Coffee, in front of the Los Angeles mural in Venice", "alt_fa": "راهی، بنیان‌گذار کاسپین کوست کافی، در برابر نقاشی دیواری لس‌آنجلس" },
-    "rahiMom": { "src": "img/rahi-mom.jpg", "alt": "Rahi as a boy with his mother, blowing out birthday candles", "alt_fa": "راهی در کودکی همراه مادرش" }
+    "heroInterior": {
+      "src": "img/hero-interior.jpg",
+      "alt": "Inside Caspian Coast Coffee, Venice — the Woman Life Freedom mural by Parisa Parnian, the Caspian Coast lion flag, and tiled bench seating",
+      "alt_fa": "داخل کاسپین کوست کافی، ونیس — نقاشی دیواری زن زندگی آزادی اثر پریسا پرنیان"
+    },
+    "spiceJars": {
+      "src": "img/spice-jars.jpg",
+      "alt": "Jars of cardamom, dried rose, pistachio, cinnamon, saffron and cocoa at Caspian Coast Coffee",
+      "alt_fa": "ظرف‌های هل، گل رز خشک، پسته، دارچین، زعفران و کاکائو در کاسپین کوست کافی"
+    },
+    "bakeryBun": {
+      "src": "img/bakery-bun.jpg",
+      "alt": "Seeded Persian bun with a heart latte in an eye cup at Caspian Coast Coffee",
+      "alt_fa": "نان کنجدی ایرانی با لاته‌ی قلبی در فنجان چشمی"
+    },
+    "bakerySpiral": {
+      "src": "img/bakery-spiral.jpg",
+      "alt": "Spiral barbari-style Persian bread with a heart latte in an eye cup",
+      "alt_fa": "نان بربری مارپیچ ایرانی با لاته‌ی قلبی در فنجان چشمی"
+    },
+    "vibeWindow": {
+      "src": "img/vibe-window.jpg",
+      "alt": "A couple on the tiled window bench at Caspian Coast Coffee, Venice, with the Persian teapot mural and Free Iran poster",
+      "alt_fa": "زوجی روی نیمکت کاشی‌کاری کنار پنجره در کاسپین کوست کافی، ونیس"
+    },
+    "vibeMural": {
+      "src": "img/vibe-mural-woman.jpg",
+      "alt": "The Woman, Life, Freedom mural by Parisa Parnian inside Caspian Coast Coffee",
+      "alt_fa": "نقاشی دیواری زن، زندگی، آزادی اثر پریسا پرنیان در کاسپین کوست کافی"
+    },
+    "nostalgiaWoman": {
+      "src": "img/nostalgia-woman.jpg",
+      "alt": "Vintage black and white family photograph",
+      "alt_fa": "عکس قدیمی سیاه و سفید خانوادگی"
+    },
+    "nostalgiaRadio": {
+      "src": "img/nostalgia-radio.jpg",
+      "alt": "Vintage radio and Persian tea by the Caspian Sea",
+      "alt_fa": "رادیوی قدیمی و چای ایرانی کنار دریای خزر"
+    },
+    "cupCeramic": {
+      "src": "img/cup-ceramic.jpg",
+      "alt": "Handmade speckled ceramic eye cup",
+      "alt_fa": "فنجان سرامیکی دست‌ساز چشمی"
+    },
+    "nostalgiaMercedes": {
+      "src": "img/nostalgia-mercedes.jpg",
+      "alt": "Vintage red Mercedes parked in front of Persian rugs",
+      "alt_fa": "مرسدس قرمز قدیمی در برابر فرش‌های ایرانی"
+    },
+    "merchShirt": {
+      "src": "img/merch-shirt.jpg",
+      "alt": "Los Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice",
+      "alt_fa": "تی‌شرت لس‌آنجلس با تایپوگرافی کاسپین گوتیک"
+    },
+    "laPostcard": {
+      "src": "img/la-postcard.jpg",
+      "alt": "Los Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian",
+      "alt_fa": "لس‌آنجلس — خوش‌نویسی دستی کاسپین گوتیک با قلب قرمز"
+    }
   }
 }
