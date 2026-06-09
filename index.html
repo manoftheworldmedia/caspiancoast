@@ -1300,7 +1300,14 @@ IN THE BEST WAY</h2>
     const past = all.filter(e => (isPastEvent(e) || e.archived) && e.recurDay == null);
     // featured = first event toggled featured (and upcoming), else the first upcoming
     let feature = upcoming.find(e => e.featured) || upcoming[0] || null;
-    const gridEvents = upcoming.filter(e => e !== feature);
+    const gridEvents = upcoming.filter(e => e !== feature).sort((a,b)=>{
+      const aRec = a.recurDay != null, bRec = b.recurDay != null;
+      if(aRec !== bRec) return aRec ? 1 : -1;            // weekly/recurring events go to the end
+      if(aRec && bRec) return (a.recurDay - b.recurDay);  // among recurring, order by weekday
+      const at = a._start ? a._start.getTime() : Infinity; // dated events: soonest first
+      const bt = b._start ? b._start.getTime() : Infinity;
+      return at - bt;
+    });
 
     // ---- featured card ----
     const feat = document.getElementById('eventFeatured');
