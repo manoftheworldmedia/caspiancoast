@@ -94,6 +94,37 @@
       "src": "img/la-postcard.jpg",
       "alt": "Los Angeles — Caspian Gothic hand-lettering with a red heart, by Parisa Parnian",
       "alt_fa": "لس‌آنجلس — خوش‌نویسی دستی کاسپین گوتیک با قلب قرمز"
+    },
+    "aboutPoster": {
+      "src": "img/la-mural-full.jpg",
+      "alt": "The LÖS Angeles mural by Parisa Parnian — a couple beside a vintage car beneath hand-painted lettering",
+      "alt_fa": "نقاشی دیواری لس‌آنجلس اثر پریسا پرنیان — زوجی کنار یک ماشین قدیمی"
+    },
+    "ownerPhoto": {
+      "src": "img/owner-rahi.jpg",
+      "alt": "Rahi, founder of Caspian Coast Coffee, in front of the LÖS Angeles mural in Venice",
+      "alt_fa": "راهی، بنیان‌گذار کاسپین کوست کافی، در برابر نقاشی دیواری لس‌آنجلس در ونیس"
+    },
+    "rahiMom": {
+      "src": "img/rahi-mom.jpg",
+      "alt": "Rahi as a boy with his mother, blowing out birthday candles",
+      "alt_fa": "راهی در کودکی همراه مادرش، در حال فوت کردن شمع‌های تولد"
     }
+  },
+  "about": {
+    "ledeHtml": "Caspian Coast Coffee was born from a desire to bring people together through the warmth of coffee and the richness of <em>story</em>.",
+    "ledeHtml_fa": "کاسپین کوست کافی از آرزوی گرد هم آوردن مردم از طریق گرمای قهوه و غنای <em>قصه</em> زاده شد.",
+    "p1": "For me, this isn't just a business — it's a continuation of a journey that began long before I was born.",
+    "p1_fa": "برای من، این فقط یک کسب‌وکار نیست — ادامهٔ سفری است که خیلی پیش از تولد من آغاز شد.",
+    "p2": "My family's story is one of courage, resilience, and hope. They crossed oceans and borders to build a new life in California, carrying with them the flavors, traditions, and values of their homeland.",
+    "p2_fa": "داستان خانوادهٔ من داستان شجاعت، پایداری و امید است. آن‌ها از اقیانوس‌ها و مرزها گذشتند تا در کالیفرنیا زندگی تازه‌ای بسازند و طعم‌ها، سنت‌ها و ارزش‌های سرزمینشان را با خود آوردند.",
+    "p3": "In our kitchen, the aroma of freshly brewed tea and the sound of laughter were constants — reminders that no matter how far we'd traveled, our heritage lived in the everyday moments we shared.",
+    "p3_fa": "در آشپزخانهٔ ما، عطر چای تازه‌دم و صدای خنده همیشگی بود — یادآور اینکه هر چقدر هم دور شده باشیم، میراث ما در لحظه‌های روزمره‌ای که با هم داشتیم زنده بود.",
+    "p4": "This shop is a celebration of that heritage. It's a place where cultures meet, where recipes and ideas travel as freely as people do, and where every cup tells a story — mine, my family's, and perhaps yours too.",
+    "p4_fa": "این کافه جشن آن میراث است. جایی که فرهنگ‌ها به هم می‌رسند، جایی که دستورها و ایده‌ها به آزادیِ آدم‌ها سفر می‌کنند، و جایی که هر فنجان قصه‌ای می‌گوید — قصهٔ من، خانواده‌ام، و شاید شما.",
+    "p5": "At Caspian Coast Coffee, we aim to create a space that feels both worldly and deeply local: rooted in the vibrant energy of Venice Beach, yet infused with the warmth and hospitality of the Caspian shores. Every detail, from the beans we select to the music we play, is chosen with intention — to honor the past, celebrate the present, and inspire connection.",
+    "p5_fa": "در کاسپین کوست کافی می‌خواهیم فضایی بسازیم که هم جهانی و هم عمیقاً محلی باشد: ریشه در انرژی پرشور ونیس بیچ، و آغشته به گرما و مهمان‌نوازی سواحل خزر. هر جزئیات، از دانه‌هایی که انتخاب می‌کنیم تا موسیقی‌ای که می‌نوازیم، با قصد انتخاب شده — برای بزرگداشت گذشته، جشن اکنون و الهام به پیوند.",
+    "photoCaption": "Rahi and his mom.",
+    "photoCaption_fa": "راهی و مادرش."
   }
 }
