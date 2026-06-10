@@ -20,7 +20,12 @@
     "body": "We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.",
     "body_fa": "ما لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — ادویهٔ ایرانی در دل نور کالیفرنیا. اسپرسوی ما همین‌جا در لس‌آنجلس توسط سایت‌گلس کافی رُست می‌شود، و باقی را به ساحل می‌سپاریم: مرکبات، نسیم شور دریا و ریتم آرام ونیس.",
     "flavorsLabel": "Flavors we build with",
-    "flavorsLabel_fa": "طعم‌هایی که با آن‌ها می‌سازیم"
+    "flavorsLabel_fa": "طعم‌هایی که با آن‌ها می‌سازیم",
+    "image": {
+      "src": "img/spice-jars.jpg",
+      "alt": "Jars of cardamom, dried rose, pistachio, cinnamon, saffron and cocoa at Caspian Coast Coffee",
+      "alt_fa": "ظرف‌های هل، گل رز خشک، پسته، دارچین، زعفران و کاکائو در کاسپین کوست کافی"
+    }
   },
   "hero": {
     "eyebrow": "Persian Café · Venice Beach, Los Angeles",
