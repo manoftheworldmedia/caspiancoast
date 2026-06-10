@@ -796,11 +796,11 @@
   <img class="scroll-wm right mid" src="img/logo-green.png" alt="" aria-hidden="true" />
   <div class="wrap">
     <div class="reveal intro-copy">
-      <p class="q">Is this a Persian café?</p>
-      <h2>YES —
+      <p class="q" data-cc-html="intro.q">Is this a Persian café?</p>
+      <h2 data-cc-html="intro.titleHtml">YES —
 AND THEN SOME</h2>
-      <p class="body-copy">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.</p>
-      <span class="eyebrow flavors-label">Flavors we build with</span>
+      <p class="body-copy" data-cc-html="intro.body">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.</p>
+      <span class="eyebrow flavors-label" data-cc-html="intro.flavorsLabel">Flavors we build with</span>
       <div class="spices">
         <span class="chip">Saffron</span>
         <span class="chip">Cardamom</span>
@@ -1163,7 +1163,7 @@ IN THE BEST WAY</h2>
     "Walk in →":"بدون نوبت بیایید →",
     "Scroll":"اسکرول"
   };
-  const T_SEL = ".intro .q,.intro h2,.intro .body-copy,.flavors-label,.chip,.menu-head .eyebrow,.menu-head h2,.menu-lead p,.menu-lead a,.bakery-copy .eyebrow,.bakery-copy h2,.bakery-copy p,.vibe-head .eyebrow,.vibe-head h2,.vibe-head p,.vibe-grid figcaption,.nost-head .eyebrow,.nost-head h2,.nost-head p,.frame .label,.pull blockquote,.pull cite,.merch-copy .eyebrow,.merch-copy h2,.merch-copy p,.merch-copy .link-arrow,.events-head .eyebrow,.events-head h2,.events-head .link-arrow,.ev-body h3,.ev-body .when,.faq-aside .eyebrow,.faq-aside h2,.faq-aside p,.faq-aside .yes,.qa summary,.qa .a,.come .eyebrow,.info-row .big,.come .hand,.come .link-arrow,.map-cta,.la-band figcaption,.la-sub,.hero .link-arrow,.scroll-cue span";
+  const T_SEL = ".chip,.menu-head .eyebrow,.menu-head h2,.menu-lead p,.menu-lead a,.bakery-copy .eyebrow,.bakery-copy h2,.bakery-copy p,.vibe-head .eyebrow,.vibe-head h2,.vibe-head p,.vibe-grid figcaption,.nost-head .eyebrow,.nost-head h2,.nost-head p,.frame .label,.pull blockquote,.pull cite,.merch-copy .eyebrow,.merch-copy h2,.merch-copy p,.merch-copy .link-arrow,.events-head .eyebrow,.events-head h2,.events-head .link-arrow,.ev-body h3,.ev-body .when,.faq-aside .eyebrow,.faq-aside h2,.faq-aside p,.faq-aside .yes,.qa summary,.qa .a,.come .eyebrow,.info-row .big,.come .hand,.come .link-arrow,.map-cta,.la-band figcaption,.la-sub,.hero .link-arrow,.scroll-cue span";
   const dictEls = [];
   document.querySelectorAll(T_SEL).forEach(el => {
     if(el.closest('[data-fa]')) return;
@@ -1185,6 +1185,7 @@ IN THE BEST WAY</h2>
       else { el.innerHTML = el._enHTML; el.classList.remove('fa-text'); el.removeAttribute('dir'); }
     });
     langToggle.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+    if(window.ccApply) window.ccApply();
     updateStatus();
   }
   langToggle.querySelectorAll('button').forEach(b =>
