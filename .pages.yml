@@ -10,30 +10,31 @@ content:
     type: file
     path: events.json
     icon: calendar
+    description: "One list for everything. Tick 'Featured' to make an event the big one at top. Pick a Date for one-time events, or a Weekday for weekly ones. Past dated events move to the site's 'Past events' automatically."
     fields:
       - name: events
         label: Events
         type: object
         list: true
         fields:
-          - { name: featured, label: "★ Featured? (big event at top)", type: boolean }
+          - { name: featured, label: "★ Featured? (show as the big event at top)", type: boolean }
           - { name: title, label: Title (English), type: string }
           - { name: title_fa, label: Title (Farsi), type: string }
-          - { name: tag, label: "Tag (e.g. Watch Party, Weekly)", type: string }
+          - { name: tag, label: "Tag (e.g. Featured Event, Watch Party, Weekly)", type: string }
           - { name: tag_fa, label: Tag (Farsi), type: string }
           - { name: image, label: Photo, type: image }
-          - { name: date, label: "Date — one-time event", type: date, options: { format: "yyyy-MM-dd" } }
-          - { name: recurDay, label: "OR Weekday weekly — 0=Sun..6=Sat (blank for one-time)", type: number }
+          - { name: date, label: "Date — for a one-time event", type: date, options: { format: "yyyy-MM-dd" } }
+          - { name: recurDay, label: "OR Weekday for a weekly event — 0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat (leave blank for one-time)", type: number }
           - { name: start, label: "Start time (24h, e.g. 10:00)", type: string }
           - { name: end, label: "End time (24h, e.g. 13:00)", type: string }
-          - { name: whenLabel, label: "When label (EN)", type: string }
+          - { name: whenLabel, label: "When label shown on card (English, e.g. June 20 · 10AM–1PM)", type: string }
           - { name: whenLabel_fa, label: "When label (Farsi)", type: string }
-          - { name: locationLabel, label: "Location on card (EN)", type: string }
-          - { name: locationLabel_fa, label: "Location on card (Farsi)", type: string }
+          - { name: locationLabel, label: "Location shown on card (English, e.g. 📍 Venice Beach)", type: string }
+          - { name: locationLabel_fa, label: "Location shown on card (Farsi)", type: string }
           - { name: location, label: "Full address (for Add to Calendar)", type: string }
-          - { name: description, label: Description, type: text }
-          - { name: archived, label: "Hide from site", type: boolean }
-          - { name: id, label: "Unique ID (lowercase)", type: string }
+          - { name: description, label: Description (calendar invite), type: text }
+          - { name: archived, label: "Hide from site (manual archive)", type: boolean }
+          - { name: id, label: "Unique ID (lowercase, no spaces)", type: string }
 
   - name: menu
     label: Menu
@@ -53,14 +54,14 @@ content:
           - { name: sub_fa, label: Subheadline (Farsi), type: text }
           - { name: address, label: Address line, type: string }
       - name: boards
-        label: Menu Boards
+        label: Menu Boards (the menu images shown on the Menu page)
         type: object
         list: true
         fields:
-          - { name: title, label: Board title, type: string }
+          - { name: title, label: Board title (e.g. Summer 2026 Specials), type: string }
           - { name: image, label: Menu image, type: image }
-          - { name: alt, label: Image description, type: string }
-          - { name: id, label: "Unique ID", type: string }
+          - { name: alt, label: "Image description (for accessibility/SEO)", type: string }
+          - { name: id, label: "Unique ID (lowercase, no spaces)", type: string }
 
   - name: faq
     label: FAQ
@@ -73,12 +74,12 @@ content:
         type: object
         list: true
         fields:
-          - { name: q, label: Question (EN), type: string }
+          - { name: q, label: Question (English), type: string }
           - { name: q_fa, label: Question (Farsi), type: string }
-          - { name: a, label: Answer (EN), type: text }
+          - { name: a, label: Answer (English), type: text }
           - { name: a_fa, label: Answer (Farsi), type: text }
-          - { name: open, label: "Open by default?", type: boolean }
-          - { name: instagram, label: "Instagram link (optional)", type: string }
+          - { name: open, label: "Open by default? (first item only)", type: boolean }
+          - { name: instagram, label: "Instagram link (optional — turns @handle into a link)", type: string }
 
   - name: home
     label: Home Page
@@ -100,10 +101,29 @@ content:
         fields:
           - { name: eyebrow, label: Eyebrow (EN), type: string }
           - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
-          - { name: titleHtml, label: "Title (EN — <br> allowed)", type: string }
-          - { name: titleHtml_fa, label: "Title (Farsi — <br> allowed)", type: string }
+          - { name: titleHtml, label: "Title (EN — br allowed)", type: string }
+          - { name: titleHtml_fa, label: "Title (Farsi — br allowed)", type: string }
           - { name: subHtml, label: Subheadline (EN), type: text }
           - { name: subHtml_fa, label: Subheadline (Farsi), type: text }
+      - name: intro
+        label: "Persian Café beat (Is this a Persian Café?)"
+        type: object
+        fields:
+          - { name: q, label: Eyebrow question (EN), type: string }
+          - { name: q_fa, label: Eyebrow question (Farsi), type: string }
+          - { name: titleHtml, label: "Heading (EN) — use a line break tag for two lines", type: text }
+          - { name: titleHtml_fa, label: Heading (Farsi), type: text }
+          - { name: body, label: Body paragraph (EN), type: text }
+          - { name: body_fa, label: Body paragraph (Farsi), type: text }
+          - { name: flavorsLabel, label: "Flavors label (EN)", type: string }
+          - { name: flavorsLabel_fa, label: "Flavors label (Farsi)", type: string }
+          - name: image
+            label: Photo (spice jars)
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
       - name: carousel
         label: Drinks Carousel
         type: object
@@ -126,15 +146,15 @@ content:
           - { name: addressLine2_fa, label: Address line 2 (Farsi), type: string }
           - { name: hours, label: Hours (EN), type: string }
           - { name: hours_fa, label: Hours (Farsi), type: string }
-          - { name: hoursDetail, label: "Hours detail near map (EN, <br> per line)", type: string }
-          - { name: hoursDetail_fa, label: "Hours detail near map (Farsi, <br> per line)", type: string }
+          - { name: hoursDetail, label: "Hours detail — near map (EN, use br per line)", type: string }
+          - { name: hoursDetail_fa, label: "Hours detail — near map (Farsi, use br per line)", type: string }
           - { name: phone, label: Phone, type: string }
           - { name: instagram, label: Instagram URL, type: string }
           - { name: instagramHandle, label: Instagram handle, type: string }
           - { name: mapsUrl, label: Google Maps URL, type: string }
           - { name: orderUrl, label: Order (Dripos) URL, type: string }
       - name: images
-        label: Home Photos
+        label: Home Photos (in page order)
         type: object
         fields:
           - name: heroInterior
@@ -145,7 +165,7 @@ content:
               - { name: alt, label: Alt (EN), type: string }
               - { name: alt_fa, label: Alt (Farsi), type: string }
           - name: spiceJars
-            label: "2 · Intro — spice jars"
+            label: "2 · Intro — spice jars (edit under Persian Café beat above)"
             type: object
             fields:
               - { name: src, label: Photo, type: image }
