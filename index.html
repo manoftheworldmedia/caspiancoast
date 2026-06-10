@@ -955,7 +955,7 @@ IN THE BEST WAY</h2>
         <hr class="rule" style="background:var(--cream);" />
         <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
       </div>
-      <a class="link-arrow" id="viewCalendar" href="#" data-fa="افزودن همه به تقویم">Add all to calendar &nbsp;→</a>
+      <a class="link-arrow" id="viewCalendar" href="#">See past events &nbsp;→</a>
     </div>
     <article class="ev-feature reveal" id="eventFeatured"></article>
     <div class="ev-grid reveal" id="eventGrid"></div>
@@ -1351,12 +1351,14 @@ IN THE BEST WAY</h2>
     if(!ev._end) return false;
     return ev._end.getTime() < Date.now();          // dated event whose end has passed
   }
+  var ccPastView = false;
   function renderEvents(){
     if(!EVENTS) return;
     const fa = evLang()==='fa';
     const all = evList();
     const upcoming = all.filter(e => !isPastEvent(e) && !e.archived);
-    const past = all.filter(e => (isPastEvent(e) || e.archived) && e.recurDay == null);
+    const past = all.filter(e => (isPastEvent(e) || e.archived) && e.recurDay == null)
+      .sort((a,b)=> (b._start?b._start.getTime():0) - (a._start?a._start.getTime():0));
     // featured = first event toggled featured (and upcoming), else the first upcoming
     let feature = upcoming.find(e => e.featured) || upcoming[0] || null;
     const gridEvents = upcoming.filter(e => e !== feature).sort((a,b)=>{
@@ -1368,8 +1370,59 @@ IN THE BEST WAY</h2>
       return at - bt;
     });
 
-    // ---- featured card ----
+    // if there are no past events, never stay in past view
+    if(ccPastView && !past.length) ccPastView = false;
+
+    // ---- toggle link: "See past events" <-> "Back to upcoming" ----
+    const toggle = document.getElementById('viewCalendar');
+    if(toggle){
+      if(past.length){
+        toggle.style.display = '';
+        if(ccPastView){
+          toggle.textContent = (fa?'\u2192 \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u067e\u06cc\u0634 \u0631\u0648':'\u2190 Back to upcoming');
+        } else {
+          toggle.textContent = (fa?'\u062f\u06cc\u062f\u0646 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u2192':'See past events \u00a0\u2192');
+        }
+      } else {
+        toggle.style.display = 'none';
+      }
+    }
+
+    // ============ PAST VIEW ============
     const feat = document.getElementById('eventFeatured');
+    const grid = document.getElementById('eventGrid');
+    const pastWrap = document.getElementById('eventPast');
+    if(pastWrap){ pastWrap.style.display='none'; pastWrap.innerHTML=''; }
+
+    if(ccPastView){
+      if(feat){ feat.style.display='none'; feat.innerHTML=''; }
+      if(grid){
+        grid.innerHTML='';
+        if(!past.length){
+          grid.innerHTML = '<p class="ev-empty">'+(fa?'\u0647\u0646\u0648\u0632 \u0631\u0648\u06cc\u062f\u0627\u062f \u06af\u0630\u0634\u062a\u0647\u200c\u0627\u06cc \u0646\u06cc\u0633\u062a.':'No past events yet.')+'</p>';
+        }
+        past.forEach(ev=>{
+          const a = document.createElement('article');
+          a.className = 'ev ev-past';
+          a.innerHTML = '<img src="'+ev.image+'" alt="" />'
+            + '<div class="ev-body">'
+            +   '<h3>'+(fa?ev.title_fa:ev.title)+'</h3>'
+            +   '<div class="ev-meta">'
+            +     (ev.tag?'<span class="ev-tag">'+(fa?(ev.tag_fa||ev.tag):ev.tag)+'</span>':'')
+            +     '<div class="ev-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</div>'
+            +     (ev.locationLabel?'<div class="ev-where">'+(fa?ev.locationLabel_fa:ev.locationLabel)+'</div>':'')
+            +   '</div>'
+            + '</div>';
+          if(fa) a.querySelector('.ev-body').setAttribute('dir','rtl');
+          grid.appendChild(a);
+        });
+        grid.classList.add('in');
+      }
+      document.querySelectorAll('#eventGrid.reveal').forEach(el=>el.classList.add('in'));
+      return;
+    }
+
+    // ---- featured card ----
     if(feat){
       if(feature){
         feat.style.display = '';
@@ -1386,7 +1439,6 @@ IN THE BEST WAY</h2>
     }
 
     // ---- grid of remaining upcoming events (full info on each) ----
-    const grid = document.getElementById('eventGrid');
     if(grid){
       grid.innerHTML = '';
       gridEvents.forEach(ev=>{
@@ -1410,18 +1462,7 @@ IN THE BEST WAY</h2>
       });
     }
 
-    // ---- past events repository (collapsible) ----
-    const pastWrap = document.getElementById('eventPast');
-    if(pastWrap){
-      if(past.length){
-        pastWrap.style.display = '';
-        const items = past.sort((a,b)=> (b._start?b._start.getTime():0) - (a._start?a._start.getTime():0)).map(ev=>
-          '<li><div class="pe-thumb"><img src="'+(ev.image||'img/eye-mark.png')+'" alt="'+(fa?ev.title_fa:ev.title)+'" loading="lazy" /></div><div class="pe-body"><span class="pe-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</span><span class="pe-title">'+(fa?ev.title_fa:ev.title)+'</span></div></li>'
-        ).join('');
-        pastWrap.innerHTML = '<details class="past-events"><summary>'+(fa?'رویدادهای گذشته':'Past events')+' ('+past.length+')</summary><ul class="pe-list">'+items+'</ul></details>';
-        if(fa) pastWrap.querySelector('.past-events').setAttribute('dir','rtl');
-      } else { pastWrap.style.display='none'; pastWrap.innerHTML=''; }
-    }
+    // ---- past events repository handled by the "See past events" toggle (ccPastView) ----
 
     document.querySelectorAll('#eventFeatured.reveal, #eventGrid.reveal').forEach(el=>el.classList.add('in'));
   }
@@ -1457,25 +1498,14 @@ IN THE BEST WAY</h2>
   }
   fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
 
-  /* "Add all to calendar" — combined .ics of every event */
+  /* "See past events" toggle — swaps the grid between upcoming and past */
   const viewCal=document.getElementById('viewCalendar');
   if(viewCal){ viewCal.addEventListener('click', (e)=>{
     e.preventDefault();
-    if(!EVENTS) return;
-    const all=evList().filter(e=>!isPastEvent(e) && !e.archived);
-    let L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Caspian Coast Coffee//Events//EN','CALSCALE:GREGORIAN','X-WR-CALNAME:Caspian Coast Coffee'];
-    all.forEach(ev=>{ if(!ev._start) return;
-      L.push('BEGIN:VEVENT','UID:'+ev.id+'@caspiancoastcoffee','DTSTAMP:'+icsStamp(new Date()),
-        'DTSTART:'+icsStamp(ev._start),'DTEND:'+icsStamp(ev._end),'SUMMARY:'+ev.title);
-      if(ev._rrule) L.push('RRULE:'+ev._rrule);
-      if(ev.location) L.push('LOCATION:'+ev.location.replace(/,/g,'\\,'));
-      if(ev.description) L.push('DESCRIPTION:'+ev.description.replace(/,/g,'\\,'));
-      L.push('END:VEVENT');
-    });
-    L.push('END:VCALENDAR');
-    const a=document.createElement('a');
-    a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(L.join('\r\n'));
-    a.download='caspian-coast-events.ics'; a.click();
+    ccPastView = !ccPastView;
+    renderEvents();
+    const sec = document.getElementById('events') || viewCal.closest('section');
+    if(sec){ const y = sec.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top:y, behavior:'smooth'}); }
   }); }
 
   document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click', ()=>setTimeout(()=>{renderEvents();renderFaq();},0)));
