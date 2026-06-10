@@ -463,6 +463,9 @@
   .events-head h2{font-size:clamp(28px,3.4vw,48px);text-transform:uppercase;}
   .events-head .link-arrow{border-color:var(--cream);color:var(--cream);}
   .ev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .ev-pastlink-wrap{text-align:center;margin-top:36px;}
+  .ev-pastlink-wrap .link-arrow{border-color:var(--cream);color:var(--cream);}
+  .ev-empty{grid-column:1/-1;text-align:center;color:var(--cream);opacity:.7;font-family:var(--font-body);padding:30px 0;}
   .ev{position:relative;aspect-ratio:3/3.4;overflow:hidden;border-radius:2px;display:flex;align-items:flex-end;}
   .ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.78);transition:transform 1s cubic-bezier(.16,1,.3,1),filter .5s;}
   .ev:hover img{transform:scale(1.06);filter:saturate(1) brightness(.9);}
@@ -955,11 +958,12 @@ IN THE BEST WAY</h2>
         <hr class="rule" style="background:var(--cream);" />
         <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
       </div>
-      <a class="link-arrow" id="viewCalendar" href="#">See past events &nbsp;→</a>
+      <a class="link-arrow" id="viewCalendar" href="#" data-fa="افزودن همه به تقویم">Add all to calendar &nbsp;→</a>
     </div>
     <article class="ev-feature reveal" id="eventFeatured"></article>
     <div class="ev-grid reveal" id="eventGrid"></div>
     <div id="eventPast"></div>
+    <div class="ev-pastlink-wrap reveal"><a class="link-arrow ev-pastlink" id="viewPast" href="#">See past events &nbsp;→</a></div>
   </div>
 </section>
 
@@ -1370,21 +1374,17 @@ IN THE BEST WAY</h2>
       return at - bt;
     });
 
-    // if there are no past events, never stay in past view
-    if(ccPastView && !past.length) ccPastView = false;
-
     // ---- toggle link: "See past events" <-> "Back to upcoming" ----
-    const toggle = document.getElementById('viewCalendar');
+    // ---- "Add all to calendar" stays in header (hidden while viewing past); "See past events" toggle lives below the grid ----
+    const addAll = document.getElementById('viewCalendar');
+    if(addAll) addAll.style.visibility = ccPastView ? 'hidden' : '';
+    const toggle = document.getElementById('viewPast');
     if(toggle){
-      if(past.length){
-        toggle.style.display = '';
-        if(ccPastView){
-          toggle.textContent = (fa?'\u2192 \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u067e\u06cc\u0634 \u0631\u0648':'\u2190 Back to upcoming');
-        } else {
-          toggle.textContent = (fa?'\u062f\u06cc\u062f\u0646 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u2192':'See past events \u00a0\u2192');
-        }
+      toggle.style.display = '';
+      if(ccPastView){
+        toggle.textContent = (fa?'\u2192 \u0628\u0627\u0632\u06af\u0634\u062a \u0628\u0647 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u067e\u06cc\u0634 \u0631\u0648':'\u2190 Back to upcoming');
       } else {
-        toggle.style.display = 'none';
+        toggle.textContent = (fa?'\u062f\u06cc\u062f\u0646 \u0631\u0648\u06cc\u062f\u0627\u062f\u0647\u0627\u06cc \u06af\u0630\u0634\u062a\u0647 \u2192':'See past events \u00a0\u2192');
       }
     }
 
@@ -1498,13 +1498,34 @@ IN THE BEST WAY</h2>
   }
   fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
 
-  /* "See past events" toggle — swaps the grid between upcoming and past */
+  /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
   if(viewCal){ viewCal.addEventListener('click', (e)=>{
     e.preventDefault();
+    if(!EVENTS) return;
+    const all=evList().filter(e=>!isPastEvent(e) && !e.archived);
+    let L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Caspian Coast Coffee//Events//EN','CALSCALE:GREGORIAN','X-WR-CALNAME:Caspian Coast Coffee'];
+    all.forEach(ev=>{ if(!ev._start) return;
+      L.push('BEGIN:VEVENT','UID:'+ev.id+'@caspiancoastcoffee','DTSTAMP:'+icsStamp(new Date()),
+        'DTSTART:'+icsStamp(ev._start),'DTEND:'+icsStamp(ev._end),'SUMMARY:'+ev.title);
+      if(ev._rrule) L.push('RRULE:'+ev._rrule);
+      if(ev.location) L.push('LOCATION:'+ev.location.replace(/,/g,'\\,'));
+      if(ev.description) L.push('DESCRIPTION:'+ev.description.replace(/,/g,'\\,'));
+      L.push('END:VEVENT');
+    });
+    L.push('END:VCALENDAR');
+    const a=document.createElement('a');
+    a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(L.join('\r\n'));
+    a.download='caspian-coast-events.ics'; a.click();
+  }); }
+
+  /* "See past events" toggle — swaps the grid between upcoming and past */
+  const viewPast=document.getElementById('viewPast');
+  if(viewPast){ viewPast.addEventListener('click', (e)=>{
+    e.preventDefault();
     ccPastView = !ccPastView;
     renderEvents();
-    const sec = document.getElementById('events') || viewCal.closest('section');
+    const sec = document.getElementById('events') || viewPast.closest('section');
     if(sec){ const y = sec.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top:y, behavior:'smooth'}); }
   }); }
 

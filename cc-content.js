@@ -179,6 +179,8 @@
       var hi = href.indexOf('#'); if (hi < 0) return;
       var hash = href.slice(hi);              // "#cafe"
       var path = href.slice(0, hi);           // "", "/", "../" etc.
+      // ignore bare "#" (action links like the events toggle)
+      if (hash.length < 2) return;
       // only intercept if that section exists on THIS page
       if (document.querySelector(hash)) {
         e.preventDefault();
