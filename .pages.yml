@@ -101,8 +101,8 @@ content:
         fields:
           - { name: eyebrow, label: Eyebrow (EN), type: string }
           - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
-          - { name: titleHtml, label: "Title (EN — br allowed)", type: string }
-          - { name: titleHtml_fa, label: "Title (Farsi — br allowed)", type: string }
+          - { name: titleHtml, label: "Title (EN)", type: string }
+          - { name: titleHtml_fa, label: "Title (Farsi)", type: string }
           - { name: subHtml, label: Subheadline (EN), type: text }
           - { name: subHtml_fa, label: Subheadline (Farsi), type: text }
       - name: intro
@@ -111,7 +111,7 @@ content:
         fields:
           - { name: q, label: Eyebrow question (EN), type: string }
           - { name: q_fa, label: Eyebrow question (Farsi), type: string }
-          - { name: titleHtml, label: "Heading (EN) — use a line break tag for two lines", type: text }
+          - { name: titleHtml, label: "Heading (EN)", type: text }
           - { name: titleHtml_fa, label: Heading (Farsi), type: text }
           - { name: body, label: Body paragraph (EN), type: text }
           - { name: body_fa, label: Body paragraph (Farsi), type: text }
@@ -136,6 +136,36 @@ content:
           - { name: secret, label: "Secret menu item? (blurred until rubbed)", type: boolean, default: false }
           - { name: secretLabel, label: "Secret label (EN)", type: string }
           - { name: secretLabel_fa, label: "Secret label (Farsi)", type: string }
+      - name: bakery
+        label: "Bakery section"
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: titleHtml, label: "Heading (EN)", type: text }
+          - { name: titleHtml_fa, label: "Heading (Farsi)", type: text }
+          - { name: body1, label: Paragraph 1 (EN), type: text }
+          - { name: body1_fa, label: Paragraph 1 (Farsi), type: text }
+          - { name: body2, label: Paragraph 2 (EN), type: text }
+          - { name: body2_fa, label: Paragraph 2 (Farsi), type: text }
+          - { name: bakerName, label: Baker name (EN), type: string }
+          - { name: bakerName_fa, label: Baker name (Farsi), type: string }
+          - { name: bakerHandle, label: "Baker handle (e.g. @kouzehbakery)", type: string }
+          - { name: bakerInstagram, label: Baker Instagram URL, type: string }
+          - name: image1
+            label: Photo 1
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
+          - name: image2
+            label: Photo 2
+            type: object
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: alt, label: Alt (EN), type: string }
+              - { name: alt_fa, label: Alt (Farsi), type: string }
       - name: contact
         label: Contact & Hours
         type: object
@@ -146,8 +176,8 @@ content:
           - { name: addressLine2_fa, label: Address line 2 (Farsi), type: string }
           - { name: hours, label: Hours (EN), type: string }
           - { name: hours_fa, label: Hours (Farsi), type: string }
-          - { name: hoursDetail, label: "Hours detail — near map (EN, use br per line)", type: string }
-          - { name: hoursDetail_fa, label: "Hours detail — near map (Farsi, use br per line)", type: string }
+          - { name: hoursDetail, label: "Hours detail near map (EN)", type: string }
+          - { name: hoursDetail_fa, label: "Hours detail near map (Farsi)", type: string }
           - { name: phone, label: Phone, type: string }
           - { name: instagram, label: Instagram URL, type: string }
           - { name: instagramHandle, label: Instagram handle, type: string }
@@ -165,21 +195,21 @@ content:
               - { name: alt, label: Alt (EN), type: string }
               - { name: alt_fa, label: Alt (Farsi), type: string }
           - name: spiceJars
-            label: "2 · Intro — spice jars (edit under Persian Café beat above)"
+            label: "2 · Intro — spice jars (edit under Persian Café beat)"
             type: object
             fields:
               - { name: src, label: Photo, type: image }
               - { name: alt, label: Alt (EN), type: string }
               - { name: alt_fa, label: Alt (Farsi), type: string }
           - name: bakeryBun
-            label: "3 · Bakery — seeded bun"
+            label: "3 · Bakery — seeded bun (edit under Bakery section)"
             type: object
             fields:
               - { name: src, label: Photo, type: image }
               - { name: alt, label: Alt (EN), type: string }
               - { name: alt_fa, label: Alt (Farsi), type: string }
           - name: bakerySpiral
-            label: "4 · Bakery — spiral bread"
+            label: "4 · Bakery — spiral bread (edit under Bakery section)"
             type: object
             fields:
               - { name: src, label: Photo, type: image }
