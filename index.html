@@ -415,7 +415,8 @@
   .bakery-copy h2 em{font-family:var(--font-serif);font-weight:500;font-style:italic;text-transform:none;color:var(--clay);}
   .bakery-copy p{color:var(--ink-soft);margin-top:22px;max-width:42ch;}
   .bakery-copy .baker{margin-top:26px;display:flex;align-items:center;gap:14px;}
-  .bakery-copy .baker .eye{width:42px;height:42px;border:1.5px solid var(--clay);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--clay);font-family:var(--font-serif);font-size:18px;flex:0 0 auto;}
+  .bakery-copy .baker .eye{width:52px;height:52px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:#fff;box-shadow:0 2px 10px -4px rgba(27,25,22,.35);}
+  .bakery-copy .baker .eye img{width:100%;height:100%;object-fit:cover;}
   .bakery-copy .baker .bk-name{font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.25;}
   .bakery-copy .baker .bk-handle{font-size:13px;color:var(--clay);}
   .bakery-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
@@ -858,22 +859,22 @@ SERVED WITH CARE</h2>
   <img class="scroll-wm right mid" src="img/logo-green.png" alt="" aria-hidden="true" />
   <div class="wrap">
     <div class="bakery-copy reveal">
-      <span class="eyebrow">The Bakery</span>
+      <span class="eyebrow" data-cc-html="bakery.eyebrow">The Bakery</span>
       <hr class="rule" style="background:var(--clay);" />
-      <h2>Magical Persian<br /><em>baked creations</em></h2>
-      <p>Pillowy seeded buns, spiraled barbari, saffron-kissed sweets — our pastries are made in collaboration with the bakers we love most, then served warm beside your latte.</p>
-      <p>Curated with Artelice &amp; Kouzeh Bakery.</p>
+      <h2 data-cc-html="bakery.titleHtml">Magical Persian<br /><em>baked creations</em></h2>
+      <p data-cc-html="bakery.body1">Pillowy seeded buns, spiraled barbari, saffron-kissed sweets — our pastries are made in collaboration with the bakers we love most, then served warm beside your latte.</p>
+      <p data-cc-html="bakery.body2">Curated with Artelice &amp; Kouzeh Bakery.</p>
       <div class="baker">
-        <span class="eye">✶</span>
+        <span class="eye"><img src="img/kouzeh-logo.jpg" alt="Kouzeh Iranian Bakery logo" /></span>
         <div>
-          <div class="bk-name">Sahar Shomali</div>
-          <a class="bk-handle" href="https://instagram.com/kouzehbakery" target="_blank" rel="noopener">@kouzehbakery</a>
+          <div class="bk-name" data-cc-html="bakery.bakerName">Sahar Shomali</div>
+          <a class="bk-handle" data-cc-html="bakery.bakerHandle" data-cc-href="bakery.bakerInstagram" href="https://instagram.com/kouzehbakery" target="_blank" rel="noopener">@kouzehbakery</a>
         </div>
       </div>
     </div>
     <div class="bakery-photos reveal">
-      <div class="ph"><img data-cc-img="images.bakeryBun" src="img/bakery-bun.jpg" alt="Seeded Persian bun with a heart latte in an eye cup at Caspian Coast Coffee" /></div>
-      <div class="ph"><img data-cc-img="images.bakerySpiral" src="img/bakery-spiral.jpg" alt="Spiral barbari-style Persian bread with a heart latte in an eye cup" /></div>
+      <div class="ph"><img data-cc-img="bakery.image1" src="img/bakery-bun.jpg" alt="Seeded Persian bun with a heart latte in an eye cup at Caspian Coast Coffee" /></div>
+      <div class="ph"><img data-cc-img="bakery.image2" src="img/bakery-spiral.jpg" alt="Spiral barbari-style Persian bread with a heart latte in an eye cup" /></div>
     </div>
   </div>
 </section>
@@ -1163,7 +1164,7 @@ IN THE BEST WAY</h2>
     "Walk in →":"بدون نوبت بیایید →",
     "Scroll":"اسکرول"
   };
-  const T_SEL = ".chip,.menu-head .eyebrow,.menu-head h2,.menu-lead p,.menu-lead a,.bakery-copy .eyebrow,.bakery-copy h2,.bakery-copy p,.vibe-head .eyebrow,.vibe-head h2,.vibe-head p,.vibe-grid figcaption,.nost-head .eyebrow,.nost-head h2,.nost-head p,.frame .label,.pull blockquote,.pull cite,.merch-copy .eyebrow,.merch-copy h2,.merch-copy p,.merch-copy .link-arrow,.events-head .eyebrow,.events-head h2,.events-head .link-arrow,.ev-body h3,.ev-body .when,.faq-aside .eyebrow,.faq-aside h2,.faq-aside p,.faq-aside .yes,.qa summary,.qa .a,.come .eyebrow,.info-row .big,.come .hand,.come .link-arrow,.map-cta,.la-band figcaption,.la-sub,.hero .link-arrow,.scroll-cue span";
+  const T_SEL = ".chip,.menu-head .eyebrow,.menu-head h2,.menu-lead p,.menu-lead a,.vibe-head .eyebrow,.vibe-head h2,.vibe-head p,.vibe-grid figcaption,.nost-head .eyebrow,.nost-head h2,.nost-head p,.frame .label,.pull blockquote,.pull cite,.merch-copy .eyebrow,.merch-copy h2,.merch-copy p,.merch-copy .link-arrow,.events-head .eyebrow,.events-head h2,.events-head .link-arrow,.ev-body h3,.ev-body .when,.faq-aside .eyebrow,.faq-aside h2,.faq-aside p,.faq-aside .yes,.qa summary,.qa .a,.come .eyebrow,.info-row .big,.come .hand,.come .link-arrow,.map-cta,.la-band figcaption,.la-sub,.hero .link-arrow,.scroll-cue span";
   const dictEls = [];
   document.querySelectorAll(T_SEL).forEach(el => {
     if(el.closest('[data-fa]')) return;
