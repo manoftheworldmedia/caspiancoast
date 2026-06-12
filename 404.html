@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — Caspian Coast Coffee</title>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="/img/favicon.png" />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Jost:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f1ede4; --ink:#1b1916; --ink-soft:#4a463f; --clay:#c0653a; --clay-deep:#a8542e; --line:rgba(27,25,22,.16);
+    --display:'Archivo',sans-serif; --body:'Jost',sans-serif; --edit:'Cormorant Garamond',serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 24px;-webkit-font-smoothing:antialiased;}
+  .lang{position:fixed;top:20px;right:22px;display:flex;gap:9px;align-items:center;font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.12em;z-index:5;}
+  .lang button{font:inherit;background:none;border:0;color:var(--ink);cursor:pointer;opacity:.5;padding:2px 0;text-transform:uppercase;transition:opacity .2s;}
+  .lang button.active{opacity:1;}
+  .lang button.fa{font-family:'Vazirmatn',var(--body);letter-spacing:0;}
+  .lang .sep{opacity:.4;}
+  .wrap{width:100%;max-width:560px;text-align:center;}
+  .photo{width:min(340px,76vw);margin:0 auto 32px;border-radius:8px;overflow:hidden;
+    box-shadow:0 30px 64px -32px rgba(27,25,22,.55), 0 4px 14px -6px rgba(27,25,22,.2);}
+  .photo img{width:100%;display:block;}
+  .poem{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(21px,3.4vw,30px);
+    line-height:1.4;color:var(--ink);max-width:40ch;margin:0 auto;}
+  .poem .by{display:block;font-size:.62em;color:var(--clay);margin-top:14px;letter-spacing:.02em;}
+  .msg{font-family:var(--edit);font-style:italic;font-weight:500;text-transform:none;letter-spacing:0;
+    font-size:clamp(20px,2.6vw,27px);margin-top:22px;color:var(--ink-soft);}
+  .home{display:inline-flex;align-items:center;justify-content:center;gap:11px;margin-top:8px;
+    background:var(--clay);color:#fff;font-family:var(--display);text-transform:uppercase;
+    letter-spacing:.16em;font-size:13px;font-weight:700;padding:13px 26px;border-radius:999px;
+    text-decoration:none;box-shadow:0 16px 34px -16px rgba(192,101,58,.7);transition:background .25s,transform .25s;}
+  .home:hover{background:var(--clay-deep);transform:translateY(-2px);}
+  .home .eye{width:30px;height:30px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .home .eye img{width:22px;height:22px;display:block;}
+  /* Farsi */
+  body.fa{direction:rtl;}
+  body.fa .poem,body.fa .msg,body.fa .msg .sub,body.fa .home{font-family:'Vazirmatn',var(--body);}
+  body.fa .poem{font-style:normal;font-weight:600;max-width:26ch;}
+  body.fa .msg{font-weight:700;}
+  body.fa .msg .sub{font-style:normal;font-weight:500;}
+  body.fa .home{letter-spacing:0;padding:13px 26px;}
+  body.fa .poem .by{font-weight:500;}
+  .en,.fa-text{display:none;}
+  body:not(.fa) .en{display:block;}
+  body:not(.fa) .home .en{display:inline;}
+  body.fa .fa-text{display:block;}
+  body.fa .home .fa-text{display:inline;}
+</style>
+</head>
+<body>
+  <div class="lang" id="lang">
+    <button type="button" data-lang="en" class="active">EN</button>
+    <span class="sep">/</span>
+    <button type="button" data-lang="fa" class="fa">فارسی</button>
+  </div>
+
+  <div class="wrap">
+    <figure class="photo">
+      <img src="/img/caspian-sea.jpg" alt="A latte in a Caspian Coast eye cup beside a vintage radio on a Persian rug by the Caspian Sea" />
+    </figure>
+
+    <p class="poem">
+      <span class="en">"You are not a drop in the ocean.<br />You are the entire ocean in a drop."</span>
+      <span class="fa-text">«تو قطره‌ای در اقیانوس نیستی، بلکه اقیانوسی در یک قطره هستی.»</span>
+      <span class="by"><span class="en">— Rumi</span><span class="fa-text">— مولانا</span></span>
+    </p>
+
+    <p class="msg">
+      <span class="en">Have a coffee, stay a while.</span>
+      <span class="fa-text">یک قهوه بنوش و کمی بمان.</span>
+    </p>
+
+    <a class="home" href="/index.html">
+      <span class="eye"><img src="/img/eye-mark.png" alt="" /></span>
+      <span class="en">Return Home</span>
+      <span class="fa-text">بازگشت به خانه</span>
+    </a>
+  </div>
+
+  <script>
+    (function(){
+      var saved = localStorage.getItem('cc_lang') || 'en';
+      function apply(l){
+        document.body.classList.toggle('fa', l==='fa');
+        document.documentElement.lang = l;
+        document.querySelectorAll('#lang button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang===l); });
+        try{ localStorage.setItem('cc_lang', l); }catch(e){}
+      }
+      document.querySelectorAll('#lang button').forEach(function(b){
+        b.addEventListener('click', function(){ apply(b.dataset.lang); });
+      });
+      apply(saved);
+    })();
+  </script>
+</body>
+</html>
