@@ -1477,6 +1477,12 @@ IN THE BEST WAY</h2>
 
   /* ===== FAQ (data-driven) + auto JSON-LD schema ===== */
   let FAQ=null;
+  // Turn [text](https://url) into links — works in any CMS answer field
+  function ccLinkify(s){
+    if(!s) return s;
+    return s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener" style="border-bottom:1px solid var(--clay);">$1</a>');
+  }
   function renderFaq(){
     if(!FAQ) return;
     const fa=evLang()==='fa';
@@ -1486,7 +1492,8 @@ IN THE BEST WAY</h2>
     (FAQ.items||[]).forEach((it,i)=>{
       const d=document.createElement('details'); d.className='qa'; if(it.open&&i===0) d.open=true;
       let ans=fa?(it.a_fa||it.a):it.a;
-      if(it.instagram) ans=ans.replace('@caspiancoastcoffee','<a href="'+it.instagram+'" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>');
+      ans=ccLinkify(ans);
+      if(it.instagram) ans=ans.replace('@caspiancoastcoffee','<a href="'+it.instagram+'" target="_blank" rel="noopener" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>');
       d.innerHTML='<summary>'+(fa?(it.q_fa||it.q):it.q)+'</summary><div class="a">'+ans+'</div>';
       if(fa){d.querySelector('summary').setAttribute('dir','rtl');d.querySelector('.a').setAttribute('dir','rtl');}
       list.appendChild(d);
@@ -1494,7 +1501,7 @@ IN THE BEST WAY</h2>
   }
   function buildFaqSchema(){
     if(!FAQ) return;
-    const schema={"@context":"https://schema.org","@type":"FAQPage","mainEntity":(FAQ.items||[]).map(it=>({"@type":"Question","name":it.q,"acceptedAnswer":{"@type":"Answer","text":it.a}}))};
+    const schema={"@context":"https://schema.org","@type":"FAQPage","mainEntity":(FAQ.items||[]).map(it=>({"@type":"Question","name":it.q,"acceptedAnswer":{"@type":"Answer","text":(it.a||'').replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,'$1 ($2)')}}))};
     let s=[...document.querySelectorAll('script[type="application/ld+json"]')].find(x=>x.textContent.includes('FAQPage'));
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
