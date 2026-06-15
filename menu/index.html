@@ -15,8 +15,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Menu — Caspian Coast Coffee · Persian Café in Venice, Los Angeles</title>
 <meta name="description" content="The full menu at Caspian Coast Coffee, Venice. Summer 2026 specials, espresso, matcha & Persian tea, saffron & cardamom specialty lattes, coffee, alt milks and wellness boosts. Roasted in LA by Sightglass." />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" href="/img/favicon.png" />
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="../img/favicon.png" />
 <link rel="canonical" href="https://caspiancoast.com/menu" />
 <link rel="alternate" hreflang="en-us" href="https://caspiancoast.com/menu" />
 <link rel="alternate" hreflang="fa" href="https://caspiancoast.com/menu/fa" />
@@ -251,7 +251,7 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <img class="mm-eye" src="/img/eye-mark.png" alt="" aria-hidden="true" />
+  <img class="mm-eye" src="../img/eye-mark.png" alt="" aria-hidden="true" />
   <a href="../menu/" data-fa="منو">Menu</a>
   <a href="../#cafe" data-fa="کافه">Café</a>
   <a href="../shop/" data-fa="فروشگاه">Shop</a>
@@ -265,7 +265,7 @@
 
 <!-- HERO -->
 <section class="menu-hero">
-  <img class="eye" src="/img/eye-mark.png" alt="Caspian Coast eye emblem" />
+  <img class="eye" src="../img/eye-mark.png" alt="Caspian Coast eye emblem" />
   <span class="eyebrow" id="mhEyebrow">The Menu</span>
   <h1 id="mhTitle">Flavors of home</h1>
   <p class="sub" id="mhSub">Persian spice, California light — iced or hot, you're our guest.</p>
@@ -282,19 +282,19 @@
 <!-- ORDER CTA -->
 <div class="menu-band reveal" aria-label="Our drinks">
   <div class="menu-track">
-    <div class="drink"><img src="/img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /></div>
-    <div class="drink"><img src="/img/summer-icedtea.jpg" alt="Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu" /></div>
-    <div class="drink"><img src="/img/summer-hojicha.jpg" alt="Habibi Joon Hojicha — toasted Japanese green tea latte" /></div>
-    <div class="drink"><img src="/img/summer-saffrontonic.jpg" alt="Saffron Tonic — Fever Tree tonic with saffron syrup and lemon" /></div>
-    <div class="drink" aria-hidden="true"><img src="/img/summer-lavender.jpg" alt="" /></div>
-    <div class="drink" aria-hidden="true"><img src="/img/summer-icedtea.jpg" alt="" /></div>
-    <div class="drink" aria-hidden="true"><img src="/img/summer-hojicha.jpg" alt="" /></div>
-    <div class="drink" aria-hidden="true"><img src="/img/summer-saffrontonic.jpg" alt="" /></div>
+    <div class="drink"><img src="../img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /></div>
+    <div class="drink"><img src="../img/summer-icedtea.jpg" alt="Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu" /></div>
+    <div class="drink"><img src="../img/summer-hojicha.jpg" alt="Habibi Joon Hojicha — toasted Japanese green tea latte" /></div>
+    <div class="drink"><img src="../img/summer-saffrontonic.jpg" alt="Saffron Tonic — Fever Tree tonic with saffron syrup and lemon" /></div>
+    <div class="drink" aria-hidden="true"><img src="../img/summer-lavender.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="../img/summer-icedtea.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="../img/summer-hojicha.jpg" alt="" /></div>
+    <div class="drink" aria-hidden="true"><img src="../img/summer-saffrontonic.jpg" alt="" /></div>
   </div>
 </div>
 
 <section class="order-cta">
-  <img class="eye" src="/img/eye-mark.png" alt="Caspian Coast eye emblem" />
+  <img class="eye" src="../img/eye-mark.png" alt="Caspian Coast eye emblem" />
   <h2>Skip the line, aziz</h2>
   <p>Order ahead for pickup · roasted in LA by Sightglass · pastries by Kouzeh &amp; Artelice.</p>
   <a class="big-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener">Order for pickup →</a>
@@ -330,7 +330,7 @@
     set('mhSub',MENU_HERO.sub,MENU_HERO.sub_fa);
     set('mhAddr',MENU_HERO.address,MENU_HERO.address_fa);
   }
-  fetch('/menu.json').then(r=>r.json()).then(data=>{
+  fetch('../menu.json').then(r=>r.json()).then(data=>{
     if(data.hero){ MENU_HERO=data.hero; renderMenuHero(); }
     const wrap=document.getElementById('menuBoards');
     const hint=wrap.querySelector('.board-hint');
@@ -348,6 +348,6 @@
   mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
 </script>
-<script src="/cc-content.js"></script>
+<script src="../cc-content.js"></script>
 </body>
 </html>

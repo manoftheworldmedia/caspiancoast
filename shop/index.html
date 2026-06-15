@@ -15,8 +15,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shop — Caspian Coast Coffee · Persian Café in Venice, Los Angeles</title>
 <meta name="description" content="Shop Caspian Coast Coffee — Lös Angeles tees, hand-painted Persian artist ceramic magnets and necklaces. Made by Persian artists, sold in Venice, California." />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" href="/img/favicon.png" />
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" href="../img/favicon.png" />
 <link rel="canonical" href="https://caspiancoast.com/shop" />
 <link rel="alternate" hreflang="en-us" href="https://caspiancoast.com/shop" />
 <link rel="alternate" hreflang="fa" href="https://caspiancoast.com/shop/fa" />
@@ -212,7 +212,7 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <img class="mm-eye" src="/img/eye-mark.png" alt="" aria-hidden="true" />
+  <img class="mm-eye" src="../img/eye-mark.png" alt="" aria-hidden="true" />
   <a href="../menu/" data-fa="منو">Menu</a>
   <a href="../#cafe" data-fa="کافه">Café</a>
   <a href="../shop/" data-fa="فروشگاه">Shop</a>
@@ -226,7 +226,7 @@
 
 <!-- HERO -->
 <section class="shop-hero">
-  <img class="eye" src="/img/eye-mark.png" alt="Caspian Coast eye emblem" />
+  <img class="eye" src="../img/eye-mark.png" alt="Caspian Coast eye emblem" />
   <span class="eyebrow" id="shopEyebrow">The Shop</span>
   <h1 id="shopTitle">CASPIAN INSPIRED
 DESIGEND IN VENICE</h1>
@@ -238,7 +238,7 @@ DESIGEND IN VENICE</h1>
   <div class="wrap" id="shopSections"></div>
   <div class="wrap">
     <div class="buy-note reveal">
-      <img class="bn-eye" src="/img/eye-mark.png" alt="" aria-hidden="true" />
+      <img class="bn-eye" src="../img/eye-mark.png" alt="" aria-hidden="true" />
       <p id="buyNoteText">These are one-of-a-kind, handmade pieces. Message us to reserve or buy — or come find your favorite at the café.</p>
       <a class="bn-cta" id="buyNoteCta" href="https://www.instagram.com/caspiancoastcoffee_la/?hl=en" target="_blank" rel="noopener" data-fa="پیام در اینستاگرام">Message on Instagram</a>
     </div>
@@ -247,7 +247,7 @@ DESIGEND IN VENICE</h1>
 
 <!-- CTA -->
 <section class="shop-cta">
-  <img class="eye" src="/img/eye-mark.png" alt="Caspian Coast eye emblem" />
+  <img class="eye" src="../img/eye-mark.png" alt="Caspian Coast eye emblem" />
   <h2 data-fa="از ساحل خزر، با عشق.">From the Caspian coast, with love.</h2>
   <p data-fa="در ونیس، کالیفرنیا دست‌ساز و دست‌نقاشی شده.">Handmade &amp; hand-painted in Venice, California.</p>
   <a class="back" href="../" data-fa="← بازگشت به خانه">← Back to home</a>
@@ -304,7 +304,7 @@ DESIGEND IN VENICE</h1>
     if(SHOP.purchaseUrl){document.getElementById('buyNoteCta').setAttribute('href',SHOP.purchaseUrl);}
     observeReveals();
   }
-  fetch('/shop.json').then(r=>r.json()).then(data=>{SHOP=data;renderShop();}).catch(()=>{});
+  fetch('../shop.json').then(r=>r.json()).then(data=>{SHOP=data;renderShop();}).catch(()=>{});
 
   applyLang(LANG);setInterval(updateStatus,60000);
   observeReveals();
@@ -314,6 +314,6 @@ DESIGEND IN VENICE</h1>
   mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});
 </script>
-<script src="/cc-content.js"></script>
+<script src="../cc-content.js"></script>
 </body>
 </html>
