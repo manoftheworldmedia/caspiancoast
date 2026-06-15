@@ -9,6 +9,26 @@
     return src.replace(/cc-content\.js(\?.*)?$/, '');
   })();
   function isFa() { return document.body.classList.contains('lang-fa'); }
+  // ---- Language routing: EN/FA live at separate URLs (/ <-> /fa, /menu <-> /menu/fa) ----
+  (function () {
+    function langURL(target) {
+      var p = location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '');
+      var base = /\/fa$/.test(p) ? p.replace(/\/fa$/, '') : p; // english base, '' for home
+      return target === 'fa' ? (base + '/fa/') : (base + '/');
+    }
+    function wire() {
+      var tg = document.getElementById('langToggle');
+      if (!tg) return;
+      var onFa = /\/fa(\/|$)/.test(location.pathname);
+      tg.querySelectorAll('button[data-lang]').forEach(function (b) {
+        b.addEventListener('click', function (e) {
+          var wantFa = b.dataset.lang === 'fa';
+          if (wantFa !== onFa) { e.preventDefault(); e.stopImmediatePropagation(); location.assign(langURL(b.dataset.lang)); }
+        }, true);
+      });
+    }
+    if (document.readyState !== 'loading') wire(); else document.addEventListener('DOMContentLoaded', wire);
+  })();
   function resolveSrc(src) {
     if (!src) return src;
     if (/^(https?:)?\/\//.test(src) || src.charAt(0) === '/') return src; // absolute
