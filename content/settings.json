@@ -1,0 +1,19 @@
+{
+  "email": "hello@caspiancoast.com",
+  "phone": "",
+  "address": "1501 Main St, Unit 103, Venice, CA 90291",
+  "hours": "Mon–Thu 7am–5pm · Fri & Sat 7am–7pm · Sun 8am–4pm",
+  "order_url": "https://order.dripos.com/Caspian-Coast",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Caspian+Coast+Coffee+1501+Main+St+Unit+103+Venice+CA+90291",
+  "social": [
+    { "platform": "instagram", "url": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en" }
+  ],
+  "shop_enabled": true,
+  "shop_currency": "usd",
+  "en": {
+    "footer_tagline": "Persian roots, California light, Venice soul."
+  },
+  "fa": {
+    "footer_tagline": "ریشه ایرانی، نور کالیفرنیا، روح ونیس."
+  }
+}

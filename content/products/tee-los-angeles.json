@@ -1,0 +1,16 @@
+{
+  "sku": "tee-los-angeles",
+  "price": 38,
+  "currency": "usd",
+  "image": "img/merch-shirt.jpg",
+  "active": true,
+  "buy_url": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
+  "en": {
+    "name": "Los Angeles 'Caspian Gothic' Tee",
+    "description": "Soft cotton tee with our mural lettering — a love letter to the city, in two alphabets."
+  },
+  "fa": {
+    "name": "تی‌شرت لس‌آنجلس",
+    "description": "تی‌شرت نخی نرم با خط دیواری ما — نامه‌ای عاشقانه به شهر، با دو الفبا."
+  }
+}

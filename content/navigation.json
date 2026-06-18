@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "url": "./menu/", "newTab": false, "label_en": "Menu", "label_fa": "منو" },
+    { "url": "./#cafe", "newTab": false, "label_en": "Café", "label_fa": "کافه" },
+    { "url": "./shop/", "newTab": false, "label_en": "Shop", "label_fa": "فروشگاه" },
+    { "url": "./#visit", "newTab": false, "label_en": "Visit", "label_fa": "بازدید" },
+    { "url": "./about/", "newTab": false, "label_en": "About", "label_fa": "درباره ما" },
+    { "url": "https://order.dripos.com/Caspian-Coast", "newTab": true, "label_en": "Order Now", "label_fa": "سفارش دهید" }
+  ]
+}

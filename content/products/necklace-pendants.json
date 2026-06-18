@@ -1,0 +1,16 @@
+{
+  "sku": "necklace-pendants",
+  "price": 30,
+  "currency": "usd",
+  "image": "img/shop-necklaces.jpg",
+  "active": true,
+  "buy_url": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
+  "en": {
+    "name": "Pendant Necklaces",
+    "description": "Hand-painted ceramic pendants — Iran maps, tulips, and vintage portraits — on delicate chains."
+  },
+  "fa": {
+    "name": "گردنبندهای آویز",
+    "description": "آویزهای سرامیکی دست‌نقاشی — نقشه‌ی ایران، لاله‌ها و پرتره‌های قدیمی — روی زنجیرهای ظریف."
+  }
+}
