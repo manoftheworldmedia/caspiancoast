@@ -1,0 +1,314 @@
+{
+  "project": "caspiancoast",
+  "label": "Caspian Coast Coffee",
+  "description": "Persian café in Venice, California (Los Angeles). Multilingual (English / فارسی) content model: homepage, events (news), pages, menu boards, shop products, navigation and settings.",
+  "languages": [
+    "en",
+    "fa"
+  ],
+  "schemas": [
+    {
+      "name": "home",
+      "label": "Homepage",
+      "icon": "home",
+      "kind": "single",
+      "path": "content/home.json",
+      "fields": [
+        {
+          "name": "images",
+          "label": "Images",
+          "type": "object",
+          "fields": [
+            { "name": "logo", "label": "Logo", "type": "image" },
+            { "name": "hero", "label": "Hero / interior image", "type": "image" },
+            { "name": "spice_jars", "label": "Spice jars image", "type": "image" },
+            { "name": "og_image", "label": "Social share image", "type": "image" }
+          ]
+        },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "seo_title", "label": "SEO title (browser tab + Google)", "type": "string", "required": true, "maxLength": 70 },
+            { "name": "seo_description", "label": "SEO description (Google snippet)", "type": "text", "required": true, "maxLength": 320 },
+            { "name": "hero_eyebrow", "label": "Hero — small label", "type": "string" },
+            { "name": "hero_title", "label": "Hero — headline", "type": "string", "required": true },
+            { "name": "hero_subhead", "label": "Hero — paragraph", "type": "text" },
+            { "name": "cta_primary", "label": "Primary button (Order)", "type": "string" },
+            { "name": "cta_secondary", "label": "Secondary button (Visit)", "type": "string" },
+            { "name": "intro_heading", "label": "Intro — heading", "type": "string" },
+            { "name": "intro_body", "label": "Intro — paragraph", "type": "text" },
+            { "name": "bakery_heading", "label": "Bakery — heading", "type": "string" },
+            { "name": "bakery_body", "label": "Bakery — paragraph", "type": "text" },
+            { "name": "about_lede", "label": "About — lede", "type": "text" }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "seo_title", "label": "SEO title (browser tab + Google)", "type": "string", "required": true, "maxLength": 70 },
+            { "name": "seo_description", "label": "SEO description (Google snippet)", "type": "text", "required": true, "maxLength": 320 },
+            { "name": "hero_eyebrow", "label": "Hero — small label", "type": "string" },
+            { "name": "hero_title", "label": "Hero — headline", "type": "string", "required": true },
+            { "name": "hero_subhead", "label": "Hero — paragraph", "type": "text" },
+            { "name": "cta_primary", "label": "Primary button (Order)", "type": "string" },
+            { "name": "cta_secondary", "label": "Secondary button (Visit)", "type": "string" },
+            { "name": "intro_heading", "label": "Intro — heading", "type": "string" },
+            { "name": "intro_body", "label": "Intro — paragraph", "type": "text" },
+            { "name": "bakery_heading", "label": "Bakery — heading", "type": "string" },
+            { "name": "bakery_body", "label": "Bakery — paragraph", "type": "text" },
+            { "name": "about_lede", "label": "About — lede", "type": "text" }
+          ]
+        },
+        {
+          "name": "faqs",
+          "label": "FAQ items",
+          "type": "list",
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "question_en", "label": "Question (English)", "type": "string", "required": true },
+              { "name": "answer_en", "label": "Answer (English)", "type": "text", "required": true },
+              { "name": "question_fa", "label": "Question (فارسی)", "type": "string" },
+              { "name": "answer_fa", "label": "Answer (فارسی)", "type": "text" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "news",
+      "label": "Events",
+      "icon": "file",
+      "kind": "collection",
+      "folder": "content/news",
+      "extension": "json",
+      "primaryField": "date",
+      "fields": [
+        { "name": "date", "label": "Date", "type": "date", "required": true },
+        { "name": "cover", "label": "Cover image", "type": "image" },
+        { "name": "featured", "label": "Featured", "type": "boolean", "default": false },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "excerpt", "label": "When / where", "type": "text" },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "excerpt", "label": "When / where", "type": "text" },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pages",
+      "label": "Pages",
+      "icon": "file",
+      "kind": "collection",
+      "folder": "content/pages",
+      "extension": "json",
+      "primaryField": "slug",
+      "fields": [
+        { "name": "slug", "label": "URL slug", "type": "string", "required": true },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "label": "Menu Boards",
+      "icon": "file",
+      "kind": "collection",
+      "folder": "content/menu",
+      "extension": "json",
+      "primaryField": "slug",
+      "fields": [
+        { "name": "slug", "label": "URL slug / ID", "type": "string", "required": true },
+        { "name": "image", "label": "Menu board image", "type": "image", "required": true },
+        { "name": "active", "label": "Show", "type": "boolean", "default": true },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "caption", "label": "Caption / alt text", "type": "text" }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "caption", "label": "Caption / alt text", "type": "text" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "label": "Shop / Products",
+      "icon": "file",
+      "kind": "collection",
+      "folder": "content/products",
+      "extension": "json",
+      "primaryField": "sku",
+      "fields": [
+        { "name": "sku", "label": "SKU / ID (used in the URL)", "type": "string", "required": true },
+        { "name": "price", "label": "Price (e.g. 38)", "type": "number", "required": true, "min": 0 },
+        {
+          "name": "currency",
+          "label": "Currency",
+          "type": "select",
+          "options": ["usd", "eur", "gbp", "cad", "aud"],
+          "required": true,
+          "default": "usd"
+        },
+        { "name": "image", "label": "Product image", "type": "image" },
+        { "name": "active", "label": "For sale", "type": "boolean", "default": true },
+        { "name": "buy_url", "label": "External purchase link", "type": "url" },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "name", "label": "Name", "type": "string", "required": true },
+            { "name": "description", "label": "Description", "type": "text" }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "name", "label": "Name", "type": "string", "required": true },
+            { "name": "description", "label": "Description", "type": "text" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "navigation",
+      "label": "Navigation Menu",
+      "icon": "menu",
+      "kind": "single",
+      "path": "content/navigation.json",
+      "fields": [
+        {
+          "name": "items",
+          "label": "Menu items (drag to reorder)",
+          "type": "list",
+          "min": 1,
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "url", "label": "Link", "type": "url", "required": true },
+              { "name": "newTab", "label": "Open in new tab", "type": "boolean", "default": false },
+              { "name": "label_en", "label": "Label (English)", "type": "string", "required": true },
+              { "name": "label_fa", "label": "Label (فارسی)", "type": "string", "required": false }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "label": "Site Settings",
+      "icon": "menu",
+      "kind": "single",
+      "path": "content/settings.json",
+      "fields": [
+        { "name": "email", "label": "Contact email", "type": "email" },
+        { "name": "phone", "label": "Phone", "type": "string" },
+        { "name": "address", "label": "Address", "type": "string" },
+        { "name": "hours", "label": "Hours", "type": "string" },
+        { "name": "order_url", "label": "Online order link", "type": "url" },
+        { "name": "maps_url", "label": "Google Maps link", "type": "url" },
+        {
+          "name": "social",
+          "label": "Social links",
+          "type": "list",
+          "of": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "platform",
+                "label": "Platform",
+                "type": "select",
+                "options": ["instagram", "linkedin", "x", "youtube", "tiktok", "facebook"],
+                "required": true
+              },
+              { "name": "url", "label": "URL", "type": "url", "required": true }
+            ]
+          }
+        },
+        { "name": "shop_enabled", "label": "Enable shop", "type": "boolean", "default": false },
+        {
+          "name": "shop_currency",
+          "label": "Default currency",
+          "type": "select",
+          "options": ["usd", "eur", "gbp", "cad", "aud"],
+          "default": "usd"
+        },
+        {
+          "name": "en",
+          "label": "English",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "footer_tagline", "label": "Footer tagline", "type": "text" }
+          ]
+        },
+        {
+          "name": "fa",
+          "label": "فارسی (Persian)",
+          "type": "object",
+          "ui": { "group": "Languages" },
+          "fields": [
+            { "name": "footer_tagline", "label": "Footer tagline", "type": "text" }
+          ]
+        }
+      ]
+    }
+  ]
+}

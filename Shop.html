@@ -270,7 +270,48 @@ DESIGEND IN VENICE</h1>
     if(SHOP.purchaseUrl){document.getElementById('buyNoteCta').setAttribute('href',SHOP.purchaseUrl);}
     observeReveals();
   }
-  fetch('shop.json').then(r=>r.json()).then(data=>{SHOP=data;renderShop();}).catch(()=>{});
+  /* MOW CMS Standard: products are sourced from content/products/*.json
+     (the editable source of truth). We keep the intro copy from shop.json, but
+     replace the product list with the standard product files. Falls back
+     silently to shop.json if content/products is unavailable. */
+  var CURRENCY_SYMBOL={usd:'$',eur:'€',gbp:'£',cad:'$',aud:'$'};
+  function fmtPrice(p){
+    if(p==null||p.price==null)return '';
+    var sym=CURRENCY_SYMBOL[(p.currency||'usd')]||'$';
+    return sym+p.price;
+  }
+  function loadStandardProducts(base){
+    return fetch('content/products.index.json',{cache:'no-store'})
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(skus){
+        if(!Array.isArray(skus)||!skus.length)return null;
+        return Promise.all(skus.map(function(sku){
+          return fetch('content/products/'+sku+'.json',{cache:'no-store'})
+            .then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
+        }));
+      });
+  }
+  fetch('shop.json').then(function(r){return r.json();}).then(function(data){
+    SHOP=data;
+    loadStandardProducts().then(function(prods){
+      if(prods){
+        var items=prods.filter(function(p){return p&&p.active!==false;}).map(function(p){
+          var en=p.en||{},fa=p.fa||{};
+          return {
+            id:p.sku,
+            name:en.name,name_fa:fa.name,
+            desc:en.description,desc_fa:fa.description,
+            price:fmtPrice(p),
+            image:p.image,
+            purchaseUrl:p.buy_url||SHOP.purchaseUrl
+          };
+        });
+        // Single section sourced from the CMS product collection.
+        SHOP.sections=[{title:'',title_fa:'',products:items}];
+      }
+      renderShop();
+    }).catch(function(){renderShop();});
+  }).catch(function(){});
 
   applyLang(LANG);setInterval(updateStatus,60000);
   observeReveals();

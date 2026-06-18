@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-21",
+  "cover": "img/event-worldcup.jpg",
+  "featured": false,
+  "en": {
+    "title": "World Cup Viewing Party: Iran vs. Belgium",
+    "excerpt": "June 21st · 12PM · Caspian Coast Coffee, Venice",
+    "body": "<p>World Cup viewing party at Caspian Coast Coffee. Saffron lattes, big screen, and good company.</p>"
+  },
+  "fa": {
+    "title": "جشن تماشای جام جهانی: ایران مقابل بلژیک",
+    "excerpt": "۲۱ ژوئن · ۱۲ ظهر · کاسپین کوست کافی، ونیس",
+    "body": "<p>جشن تماشای جام جهانی در کاسپین کوست کافی. لاته‌ی زعفرانی، نمایش روی پرده‌ی بزرگ و جمع دوستانه.</p>"
+  }
+}

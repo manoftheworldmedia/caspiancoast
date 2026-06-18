@@ -1,0 +1,13 @@
+{
+  "slug": "full-menu",
+  "image": "img/menu-main.jpg",
+  "active": true,
+  "en": {
+    "title": "Full Menu",
+    "caption": "Caspian Coast Coffee full menu — espresso, matcha and tea, specialty drinks, coffee, dairy and wellness boosts"
+  },
+  "fa": {
+    "title": "منوی کامل",
+    "caption": "منوی کامل کاسپین کوست کافی — اسپرسو، ماچا و چای، نوشیدنی‌های ویژه، قهوه و افزودنی‌های سلامتی"
+  }
+}
