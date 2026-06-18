@@ -77,9 +77,14 @@
     applyMeta();
   }
 
+  var metaDone = false;
   function applyMeta() {
-    if (!HOME) return;
-    var l = lang(), block = HOME[l] || HOME.en || {};
+    if (!HOME || metaDone) return;
+    metaDone = true;
+    // The live page has a single (English) <title>; keep it stable across the
+    // EN/FA soft-toggle by always using the en block and applying only once.
+    // Future portal edits to en.seo_title/description still show on next load.
+    var block = HOME.en || {};
     if (block.seo_title) document.title = block.seo_title;
     if (block.seo_description) {
       var m = document.querySelector('meta[name="description"]');
