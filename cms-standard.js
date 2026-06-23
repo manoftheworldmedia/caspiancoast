@@ -38,13 +38,9 @@
     return path.split('.').reduce(function (o, k) { return (o && o[k] != null) ? o[k] : null; }, root);
   }
 
-  // For data-cms="field" we look first under the active language block of
-  // home.json, then at the top level of home.json (so e.g. "en.hero_title" and
-  // "hero_title" both work). Lets editors author per-language fields.
   function cmsValue(path) {
     if (!HOME) return null;
     var l = lang();
-    // explicit "en."/"fa." prefix -> respect it
     if (/^(en|fa)\./.test(path)) return dig(HOME, path);
     var v = HOME[l] ? dig(HOME[l], path) : null;
     if (v == null) v = dig(HOME, path);
@@ -54,13 +50,11 @@
   function apply() {
     var fa = isFa();
 
-    // Images: data-cms-img="images.hero"
     document.querySelectorAll('[data-cms-img]').forEach(function (el) {
       var v = dig(HOME, el.getAttribute('data-cms-img'));
       if (v != null) el.setAttribute('src', resolveSrc(v));
     });
 
-    // Text: data-cms="hero_title" (per-language)
     document.querySelectorAll('[data-cms]').forEach(function (el) {
       var v = cmsValue(el.getAttribute('data-cms'));
       if (v == null) return;
@@ -68,7 +62,6 @@
       if (fa) el.setAttribute('dir', 'rtl'); else el.removeAttribute('dir');
     });
 
-    // HTML: data-cms-html="bakery_body" (innerHTML, allows <br>/<em>)
     document.querySelectorAll('[data-cms-html]').forEach(function (el) {
       var v = cmsValue(el.getAttribute('data-cms-html'));
       if (v != null) el.innerHTML = v;
@@ -81,9 +74,6 @@
   function applyMeta() {
     if (!HOME || metaDone) return;
     metaDone = true;
-    // The live page has a single (English) <title>; keep it stable across the
-    // EN/FA soft-toggle by always using the en block and applying only once.
-    // Future portal edits to en.seo_title/description still show on next load.
     var block = HOME.en || {};
     if (block.seo_title) document.title = block.seo_title;
     if (block.seo_description) {
@@ -115,7 +105,6 @@
   load('content/navigation.json', function (j) { NAV = j; });
   load('content/settings.json', function (j) { SET = j; });
 
-  // Re-apply on language toggle (mirrors cc-content.js behaviour).
   document.querySelectorAll('#langToggle button').forEach(function (b) {
     b.addEventListener('click', function () { setTimeout(apply, 0); });
   });
