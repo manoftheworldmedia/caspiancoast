@@ -14,7 +14,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caspian Coast Coffee — Persian Café in Venice, Los Angeles</title>
-<meta name="description" content="Caspian Coast Coffee is a Persian café in Venice, California (Los Angeles). Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA — Persian roots, California light, Venice soul. Open daily 7am–8pm." />
+<meta name="description" content="Caspian Coast Coffee — Persian café in Venice Beach, Los Angeles. Saffron lattes, cardamom cold brew, saffron-kissed pastries and espresso by Sightglass. Mon–Thu 7am–5pm, Fri–Sat 7am–7pm, Sun 8am–4pm. 1501 Main St, Venice, CA." />
 <link rel="icon" href="favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" href="img/favicon.png" />
 <link rel="apple-touch-icon" href="img/favicon.png" />
@@ -98,7 +98,7 @@
       "name": "What are your hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are open daily, 7am to 8pm."
+        "text": "We're open daily: Mon–Thu 7am–5pm, Fri & Sat 7am–7pm, Sun 8am–4pm. Located at 1501 Main St, Unit 103, Venice, CA 90291."
       }
     },
     {
@@ -136,7 +136,7 @@
   "@type": "CafeOrCoffeeShop",
   "name": "Caspian Coast Coffee",
   "image": "https://caspiancoast.com/img/hero-interior.jpg",
-  "description": "A Persian café in Venice, California. Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA by Sightglass.",
+  "description": "A Persian café in Venice Beach, Los Angeles. Saffron lattes, cardamom cold brew and espresso roasted in LA by Sightglass. Mon–Thu 7am–5pm, Fri–Sat 7am–7pm, Sun 8am–4pm.",
   "servesCuisine": ["Coffee", "Persian"],
   "priceRange": "$$",
   "url": "https://caspiancoast.com/",
@@ -149,12 +149,11 @@
     "addressCountry": "US"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 33.9889, "longitude": -118.4695 },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "07:00",
-    "closes": "17:00"
-  }],
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"07:00","closes":"17:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"07:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"08:00","closes":"16:00"}
+  ],
   "sameAs": ["https://www.instagram.com/caspiancoastcoffee_la/?hl=en"]
 }
 </script>
@@ -1152,6 +1151,9 @@ IN THE BEST WAY</h2>
     "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk. Walk in; everyone is welcome.":"۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱ — یک بلوک تا گذرگاه ساحلی. وارد شوید؛ همه خوش‌آمدید.",
     "What are your hours?":"ساعات کاری شما چیست؟",
     "We're open daily, 7am to 8pm.":"ما هر روز از ۷ صبح تا ۸ شب باز هستیم.",
+    "Mon–Thu 7am–5pm":"دوشنبه تا پنجشنبه ۷ صبح–۵ عصر",
+    "Fri & Sat 7am–7pm":"جمعه و شنبه ۷ صبح–۷ عصر",
+    "Sun 8am–4pm":"یکشنبه ۸ صبح–۴ عصر",
     "Do you have oat milk and plant-based options?":"آیا شیر جو دوسر و گزینه‌های گیاهی دارید؟",
     "Yes — oat milk and other alternative milks are available for any drink, with plant-based options across the menu.":"بله — شیر جو دوسر و دیگر شیرهای جایگزین برای هر نوشیدنی موجود است، همراه با گزینه‌های گیاهی در سراسر منو.",
     "What is the eye symbol on your cups?":"نماد چشم روی فنجان‌های شما چیست؟",
