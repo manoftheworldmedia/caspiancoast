@@ -7,7 +7,7 @@
   },
   "en": {
     "seo_title": "Caspian Coast Coffee — Persian Café in Venice, Los Angeles",
-    "seo_description": "Caspian Coast Coffee is a Persian café in Venice, California (Los Angeles). Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA — Persian roots, California light, Venice soul. Open daily 7am–8pm.",
+    "seo_description": "Caspian Coast Coffee is a Persian café in Venice, California (Los Angeles). Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA — Persian roots, California light, Venice soul. ",
     "hero_eyebrow": "Persian Café · Venice Beach, Los Angeles",
     "hero_title": "PERSIAN STYLE<br />VENICE SOUL",
     "hero_subhead": "Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.",
@@ -34,9 +34,29 @@
     "about_lede": "کاسپین کوست کافی از آرزوی گرد هم آوردن مردم از طریق گرمای قهوه و غنای قصه زاده شد."
   },
   "faqs": [
-    {"question_en": "Is Caspian Coast Coffee a Persian café?", "answer_en": "Yes! We're a Persian café in Venice, California.", "question_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟", "answer_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم."},
-    {"question_en": "What makes the café Persian?", "answer_en": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup.", "question_fa": "چه چیزی قهوه را ایرانی می‌کند؟", "answer_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم."},
-    {"question_en": "Where is Caspian Coast Coffee located?", "answer_en": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk.", "question_fa": "کاسپین کوست کافی کجاست؟", "answer_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱."},
-    {"question_en": "What are your hours?", "answer_en": "We're open daily, 7am to 8pm.", "question_fa": "ساعات کاری شما چیست؟", "answer_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم."}
+    {
+      "question_en": "Is Caspian Coast Coffee a Persian café?",
+      "answer_en": "Yes! We're a Persian café in Venice, California.",
+      "question_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟",
+      "answer_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم."
+    },
+    {
+      "question_en": "What makes the café Persian?",
+      "answer_en": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup.",
+      "question_fa": "چه چیزی قهوه را ایرانی می‌کند؟",
+      "answer_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم."
+    },
+    {
+      "question_en": "Where is Caspian Coast Coffee located?",
+      "answer_en": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk.",
+      "question_fa": "کاسپین کوست کافی کجاست؟",
+      "answer_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱."
+    },
+    {
+      "question_en": "What are your hours?",
+      "answer_en": "We're open daily, 7am to 8pm.",
+      "question_fa": "ساعات کاری شما چیست؟",
+      "answer_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم."
+    }
   ]
 }
