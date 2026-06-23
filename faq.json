@@ -5,86 +5,68 @@
       "q_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟",
       "a": "Yes! We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew, and rosewater matcha — right alongside a classic espresso menu roasted in LA by Sightglass Coffee. Persian roots, California light, Venice soul.",
       "a_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم. لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — در کنار منوی کلاسیک اسپرسو که در لس‌آنجلس توسط سایت‌گلس کافی رُست شده. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس.",
-      "open": true,
-      "instagram": "@caspiancostcoffee_la"
+      "open": true
     },
     {
       "q": "What makes the café Persian?",
       "q_fa": "چه چیزی قهوه را ایرانی می‌کند؟",
       "a": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup. Try our signature saffron latte or a cardamom cold brew. The hospitality is Persian too — here, you're a guest, not a customer.",
-      "a_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم: زعفران، هل، گلاب و شیره‌ی خرما. لاته‌ی زعفرانی ویژه‌ی ما یا یک کلد برو هل را امتحان کنید. مهمان‌نوازی هم ایرانی است — اینجا شما مهمان هستید، نه مشتری.",
-      "open": false
+      "a_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم: زعفران، هل، گلاب و شیره‌ی خرما. لاته‌ی زعفرانی ویژه‌ی ما یا یک کلد برو هل را امتحان کنید. مهمان‌نوازی هم ایرانی است — اینجا شما مهمان هستید، نه مشتری."
     },
     {
       "q": "What are your most popular drinks?",
       "q_fa": "محبوب‌ترین نوشیدنی‌های شما کدام‌اند؟",
       "a": "Our signature saffron latte, Nicole's Strawberry Matcha (iced matcha with house strawberry purée), the Valentino (espresso and chocolate with a bright hint of orange), cardamom cold brew and our espresso tonic. Everything can be served iced or hot.",
-      "a_fa": "لاته‌ی زعفرانی ویژه‌ی ما، ماچا توت‌فرنگی نیکول (ماچای یخ با پوره‌ی توت‌فرنگی خانگی)، والنتینو (اسپرسو و شکلات با رایحه‌ی پرتقال)، کلد برو هل و اسپرسو تونیک ما. همه را می‌توان سرد یا گرم سرو کرد.",
-      "open": false
+      "a_fa": "لاته‌ی زعفرانی ویژه‌ی ما، ماچا توت‌فرنگی نیکول (ماچای یخ با پوره‌ی توت‌فرنگی خانگی)، والنتینو (اسپرسو و شکلات با رایحه‌ی پرتقال)، کلد برو هل و اسپرسو تونیک ما. همه را می‌توان سرد یا گرم سرو کرد."
     },
     {
       "q": "You also serve up my favorite espresso drinks too, right?",
       "q_fa": "نوشیدنی‌های اسپرسوی محبوبم را هم سرو می‌کنید، درست است؟",
       "a": "Absolutely! We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites, and cold brew — pulled from beans roasted in LA by Sightglass Coffee. Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew, and the Valentino, plus traditional Persian pastries from Kouzeh Bakery. The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.",
-      "a_fa": "کاملاً! ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط سایت‌گلس رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از نانوایی کوزه. بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه.",
-      "open": false
+      "a_fa": "کاملاً! ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط سایت‌گلس رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از نانوایی کوزه. بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه."
     },
     {
       "q": "Who roasts your coffee, and where do the pastries come from?",
       "q_fa": "چه کسی قهوه‌ی شما را رُست می‌کند و شیرینی‌ها از کجا می‌آیند؟",
       "a": "Our coffee is roasted in Los Angeles by Sightglass Coffee, one of the best in the business. Our pastries and snacks are curated in collaboration with Artelice and Kouzeh Bakery.",
-      "a_fa": "قهوه‌ی ما در لس‌آنجلس توسط سایت‌گلس کافی، یکی از بهترین‌ها، رُست می‌شود. شیرینی‌ها و تنقلات ما با همکاری آرتلیس و نانوایی کوزه تهیه می‌شوند.",
-      "open": false
+      "a_fa": "قهوه‌ی ما در لس‌آنجلس توسط سایت‌گلس کافی، یکی از بهترین‌ها، رُست می‌شود. شیرینی‌ها و تنقلات ما با همکاری آرتلیس و نانوایی کوزه تهیه می‌شوند."
     },
     {
       "q": "Where is Caspian Coast Coffee located?",
       "q_fa": "کاسپین کوست کافی کجاست؟",
       "a": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk. Walk in; everyone is welcome.",
-      "a_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱ — یک بلوک تا گذرگاه ساحلی. وارد شوید؛ همه خوش‌آمدید.",
-      "open": false
+      "a_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱ — یک بلوک تا گذرگاه ساحلی. وارد شوید؛ همه خوش‌آمدید."
     },
     {
-      "q": "What are your hours?",
-      "q_fa": "ساعات کاری شما چیست؟",
-      "a": "We're open daily, 7am to 8pm.",
-      "a_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم.",
-      "open": false
+      "q": "What are the hours at Caspian Coast?",
+      "q_fa": "ساعات کاری کاسپین کوست چه زمانی است؟",
+      "a": "We're open daily:\nMon–Thu 7am–5pm\nFri & Sat 7am–7pm\nSun 8am–4pm",
+      "a_fa": "ما هر روز باز هستیم:\nدوشنبه تا پنجشنبه ۷ صبح–۵ عصر\nجمعه و شنبه ۷ صبح–۷ عصر\nیکشنبه ۸ صبح–۴ عصر"
     },
     {
       "q": "Do you have oat milk and plant-based options?",
       "q_fa": "آیا شیر جو دوسر و گزینه‌های گیاهی دارید؟",
       "a": "Yes — oat milk and other alternative milks are available for any drink, with plant-based options across the menu.",
-      "a_fa": "بله — شیر جو دوسر و دیگر شیرهای جایگزین برای هر نوشیدنی موجود است، همراه با گزینه‌های گیاهی در سراسر منو.",
-      "open": false
+      "a_fa": "بله — شیر جو دوسر و دیگر شیرهای جایگزین برای هر نوشیدنی موجود است، همراه با گزینه‌های گیاهی در سراسر منو."
     },
     {
       "q": "What is the eye symbol on your cups?",
       "q_fa": "نماد چشم روی فنجان‌های شما چیست؟",
       "a": "It's the nazar — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Our handmade speckled ceramic eye cups are available in the café.",
-      "a_fa": "این نظر است — چشم ایرانی که چشم‌زخم را دور می‌کند و نماد محافظت، مراقبت و خوش‌آمدگویی است. فنجان‌های سرامیکی دست‌ساز چشمِ ما در کافه موجود است.",
-      "open": false
+      "a_fa": "این نظر است — چشم ایرانی که چشم‌زخم را دور می‌کند و نماد محافظت، مراقبت و خوش‌آمدگویی است. فنجان‌های سرامیکی دست‌ساز چشمِ ما در کافه موجود است."
     },
     {
       "q": "Can I work from the café or host an event?",
       "q_fa": "می‌توانم در کافه کار کنم یا رویدادی برگزار کنم؟",
       "a": "Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram @caspiancoastcoffee.",
       "a_fa": "کاملاً. ما یک فضای اجتماعی هستیم — بیایید کار کنید، دیدار کنید، یا به جمع یکشنبه‌های بی‌خیال، باشگاه تخته‌نرد، شب صفحه‌ی موسیقی و محفل زعفران بپیوندید. برای رویدادهای خصوصی و اجاره‌ی فضا، در اینستاگرام به ما پیام دهید @caspiancoastcoffee.",
-      "open": false,
       "instagram": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en"
     },
     {
       "q": "Who created the murals at Caspian Coast?",
       "q_fa": "نقاشی‌های دیواری کاسپین کوست را چه کسی خلق کرده است؟",
       "a": "The murals at Caspian Coast were created by [Parisa Parnian](https://www.parisaparnian.com) — known as the Savage Muse — a prominent Los Angeles-based, Iranian-American multi-disciplinary visual artist, muralist, and experiential curator. In her words: \"This Woman, Life, Freedom mural is the layered blending of worlds, memories, revolutions, migrations, freedoms won and freedoms lost. It is holidays at the Caspian Sea with family and friends, breaking sangak bread and sipping teas and coffees while playing backgammon. It is being free as a woman to wear a bathing suit and feel the sun and sea breeze on your arms and legs without fear. This mural is a love letter to my motherland and the motherland of so many in our diaspora, including the founder of Caspian Coast Coffee.\"",
-      "a_fa": "نقاشی‌های دیواری کاسپین کوست توسط [پریسا پرنیان](https://www.parisaparnian.com) — معروف به Savage Muse — خلق شده‌اند؛ هنرمند تجسمی، نقاش دیواری و کیوریتور برجسته‌ی ایرانی‌-آمریکایی مقیم لس‌آنجلس. به گفته‌ی خودش: «این نقاشی دیواری زن، زندگی، آزادی، آمیزه‌ای لایه‌لایه از جهان‌ها، خاطره‌ها، انقلاب‌ها، مهاجرت‌ها و آزادی‌های به‌دست‌آمده و ازدست‌رفته است. تعطیلات کنار دریای خزر با خانواده و دوستان، شکستن نان سنگک و نوشیدن چای و قهوه هنگام تخته‌نرد بازی کردن. آزاد بودن به‌عنوان یک زن برای پوشیدن مایو و حس کردن آفتاب و نسیم دریا بر دست و پا بدون ترس. این نقاشی نامه‌ای عاشقانه به سرزمین مادری من و سرزمین مادری بسیاری در دیاسپورای ماست، از جمله بنیان‌گذار کاسپین کوست کافی.»",
-      "open": false
-    },
-    {
-      "q": "What is Caspian Coast?",
-      "q_fa": "کاسپین کوست چیست؟",
-      "a": "Caspian Coast is a Venice Beach coffee shop inspired by the cultural memory of the Caspian Sea and Persian hospitality. The space blends tiled benches, hand-painted murals, and a warm residential atmosphere with specialty coffee, saffron lattes, and Persian breads. It exists at the intersection of Venice Beach creativity and Iranian coastal culture, feeling equally connected to Los Angeles, Tehran, and the Caspian region.",
-      "a_fa": "کاسپین کوست یک کافه در ونیز بیچ است که از حافظه فرهنگی دریای خزر و مهمان‌نوازی ایرانی الهام گرفته شده است. این فضا با نیمکت‌های کاشی‌کاری‌شده، نقاشی‌های دیواری دست‌ساز و فضایی گرم و شبیه خانه، در کنار قهوه تخصصی، لاته زعفرانی و نان‌های ایرانی شکل گرفته است. کاسپین کوست در نقطه تلاقی خلاقیت ونیز بیچ و فرهنگ ساحلی ایران قرار دارد و هم‌زمان به لس‌آنجلس، تهران و منطقه خزر پیوند می‌خورد.",
-      "open": false
+      "a_fa": "نقاشی‌های دیواری کاسپین کوست توسط [پریسا پرنیان](https://www.parisaparnian.com) — معروف به Savage Muse — خلق شده‌اند؛ هنرمند تجسمی، نقاش دیواری و کیوریتور برجسته‌ی ایرانی‌-آمریکایی مقیم لس‌آنجلس. به گفته‌ی خودش: «این نقاشی دیواری زن، زندگی، آزادی، آمیزه‌ای لایه‌لایه از جهان‌ها، خاطره‌ها، انقلاب‌ها، مهاجرت‌ها و آزادی‌های به‌دست‌آمده و ازدست‌رفته است. تعطیلات کنار دریای خزر با خانواده و دوستان، شکستن نان سنگک و نوشیدن چای و قهوه هنگام تخته‌نرد بازی کردن. آزاد بودن به‌عنوان یک زن برای پوشیدن مایو و حس کردن آفتاب و نسیم دریا بر دست و پا بدون ترس. این نقاشی نامه‌ای عاشقانه به سرزمین مادری من و سرزمین مادری بسیاری در دیاسپورای ماست، از جمله بنیان‌گذار کاسپین کوست کافی.»"
     }
   ]
 }

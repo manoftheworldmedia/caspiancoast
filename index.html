@@ -153,7 +153,7 @@
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens": "07:00",
-    "closes": "20:00"
+    "closes": "17:00"
   }],
   "sameAs": ["https://www.instagram.com/caspiancoastcoffee_la/?hl=en"]
 }
@@ -777,13 +777,13 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img data-cms-img="images.hero" src="img/hero-interior.jpg" alt="Inside Caspian Coast Coffee, Venice — the Woman Life Freedom mural by Parisa Parnian, the Caspian Coast lion flag, and tiled bench seating by the window" /></div>
+  <div class="hero-bg"><img data-cc-img="images.heroInterior" src="img/hero-interior.jpg" alt="Inside Caspian Coast Coffee, Venice — the Woman Life Freedom mural by Parisa Parnian, the Caspian Coast lion flag, and tiled bench seating by the window" /></div>
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <div class="hero-content">
       <img class="hero-mark" src="img/eye-white.png" alt="Caspian Coast Coffee" style="padding: 0px; margin: 0px -20px 16px 0px; border-width: 0px; border-style: solid" />
-      <p class="hero-eyebrow" data-cms="hero_eyebrow" style="margin: 0px 0px 20px 5px">Persian Café · Venice Beach, Los Angeles</p>
-      <h1><span class="hl" data-cms-html="hero_title">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-cms="hero_subhead">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
+      <p class="hero-eyebrow" data-cc-html="hero.eyebrow" style="margin: 0px 0px 20px 5px">Persian Café · Venice Beach, Los Angeles</p>
+      <h1><span class="hl" data-cc-html="hero.titleHtml">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-cc-html="hero.subHtml">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
       <div class="hero-meta">
         <div class="hero-hours">
           <span class="eyebrow" data-fa="هر روز باز">Open Daily</span>
@@ -803,9 +803,9 @@
   <div class="wrap">
     <div class="reveal intro-copy">
       <p class="q" data-cc-html="intro.q">Is this a Persian café?</p>
-      <h2 data-cms-html="intro_heading">YES —
+      <h2 data-cc-html="intro.titleHtml">YES —
 AND THEN SOME</h2>
-      <p class="body-copy" data-cms-html="intro_body">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.</p>
+      <p class="body-copy" data-cc-html="intro.body">We pour saffron lattes, cardamom cold brew and rosewater matcha — Persian spice meeting California light. Our espresso is roasted right here in Los Angeles by Sightglass Coffee, and we let the coast do the rest: the citrus, the salt air, the easy pace of Venice.</p>
       <span class="eyebrow flavors-label" data-cc-html="intro.flavorsLabel">Flavors we build with</span>
       <div class="spices">
         <span class="chip">Saffron</span>
@@ -866,8 +866,8 @@ SERVED WITH CARE</h2>
     <div class="bakery-copy reveal">
       <span class="eyebrow" data-cc-html="bakery.eyebrow">The Bakery</span>
       <hr class="rule" style="background:var(--clay);" />
-      <h2 data-cms-html="bakery_heading">Magical Persian<br /><em>baked creations</em></h2>
-      <p data-cms-html="bakery_body">Pillowy seeded buns, spiraled barbari, saffron-kissed sweets — our pastries are made in collaboration with the bakers we love most, then served warm beside your latte.</p>
+      <h2 data-cc-html="bakery.titleHtml">Magical Persian<br /><em>baked creations</em></h2>
+      <p data-cc-html="bakery.body1">Pillowy seeded buns, spiraled barbari, saffron-kissed sweets — our pastries are made in collaboration with the bakers we love most, then served warm beside your latte.</p>
       <p data-cc-html="bakery.body2">Curated with Artelice &amp; Kouzeh Bakery.</p>
       <div class="baker">
         <span class="eye"><img src="img/kouzeh-logo.jpg" alt="Kouzeh Iranian Bakery logo" /></span>
@@ -1494,7 +1494,7 @@ IN THE BEST WAY</h2>
     if(!list) return;
     list.innerHTML='';
     (FAQ.items||[]).forEach((it,i)=>{
-      const d=document.createElement('details'); d.className='qa'; if(i===0) d.open=true;
+      const d=document.createElement('details'); d.className='qa'; if(it.open&&i===0) d.open=true;
       let ans=fa?(it.a_fa||it.a):it.a;
       ans=ccLinkify(ans);
       if(it.instagram) ans=ans.replace('@caspiancoastcoffee','<a href="'+it.instagram+'" target="_blank" rel="noopener" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>');
@@ -1510,19 +1510,7 @@ IN THE BEST WAY</h2>
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
   }
-  // FAQ source of truth = the portal-edited content/home.json (faqs[]). This way
-  // edits made in the MOW portal show on the live site. Falls back to the legacy
-  // faq.json if the CMS content is unavailable, so the section never breaks.
-  function ccFaqFromHome(home){
-    if(!home || !Array.isArray(home.faqs) || !home.faqs.length) return null;
-    return { items: home.faqs.map(function(f){ return { q:f.question_en, a:f.answer_en, q_fa:f.question_fa, a_fa:f.answer_fa }; }) };
-  }
-  function ccLoadFaqLegacy(){ return fetch('faq.json').then(function(r){return r.json();}).then(function(data){ FAQ=data; renderFaq(); buildFaqSchema(); }); }
-  fetch('content/home.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(home){
-    var fromHome=ccFaqFromHome(home);
-    if(fromHome){ FAQ=fromHome; renderFaq(); buildFaqSchema(); return; }
-    return ccLoadFaqLegacy();
-  }).catch(function(){ ccLoadFaqLegacy().catch(function(){}); });
+  fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
 
   /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
@@ -1558,6 +1546,5 @@ IN THE BEST WAY</h2>
   document.querySelectorAll('#langToggle button').forEach(b=>b.addEventListener('click', ()=>setTimeout(()=>{renderEvents();renderFaq();},0)));
 </script>
 <script src="cc-content.js"></script>
-<script src="cms-standard.js"></script>
 </body>
 </html>
