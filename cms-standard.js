@@ -85,6 +85,23 @@
     if (block.seo_title) {
       var ot = document.querySelector('meta[property="og:title"]');
       if (ot) ot.setAttribute('content', block.seo_title);
+      var tt = document.querySelector('meta[name="twitter:title"]');
+      if (tt) tt.setAttribute('content', block.seo_title);
+    }
+    if (block.seo_description) {
+      var td = document.querySelector('meta[name="twitter:description"]');
+      if (td) td.setAttribute('content', block.seo_description);
+      // Keep the business structured data (CafeOrCoffeeShop) description in sync.
+      var lds = document.querySelectorAll('script[type="application/ld+json"]');
+      for (var i = 0; i < lds.length; i++) {
+        try {
+          var obj = JSON.parse(lds[i].textContent);
+          if (obj && /CafeOrCoffeeShop|Restaurant|LocalBusiness/.test(obj['@type'] || '')) {
+            obj.description = block.seo_description;
+            lds[i].textContent = JSON.stringify(obj);
+          }
+        } catch (e) { /* skip non-JSON-LD blocks */ }
+      }
     }
     if (HOME.images && HOME.images.og_image) {
       var oi = document.querySelector('meta[property="og:image"]');
