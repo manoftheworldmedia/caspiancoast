@@ -1,16 +1,1 @@
-{
-  "sku": "magnet-homeland",
-  "price": 25,
-  "currency": "usd",
-  "image": "img/shop-magnets.jpg",
-  "active": true,
-  "buy_url": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
-  "en": {
-    "name": "Homeland Magnets",
-    "description": "Hand-painted ceramic magnets — Iran maps, hearts, and Persian sayings. Pick your favorite in the café."
-  },
-  "fa": {
-    "name": "مگنت‌های وطن",
-    "description": "مگنت‌های سرامیکی دست‌نقاشی — نقشه‌ی ایران، قلب‌ها و ضرب‌المثل‌های فارسی. در کافه دلخواهت را انتخاب کن."
-  }
-}
+{"sku":"magnet-homeland","price":25,"currency":"usd","image":"img/shop-magnets.jpg","active":true,"buy_url":"https://www.instagram.com/caspiancoastcoffee_la/?hl=en","en":{"name":"Homeland Magnets","description":"Hand-painted ceramic magnets — Iran maps, hearts, and Persian sayings."},"fa":{"name":"مگنت‌های وطن","description":"مگنت‌های سرامیکی دست‌نقاشی."}}

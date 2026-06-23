@@ -21,90 +21,22 @@
   },
   "fa": {
     "seo_title": "کاسپین کوست کافی — کافه ایرانی در ونیس، لس‌آنجلس",
-    "seo_description": "کاسپین کوست کافی یک کافه ایرانی در ونیس، کالیفرنیا (لس‌آنجلس) است. لاته زعفرانی، کلد برو هل، ماچا گلاب و اسپرسوی رُست‌شده در لس‌آنجلس — ریشه ایرانی، نور کالیفرنیا، روح ونیس. هر روز از ۷ صبح تا ۸ شب باز.",
+    "seo_description": "کاسپین کوست کافی یک کافه ایرانی در ونیس، کالیفرنیا (لس‌آنجلس) است.",
     "hero_eyebrow": "کافه ایرانی · ونیس بیچ، لس‌آنجلس",
     "hero_title": "اصالت ایرانی،<br />روح ونیس",
-    "hero_subhead": "کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست — بهترین قهوهٔ لس‌آنجلس، شیرینی‌های سنتی ایرانی، و طعم‌هایی که خزر را به اقیانوس آرام می‌آورند.",
+    "hero_subhead": "کاسپین کوست یک کافه و نشیمن دنج در ونیس، کالیفرنیاست.",
     "cta_primary": "سفارش دهید",
     "cta_secondary": "بازدید",
     "intro_heading": "بله —<br>و فراتر از آن",
-    "intro_body": "ما لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — ادویهٔ ایرانی در دل نور کالیفرنیا. اسپرسوی ما همین‌جا در لس‌آنجلس توسط سایت‌گلس کافی رُست می‌شود، و باقی را به ساحل می‌سپاریم: مرکبات، نسیم شور دریا و ریتم آرام ونیس.",
+    "intro_body": "ما لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم.",
     "bakery_heading": "خلق‌های جادوییِ<br /><em>نان ایرانی</em>",
-    "bakery_body": "نان‌های نرم کنجدی، بربری مارپیچ، شیرینی‌های آغشته به زعفران — شیرینی‌های ما با همکاری نانوایانی که عاشقشانیم پخته و گرم کنار لاته‌تان سرو می‌شوند.",
+    "bakery_body": "نان‌های نرم کنجدی، بربری مارپیچ، شیرینی‌های آغشته به زعفران.",
     "about_lede": "کاسپین کوست کافی از آرزوی گرد هم آوردن مردم از طریق گرمای قهوه و غنای قصه زاده شد."
   },
   "faqs": [
-    {
-      "question_en": "Is Caspian Coast Coffee a Persian café?",
-      "answer_en": "Yes! We're a Persian café in Venice, California. We pour saffron lattes, cardamom cold brew, and rosewater matcha — right alongside a classic espresso menu roasted in LA by [Sightglass Coffee](https://sightglasscoffee.com). Persian roots, California light, Venice soul.",
-      "question_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟",
-      "answer_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم. لاته‌ی زعفرانی، کلد برو هل و ماچا گلاب سرو می‌کنیم — در کنار منوی کلاسیک اسپرسو که در لس‌آنجلس توسط [سایت‌گلس کافی](https://sightglasscoffee.com) رُست شده. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس."
-    },
-    {
-      "question_en": "What makes the café Persian?",
-      "answer_en": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup. Try our signature saffron latte or a cardamom cold brew. The hospitality is Persian too — here, you're a guest, not a customer.",
-      "question_fa": "چه چیزی قهوه را ایرانی می‌کند؟",
-      "answer_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم: زعفران، هل، گلاب و شیره‌ی خرما. لاته‌ی زعفرانی ویژه‌ی ما یا یک کلد برو هل را امتحان کنید. مهمان‌نوازی هم ایرانی است — اینجا شما مهمان هستید، نه مشتری."
-    },
-    {
-      "question_en": "What are your most popular drinks?",
-      "answer_en": "Our signature saffron latte, Nicole's Strawberry Matcha (iced matcha with house strawberry purée), the Valentino (espresso and chocolate with a bright hint of orange), cardamom cold brew and our espresso tonic. Everything can be served iced or hot.",
-      "question_fa": "محبوب‌ترین نوشیدنی‌های شما کدام‌اند؟",
-      "answer_fa": "لاته‌ی زعفرانی ویژه‌ی ما، ماچا توت‌فرنگی نیکول (ماچای یخ با پوره‌ی توت‌فرنگی خانگی)، والنتینو (اسپرسو و شکلات با رایحه‌ی پرتقال)، کلد برو هل و اسپرسو تونیک ما. همه را می‌توان سرد یا گرم سرو کرد."
-    },
-    {
-      "question_en": "You also serve up my favorite espresso drinks too, right?",
-      "answer_en": "Absolutely! We serve the best espresso drinks in Venice — espresso, cortados, cappuccinos, lattes, flat whites, and cold brew — pulled from beans roasted in LA by [Sightglass Coffee](https://sightglasscoffee.com). Beyond the classics, we make specialty concoctions like the saffron honey latte, cardamom cold brew, and the Valentino, plus traditional Persian pastries from [Kouzeh Bakery](https://kouzehbakery.com). The best espresso, signature specialty drinks, and authentic Persian sweets — all in one café.",
-      "question_fa": "نوشیدنی‌های اسپرسوی محبوبم را هم سرو می‌کنید، درست است؟",
-      "answer_fa": "کاملاً! ما بهترین نوشیدنی‌های اسپرسو در ونیس را سرو می‌کنیم — اسپرسو، کورتادو، کاپوچینو، لاته، فلت‌وایت و کلد برو — از دانه‌هایی که در لس‌آنجلس توسط [سایت‌گلس](https://sightglasscoffee.com) رُست شده‌اند. فراتر از کلاسیک‌ها، نوشیدنی‌های ویژه‌ای مثل لاته‌ی زعفران و عسل، کلد برو هل و والنتینو می‌سازیم، به‌علاوه‌ی شیرینی‌های سنتی ایرانی از [نانوایی کوزه](https://kouzehbakery.com). بهترین اسپرسو، نوشیدنی‌های ویژه و شیرینی‌های اصیل ایرانی — همه در یک کافه."
-    },
-    {
-      "question_en": "Who roasts your coffee, and where do the pastries come from?",
-      "answer_en": "Our coffee is roasted in Los Angeles by [Sightglass Coffee](https://sightglasscoffee.com), one of the best in the business. Our pastries and snacks are curated in collaboration with Artelice and [Kouzeh Bakery](https://kouzehbakery.com).",
-      "question_fa": "چه کسی قهوه‌ی شما را رُست می‌کند و شیرینی‌ها از کجا می‌آیند؟",
-      "answer_fa": "قهوه‌ی ما در لس‌آنجلس توسط [سایت‌گلس کافی](https://sightglasscoffee.com)، یکی از بهترین‌ها، رُست می‌شود. شیرینی‌ها و تنقلات ما با همکاری آرتلیس و [نانوایی کوزه](https://kouzehbakery.com) تهیه می‌شوند."
-    },
-    {
-      "question_en": "Where is Caspian Coast Coffee located?",
-      "answer_en": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk. Walk in; everyone is welcome.",
-      "question_fa": "کاسپین کوست کافی کجاست؟",
-      "answer_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱ — یک بلوک تا گذرگاه ساحلی. وارد شوید؛ همه خوش‌آمدید."
-    },
-    {
-      "question_en": "What are your hours?",
-      "answer_en": "We're open daily, 7am to 8pm.",
-      "question_fa": "ساعات کاری شما چیست؟",
-      "answer_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم."
-    },
-    {
-      "question_en": "Do you have oat milk and plant-based options?",
-      "answer_en": "Yes — oat milk and other alternative milks are available for any drink, with plant-based options across the menu.",
-      "question_fa": "آیا شیر جو دوسر و گزینه‌های گیاهی دارید؟",
-      "answer_fa": "بله — شیر جو دوسر و دیگر شیرهای جایگزین برای هر نوشیدنی موجود است، همراه با گزینه‌های گیاهی در سراسر منو."
-    },
-    {
-      "question_en": "What is the eye symbol on your cups?",
-      "answer_en": "It's the nazar — the Persian eye that wards off the evil eye and stands for protection, care and welcome. Our handmade speckled ceramic eye cups are available in the café.",
-      "question_fa": "نماد چشم روی فنجان‌های شما چیست؟",
-      "answer_fa": "این نظر است — چشم ایرانی که چشم‌زخم را دور می‌کند و نماد محافظت، مراقبت و خوش‌آمدگویی است. فنجان‌های سرامیکی دست‌ساز چشمِ ما در کافه موجود است."
-    },
-    {
-      "question_en": "Can I work from the café or host an event?",
-      "answer_en": "Absolutely. We're a community space — come work, meet, or join Lazy Sundays, Backgammon Club, Record Night and Saffron Sessions. For private events and space rentals, message us on Instagram [@caspiancoastcoffee](https://www.instagram.com/caspiancoastcoffee_la/?hl=en).",
-      "question_fa": "می‌توانم در کافه کار کنم یا رویدادی برگزار کنم؟",
-      "answer_fa": "کاملاً. ما یک فضای اجتماعی هستیم — بیایید کار کنید، دیدار کنید، یا به جمع یکشنبه‌های بی‌خیال، باشگاه تخته‌نرد، شب صفحه‌ی موسیقی و محفل زعفران بپیوندید. برای رویدادهای خصوصی و اجاره‌ی فضا، در اینستاگرام به ما پیام دهید [@caspiancoastcoffee](https://www.instagram.com/caspiancoastcoffee_la/?hl=en)."
-    },
-    {
-      "question_en": "Who created the murals at Caspian Coast?",
-      "answer_en": "The murals at Caspian Coast were created by [Parisa Parnian](https://www.parisaparnian.com) — known as the Savage Muse — a prominent Los Angeles-based, Iranian-American multi-disciplinary visual artist, muralist, and experiential curator. In her words: \"This Woman, Life, Freedom mural is the layered blending of worlds, memories, revolutions, migrations, freedoms won and freedoms lost. It is holidays at the Caspian Sea with family and friends, breaking sangak bread and sipping teas and coffees while playing backgammon. It is being free as a woman to wear a bathing suit and feel the sun and sea breeze on your arms and legs without fear. This mural is a love letter to my motherland and the motherland of so many in our diaspora, including the founder of Caspian Coast Coffee.\"",
-      "question_fa": "نقاشی‌های دیواری کاسپین کوست را چه کسی خلق کرده است؟",
-      "answer_fa": "نقاشی‌های دیواری کاسپین کوست توسط [پریسا پرنیان](https://www.parisaparnian.com) — معروف به Savage Muse — خلق شده‌اند؛ هنرمند تجسمی، نقاش دیواری و کیوریتور برجسته‌ی ایرانی‌-آمریکایی مقیم لس‌آنجلس. به گفته‌ی خودش: «این نقاشی دیواری زن، زندگی، آزادی، آمیزه‌ای لایه‌لایه از جهان‌ها، خاطره‌ها، انقلاب‌ها، مهاجرت‌ها و آزادی‌های به‌دست‌آمده و ازدست‌رفته است. تعطیلات کنار دریای خزر با خانواده و دوستان، شکستن نان سنگک و نوشیدن چای و قهوه هنگام تخته‌نرد بازی کردن. آزاد بودن به‌عنوان یک زن برای پوشیدن مایو و حس کردن آفتاب و نسیم دریا بر دست و پا بدون ترس. این نقاشی نامه‌ای عاشقانه به سرزمین مادری من و سرزمین مادری بسیاری در دیاسپورای ماست، از جمله بنیان‌گذار کاسپین کوست کافی.»"
-    },
-    {
-      "question_en": "What is Caspian Coast?",
-      "answer_en": "Caspian Coast is a Venice Beach coffee shop inspired by the cultural memory of the Caspian Sea and Persian hospitality. The space blends tiled benches, hand-painted murals, and a warm residential atmosphere with specialty coffee, saffron lattes, and Persian breads. It exists at the intersection of Venice Beach creativity and Iranian coastal culture, feeling equally connected to Los Angeles, Tehran, and the Caspian region.",
-      "question_fa": "کاسپین کوست چیست؟",
-      "answer_fa": "کاسپین کوست یک کافه در ونیز بیچ است که از حافظه فرهنگی دریای خزر و مهمان‌نوازی ایرانی الهام گرفته شده است. این فضا با نیمکت‌های کاشی‌کاری‌شده، نقاشی‌های دیواری دست‌ساز و فضایی گرم و شبیه خانه، در کنار قهوه تخصصی، لاته زعفرانی و نان‌های ایرانی شکل گرفته است. کاسپین کوست در نقطه تلاقی خلاقیت ونیز بیچ و فرهنگ ساحلی ایران قرار دارد و هم‌زمان به لس‌آنجلس، تهران و منطقه خزر پیوند می‌خورد."
-    }
+    {"question_en": "Is Caspian Coast Coffee a Persian café?", "answer_en": "Yes! We're a Persian café in Venice, California.", "question_fa": "آیا کاسپین کوست کافی یک کافه‌ی ایرانی است؟", "answer_fa": "بله! ما یک کافه‌ی ایرانی در ونیس کالیفرنیا هستیم."},
+    {"question_en": "What makes the café Persian?", "answer_en": "We build drinks around the flavors of a Persian home: saffron, cardamom, rosewater and date syrup.", "question_fa": "چه چیزی قهوه را ایرانی می‌کند؟", "answer_fa": "ما نوشیدنی‌ها را حول طعم‌های یک خانه‌ی ایرانی می‌سازیم."},
+    {"question_en": "Where is Caspian Coast Coffee located?", "answer_en": "1501 Main St, Unit 103, Venice, CA 90291 — a block from the boardwalk.", "question_fa": "کاسپین کوست کافی کجاست؟", "answer_fa": "۱۵۰۱ مِین‌استریت، واحد ۱۰۳، ونیس، کالیفرنیا ۹۰۲۹۱."},
+    {"question_en": "What are your hours?", "answer_en": "We're open daily, 7am to 8pm.", "question_fa": "ساعات کاری شما چیست؟", "answer_fa": "ما هر روز از ۷ صبح تا ۸ شب باز هستیم."}
   ]
 }

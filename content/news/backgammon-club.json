@@ -1,15 +1,1 @@
-{
-  "date": "2026-06-08",
-  "cover": "img/cups-trio.jpg",
-  "featured": false,
-  "en": {
-    "title": "Weekend Backgammon & Reading",
-    "excerpt": "Weekends · Caspian Coast Coffee, Venice",
-    "body": "<p>Read a book or play Backgammon (تخته) with friends in the Caspian Loft. Slow mornings, good coffee, no rush. Get comfortable, relax, and stay a while.</p>"
-  },
-  "fa": {
-    "title": "تخته‌نرد و کتاب‌خوانی آخر هفته",
-    "excerpt": "آخر هفته · کافه، ونیس",
-    "body": "<p>در کاسپین لافت کتاب بخوانید یا با دوستان تخته‌نرد بازی کنید. صبح‌های آرام، قهوه‌ی خوب، بی‌عجله. راحت باشید و کمی بمانید.</p>"
-  }
-}
+{"date":"2026-06-08","cover":"img/cups-trio.jpg","featured":false,"en":{"title":"Weekend Backgammon & Reading","excerpt":"Weekends · Caspian Coast Coffee, Venice","body":"<p>Read a book or play Backgammon with friends in the Caspian Loft. Slow mornings, good coffee, no rush.</p>"},"fa":{"title":"تخته‌نرد و کتاب‌خوانی آخر هفته","excerpt":"آخر هفته · کافه، ونیس","body":"<p>در کاسپین لافت کتاب بخوانید یا با دوستان تخته‌نرد بازی کنید.</p>"}}

@@ -1,16 +1,1 @@
-{
-  "sku": "hat-baba",
-  "price": 32,
-  "currency": "usd",
-  "image": "img/shop-hat.jpg",
-  "active": true,
-  "buy_url": "https://www.instagram.com/caspiancoastcoffee_la/?hl=en",
-  "en": {
-    "name": "Baba Hat",
-    "description": "Adjustable Lös Angeles dad hat with our Caspian Gothic embroidery — Tehrangeles meets Venice."
-  },
-  "fa": {
-    "name": "کلاه بابا",
-    "description": "کلاه بابای قابل‌تنظیم لس‌آنجلس با گلدوزی کاسپین گوتیک — تهرانجلس به ونیس می‌رسد."
-  }
-}
+{"sku":"hat-baba","price":32,"currency":"usd","image":"img/shop-hat.jpg","active":true,"buy_url":"https://www.instagram.com/caspiancoastcoffee_la/?hl=en","en":{"name":"Baba Hat","description":"Adjustable Lös Angeles dad hat with our Caspian Gothic embroidery."},"fa":{"name":"کلاه بابا","description":"کلاه بابای قابل‌تنظیم لس‌آنجلس با گلدوزی کاسپین گوتیک."}}

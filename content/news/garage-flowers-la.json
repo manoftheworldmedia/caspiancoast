@@ -1,15 +1,1 @@
-{
-  "date": "2026-06-13",
-  "cover": "img/Caspian_Coast_Coffee_Garage_Flowers_Venice_Los_Angeles_California.png",
-  "featured": false,
-  "en": {
-    "title": "Garage Flowers LA",
-    "excerpt": "June 13 · 10AM · Caspian Coast Coffee, Venice",
-    "body": "<p>Beautiful bouquets by Parissa Ahmadkhani. Iranian-owned, Venice-rooted.</p>"
-  },
-  "fa": {
-    "title": "گاراژ فلاورز ال‌ای (LA)",
-    "excerpt": "۱۳ ژوئن · ساعت ۱۰ صبح · کافه، ونیس",
-    "body": "<p>دسته‌گل‌های زیبا از پریسا احمدخانی. ایرانی، با ریشه در ونیس.</p>"
-  }
-}
+{"date":"2026-06-13","cover":"img/Caspian_Coast_Coffee_Garage_Flowers_Venice_Los_Angeles_California.png","featured":false,"en":{"title":"Garage Flowers LA","excerpt":"June 13 · 10AM · Caspian Coast Coffee, Venice","body":"<p>Beautiful bouquets by Parissa Ahmadkhani. Iranian-owned, Venice-rooted.</p>"},"fa":{"title":"گاراژ فلاورز ال‌ای","excerpt":"۱۳ ژوئن · ساعت ۱۰ صبح · کافه، ونیس","body":"<p>دسته‌گل‌های زیبا از پریسا احمدخانی.</p>"}}

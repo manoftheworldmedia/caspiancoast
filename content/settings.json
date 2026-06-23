@@ -10,10 +10,6 @@
   ],
   "shop_enabled": true,
   "shop_currency": "usd",
-  "en": {
-    "footer_tagline": "Persian roots, California light, Venice soul."
-  },
-  "fa": {
-    "footer_tagline": "ریشه ایرانی، نور کالیفرنیا، روح ونیس."
-  }
+  "en": { "footer_tagline": "Persian roots, California light, Venice soul." },
+  "fa": { "footer_tagline": "ریشه ایرانی، نور کالیفرنیا، روح ونیس." }
 }
