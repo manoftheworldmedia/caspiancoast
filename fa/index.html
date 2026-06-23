@@ -1511,7 +1511,16 @@ IN THE BEST WAY</h2>
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
   }
-  fetch('../faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
+  // Single source of truth: portal-edited content/home.json first, faq.json as fallback.
+  function ccAdaptHomeFaqs(h){
+    var arr=(h&&Array.isArray(h.faqs))?h.faqs:[];
+    return {items:arr.map(function(f,i){return {q:f.question_en,a:f.answer_en,q_fa:f.question_fa,a_fa:f.answer_fa,open:i===0};})};
+  }
+  fetch('../content/home.json').then(function(r){return r.json();}).then(function(h){
+    var a=ccAdaptHomeFaqs(h);
+    if(a.items.length){ FAQ=a; renderFaq(); buildFaqSchema(); }
+    else { throw new Error('no portal faqs'); }
+  }).catch(function(){ fetch('../faq.json').then(function(r){return r.json();}).then(function(data){ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(function(){}); });
 
   /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
