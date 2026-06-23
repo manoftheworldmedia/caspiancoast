@@ -1494,7 +1494,7 @@ IN THE BEST WAY</h2>
     if(!list) return;
     list.innerHTML='';
     (FAQ.items||[]).forEach((it,i)=>{
-      const d=document.createElement('details'); d.className='qa'; if(it.open&&i===0) d.open=true;
+      const d=document.createElement('details'); d.className='qa'; if(i===0) d.open=true;
       let ans=fa?(it.a_fa||it.a):it.a;
       ans=ccLinkify(ans);
       if(it.instagram) ans=ans.replace('@caspiancoastcoffee','<a href="'+it.instagram+'" target="_blank" rel="noopener" style="border-bottom:1px solid var(--clay);">@caspiancoastcoffee</a>');
@@ -1510,7 +1510,19 @@ IN THE BEST WAY</h2>
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
   }
-  fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
+  // FAQ source of truth = the portal-edited content/home.json (faqs[]). This way
+  // edits made in the MOW portal show on the live site. Falls back to the legacy
+  // faq.json if the CMS content is unavailable, so the section never breaks.
+  function ccFaqFromHome(home){
+    if(!home || !Array.isArray(home.faqs) || !home.faqs.length) return null;
+    return { items: home.faqs.map(function(f){ return { q:f.question_en, a:f.answer_en, q_fa:f.question_fa, a_fa:f.answer_fa }; }) };
+  }
+  function ccLoadFaqLegacy(){ return fetch('faq.json').then(function(r){return r.json();}).then(function(data){ FAQ=data; renderFaq(); buildFaqSchema(); }); }
+  fetch('content/home.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(home){
+    var fromHome=ccFaqFromHome(home);
+    if(fromHome){ FAQ=fromHome; renderFaq(); buildFaqSchema(); return; }
+    return ccLoadFaqLegacy();
+  }).catch(function(){ ccLoadFaqLegacy().catch(function(){}); });
 
   /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
