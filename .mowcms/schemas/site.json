@@ -1,196 +1,308 @@
 {
   "project": "caspiancoast",
   "label": "Caspian Coast Coffee",
-  "description": "Persian café in Venice, California (Los Angeles). Multilingual (English / فارسی) content model: homepage, events (news), pages, menu boards, shop products, navigation and settings.",
+  "description": "Persian café in Venice, California (Los Angeles). The portal edits the LIVE root data files the site actually serves — content.json (homepage + About + shared images/theme), menu.json (menu boards), shop.json (shop) — plus the home FAQ list in content/home.json and the News/Articles collection. Bilingual (English / فارسی) via adjacent _fa-suffixed fields. Edits go straight live; no manual sync.",
   "languages": [
     "en",
     "fa"
   ],
   "schemas": [
     {
-      "name": "home",
-      "label": "Homepage",
+      "name": "content",
+      "label": "Homepage & About",
       "icon": "home",
+      "kind": "single",
+      "path": "content.json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "Hero",
+          "type": "object",
+          "ui": { "group": "Homepage — Hero" },
+          "fields": [
+            { "name": "eyebrow", "label": "Eyebrow (EN)", "type": "string" },
+            { "name": "eyebrow_fa", "label": "Eyebrow (فارسی)", "type": "string" },
+            { "name": "titleHtml", "label": "Headline (EN, allows <br>/<em>)", "type": "richtext" },
+            { "name": "titleHtml_fa", "label": "Headline (فارسی, allows <br>/<em>)", "type": "richtext" },
+            { "name": "subHtml", "label": "Sub-paragraph (EN, allows HTML)", "type": "richtext" },
+            { "name": "subHtml_fa", "label": "Sub-paragraph (فارسی, allows HTML)", "type": "richtext" }
+          ]
+        },
+        {
+          "name": "intro",
+          "label": "Intro",
+          "type": "object",
+          "ui": { "group": "Homepage — Intro" },
+          "fields": [
+            { "name": "q", "label": "Question (EN)", "type": "richtext" },
+            { "name": "q_fa", "label": "Question (فارسی)", "type": "richtext" },
+            { "name": "titleHtml", "label": "Title (EN, allows <br>/<em>)", "type": "richtext" },
+            { "name": "titleHtml_fa", "label": "Title (فارسی, allows <br>/<em>)", "type": "richtext" },
+            { "name": "body", "label": "Body (EN, allows HTML)", "type": "richtext" },
+            { "name": "body_fa", "label": "Body (فارسی, allows HTML)", "type": "richtext" },
+            { "name": "flavorsLabel", "label": "Flavors label (EN)", "type": "string" },
+            { "name": "flavorsLabel_fa", "label": "Flavors label (فارسی)", "type": "string" },
+            {
+              "name": "image",
+              "label": "Intro image",
+              "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bakery",
+          "label": "Bakery",
+          "type": "object",
+          "ui": { "group": "Homepage — Bakery" },
+          "fields": [
+            { "name": "eyebrow", "label": "Eyebrow (EN)", "type": "string" },
+            { "name": "eyebrow_fa", "label": "Eyebrow (فارسی)", "type": "string" },
+            { "name": "titleHtml", "label": "Title (EN, allows <br>/<em>)", "type": "richtext" },
+            { "name": "titleHtml_fa", "label": "Title (فارسی, allows <br>/<em>)", "type": "richtext" },
+            { "name": "body1", "label": "Paragraph 1 (EN, allows HTML)", "type": "richtext" },
+            { "name": "body1_fa", "label": "Paragraph 1 (فارسی, allows HTML)", "type": "richtext" },
+            { "name": "body2", "label": "Paragraph 2 (EN, allows HTML)", "type": "richtext" },
+            { "name": "body2_fa", "label": "Paragraph 2 (فارسی, allows HTML)", "type": "richtext" },
+            { "name": "bakerName", "label": "Baker name (EN)", "type": "string" },
+            { "name": "bakerName_fa", "label": "Baker name (فارسی)", "type": "string" },
+            { "name": "bakerHandle", "label": "Baker Instagram handle", "type": "string" },
+            { "name": "bakerInstagram", "label": "Baker Instagram URL", "type": "url" },
+            {
+              "name": "image1",
+              "label": "Bakery image 1",
+              "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "image2",
+              "label": "Bakery image 2",
+              "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "contact",
+          "label": "Contact & hours",
+          "type": "object",
+          "ui": { "group": "Homepage — Contact" },
+          "fields": [
+            { "name": "addressLine1", "label": "Address line 1 (EN)", "type": "string" },
+            { "name": "addressLine1_fa", "label": "Address line 1 (فارسی)", "type": "string" },
+            { "name": "addressLine2", "label": "Address line 2 (EN)", "type": "string" },
+            { "name": "addressLine2_fa", "label": "Address line 2 (فارسی)", "type": "string" },
+            { "name": "hours", "label": "Hours — short (EN)", "type": "string" },
+            { "name": "hours_fa", "label": "Hours — short (فارسی)", "type": "string" },
+            { "name": "hoursDetail", "label": "Hours — detailed (EN, allows <br>)", "type": "richtext" },
+            { "name": "hoursDetail_fa", "label": "Hours — detailed (فارسی, allows <br>)", "type": "richtext" },
+            { "name": "instagram", "label": "Instagram URL", "type": "url" },
+            { "name": "instagramHandle", "label": "Instagram handle", "type": "string" },
+            { "name": "mapsUrl", "label": "Google Maps URL", "type": "url" },
+            { "name": "orderUrl", "label": "Online order URL", "type": "url" }
+          ]
+        },
+        {
+          "name": "carousel",
+          "label": "Drinks carousel",
+          "type": "list",
+          "ui": { "group": "Homepage — Carousel" },
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "image", "label": "Drink image", "type": "image" },
+              { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+              { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" },
+              { "name": "secret", "label": "Secret menu item", "type": "boolean" },
+              { "name": "secretLabel", "label": "Secret label (EN)", "type": "string" },
+              { "name": "secretLabel_fa", "label": "Secret label (فارسی)", "type": "string" },
+              { "name": "show", "label": "Show in carousel", "type": "boolean" }
+            ]
+          }
+        },
+        {
+          "name": "about",
+          "label": "About page copy",
+          "type": "object",
+          "ui": { "group": "About page" },
+          "fields": [
+            { "name": "ledeHtml", "label": "Lede (EN, allows HTML)", "type": "richtext" },
+            { "name": "ledeHtml_fa", "label": "Lede (فارسی, allows HTML)", "type": "richtext" },
+            { "name": "p1", "label": "Paragraph 1 (EN)", "type": "richtext" },
+            { "name": "p1_fa", "label": "Paragraph 1 (فارسی)", "type": "richtext" },
+            { "name": "p2", "label": "Paragraph 2 (EN)", "type": "richtext" },
+            { "name": "p2_fa", "label": "Paragraph 2 (فارسی)", "type": "richtext" },
+            { "name": "p3", "label": "Paragraph 3 (EN)", "type": "richtext" },
+            { "name": "p3_fa", "label": "Paragraph 3 (فارسی)", "type": "richtext" },
+            { "name": "p4", "label": "Paragraph 4 (EN)", "type": "richtext" },
+            { "name": "p4_fa", "label": "Paragraph 4 (فارسی)", "type": "richtext" },
+            { "name": "p5", "label": "Paragraph 5 (EN)", "type": "richtext" },
+            { "name": "p5_fa", "label": "Paragraph 5 (فارسی)", "type": "richtext" },
+            { "name": "photoCaption", "label": "Photo caption (EN)", "type": "string" },
+            { "name": "photoCaption_fa", "label": "Photo caption (فارسی)", "type": "string" }
+          ]
+        },
+        {
+          "name": "theme",
+          "label": "Theme fonts",
+          "type": "object",
+          "ui": { "group": "Theme" },
+          "fields": [
+            { "name": "fontDisplay", "label": "Display font (Google Fonts family)", "type": "string" },
+            { "name": "fontSerif", "label": "Serif font (Google Fonts family)", "type": "string" },
+            { "name": "fontBody", "label": "Body font (Google Fonts family)", "type": "string" },
+            { "name": "fontEditorial", "label": "Editorial font (Google Fonts family)", "type": "string" }
+          ]
+        },
+        {
+          "name": "images",
+          "label": "Shared images (homepage & About)",
+          "type": "object",
+          "ui": { "group": "Images" },
+          "fields": [
+            {
+              "name": "heroInterior", "label": "Hero interior", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "spiceJars", "label": "Spice jars", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "bakeryBun", "label": "Bakery bun", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "bakerySpiral", "label": "Bakery spiral", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "vibeWindow", "label": "Vibe — window bench", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "vibeMural", "label": "Vibe — mural", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "nostalgiaWoman", "label": "Nostalgia — woman", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "nostalgiaRadio", "label": "Nostalgia — radio", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "cupCeramic", "label": "Ceramic cup", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "nostalgiaMercedes", "label": "Nostalgia — Mercedes", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "merchShirt", "label": "Merch shirt", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "laPostcard", "label": "LA postcard", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "aboutPoster", "label": "About — poster", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "ownerPhoto", "label": "About — owner photo", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            },
+            {
+              "name": "rahiMom", "label": "About — Rahi & mom", "type": "object",
+              "fields": [
+                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "homeFaqs",
+      "label": "Homepage FAQ",
+      "icon": "menu",
       "kind": "single",
       "path": "content/home.json",
       "fields": [
-        {
-          "name": "images",
-          "label": "Images",
-          "type": "object",
-          "fields": [
-            {
-              "name": "logo",
-              "label": "Logo",
-              "type": "image"
-            },
-            {
-              "name": "hero",
-              "label": "Hero / interior image",
-              "type": "image"
-            },
-            {
-              "name": "spice_jars",
-              "label": "Spice jars image",
-              "type": "image"
-            },
-            {
-              "name": "og_image",
-              "label": "Social share image",
-              "type": "image"
-            }
-          ]
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "seo_title",
-              "label": "SEO title",
-              "type": "string",
-              "required": true,
-              "maxLength": 70
-            },
-            {
-              "name": "seo_description",
-              "label": "SEO description",
-              "type": "text",
-              "required": true,
-              "maxLength": 320
-            },
-            {
-              "name": "hero_eyebrow",
-              "label": "Hero — small label",
-              "type": "string"
-            },
-            {
-              "name": "hero_title",
-              "label": "Hero — headline",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "hero_subhead",
-              "label": "Hero — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "cta_primary",
-              "label": "Primary button",
-              "type": "string"
-            },
-            {
-              "name": "cta_secondary",
-              "label": "Secondary button",
-              "type": "string"
-            },
-            {
-              "name": "intro_heading",
-              "label": "Intro — heading",
-              "type": "string"
-            },
-            {
-              "name": "intro_body",
-              "label": "Intro — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "bakery_heading",
-              "label": "Bakery — heading",
-              "type": "string"
-            },
-            {
-              "name": "bakery_body",
-              "label": "Bakery — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "about_lede",
-              "label": "About — lede",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "seo_title",
-              "label": "SEO title",
-              "type": "string",
-              "required": true,
-              "maxLength": 70
-            },
-            {
-              "name": "seo_description",
-              "label": "SEO description",
-              "type": "text",
-              "required": true,
-              "maxLength": 320
-            },
-            {
-              "name": "hero_eyebrow",
-              "label": "Hero — small label",
-              "type": "string"
-            },
-            {
-              "name": "hero_title",
-              "label": "Hero — headline",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "hero_subhead",
-              "label": "Hero — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "cta_primary",
-              "label": "Primary button",
-              "type": "string"
-            },
-            {
-              "name": "cta_secondary",
-              "label": "Secondary button",
-              "type": "string"
-            },
-            {
-              "name": "intro_heading",
-              "label": "Intro — heading",
-              "type": "string"
-            },
-            {
-              "name": "intro_body",
-              "label": "Intro — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "bakery_heading",
-              "label": "Bakery — heading",
-              "type": "string"
-            },
-            {
-              "name": "bakery_body",
-              "label": "Bakery — paragraph",
-              "type": "text"
-            },
-            {
-              "name": "about_lede",
-              "label": "About — lede",
-              "type": "text"
-            }
-          ]
-        },
         {
           "name": "faqs",
           "label": "FAQ items",
@@ -198,27 +310,106 @@
           "of": {
             "type": "object",
             "fields": [
+              { "name": "question_en", "label": "Question (English)", "type": "string", "required": true },
+              { "name": "answer_en", "label": "Answer (English)", "type": "richtext", "required": true },
+              { "name": "question_fa", "label": "Question (فارسی)", "type": "string" },
+              { "name": "answer_fa", "label": "Answer (فارسی)", "type": "richtext" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "label": "Menu",
+      "icon": "menu",
+      "kind": "single",
+      "path": "menu.json",
+      "fields": [
+        {
+          "name": "hero",
+          "label": "Menu hero",
+          "type": "object",
+          "ui": { "group": "Hero" },
+          "fields": [
+            { "name": "eyebrow", "label": "Eyebrow (EN)", "type": "string" },
+            { "name": "eyebrow_fa", "label": "Eyebrow (فارسی)", "type": "string" },
+            { "name": "title", "label": "Title (EN)", "type": "string" },
+            { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
+            { "name": "sub", "label": "Sub-text (EN)", "type": "text" },
+            { "name": "sub_fa", "label": "Sub-text (فارسی)", "type": "text" },
+            { "name": "address", "label": "Address (EN)", "type": "string" }
+          ]
+        },
+        {
+          "name": "boards",
+          "label": "Menu boards",
+          "type": "list",
+          "ui": { "group": "Boards" },
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "label": "ID / slug", "type": "string" },
+              { "name": "title", "label": "Title", "type": "string" },
+              { "name": "image", "label": "Board image", "type": "image" },
+              { "name": "alt", "label": "Alt text", "type": "string" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "shop",
+      "label": "Shop",
+      "icon": "menu",
+      "kind": "single",
+      "path": "shop.json",
+      "fields": [
+        {
+          "name": "intro",
+          "label": "Shop intro",
+          "type": "object",
+          "ui": { "group": "Intro" },
+          "fields": [
+            { "name": "eyebrow", "label": "Eyebrow (EN)", "type": "string" },
+            { "name": "eyebrow_fa", "label": "Eyebrow (فارسی)", "type": "string" },
+            { "name": "title", "label": "Title (EN)", "type": "string" },
+            { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
+            { "name": "sub", "label": "Sub-text (EN)", "type": "text" },
+            { "name": "sub_fa", "label": "Sub-text (فارسی)", "type": "text" }
+          ]
+        },
+        { "name": "purchaseUrl", "label": "Default purchase URL", "type": "url", "ui": { "group": "Intro" } },
+        {
+          "name": "sections",
+          "label": "Product sections",
+          "type": "list",
+          "ui": { "group": "Products" },
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "label": "Section ID / slug", "type": "string" },
+              { "name": "title", "label": "Section title (EN)", "type": "string" },
+              { "name": "title_fa", "label": "Section title (فارسی)", "type": "string" },
+              { "name": "note", "label": "Section note (EN)", "type": "string" },
+              { "name": "note_fa", "label": "Section note (فارسی)", "type": "string" },
               {
-                "name": "question_en",
-                "label": "Question (English)",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "answer_en",
-                "label": "Answer (English)",
-                "type": "richtext",
-                "required": true
-              },
-              {
-                "name": "question_fa",
-                "label": "Question (فارسی)",
-                "type": "string"
-              },
-              {
-                "name": "answer_fa",
-                "label": "Answer (فارسی)",
-                "type": "richtext"
+                "name": "products",
+                "label": "Products",
+                "type": "list",
+                "of": {
+                  "type": "object",
+                  "fields": [
+                    { "name": "id", "label": "Product ID / slug", "type": "string" },
+                    { "name": "name", "label": "Name (EN)", "type": "string" },
+                    { "name": "name_fa", "label": "Name (فارسی)", "type": "string" },
+                    { "name": "desc", "label": "Description (EN)", "type": "text" },
+                    { "name": "desc_fa", "label": "Description (فارسی)", "type": "text" },
+                    { "name": "price", "label": "Price (display text, e.g. $38)", "type": "string" },
+                    { "name": "image", "label": "Product image", "type": "image" },
+                    { "name": "badge", "label": "Badge (EN)", "type": "string" }
+                  ]
+                }
               }
             ]
           }
@@ -226,84 +417,39 @@
       ]
     },
     {
-      "name": "news",
+      "name": "events",
       "label": "Events",
       "icon": "file",
-      "kind": "collection",
-      "folder": "content/news",
-      "extension": "json",
-      "primaryField": "date",
+      "kind": "single",
+      "path": "events.json",
       "fields": [
         {
-          "name": "date",
-          "label": "Date",
-          "type": "date",
-          "required": true
-        },
-        {
-          "name": "cover",
-          "label": "Cover image",
-          "type": "image"
-        },
-        {
-          "name": "featured",
-          "label": "Featured",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "excerpt",
-              "label": "When / where",
-              "type": "text"
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "excerpt",
-              "label": "When / where",
-              "type": "text"
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
-          ]
+          "name": "events",
+          "label": "Events",
+          "type": "list",
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "id", "label": "ID / slug", "type": "string" },
+              { "name": "featured", "label": "Featured", "type": "boolean" },
+              { "name": "title", "label": "Title (EN)", "type": "string" },
+              { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
+              { "name": "tag", "label": "Tag (EN)", "type": "string" },
+              { "name": "tag_fa", "label": "Tag (فارسی)", "type": "string" },
+              { "name": "image", "label": "Event image", "type": "image" },
+              { "name": "date", "label": "Date (YYYY-MM-DD)", "type": "string" },
+              { "name": "start", "label": "Start time (HH:MM)", "type": "string" },
+              { "name": "end", "label": "End time (HH:MM)", "type": "string" },
+              { "name": "recurDay", "label": "Recurring weekday (0=Sun..6=Sat, optional)", "type": "number" },
+              { "name": "whenLabel", "label": "When label (EN)", "type": "string" },
+              { "name": "whenLabel_fa", "label": "When label (فارسی)", "type": "string" },
+              { "name": "locationLabel", "label": "Location label (EN)", "type": "string" },
+              { "name": "locationLabel_fa", "label": "Location label (فارسی)", "type": "string" },
+              { "name": "location", "label": "Location address (for calendar)", "type": "string" },
+              { "name": "description", "label": "Description", "type": "text" },
+              { "name": "archived", "label": "Archived", "type": "boolean" }
+            ]
+          }
         }
       ]
     },
@@ -395,396 +541,6 @@
               "label": "Body",
               "type": "richtext",
               "required": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "pages",
-      "label": "Pages",
-      "icon": "file",
-      "kind": "collection",
-      "folder": "content/pages",
-      "extension": "json",
-      "primaryField": "slug",
-      "fields": [
-        {
-          "name": "slug",
-          "label": "URL slug",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "menu",
-      "label": "Menu Boards",
-      "icon": "file",
-      "kind": "collection",
-      "folder": "content/menu",
-      "extension": "json",
-      "primaryField": "slug",
-      "fields": [
-        {
-          "name": "slug",
-          "label": "URL slug / ID",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "image",
-          "label": "Menu board image",
-          "type": "image",
-          "required": true
-        },
-        {
-          "name": "active",
-          "label": "Show",
-          "type": "boolean",
-          "default": true
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "caption",
-              "label": "Caption",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "caption",
-              "label": "Caption",
-              "type": "text"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "products",
-      "label": "Shop / Products",
-      "icon": "file",
-      "kind": "collection",
-      "folder": "content/products",
-      "extension": "json",
-      "primaryField": "sku",
-      "fields": [
-        {
-          "name": "sku",
-          "label": "SKU / ID",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "price",
-          "label": "Price",
-          "type": "number",
-          "required": true,
-          "min": 0
-        },
-        {
-          "name": "currency",
-          "label": "Currency",
-          "type": "select",
-          "options": [
-            "usd",
-            "eur",
-            "gbp",
-            "cad",
-            "aud"
-          ],
-          "required": true,
-          "default": "usd"
-        },
-        {
-          "name": "image",
-          "label": "Product image",
-          "type": "image"
-        },
-        {
-          "name": "active",
-          "label": "For sale",
-          "type": "boolean",
-          "default": true
-        },
-        {
-          "name": "buy_url",
-          "label": "External purchase link",
-          "type": "url"
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "name",
-              "label": "Name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "label": "Description",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "name",
-              "label": "Name",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "description",
-              "label": "Description",
-              "type": "text"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "navigation",
-      "label": "Navigation Menu",
-      "icon": "menu",
-      "kind": "single",
-      "path": "content/navigation.json",
-      "fields": [
-        {
-          "name": "items",
-          "label": "Menu items (drag to reorder)",
-          "type": "list",
-          "min": 1,
-          "of": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "url",
-                "label": "Link",
-                "type": "url",
-                "required": true
-              },
-              {
-                "name": "newTab",
-                "label": "Open in new tab",
-                "type": "boolean",
-                "default": false
-              },
-              {
-                "name": "label_en",
-                "label": "Label (English)",
-                "type": "string",
-                "required": true
-              },
-              {
-                "name": "label_fa",
-                "label": "Label (فارسی)",
-                "type": "string",
-                "required": false
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "settings",
-      "label": "Site Settings",
-      "icon": "menu",
-      "kind": "single",
-      "path": "content/settings.json",
-      "fields": [
-        {
-          "name": "email",
-          "label": "Contact email",
-          "type": "email"
-        },
-        {
-          "name": "phone",
-          "label": "Phone",
-          "type": "string"
-        },
-        {
-          "name": "address",
-          "label": "Address",
-          "type": "string"
-        },
-        {
-          "name": "hours",
-          "label": "Hours",
-          "type": "string"
-        },
-        {
-          "name": "order_url",
-          "label": "Online order link",
-          "type": "url"
-        },
-        {
-          "name": "maps_url",
-          "label": "Google Maps link",
-          "type": "url"
-        },
-        {
-          "name": "social",
-          "label": "Social links",
-          "type": "list",
-          "of": {
-            "type": "object",
-            "fields": [
-              {
-                "name": "platform",
-                "label": "Platform",
-                "type": "select",
-                "options": [
-                  "instagram",
-                  "linkedin",
-                  "x",
-                  "youtube",
-                  "tiktok",
-                  "facebook"
-                ],
-                "required": true
-              },
-              {
-                "name": "url",
-                "label": "URL",
-                "type": "url",
-                "required": true
-              }
-            ]
-          }
-        },
-        {
-          "name": "shop_enabled",
-          "label": "Enable shop",
-          "type": "boolean",
-          "default": false
-        },
-        {
-          "name": "shop_currency",
-          "label": "Default currency",
-          "type": "select",
-          "options": [
-            "usd",
-            "eur",
-            "gbp",
-            "cad",
-            "aud"
-          ],
-          "default": "usd"
-        },
-        {
-          "name": "en",
-          "label": "English",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "footer_tagline",
-              "label": "Footer tagline",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "name": "fa",
-          "label": "فارسی (Persian)",
-          "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
-          "fields": [
-            {
-              "name": "footer_tagline",
-              "label": "Footer tagline",
-              "type": "text"
             }
           ]
         }
