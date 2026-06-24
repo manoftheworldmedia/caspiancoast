@@ -751,7 +751,6 @@
   </a>
   <nav class="nav-right">
     <a class="nav-link" href="#visit" data-fa="بازدید">Visit</a>
-    <a class="nav-link" href="news/" data-fa="اخبار">News</a>
     <a class="nav-link" href="about/" data-fa="درباره ما">About</a>
     <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
@@ -767,7 +766,6 @@
   <a href="#cafe" data-fa="کافه">Café</a>
   <a href="shop/" data-fa="فروشگاه">Shop</a>
   <a href="#visit" data-fa="بازدید">Visit</a>
-  <a href="news/" data-fa="اخبار">News</a>
   <a href="about/" data-fa="درباره ما">About</a>
   <a class="mm-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   <span class="mm-foot" data-fa="ونیس، کالیفرنیا">Venice, California</span>
@@ -784,7 +782,7 @@
     <div class="hero-content">
       <img class="hero-mark" src="img/eye-white.png" alt="Caspian Coast Coffee" style="padding: 0px; margin: 0px -20px 16px 0px; border-width: 0px; border-style: solid" />
       <p class="hero-eyebrow" data-cc-html="hero.eyebrow" style="margin: 0px 0px 20px 5px">Persian Café · Venice Beach, Los Angeles</p>
-      <h1><span class="hl" data-cc-html="hero.titleHtml">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-cc-html="hero.subHtml">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
+      <h1><span class="hl" data-cc-html="hero.titleHtml">PERSIAN STYLE<br />VENICE SOUL</span><span class="sub" data-nosnippet data-cc-html="hero.subHtml">Caspian Coast is a café and a living room in Venice, California, serving up the best LA coffee, traditional Persian treats, and flavors that bring the Caspian to the Pacific.</span></h1>
       <div class="hero-meta">
         <div class="hero-hours">
           <span class="eyebrow" data-fa="هر روز باز">Open Daily</span>
@@ -1514,16 +1512,7 @@ IN THE BEST WAY</h2>
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
   }
-  // Single source of truth: portal-edited content/home.json first, faq.json as fallback.
-  function ccAdaptHomeFaqs(h){
-    var arr=(h&&Array.isArray(h.faqs))?h.faqs:[];
-    return {items:arr.map(function(f,i){return {q:f.question_en,a:f.answer_en,q_fa:f.question_fa,a_fa:f.answer_fa,open:i===0};})};
-  }
-  fetch('content/home.json').then(function(r){return r.json();}).then(function(h){
-    var a=ccAdaptHomeFaqs(h);
-    if(a.items.length){ FAQ=a; renderFaq(); buildFaqSchema(); }
-    else { throw new Error('no portal faqs'); }
-  }).catch(function(){ fetch('faq.json').then(function(r){return r.json();}).then(function(data){ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(function(){}); });
+  fetch('faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
 
   /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
