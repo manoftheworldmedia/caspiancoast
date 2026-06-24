@@ -1,0 +1,58 @@
+name: Regenerate News manifest
+
+# When the portal publishes a News article (commits content/articles/<slug>.json),
+# rebuild content/articles.index.json so the live /news/ pages discover it.
+# Static GitHub Pages can't list a folder, so this manifest is the bridge.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/articles/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: articles-manifest
+  cancel-in-progress: false
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild content/articles.index.json
+        run: |
+          python3 - <<'PY'
+          import json, os, glob
+          rows = []
+          for f in glob.glob('content/articles/*.json'):
+              slug = os.path.splitext(os.path.basename(f))[0]
+              try:
+                  d = json.load(open(f, encoding='utf-8'))
+              except Exception:
+                  d = {}
+              rows.append((slug, str(d.get('date', ''))))
+          # newest first
+          rows.sort(key=lambda r: r[1], reverse=True)
+          slugs = [r[0] for r in rows]
+          os.makedirs('content', exist_ok=True)
+          with open('content/articles.index.json', 'w', encoding='utf-8') as fh:
+              json.dump(slugs, fh, ensure_ascii=False, indent=2)
+              fh.write('\n')
+          print('manifest:', slugs)
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/articles.index.json
+          if git diff --cached --quiet; then
+            echo "No manifest change."
+          else
+            git commit -m "Auto: regenerate News manifest [skip ci]"
+            git push
+          fi
