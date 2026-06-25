@@ -24,6 +24,8 @@ content:
           - { name: featured, label: "★ Featured? (show as the big event at top)", type: boolean }
           - { name: title, label: Title (English), type: string }
           - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: subtitle, label: "Subtitle / tagline (English) — shows under the featured title", type: text }
+          - { name: subtitle_fa, label: "Subtitle / tagline (Farsi)", type: text }
           - { name: tag, label: "Tag (e.g. Featured Event, Watch Party, Weekly)", type: string }
           - { name: tag_fa, label: Tag (Farsi), type: string }
           - { name: image, label: Photo, type: image }
@@ -430,41 +432,19 @@ content:
             type: object
             fields:
               - { name: intro, label: Opening paragraph, type: text }
-              - { name: cta, label: Call to action line, type: string }
+              - name: body
+                label: Article sections (heading + paragraph)
+                type: object
+                list: true
+                fields:
+                  - { name: h, label: Section heading, type: string }
+                  - { name: p, label: Section paragraph, type: text }
+              - { name: cta, label: Closing call-to-action line, type: string }
+              - name: externalLinks
+                label: External links (optional)
+                type: object
+                list: true
+                fields:
+                  - { name: text, label: Link text, type: string }
+                  - { name: url, label: "URL (https://...)", type: string }
               - { name: seo_keywords, label: "SEO keywords (comma-separated)", type: text }
-    fields:
-      - name: intro
-        label: Shop intro
-        type: object
-        fields:
-          - { name: eyebrow, label: Eyebrow (EN), type: string }
-          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
-          - { name: title, label: Title (EN), type: string }
-          - { name: title_fa, label: Title (Farsi), type: string }
-          - { name: sub, label: Sub (EN), type: text }
-          - { name: sub_fa, label: Sub (Farsi), type: text }
-      - { name: purchaseUrl, label: "Default Buy link", type: string }
-      - name: sections
-        label: Product Sections
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Section title (EN), type: string }
-          - { name: title_fa, label: Section title (Farsi), type: string }
-          - { name: note, label: Section note (EN), type: string }
-          - { name: note_fa, label: Section note (Farsi), type: string }
-          - { name: id, label: "Section ID (lowercase)", type: string }
-          - name: products
-            label: Products
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name (EN), type: string }
-              - { name: name_fa, label: Name (Farsi), type: string }
-              - { name: desc, label: Description (EN), type: text }
-              - { name: desc_fa, label: Description (Farsi), type: text }
-              - { name: price, label: "Price (e.g. $38)", type: string }
-              - { name: image, label: Photo, type: image }
-              - { name: badge, label: "Badge (e.g. 1 of a kind)", type: string }
-              - { name: purchaseUrl, label: "Buy link (optional)", type: string }
-              - { name: id, label: "Product ID (lowercase)", type: string }

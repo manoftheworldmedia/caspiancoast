@@ -744,7 +744,7 @@
 <header class="nav" id="nav">
   <nav class="nav-left">
     <a class="nav-link" href="menu/" data-fa="منو">Menu</a>
-    <a class="nav-link" href="#cafe" data-fa="کافه">Café</a>
+    <a class="nav-link" href="../events/" data-fa="رویدادها">Events</a>
     <a class="nav-link" href="shop/" data-fa="فروشگاه">Shop</a>
   </nav>
   <a class="brand" href="./" aria-label="Caspian Coast Coffee home">
@@ -753,7 +753,6 @@
   </a>
   <nav class="nav-right">
     <a class="nav-link" href="#visit" data-fa="بازدید">Visit</a>
-    <a class="nav-link" href="/news/fa/" data-fa="اخبار">News</a>
     <a class="nav-link" href="about/" data-fa="درباره ما">About</a>
     <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
@@ -766,10 +765,9 @@
 <div class="mobile-menu" id="mobileMenu">
   <img class="mm-eye" src="../img/eye-mark.png" alt="" aria-hidden="true" />
   <a href="menu/" data-fa="منو">Menu</a>
-  <a href="#cafe" data-fa="کافه">Café</a>
+  <a href="../events/" data-fa="رویدادها">Events</a>
   <a href="shop/" data-fa="فروشگاه">Shop</a>
   <a href="#visit" data-fa="بازدید">Visit</a>
-  <a href="/news/fa/" data-fa="اخبار">News</a>
   <a href="about/" data-fa="درباره ما">About</a>
   <a class="mm-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   <span class="mm-foot" data-fa="ونیس، کالیفرنیا · هر روز ۷ صبح – ۸ شب">Venice, California · Open daily 7am–8pm</span>
@@ -1513,16 +1511,7 @@ IN THE BEST WAY</h2>
     if(!s){s=document.createElement('script');s.type='application/ld+json';document.head.appendChild(s);}
     s.textContent=JSON.stringify(schema);
   }
-  // Single source of truth: portal-edited content/home.json first, faq.json as fallback.
-  function ccAdaptHomeFaqs(h){
-    var arr=(h&&Array.isArray(h.faqs))?h.faqs:[];
-    return {items:arr.map(function(f,i){return {q:f.question_en,a:f.answer_en,q_fa:f.question_fa,a_fa:f.answer_fa,open:i===0};})};
-  }
-  fetch('../content/home.json').then(function(r){return r.json();}).then(function(h){
-    var a=ccAdaptHomeFaqs(h);
-    if(a.items.length){ FAQ=a; renderFaq(); buildFaqSchema(); }
-    else { throw new Error('no portal faqs'); }
-  }).catch(function(){ fetch('../faq.json').then(function(r){return r.json();}).then(function(data){ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(function(){}); });
+  fetch('../faq.json').then(r=>r.json()).then(data=>{ FAQ=data; renderFaq(); buildFaqSchema(); }).catch(()=>{});
 
   /* "Add all to calendar" — combined .ics of upcoming events (header link) */
   const viewCal=document.getElementById('viewCalendar');
