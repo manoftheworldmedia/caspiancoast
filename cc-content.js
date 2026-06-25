@@ -124,12 +124,17 @@
     if (window.ccInitSecret) window.ccInitSecret();
     if (!window._lavFlipBound) {
       window._lavFlipBound = true;
-      document.addEventListener('click', function (e) {
-        var eye = e.target.closest && e.target.closest('.lav-eye');
-        if (eye) { e.preventDefault(); e.stopPropagation(); var c = eye.closest('.lav-flip'); if (c) c.classList.toggle('flipped'); return; }
-        var back = e.target.closest && e.target.closest('.lav-flip.flipped .lav-back');
-        if (back) { var c2 = back.closest('.lav-flip'); if (c2) c2.classList.remove('flipped'); }
-      }, true);
+      // The marquee captures the pointer (setPointerCapture), which redirects pointerup
+      // away from the eye and swallows the click. So the marquee emits its own 'cctap'
+      // event (only on a near-stationary release) carrying the real start target.
+      document.addEventListener('cctap', function (e) {
+        var t = e.detail && e.detail.target;
+        if (!t || !t.closest) return;
+        var eye = t.closest('.lav-eye');
+        if (eye) { var c = eye.closest('.lav-flip'); if (c) c.classList.toggle('flipped'); return; }
+        var card = t.closest('.lav-flip.flipped');
+        if (card) card.classList.remove('flipped');
+      });
     }
     setTimeout(initMarquees, 50);
   }
@@ -157,14 +162,14 @@
         unit.forEach(function (n) { var cl = n.cloneNode(true); cl.setAttribute('data-clone', ''); cl.setAttribute('aria-hidden', 'true'); track.appendChild(cl); });
       }
       var offset = 0, speed = 0.55, paused = false, idle = null, raf = null;
-      var down = false, sx = 0, so = 0, moved = false;
+      var down = false, sx = 0, sy = 0, so = 0, moved = false, startTarget = null;
       function wrap() { offset = ((offset % uw) + uw) % uw; }
       function render() { track.style.transform = 'translateX(' + (-offset) + 'px)'; }
       function tick() { if (!paused) { offset += speed; wrap(); render(); } raf = requestAnimationFrame(tick); }
       function pause() { paused = true; clearTimeout(idle); }
       function resumeSoon() { clearTimeout(idle); idle = setTimeout(function () { paused = false; }, 1500); }
       band.addEventListener('pointerdown', function (e) {
-        down = true; moved = false; sx = e.clientX; so = offset; pause(); band.classList.add('dragging');
+        down = true; moved = false; sx = e.clientX; sy = e.clientY; so = offset; startTarget = e.target; pause(); band.classList.add('dragging');
         try { band.setPointerCapture(e.pointerId); } catch (err) {}
       });
       band.addEventListener('pointermove', function (e) {
@@ -172,7 +177,16 @@
         var dx = e.clientX - sx; if (Math.abs(dx) > 3) moved = true;
         offset = so - dx; wrap(); render();
       });
-      function endDrag() { if (!down) return; down = false; band.classList.remove('dragging'); resumeSoon(); }
+      function endDrag(e) {
+        if (!down) return; down = false; band.classList.remove('dragging'); resumeSoon();
+        // Treat a near-stationary release as a tap and re-dispatch the real start target,
+        // since pointer capture has rewritten this event's target to the band.
+        var totMove = moved || (e && (Math.abs(e.clientX - sx) + Math.abs(e.clientY - sy) > 8));
+        if (!totMove && startTarget) {
+          document.dispatchEvent(new CustomEvent('cctap', { detail: { target: startTarget } }));
+        }
+        startTarget = null;
+      }
       band.addEventListener('pointerup', endDrag);
       band.addEventListener('pointercancel', endDrag);
       band.addEventListener('pointerleave', function () { if (down) endDrag(); });
