@@ -291,9 +291,20 @@
       +'<div class="article-back"><a href="#" id="backBtn">← Back to News</a></div>'
       +'</div>';
     av.style.display='block';
-    document.getElementById('backBtn').addEventListener('click',function(e){e.preventDefault();av.style.display='none';});
+    if(window.history&&history.replaceState){history.replaceState(null,'','#'+item.id);}
+    document.getElementById('backBtn').addEventListener('click',function(e){e.preventDefault();av.style.display='none';if(window.history&&history.replaceState){history.replaceState(null,'',location.pathname+location.search);}});
     window.scrollTo(0,0);
   }
+
+  // ---- open an article directly from the URL hash (e.g. /news/#blog-sightglass-partnership) ----
+  function openFromHash(){
+    if(!NEWS) return;
+    var id=(location.hash||'').replace(/^#/,'');
+    if(!id){var av=document.getElementById('articleView');if(av)av.style.display='none';return;}
+    var item=NEWS.items.filter(function(i){return i.id===id;})[0];
+    if(item&&item.content){showArticle(item);}
+  }
+  window.addEventListener('hashchange',openFromHash);
 
   // ---- Schema.org JSON-LD ----
   function buildSchema(items){
@@ -319,7 +330,7 @@
   });
 
   // ---- fetch ----
-  fetch('../news.json').then(function(r){return r.json();}).then(function(d){NEWS=d;renderGrid();}).catch(function(){});
+  fetch('../news.json').then(function(r){return r.json();}).then(function(d){NEWS=d;renderGrid();openFromHash();}).catch(function(){});
 
   // ---- lang toggle -> navigate ----
   var lt=document.getElementById('langToggle');

@@ -1583,7 +1583,7 @@ IN THE BEST WAY</h2>
         const card=document.createElement('article');
         card.className='nhc';
         const isExt=item.url&&item.url.startsWith('http');
-        const href=isExt?item.url:'news/';
+        const href=isExt?item.url:('news/#'+item.id);
         card.innerHTML='<div class="nt"><img src="'+item.image+'" alt="'+item.title+'" loading="lazy"/></div>'
           +'<div class="nb"><span class="nl '+(item.type||'')+'">'+(TYPES[item.type]||item.type||'')+'</span>'
           +'<h3>'+item.title+'</h3>'
