@@ -66,12 +66,11 @@
   .lang-toggle .sep{opacity:.4;}
 
   /* hero */
-  .news-hero{padding:clamp(130px,16vw,200px) 0 clamp(40px,5vw,64px);background:var(--ink);color:var(--cream);position:relative;overflow:hidden;}
-  .news-hero::before{content:"";position:absolute;inset:0;background-image:url("../img/mural.jpg");background-size:cover;background-position:50% 22%;opacity:.18;}
-  .news-hero .inner{position:relative;z-index:2;}
-  .news-hero .eyebrow{color:var(--saffron);}
-  .news-hero h1{font-size:clamp(36px,6vw,84px);text-transform:uppercase;margin-top:14px;}
-  .news-hero p{font-family:var(--edit);font-style:italic;font-size:clamp(18px,2.2vw,27px);color:rgba(241,237,228,.82);margin-top:14px;max-width:44ch;}
+  .news-hero{padding:clamp(120px,15vw,180px) 0 clamp(34px,4vw,54px);background:var(--cream);color:var(--ink);position:relative;overflow:hidden;}
+  .news-hero .inner{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .news-hero .eyebrow{color:var(--clay);}
+  .news-hero .nh-wordmark{width:min(560px,82vw);height:auto;display:block;margin:18px auto 4px;}
+  .news-hero p{font-family:var(--edit);font-style:italic;font-size:clamp(18px,2.2vw,26px);color:var(--ink-soft);margin-top:10px;max-width:46ch;}
 
   /* tabs */
   .tab-bar{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:88px;z-index:40;}
@@ -172,7 +171,7 @@
 <section class="news-hero">
   <div class="wrap inner">
     <span class="eyebrow">Stories from the Coast</span>
-    <h1>Press, Blogs<br />&amp; Community</h1>
+    <img class="nh-wordmark" src="../img/caspian-news-wordmark.png" alt="Caspian News — کاسپین نیوز" />
     <p>What people say about us, what we write ourselves, and the partnerships that make Caspian Coast what it is.</p>
   </div>
 </section>
