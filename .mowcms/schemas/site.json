@@ -172,126 +172,21 @@
           "type": "object",
           "ui": { "group": "Images" },
           "fields": [
-            {
-              "name": "heroInterior", "label": "Hero interior", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "spiceJars", "label": "Spice jars", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "bakeryBun", "label": "Bakery bun", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "bakerySpiral", "label": "Bakery spiral", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "vibeWindow", "label": "Vibe — window bench", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "vibeMural", "label": "Vibe — mural", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "nostalgiaWoman", "label": "Nostalgia — woman", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "nostalgiaRadio", "label": "Nostalgia — radio", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "cupCeramic", "label": "Ceramic cup", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "nostalgiaMercedes", "label": "Nostalgia — Mercedes", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "merchShirt", "label": "Merch shirt", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "laPostcard", "label": "LA postcard", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "aboutPoster", "label": "About — poster", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "ownerPhoto", "label": "About — owner photo", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            },
-            {
-              "name": "rahiMom", "label": "About — Rahi & mom", "type": "object",
-              "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
-                { "name": "alt", "label": "Alt text (EN)", "type": "string" },
-                { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
-              ]
-            }
+            { "name": "heroInterior", "label": "Hero interior", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "spiceJars", "label": "Spice jars", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "bakeryBun", "label": "Bakery bun", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "bakerySpiral", "label": "Bakery spiral", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "vibeWindow", "label": "Vibe — window bench", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "vibeMural", "label": "Vibe — mural", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "nostalgiaWoman", "label": "Nostalgia — woman", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "nostalgiaRadio", "label": "Nostalgia — radio", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "cupCeramic", "label": "Ceramic cup", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "nostalgiaMercedes", "label": "Nostalgia — Mercedes", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "merchShirt", "label": "Merch shirt", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "laPostcard", "label": "LA postcard", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "aboutPoster", "label": "About — poster", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "ownerPhoto", "label": "About — owner photo", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] },
+            { "name": "rahiMom", "label": "About — Rahi & mom", "type": "object", "fields": [{ "name": "src", "label": "Image", "type": "image" }, { "name": "alt", "label": "Alt text (EN)", "type": "string" }, { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }] }
           ]
         }
       ]
@@ -353,6 +248,110 @@
               { "name": "title", "label": "Title", "type": "string" },
               { "name": "image", "label": "Board image", "type": "image" },
               { "name": "alt", "label": "Alt text", "type": "string" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "menuItems",
+      "label": "Menu (Food & Drink)",
+      "icon": "menu",
+      "kind": "single",
+      "path": "content/menu.json",
+      "jsonld": {
+        "type": "menu",
+        "into": "menu/index.html",
+        "langs": ["en", "fa"]
+      },
+      "fields": [
+        {
+          "name": "establishmentType",
+          "label": "Business type (for rich results)",
+          "type": "select",
+          "options": ["CafeOrCoffeeShop","Restaurant","Bakery","BarOrPub","FastFoodRestaurant","IceCreamShop","Winery","Brewery"],
+          "default": "CafeOrCoffeeShop"
+        },
+        { "name": "businessName", "label": "Business name", "type": "string" },
+        { "name": "url", "label": "Website URL", "type": "url" },
+        {
+          "name": "currency",
+          "label": "Currency",
+          "type": "select",
+          "options": ["usd","eur","gbp","cad","aud"],
+          "default": "usd",
+          "required": true
+        },
+        { "name": "image", "label": "Menu / hero image", "type": "image" },
+        {
+          "name": "sections",
+          "label": "Menu sections (drag to reorder)",
+          "type": "list",
+          "min": 1,
+          "of": {
+            "type": "object",
+            "fields": [
+              {
+                "name": "en",
+                "label": "English",
+                "type": "object",
+                "ui": { "group": "Languages" },
+                "fields": [
+                  { "name": "name", "label": "Section name", "type": "string", "required": true },
+                  { "name": "description", "label": "Section description", "type": "text" }
+                ]
+              },
+              {
+                "name": "fa",
+                "label": "فارسی (Persian)",
+                "type": "object",
+                "ui": { "group": "Languages" },
+                "fields": [
+                  { "name": "name", "label": "Section name", "type": "string" },
+                  { "name": "description", "label": "Section description", "type": "text" }
+                ]
+              },
+              {
+                "name": "items",
+                "label": "Items (drag to reorder)",
+                "type": "list",
+                "of": {
+                  "type": "object",
+                  "fields": [
+                    { "name": "price", "label": "Price (e.g. 5.50)", "type": "number", "min": 0 },
+                    { "name": "image", "label": "Photo", "type": "image" },
+                    {
+                      "name": "dietary",
+                      "label": "Dietary tags",
+                      "type": "list",
+                      "of": {
+                        "type": "select",
+                        "options": ["vegan","vegetarian","gluten-free","halal","kosher","low-calorie","low-fat","low-lactose","low-salt","diabetic"]
+                      }
+                    },
+                    {
+                      "name": "en",
+                      "label": "English",
+                      "type": "object",
+                      "ui": { "group": "Languages" },
+                      "fields": [
+                        { "name": "name", "label": "Item name", "type": "string", "required": true },
+                        { "name": "description", "label": "Item description", "type": "text" }
+                      ]
+                    },
+                    {
+                      "name": "fa",
+                      "label": "فارسی (Persian)",
+                      "type": "object",
+                      "ui": { "group": "Languages" },
+                      "fields": [
+                        { "name": "name", "label": "Item name", "type": "string" },
+                        { "name": "description", "label": "Item description", "type": "text" }
+                      ]
+                    }
+                  ]
+                }
+              }
             ]
           }
         }
@@ -462,86 +461,30 @@
       "extension": "json",
       "primaryField": "date",
       "fields": [
-        {
-          "name": "date",
-          "label": "Date",
-          "type": "date",
-          "required": true
-        },
-        {
-          "name": "category",
-          "label": "Type",
-          "type": "select",
-          "options": [
-            "Article",
-            "Blog",
-            "News"
-          ],
-          "default": "Article"
-        },
-        {
-          "name": "cover",
-          "label": "Cover image",
-          "type": "image"
-        },
-        {
-          "name": "featured",
-          "label": "Featured",
-          "type": "boolean",
-          "default": false
-        },
+        { "name": "date", "label": "Date", "type": "date", "required": true },
+        { "name": "category", "label": "Type", "type": "select", "options": ["Article","Blog","News"], "default": "Article" },
+        { "name": "cover", "label": "Cover image", "type": "image" },
+        { "name": "featured", "label": "Featured", "type": "boolean", "default": false },
         {
           "name": "en",
           "label": "English",
           "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
+          "ui": { "group": "Languages" },
           "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "excerpt",
-              "label": "Excerpt / standfirst",
-              "type": "text"
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text" },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
           ]
         },
         {
           "name": "fa",
           "label": "فارسی (Persian)",
           "type": "object",
-          "ui": {
-            "group": "Languages"
-          },
+          "ui": { "group": "Languages" },
           "fields": [
-            {
-              "name": "title",
-              "label": "Title",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "excerpt",
-              "label": "Excerpt / standfirst",
-              "type": "text"
-            },
-            {
-              "name": "body",
-              "label": "Body",
-              "type": "richtext",
-              "required": true
-            }
+            { "name": "title", "label": "Title", "type": "string", "required": true },
+            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text" },
+            { "name": "body", "label": "Body", "type": "richtext", "required": true }
           ]
         }
       ]
