@@ -193,11 +193,45 @@
     },
     {
       "name": "homeFaqs",
-      "label": "Homepage FAQ",
+      "label": "Homepage (text, images & FAQ)",
       "icon": "menu",
       "kind": "single",
       "path": "content/home.json",
       "fields": [
+        { "name": "images", "label": "Homepage images", "type": "object", "ui": { "group": "Images" }, "fields": [
+          { "name": "logo", "label": "Logo", "type": "image" },
+          { "name": "hero", "label": "Hero", "type": "image" },
+          { "name": "spice_jars", "label": "Spice jars", "type": "image" },
+          { "name": "og_image", "label": "Social share image (OG)", "type": "image" }
+        ] },
+        { "name": "en", "label": "English — homepage text & SEO", "type": "object", "ui": { "group": "Homepage text — English" }, "fields": [
+          { "name": "seo_title", "label": "SEO title", "type": "string" },
+          { "name": "seo_description", "label": "SEO description", "type": "text" },
+          { "name": "hero_eyebrow", "label": "Hero eyebrow", "type": "string" },
+          { "name": "hero_title", "label": "Hero title", "type": "string" },
+          { "name": "hero_subhead", "label": "Hero subhead", "type": "text" },
+          { "name": "cta_primary", "label": "Primary CTA", "type": "string" },
+          { "name": "cta_secondary", "label": "Secondary CTA", "type": "string" },
+          { "name": "intro_heading", "label": "Intro heading", "type": "string" },
+          { "name": "intro_body", "label": "Intro body", "type": "text" },
+          { "name": "bakery_heading", "label": "Bakery heading", "type": "string" },
+          { "name": "bakery_body", "label": "Bakery body", "type": "text" },
+          { "name": "about_lede", "label": "About lede", "type": "text" }
+        ] },
+        { "name": "fa", "label": "فارسی — homepage text & SEO", "type": "object", "ui": { "group": "Homepage text — فارسی" }, "fields": [
+          { "name": "seo_title", "label": "SEO title (فارسی)", "type": "string" },
+          { "name": "seo_description", "label": "SEO description (فارسی)", "type": "text" },
+          { "name": "hero_eyebrow", "label": "Hero eyebrow (فارسی)", "type": "string" },
+          { "name": "hero_title", "label": "Hero title (فارسی)", "type": "string" },
+          { "name": "hero_subhead", "label": "Hero subhead (فارسی)", "type": "text" },
+          { "name": "cta_primary", "label": "Primary CTA (فارسی)", "type": "string" },
+          { "name": "cta_secondary", "label": "Secondary CTA (فارسی)", "type": "string" },
+          { "name": "intro_heading", "label": "Intro heading (فارسی)", "type": "string" },
+          { "name": "intro_body", "label": "Intro body (فارسی)", "type": "text" },
+          { "name": "bakery_heading", "label": "Bakery heading (فارسی)", "type": "string" },
+          { "name": "bakery_body", "label": "Bakery body (فارسی)", "type": "text" },
+          { "name": "about_lede", "label": "About lede (فارسی)", "type": "text" }
+        ] },
         {
           "name": "faqs",
           "label": "FAQ items",
