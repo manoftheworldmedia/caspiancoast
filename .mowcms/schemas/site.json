@@ -216,7 +216,7 @@
     },
     {
       "name": "menu",
-      "label": "Menu",
+      "label": "Menu Page (hero + board images)",
       "icon": "menu",
       "kind": "single",
       "path": "menu.json",
@@ -255,7 +255,7 @@
     },
     {
       "name": "menuItems",
-      "label": "Menu (Food & Drink)",
+      "label": "Menu — Food & Drink (items & prices)",
       "icon": "menu",
       "kind": "single",
       "path": "content/menu.json",
@@ -462,7 +462,7 @@
       "primaryField": "date",
       "fields": [
         { "name": "date", "label": "Date", "type": "date", "required": true },
-        { "name": "category", "label": "Type", "type": "select", "options": ["Article","Blog","News"], "default": "Article" },
+        { "name": "category", "label": "Type", "type": "select", "options": ["Thought Leadership","Blog","Article","News","Press Release"], "default": "Article" },
         { "name": "cover", "label": "Cover image", "type": "image" },
         { "name": "featured", "label": "Featured", "type": "boolean", "default": false },
         {
