@@ -29,6 +29,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://caspiancoast.com/news</loc>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://caspiancoast.com/news"/>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://caspiancoast.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://caspiancoast.com/about"/>
     <xhtml:link rel="alternate" hreflang="fa" href="https://caspiancoast.com/about/fa"/>

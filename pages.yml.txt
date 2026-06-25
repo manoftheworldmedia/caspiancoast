@@ -91,6 +91,42 @@ content:
     path: content.json
     icon: home
     fields:
+      - name: seo
+        label: "SEO — page titles & descriptions (Google)"
+        type: object
+        fields:
+          - name: home
+            label: "Home page"
+            type: object
+            fields:
+              - { name: title, label: "Meta title (EN)", type: string }
+              - { name: title_fa, label: "Meta title (Farsi)", type: string }
+              - { name: description, label: "Meta description (EN)", type: text }
+              - { name: description_fa, label: "Meta description (Farsi)", type: text }
+          - name: menu
+            label: "Menu page"
+            type: object
+            fields:
+              - { name: title, label: "Meta title (EN)", type: string }
+              - { name: title_fa, label: "Meta title (Farsi)", type: string }
+              - { name: description, label: "Meta description (EN)", type: text }
+              - { name: description_fa, label: "Meta description (Farsi)", type: text }
+          - name: about
+            label: "About page"
+            type: object
+            fields:
+              - { name: title, label: "Meta title (EN)", type: string }
+              - { name: title_fa, label: "Meta title (Farsi)", type: string }
+              - { name: description, label: "Meta description (EN)", type: text }
+              - { name: description_fa, label: "Meta description (Farsi)", type: text }
+          - name: shop
+            label: "Shop page"
+            type: object
+            fields:
+              - { name: title, label: "Meta title (EN)", type: string }
+              - { name: title_fa, label: "Meta title (Farsi)", type: string }
+              - { name: description, label: "Meta description (EN)", type: text }
+              - { name: description_fa, label: "Meta description (Farsi)", type: text }
       - name: theme
         label: Fonts
         type: object
@@ -331,6 +367,71 @@ content:
     type: file
     path: shop.json
     icon: shopping-bag
+    fields:
+      - name: intro
+        label: Shop intro
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow (EN), type: string }
+          - { name: eyebrow_fa, label: Eyebrow (Farsi), type: string }
+          - { name: title, label: Title (EN), type: string }
+          - { name: title_fa, label: Title (Farsi), type: string }
+          - { name: sub, label: Sub (EN), type: text }
+          - { name: sub_fa, label: Sub (Farsi), type: text }
+      - { name: purchaseUrl, label: "Default Buy link", type: string }
+      - name: sections
+        label: Product Sections
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Section title (EN), type: string }
+          - { name: title_fa, label: Section title (Farsi), type: string }
+          - { name: note, label: Section note (EN), type: string }
+          - { name: note_fa, label: Section note (Farsi), type: string }
+          - { name: id, label: "Section ID (lowercase)", type: string }
+          - name: products
+            label: Products
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name (EN), type: string }
+              - { name: name_fa, label: Name (Farsi), type: string }
+              - { name: desc, label: Description (EN), type: text }
+              - { name: desc_fa, label: Description (Farsi), type: text }
+              - { name: price, label: "Price (e.g. $38)", type: string }
+              - { name: image, label: Photo, type: image }
+              - { name: badge, label: "Badge (e.g. 1 of a kind)", type: string }
+              - { name: purchaseUrl, label: "Buy link (optional)", type: string }
+              - { name: id, label: "Product ID (lowercase)", type: string }
+
+  - name: news
+    label: News & Stories
+    type: file
+    path: news.json
+    icon: file-text
+    fields:
+      - name: items
+        label: Articles & Blog Posts
+        type: object
+        list: true
+        fields:
+          - { name: featured, label: "★ Feature on home page?", type: boolean }
+          - { name: title, label: Title, type: string }
+          - { name: excerpt, label: Excerpt / teaser, type: text }
+          - { name: type, label: "Type: press / blog / community / partners", type: string }
+          - { name: author, label: Author, type: string }
+          - { name: publication, label: Publication / source, type: string }
+          - { name: date, label: Date (YYYY-MM-DD), type: date, options: { format: "yyyy-MM-dd" } }
+          - { name: image, label: Cover image, type: image }
+          - { name: url, label: "URL (https://... for external; /news/slug for blogs)", type: string }
+          - { name: tags, label: "Tags (list: press, blog, partners, community, etc.)", type: rich-text }
+          - name: content
+            label: Blog content (only needed for Caspian-written blogs)
+            type: object
+            fields:
+              - { name: intro, label: Opening paragraph, type: text }
+              - { name: cta, label: Call to action line, type: string }
+              - { name: seo_keywords, label: "SEO keywords (comma-separated)", type: text }
     fields:
       - name: intro
         label: Shop intro

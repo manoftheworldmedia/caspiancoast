@@ -1,0 +1,161 @@
+{
+  "items": [
+    {
+      "id": "la-public-press-2026",
+      "type": "press",
+      "featured": true,
+      "title": "As war returns to Iran, an Iranian American artist turns an LA café into a sanctuary of memory and culture",
+      "excerpt": "Caspian Coast Coffee creates a diasporic bridge between the Caspian Sea and LA as Iranian Americans grapple with conflict and longing for a freer homeland.",
+      "author": "Susana Canales Barrón",
+      "publication": "LA Public Press",
+      "date": "2026-03-13",
+      "image": "img/mural.png",
+      "url": "https://lapublicpress.org/2026/03/la-iran-war-artist-coffee-venice/",
+      "tags": ["press", "murals", "community", "parisa-parnian"]
+    },
+    {
+      "id": "voyage-la-2026",
+      "type": "press",
+      "featured": true,
+      "title": "Exploring Life & Business with Rahi Manavi of Caspian Coast Coffee",
+      "excerpt": "Voyage LA sits down with Rahi Manavi to explore the story behind Caspian Coast Coffee — from family heritage and a homeland left behind to building a Persian café on Main Street in Venice.",
+      "author": "Voyage LA",
+      "publication": "Voyage LA",
+      "date": "2026-01-01",
+      "image": "img/hero-interior.jpg",
+      "url": "https://voyagela.com/interview/exploring-life-business-with-rahi-manavi-of-caspian-coast-coffee/",
+      "tags": ["press", "founder", "story"]
+    },
+    {
+      "id": "blog-sightglass-partnership",
+      "type": "blog",
+      "featured": true,
+      "title": "Why We Chose Sightglass: The Coffee Behind Caspian Coast",
+      "excerpt": "Every cup at Caspian Coast starts with a bean roasted in Los Angeles by one of the best in the business. Here's the story of how we found Sightglass Coffee — and why they're the only roaster we trust.",
+      "author": "Rahi Manavi",
+      "publication": "Caspian Coast Coffee",
+      "date": "2026-06-01",
+      "image": "img/cups-trio.jpg",
+      "url": "/news/blog-sightglass-partnership",
+      "tags": ["blog", "coffee", "partners", "sightglass"],
+      "content": {
+        "intro": "At Caspian Coast Coffee, we believe the cup you hold tells a story before you take a sip. The beans matter. The roast matters. The relationship behind them matters most.",
+        "body": [
+          { "h": "From Venice to the Mission District and Back", "p": "Sightglass Coffee was founded in San Francisco's SoMa neighborhood in 2009 by brothers Jeremy and Jerad Morrison. Their approach — small-batch roasting, direct-trade sourcing, obsessive consistency — was exactly the ethos we were looking for. When we discovered their Los Angeles roasting operation, it felt like the universe was paying attention. Our espresso is roasted right here in LA, a few miles from Main Street, Venice." },
+          { "h": "What a Sightglass Bean Tastes Like", "p": "Sightglass roasts for balance — a medium profile that lets the origin character of each bean shine without burning off the nuance. For our espresso base, that means a cup that's naturally sweet, with clear stone fruit and a long, clean finish. It's a foundation that holds up beautifully under saffron, cardamom, and rosewater — our Persian spices don't compete with the coffee, they converse with it." },
+          { "h": "Why This Partnership Makes Sense for Venice", "p": "Venice has always been a place where craft and culture collide. Sightglass brings the same commitment to quality that defines the best of California's food culture — sustainability-minded sourcing, transparency about origin, and a genuine respect for the farmer. Those values align with everything Caspian Coast stands for: care at every step, from the soil to the cup to the guest across the counter." },
+          { "h": "A Cup That Connects Two Coasts", "p": "Every time you order an espresso, a saffron latte, or a cardamom cold brew at Caspian Coast, you're tasting a collaboration: Sightglass Coffee's craft, our Persian spice heritage, and the light and salt air of Venice, California. We're proud to serve their beans — and to be their only home on Main Street." }
+        ],
+        "cta": "Come taste it for yourself. 1501 Main St, Unit 103, Venice, CA 90291.",
+        "seo_keywords": ["Persian coffee Venice CA", "Sightglass Coffee Los Angeles", "specialty coffee Venice Beach", "coffee shop Venice California", "best coffee Venice Beach LA"]
+      }
+    },
+    {
+      "id": "blog-kouzeh-partnership",
+      "type": "blog",
+      "featured": false,
+      "title": "Baked in LA, Rooted in Iran: Our Partnership with Kouzeh Bakery",
+      "excerpt": "When Sahar Shomali of Kouzeh Bakery first brought a tray of saffron-kissed barbari through our doors, we knew we'd found our bakery partner. Here's the story of how authentic Persian bread found a home at Caspian Coast.",
+      "author": "Rahi Manavi",
+      "publication": "Caspian Coast Coffee",
+      "date": "2026-06-08",
+      "image": "img/bakery-bun.jpg",
+      "url": "/news/blog-kouzeh-partnership",
+      "tags": ["blog", "bakery", "partners", "kouzeh", "persian-food"],
+      "content": {
+        "intro": "Good bread is a form of memory. In Persian culture, bread isn't a side note — it's the center of the table, the foundation of the sofreh, the first thing passed at every gathering. Finding the right bakery partner for Caspian Coast was never going to be a simple supplier decision.",
+        "body": [
+          { "h": "Who Is Kouzeh Bakery?", "p": "Kouzeh Bakery was founded in Los Angeles in 2018 by Pastry Chef Sahar Shomali — whose resume includes Spago, the Lucques Group, and The Hearth and Hound. Her mission: to introduce LA to the full, extraordinary diversity of Persian bread. Not a single style, not a token representation, but the real thing — flatbreads from nomadic traditions, sourdough loaves from city bakeries, enriched breads scented with cardamom and rose. In 2026, Kouzeh opened its first brick-and-mortar store in Miracle Mile. They've won Good Food Awards in 2021, 2023, and 2025. The LA Times has covered them twice." },
+          { "h": "What Persian Bread Actually Is", "p": "Most Americans know lavash. But Iranian bread culture goes far deeper: sangak (the dimpled, stone-baked flatbread that Rahi's family broke over the Caspian Sea picnics of his mother's stories), barbari (the thick, oval loaf brushed with a glaze of baking soda and flour), taftoon (thin and soft, kissed by the tandoor). Kouzeh makes all of these using long fermentation, aged sourdough cultures, and premium unbleached flours. No shortcuts. No compromise." },
+          { "h": "Bread Meets Persian Spice at Caspian Coast", "p": "We serve Kouzeh's breads alongside our drinks not just because they taste extraordinary, but because they complete the cultural picture. A saffron latte next to a warm barbari: that's a morning in a café in Tehran in 1972, reimagined on Main Street, Venice, in 2026. The partnership feels true because it is. Both Kouzeh and Caspian are trying to do the same thing — share a culture that the world mostly only knows through headlines." },
+          { "h": "Where to Find Both of Us", "p": "Kouzeh Bakery: 5466 Wilshire Blvd, LA (Wed–Mon, 9am–3pm). Caspian Coast Coffee: 1501 Main St, Unit 103, Venice (Mon–Thu 7am–5pm, Fri–Sat 7am–7pm, Sun 8am–4pm). If you love one, you'll love the other." }
+        ],
+        "cta": "Stop by and try a saffron latte with a slice of fresh barbari. It's the combination we dream about.",
+        "seo_keywords": ["Kouzeh Bakery Los Angeles", "Persian bread Los Angeles", "Iranian bakery LA", "Persian food Venice Beach", "authentic Persian bread LA"]
+      }
+    },
+    {
+      "id": "blog-parisa-parnian-mural",
+      "type": "blog",
+      "featured": true,
+      "title": "The Artist Behind Our Walls: Parisa Parnian and the Murals of Caspian Coast",
+      "excerpt": "Two murals. Nearly 12 feet tall. A Peykan, a sofreh, a surfboard with a paisley pattern, and the phrase 'Woman, Life, Freedom.' Parisa Parnian — known as the Savage Muse — painted the soul of Caspian Coast Coffee onto our walls.",
+      "author": "Rahi Manavi",
+      "publication": "Caspian Coast Coffee",
+      "date": "2026-06-15",
+      "image": "img/mural.png",
+      "url": "/news/blog-parisa-parnian-mural",
+      "tags": ["blog", "murals", "art", "community", "parisa-parnian", "venice-beach"],
+      "content": {
+        "intro": "When we signed our lease at 1501 Main St, Venice, the walls were blank. We knew they wouldn't stay that way for long — but we also knew that whoever painted them had to understand something deeper than aesthetics. They had to understand what it means to carry a culture across an ocean.",
+        "body": [
+          { "h": "Who Is Parisa Parnian?", "p": "Parisa Parnian is a Los Angeles-based, Iranian-American multi-disciplinary visual artist, muralist, and experiential curator. Known as the Savage Muse, she has built a career that refuses to be contained: fashion design in New York, underground performance pieces exploring Iranian identity post-9/11, a gender-fluid streetwear label in San Francisco, design at California College of the Arts, six years at Guess? as a senior designer, and then Savage Muse — the multidisciplinary design studio she founded in 2016 in Los Angeles. She doesn't just make art. She builds entire environments." },
+          { "h": "Two Walls, Two Visions", "p": "Rahi gave Parisa one instruction: 'These two walls are yours.' And two requests. The first: the phrase 'Woman, Life, Freedom' had to appear somewhere — the words that became a global rallying cry after the death of Mahsa Amini in 2022. The second: a visual bridge between the Caspian Sea and Venice Beach. Parisa answered with two murals, each rising nearly 12 feet, that together form a complete cultural tapestry." },
+          { "h": "The First Mural: Memory", "p": "A Persian sofreh anchors the first wall — a picnic spread of cheese, fruit, bread, mint, and tea brewed from a samovar. A surfboard stands upright beside it, its surface covered in a swirling paisley pattern. (Paisley, as Rahi points out, is derived from Persian design.) The 'Woman, Life, Freedom' text appears here — not as a political statement alone, but as a wish woven into the fabric of a remembered picnic by the Caspian Sea." },
+          { "h": "The Second Mural: Reinvention", "p": "The second wall features the 'Lös Ángeles' typography — Persian and English scripts blended, a heart replacing the 'O', brushstrokes of deep magenta, burnt orange, and crimson. At its center: a Peykan, the iconic Iranian sedan, reimagined in turquoise, coral pink, mustard, and teal. A woman in monochrome leans against it, a man beside her — ordinary figures from an Iran that existed before 1979, dropped into the visual language of LA pop art." },
+          { "h": "Why These Murals Matter", "p": "Parisa said it herself: 'Iran only seems to appear in the headlines during a crisis. But Iranian culture is far bigger than politics. It's poetry, music, food, sensuality, humor, and design. A civilization thousands of years old.' The murals at Caspian Coast are our permanent answer to that. They're not a news cycle. They're memory, identity, and beauty — on a wall in Venice, California, every day." }
+        ],
+        "cta": "Come see the murals in person. 1501 Main St, Unit 103, Venice, CA. And visit Parisa's work at parisaparnian.com.",
+        "externalLinks": [
+          { "text": "Parisa Parnian — Savage Muse", "url": "https://www.parisaparnian.com/" },
+          { "text": "LA Public Press coverage of the murals", "url": "https://lapublicpress.org/2026/03/la-iran-war-artist-coffee-venice/" }
+        ],
+        "seo_keywords": ["Parisa Parnian muralist Los Angeles", "Iranian American artist Venice Beach", "Woman Life Freedom mural LA", "Persian mural coffee shop Venice", "Savage Muse artist Los Angeles"]
+      }
+    },
+    {
+      "id": "blog-coffee-culture-iran-venice",
+      "type": "blog",
+      "featured": false,
+      "title": "From Tehran to the Caspian Sea to Venice: The Coffee Culture That Made Caspian Coast",
+      "excerpt": "Long before Caspian Coast Coffee existed on Main Street, Venice, there was a road north from Tehran. There was a Caspian shoreline. There was a radio playing two stations. And there was coffee, always coffee — this is the culture that built us.",
+      "author": "Rahi Manavi",
+      "publication": "Caspian Coast Coffee",
+      "date": "2026-06-22",
+      "image": "img/nostalgia-radio.jpg",
+      "url": "/news/blog-coffee-culture-iran-venice",
+      "tags": ["blog", "culture", "iran", "venice-beach", "coffee-culture", "heritage"],
+      "content": {
+        "intro": "People ask me why I opened a café. The honest answer is that I didn't really have a choice. A café was the only shape that could hold everything I needed to carry.",
+        "body": [
+          { "h": "Coffee in Tehran: Before You Knew the Word 'Third Wave'", "p": "Iranian coffee culture is older than Starbucks by several centuries. The qahveh khaneh — the traditional coffeehouse — was a gathering place for poets, philosophers, musicians, and chess players long before café culture existed in Europe. These weren't just places to drink; they were the internet of their era. News, debate, music, and storytelling all happened over a small cup and a plate of sweets. The café was the public square." },
+          { "h": "The Road North: Tehran to the Caspian Sea", "p": "My family left Iran in 1979. But the stories didn't leave with them. My mother described driving north from Tehran in the summer — the mountains giving way, the air thickening with humidity and the smell of the sea. The Caspian is warmer than you'd expect, sheltered by the Alborz range, lined with rice paddies and tea gardens. Her family would stop at a roadside stand for fresh tea — black, strong, served in a small glass called an estekan — with a sugar cube held between the teeth." },
+          { "h": "What Café Culture Means in the Iranian Diaspora", "p": "In Los Angeles, the Iranian diaspora rebuilt the qahveh khaneh in a hundred different forms. Westwood — Tehrangeles — became a cultural hub where Persian families gathered at cafés and restaurants to stay connected to a culture that no longer had a place they could safely return to. The café became, again, the place where community survived." },
+          { "h": "Venice: A City That Understands Reinvention", "p": "We chose Venice because Venice understands what it means to hold two things at once — tradition and rebellion, heritage and experiment. Caspian Coast sits on Main Street, a block from the ocean, pouring saffron lattes and cardamom cold brew — Persian spice filtered through California light." },
+          { "h": "The Cup as a Cultural Act", "p": "Every drink we make is an act of cultural continuity. The saffron latte carries the flavor of a country I've never visited but know completely through food and music and family stories. The cardamom cold brew is the road north from Tehran on a summer morning. The espresso — roasted in Los Angeles by Sightglass — is Venice, 2026, California-clean and alive. None of these things are in conflict. That's the whole point of Caspian Coast: they never were." }
+        ],
+        "cta": "We're open daily at 1501 Main St, Unit 103, Venice, CA. Come sit a while.",
+        "seo_keywords": ["Iranian coffee culture Los Angeles","Persian café Venice Beach","coffee shop Venice CA","Iranian American owned café LA","Tehrangeles coffee Venice","Persian coffee history"]
+      }
+    },
+    {
+      "id": "blog-sama-protein-coffee",
+      "type": "blog",
+      "featured": true,
+      "title": "Move Well, Sip Well: Caspian Coast Coffee x Sama Ghorbani",
+      "excerpt": "We teamed up with fitness and wellness creator Sama Ghorbani to build a drink that fuels your workout and your morning all at once — the Sama Special: a protein coffee that tastes nothing like a protein shake.",
+      "author": "Rahi Manavi",
+      "publication": "Caspian Coast Coffee",
+      "date": "2026-06-20",
+      "image": "img/event-sama.jpg",
+      "url": "/news/blog-sama-protein-coffee",
+      "tags": ["blog", "partners", "wellness", "community", "events"],
+      "content": {
+        "intro": "Great coffee and an active lifestyle aren't in competition. At Caspian Coast, we believe the best morning is one where your cup actually works as hard as you do.",
+        "body": [
+          { "h": "Who Is Sama Ghorbani?", "p": "Sama Ghorbani is a Los Angeles-based fitness coach, wellness creator, and Venice local whose approach to health is exactly what you'd expect from someone who lives a block from the boardwalk: joyful, community-driven, and deeply practical. She's not selling perfection. She's selling showing up — to your workout, to your morning, to your life. Her online community across Instagram and YouTube has built a following around the idea that wellness should feel good, not punishing." },
+          { "h": "The Collaboration: A Protein Coffee That Actually Tastes Good", "p": "When Sama came to us with the idea of a protein coffee on the Caspian Coast menu, we had one condition: it had to be delicious first, functional second. We worked together on the formulation — espresso from Sightglass as the base, organic vegan protein blended in (no chalky aftertaste, we tested eight versions), a touch of our house cardamom syrup for warmth and Persian character, and a vanilla cream top. The result is the Sama Special: 20g of protein, a double shot of espresso, and a flavor profile that's more latte than supplement." },
+          { "h": "The Beach Party: Where It All Launched", "p": "On June 20th, we took the collaboration to Venice Beach — Windward Plaza. Sama led a morning group hike, we set up a pop-up serving the Sama Special alongside our summer drinks, and about 80 people showed up to move, connect, and sip. It was exactly the kind of event that defines what Caspian Coast is for: not just coffee, but culture. Not just customers, but community." },
+          { "h": "Why Protein Coffee? Why Now?", "p": "The demand for functional coffee — drinks that do something beyond caffeine — has grown dramatically in Los Angeles and beyond. But most protein coffees sacrifice taste for numbers. The Sama Special is our answer to that: a drink that fits into a post-workout morning, a pre-yoga ritual, or just a Tuesday when you want something that keeps you full until noon. We're proud to offer it. And we're proud it tastes like us." },
+          { "h": "Find the Sama Special at Caspian Coast", "p": "The Sama Special is available at Caspian Coast Coffee at 1501 Main St, Unit 103, Venice, CA. Ask for it by name. And if you're in the mood for a workout first, check out Sama's events and content — she's one of the best in Venice." }
+        ],
+        "cta": "Try the Sama Special at Caspian Coast. 1501 Main St, Unit 103, Venice, CA.",
+        "externalLinks": [
+          { "text": "Follow Sama Ghorbani on Instagram", "url": "https://www.instagram.com/sama.ghorbani/" },
+          { "text": "Watch the Venice Beach collab reel", "url": "https://www.instagram.com/reel/DZQ_LrBSh0N/" }
+        ],
+        "seo_keywords": ["protein coffee Venice Beach","healthy coffee Los Angeles","Sama Ghorbani Caspian Coast","fitness coffee Venice CA","protein latte Los Angeles","functional coffee Venice Beach"]
+      }
+    }
+  ]
+}
