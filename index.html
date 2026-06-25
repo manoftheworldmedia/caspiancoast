@@ -401,6 +401,17 @@
   .menu-track .drink.secret .sm-eye{width:42px;height:auto;flex:0 0 auto;filter:brightness(0) invert(1);opacity:.96;position:relative;z-index:1;}
   .secret-veil .sm-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.32em;font-size:11px;font-weight:600;position:relative;z-index:1;color:#f4f0e7;}
   .secret-veil .sm-hint{font-family:var(--font-editorial,'Cormorant Garamond',serif);font-style:italic;font-size:14px;letter-spacing:.02em;opacity:.78;position:relative;z-index:1;margin-top:-4px;}
+  /* lavender flip easter egg */
+  .drink.lav-flip{perspective:1300px;}
+  .lav-inner{position:relative;height:100%;transition:transform .85s cubic-bezier(.22,1,.3,1);transform-style:preserve-3d;}
+  .drink.lav-flip.flipped .lav-inner{transform:rotateY(180deg);}
+  .lav-front{position:relative;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+  .lav-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:#e8136f;}
+  .menu-track .drink .lav-back img{height:100%;width:100%;object-fit:cover;}
+  .lav-eye{position:absolute;left:46%;top:60%;width:20%;height:14%;border:0;background:transparent;border-radius:50%;cursor:pointer;z-index:3;-webkit-tap-highlight-color:transparent;}
+  .lav-eye::after{content:"";position:absolute;inset:0;border-radius:50%;transition:box-shadow .3s;}
+  .lav-front:hover .lav-eye::after{box-shadow:0 0 0 2px rgba(255,255,255,.6),0 0 22px 5px rgba(255,255,255,.4);}
+  .drink.lav-flip.flipped{cursor:pointer;}
 
   /* ============ ORDER CTA ============ */
   .order-cta{background:var(--ink);color:var(--cream);text-align:center;padding:clamp(54px,7vw,92px) 0 clamp(60px,8vw,104px);}
@@ -857,12 +868,22 @@ SERVED WITH CARE</h2>
   <div class="menu-band reveal" aria-label="Our summer drinks">
     <div class="menu-track" id="drinksTrack" data-cc-carousel>
       <div class="drink secret" data-secret><img src="img/summer-junegloom.jpg" alt="June Gloom — espresso shakerato shaken into a creamy cloud of foam, finished with cinnamon" /><div class="secret-veil"><img class="sm-eye" src="img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">Secret Menu Item</span></div></div>
-      <div class="drink"><img src="img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /></div>
+      <div class="drink lav-flip" data-lavflip>
+        <div class="lav-inner">
+          <div class="lav-front"><img src="img/summer-lavender.jpg" alt="Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream" /><button class="lav-eye" type="button" aria-label="Reveal a little secret"></button></div>
+          <div class="lav-back"><img src="img/event-lavender.jpg" alt="Lavender Girl" /></div>
+        </div>
+      </div>
       <div class="drink"><img src="img/summer-icedtea.jpg" alt="Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu" /></div>
       <div class="drink"><img src="img/summer-hojicha.jpg" alt="Habibi Joon Hojicha — toasted Japanese green tea latte" /></div>
       <div class="drink"><img src="img/summer-saffrontonic.jpg" alt="Saffron Tonic — Fever Tree tonic with saffron syrup and lemon" /></div>
       <div class="drink secret" data-secret aria-hidden="true"><img src="img/summer-junegloom.jpg" alt="" /><div class="secret-veil"><img class="sm-eye" src="img/eye-white.png" alt="" aria-hidden="true" /><span class="sm-label">Secret Menu Item</span></div></div>
-      <div class="drink" aria-hidden="true"><img src="img/summer-lavender.jpg" alt="" /></div>
+      <div class="drink lav-flip" data-lavflip aria-hidden="true">
+        <div class="lav-inner">
+          <div class="lav-front"><img src="img/summer-lavender.jpg" alt="" /><button class="lav-eye" type="button" tabindex="-1" aria-label="Reveal a little secret"></button></div>
+          <div class="lav-back"><img src="img/event-lavender.jpg" alt="" /></div>
+        </div>
+      </div>
       <div class="drink" aria-hidden="true"><img src="img/summer-icedtea.jpg" alt="" /></div>
       <div class="drink" aria-hidden="true"><img src="img/summer-hojicha.jpg" alt="" /></div>
       <div class="drink" aria-hidden="true"><img src="img/summer-saffrontonic.jpg" alt="" /></div>
@@ -903,6 +924,25 @@ SERVED WITH CARE</h2>
   </div>
 </section>
 
+<!-- ===================== EVENTS ===================== -->
+<section class="events wm-host" id="events">
+  <img class="scroll-wm left mid" src="img/logo-green.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="events-head reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--sage);">Today at the Coast</span>
+        <hr class="rule" style="background:var(--cream);" />
+        <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
+      </div>
+      <a class="link-arrow" href="events/" data-fa="همه‌ی رویدادها →">See all events &nbsp;→</a>
+    </div>
+    <article class="ev-feature reveal" id="eventFeatured"></article>
+    <div class="ev-grid reveal" id="eventGrid"></div>
+    <div id="eventPast"></div>
+    <div class="ev-pastlink-wrap reveal"><a class="link-arrow ev-pastlink" id="viewPast" href="#">See past events &nbsp;→</a></div>
+  </div>
+</section>
+
 <!-- ===================== THE SPACE ===================== -->
 <section class="vibe wm-host" id="cafe">
   <img class="scroll-wm left bot" src="img/logo-green.png" alt="" aria-hidden="true" />
@@ -924,6 +964,18 @@ A WHILE</h2>
         <figcaption>"Woman, Life, Freedom" — mural by Parisa Parnian</figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- ===================== MERCH ===================== -->
+<section class="merch" id="merch">
+  <div class="merch-photo"><img data-cc-img="images.merchShirt" src="img/merch-shirt.jpg" alt="L♥S Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice" /></div>
+  <div class="merch-copy reveal">
+    <img class="wm" src="img/logo.webp" alt="" aria-hidden="true" />
+    <span class="eyebrow">New Drop</span>
+    <h2>CASPIAN MERCH</h2>
+    <p>Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
+    <a class="link-arrow" href="shop/">Shop the drop &nbsp;→</a>
   </div>
 </section>
 
@@ -961,34 +1013,19 @@ IN THE BEST WAY</h2>
   </div>
 </section>
 
-<!-- ===================== MERCH ===================== -->
-<section class="merch" id="merch">
-  <div class="merch-photo"><img data-cc-img="images.merchShirt" src="img/merch-shirt.jpg" alt="L♥S Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice" /></div>
-  <div class="merch-copy reveal">
-    <img class="wm" src="img/logo.webp" alt="" aria-hidden="true" />
-    <span class="eyebrow">New Drop</span>
-    <h2>CASPIAN MERCH</h2>
-    <p>Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
-    <a class="link-arrow" href="shop/">Shop the drop &nbsp;→</a>
-  </div>
-</section>
-
-<!-- ===================== EVENTS ===================== -->
-<section class="events wm-host" id="events">
-  <img class="scroll-wm left mid" src="img/logo-green.png" alt="" aria-hidden="true" />
+<!-- ===================== IN THE NEWS ===================== -->
+<section class="news-band wm-host" id="news">
+  <img class="scroll-wm right top" src="img/logo-green.png" alt="" aria-hidden="true" />
   <div class="wrap">
-    <div class="events-head reveal">
-      <div>
-        <span class="eyebrow" style="color:var(--sage);">Today at the Coast</span>
-        <hr class="rule" style="background:var(--cream);" />
-        <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
+    <div class="news-band-head reveal">
+      <span class="eyebrow" style="color:var(--pine);" data-fa="اخبار و داستان‌ها">In the News</span>
+      <hr class="rule" style="background:var(--pine);" />
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;">
+        <h2 style="font-size:clamp(28px,3.4vw,46px);text-transform:uppercase;" data-fa="مطبوعات، وبلاگ و جامعه">Press, Blog &amp; Community</h2>
+        <a class="link-arrow" href="news/" data-fa="همه‌ی داستان‌ها →">All stories &nbsp;→</a>
       </div>
-      <a class="link-arrow" id="viewCalendar" href="#" data-fa="افزودن همه به تقویم">Add all to calendar &nbsp;→</a>
     </div>
-    <article class="ev-feature reveal" id="eventFeatured"></article>
-    <div class="ev-grid reveal" id="eventGrid"></div>
-    <div id="eventPast"></div>
-    <div class="ev-pastlink-wrap reveal"><a class="link-arrow ev-pastlink" id="viewPast" href="#">See past events &nbsp;→</a></div>
+    <div class="news-grid-home reveal" id="homeNewsGrid"></div>
   </div>
 </section>
 
@@ -1004,22 +1041,6 @@ IN THE BEST WAY</h2>
       <div class="yes"><span>✶</span> Persian café? Yes — really.</div>
     </aside>
     <div class="faq-list reveal" id="faqList"></div>
-  </div>
-</section>
-
-<!-- ===================== IN THE NEWS ===================== -->
-<section class="news-band wm-host" id="news">
-  <img class="scroll-wm right top" src="img/logo-green.png" alt="" aria-hidden="true" />
-  <div class="wrap">
-    <div class="news-band-head reveal">
-      <span class="eyebrow" style="color:var(--pine);" data-fa="اخبار و داستان‌ها">In the News</span>
-      <hr class="rule" style="background:var(--pine);" />
-      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:16px;">
-        <h2 style="font-size:clamp(28px,3.4vw,46px);text-transform:uppercase;" data-fa="مطبوعات، وبلاگ و جامعه">Press, Blog &amp; Community</h2>
-        <a class="link-arrow" href="news/" data-fa="همه‌ی داستان‌ها →">All stories &nbsp;→</a>
-      </div>
-    </div>
-    <div class="news-grid-home reveal" id="homeNewsGrid"></div>
   </div>
 </section>
 

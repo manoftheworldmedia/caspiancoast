@@ -403,6 +403,17 @@
   .menu-track .drink.secret .sm-eye{width:42px;height:auto;flex:0 0 auto;filter:brightness(0) invert(1);opacity:.96;position:relative;z-index:1;}
   .secret-veil .sm-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.32em;font-size:11px;font-weight:600;position:relative;z-index:1;color:#f4f0e7;}
   .secret-veil .sm-hint{font-family:var(--font-editorial,'Cormorant Garamond',serif);font-style:italic;font-size:14px;letter-spacing:.02em;opacity:.78;position:relative;z-index:1;margin-top:-4px;}
+  /* lavender flip easter egg */
+  .drink.lav-flip{perspective:1300px;}
+  .lav-inner{position:relative;height:100%;transition:transform .85s cubic-bezier(.22,1,.3,1);transform-style:preserve-3d;}
+  .drink.lav-flip.flipped .lav-inner{transform:rotateY(180deg);}
+  .lav-front{position:relative;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+  .lav-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:#e8136f;}
+  .menu-track .drink .lav-back img{height:100%;width:100%;object-fit:cover;}
+  .lav-eye{position:absolute;left:46%;top:60%;width:20%;height:14%;border:0;background:transparent;border-radius:50%;cursor:pointer;z-index:3;-webkit-tap-highlight-color:transparent;}
+  .lav-eye::after{content:"";position:absolute;inset:0;border-radius:50%;transition:box-shadow .3s;}
+  .lav-front:hover .lav-eye::after{box-shadow:0 0 0 2px rgba(255,255,255,.6),0 0 22px 5px rgba(255,255,255,.4);}
+  .drink.lav-flip.flipped{cursor:pointer;}
 
   /* ============ ORDER CTA ============ */
   .order-cta{background:var(--ink);color:var(--cream);text-align:center;padding:clamp(54px,7vw,92px) 0 clamp(60px,8vw,104px);}
@@ -885,6 +896,25 @@ SERVED WITH CARE</h2>
   </div>
 </section>
 
+<!-- ===================== EVENTS ===================== -->
+<section class="events wm-host" id="events">
+  <img class="scroll-wm left mid" src="../img/logo-green.png" alt="" aria-hidden="true" />
+  <div class="wrap">
+    <div class="events-head reveal">
+      <div>
+        <span class="eyebrow" style="color:var(--sage);">Today at the Coast</span>
+        <hr class="rule" style="background:var(--cream);" />
+        <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
+      </div>
+      <a class="link-arrow" href="../events/" data-fa="همه‌ی رویدادها →">See all events &nbsp;→</a>
+    </div>
+    <article class="ev-feature reveal" id="eventFeatured"></article>
+    <div class="ev-grid reveal" id="eventGrid"></div>
+    <div id="eventPast"></div>
+    <div class="ev-pastlink-wrap reveal"><a class="link-arrow ev-pastlink" id="viewPast" href="#">See past events &nbsp;→</a></div>
+  </div>
+</section>
+
 <!-- ===================== THE SPACE ===================== -->
 <section class="vibe wm-host" id="cafe">
   <img class="scroll-wm left bot" src="../img/logo-green.png" alt="" aria-hidden="true" />
@@ -906,6 +936,18 @@ A WHILE</h2>
         <figcaption>"Woman, Life, Freedom" — mural by Parisa Parnian</figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+<!-- ===================== MERCH ===================== -->
+<section class="merch" id="merch">
+  <div class="merch-photo"><img data-cc-img="images.merchShirt" src="../img/merch-shirt.jpg" alt="L♥S Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice" /></div>
+  <div class="merch-copy reveal">
+    <img class="wm" src="../img/logo.webp" alt="" aria-hidden="true" />
+    <span class="eyebrow">New Drop</span>
+    <h2>CASPIAN MERCH</h2>
+    <p>Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
+    <a class="link-arrow" href="shop/">Shop the drop &nbsp;→</a>
   </div>
 </section>
 
@@ -940,37 +982,6 @@ IN THE BEST WAY</h2>
         <cite>— House rule</cite>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===================== MERCH ===================== -->
-<section class="merch" id="merch">
-  <div class="merch-photo"><img data-cc-img="images.merchShirt" src="../img/merch-shirt.jpg" alt="L♥S Angeles tee in Caspian Gothic typography on the rack at Caspian Coast Coffee, Venice" /></div>
-  <div class="merch-copy reveal">
-    <img class="wm" src="../img/logo.webp" alt="" aria-hidden="true" />
-    <span class="eyebrow">New Drop</span>
-    <h2>CASPIAN MERCH</h2>
-    <p>Exclusive Caspian tees and baba hats Tehrangeles style featuring our Caspian Gothic typography from the iconic mural painted on our wall — a love letter to this city, in two alphabets.</p>
-    <a class="link-arrow" href="shop/">Shop the drop &nbsp;→</a>
-  </div>
-</section>
-
-<!-- ===================== EVENTS ===================== -->
-<section class="events wm-host" id="events">
-  <img class="scroll-wm left mid" src="../img/logo-green.png" alt="" aria-hidden="true" />
-  <div class="wrap">
-    <div class="events-head reveal">
-      <div>
-        <span class="eyebrow" style="color:var(--sage);">Today at the Coast</span>
-        <hr class="rule" style="background:var(--cream);" />
-        <h2>THERE'S ALWAYS SOMETHING GOING ON</h2>
-      </div>
-      <a class="link-arrow" id="viewCalendar" href="#" data-fa="افزودن همه به تقویم">Add all to calendar &nbsp;→</a>
-    </div>
-    <article class="ev-feature reveal" id="eventFeatured"></article>
-    <div class="ev-grid reveal" id="eventGrid"></div>
-    <div id="eventPast"></div>
-    <div class="ev-pastlink-wrap reveal"><a class="link-arrow ev-pastlink" id="viewPast" href="#">See past events &nbsp;→</a></div>
   </div>
 </section>
 

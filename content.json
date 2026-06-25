@@ -1,4 +1,30 @@
 {
+  "seo": {
+    "home": {
+      "title": "Caspian Coast Coffee — Persian Café in Venice, Los Angeles",
+      "title_fa": "کاسپین کوست کافی — کافه‌ی ایرانی در ونیس، لس‌آنجلس",
+      "description": "Caspian Coast Coffee is a Persian café in Venice, California (Los Angeles). Saffron lattes, cardamom cold brew, rosewater matcha and espresso roasted in LA — Persian roots, California light, Venice soul. Open daily 7am–8pm.",
+      "description_fa": "کاسپین کوست کافی یک کافه‌ی ایرانی در ونیس، کالیفرنیاست — لاته‌ی زعفرانی، کلد برو هل، ماچا گلاب و اسپرسوی رُست‌شده در لس‌آنجلس. ریشه‌ی ایرانی، نور کالیفرنیا، روح ونیس."
+    },
+    "menu": {
+      "title": "Menu — Caspian Coast Coffee · Persian Café in Venice, Los Angeles",
+      "title_fa": "منو — کاسپین کوست کافی · کافه‌ی ایرانی در ونیس",
+      "description": "The full menu at Caspian Coast Coffee, Venice. Summer specials, espresso, matcha & Persian tea, saffron & cardamom specialty lattes, coffee, alt milks and wellness boosts.",
+      "description_fa": "منوی کامل کاسپین کوست کافی، ونیس. اسپشیال‌های تابستان، اسپرسو، ماچا و چای ایرانی، لاته‌های ویژه‌ی زعفران و هل، قهوه و بوسترهای سلامتی."
+    },
+    "about": {
+      "title": "About — Caspian Coast Coffee · Persian Café in Venice, California",
+      "title_fa": "درباره — کاسپین کوست کافی · کافه‌ی ایرانی در ونیس",
+      "description": "The story behind Caspian Coast Coffee — a Persian café in Venice, California. A family journey across oceans, a bridge between worlds, coffee roasted in LA by Sightglass.",
+      "description_fa": "داستان کاسپین کوست کافی — یک کافه‌ی ایرانی در ونیس کالیفرنیا. سفری خانوادگی از آن سوی اقیانوس‌ها، پلی میان جهان‌ها."
+    },
+    "shop": {
+      "title": "Shop — Caspian Coast Coffee · Persian Café in Venice, Los Angeles",
+      "title_fa": "فروشگاه — کاسپین کوست کافی · کافه‌ی ایرانی در ونیس",
+      "description": "Shop Caspian Coast Coffee — Lös Angeles tees, hand-painted Persian artist ceramic magnets and necklaces. Made by Persian artists, sold in Venice, California.",
+      "description_fa": "فروشگاه کاسپین کوست — تی‌شرت‌های لس‌آنجلس، مگنت‌ها و گردنبندهای سرامیکی دست‌ساز هنرمندان ایرانی. در ونیس کالیفرنیا."
+    }
+  },
   "theme": {
     "fontDisplay": "Archivo",
     "fontSerif": "Cinzel",
@@ -7,7 +33,7 @@
   },
   "carousel": [
     { "image": "img/summer-junegloom.jpg", "alt": "June Gloom — espresso shakerato shaken into a creamy cloud of foam, finished with cinnamon", "alt_fa": "جون گلوم — اسپرسو شیکراتو با کف خامه‌ای و دارچین", "secret": true, "secretLabel": "Secret Menu Item", "secretLabel_fa": "آیتم مخفی منو", "show": true },
-    { "image": "img/summer-lavender.jpg", "alt": "Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream", "alt_fa": "مزارع اسطوخودوس — لاته با شیر، عسل و اسطوخودوس", "secret": false, "show": true },
+    { "image": "img/summer-lavender.jpg", "alt": "Lavender Fields — double-shot latte with milk, honey, lavender and ube-lavender cream", "alt_fa": "مزارع اسطوخودوس — لاته با شیر، عسل و اسطوخودوس", "secret": false, "flipImage": "img/event-lavender.jpg", "show": true },
     { "image": "img/summer-icedtea.jpg", "alt": "Caspian Iced Tea — Persian tea with saffron, rose, honey and yuzu", "alt_fa": "چای سرد کاسپین — چای ایرانی با زعفران، گل رز، عسل و یوزو", "secret": false, "show": true },
     { "image": "img/summer-hojicha.jpg", "alt": "Habibi Joon Hojicha — toasted Japanese green tea latte", "alt_fa": "حبیبی جون هوجیچا — لاته چای سبز ژاپنی برشته", "secret": false, "show": true },
     { "image": "img/summer-saffrontonic.jpg", "alt": "Saffron Tonic — Fever Tree tonic with saffron syrup and lemon", "alt_fa": "تونیک زعفران — تونیک فیورتری با شربت زعفران و لیمو", "secret": false, "show": true }

@@ -71,6 +71,20 @@
       if (val) el.setAttribute('href', val);
     });
     renderCarousel(fa);
+    applySeo(fa);
+  }
+  function applySeo(fa) {
+    var key = document.body && document.body.getAttribute('data-cc-seo');
+    if (!key || !CONTENT || !CONTENT.seo || !CONTENT.seo[key]) return;
+    var s = CONTENT.seo[key];
+    var title = fa ? (s.title_fa || s.title) : s.title;
+    var desc = fa ? (s.description_fa || s.description) : s.description;
+    if (title) { document.title = title; }
+    if (desc) {
+      var m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement('meta'); m.setAttribute('name', 'description'); document.head.appendChild(m); }
+      m.setAttribute('content', desc);
+    }
   }
   function renderCarousel(fa) {
     var track = document.querySelector('[data-cc-carousel]');
@@ -83,6 +97,17 @@
       if (it.secret) d.setAttribute('data-secret', '');
       if (dup) d.setAttribute('aria-hidden', 'true');
       var alt = dup ? '' : (fa ? (it.alt_fa || it.alt || '') : (it.alt || ''));
+      if (it.flipImage) {
+        d.className = 'drink lav-flip';
+        var inner = document.createElement('div'); inner.className = 'lav-inner';
+        var front = document.createElement('div'); front.className = 'lav-front';
+        var fimg = document.createElement('img'); fimg.setAttribute('src', resolveSrc(it.image)); fimg.setAttribute('alt', alt); front.appendChild(fimg);
+        var eye = document.createElement('button'); eye.className = 'lav-eye'; eye.type = 'button'; eye.setAttribute('aria-label', fa ? 'یک راز کوچک' : 'Reveal a little secret'); if (dup) eye.setAttribute('tabindex', '-1'); front.appendChild(eye);
+        var back = document.createElement('div'); back.className = 'lav-back';
+        var bimg = document.createElement('img'); bimg.setAttribute('src', resolveSrc(it.flipImage)); bimg.setAttribute('alt', dup ? '' : (fa ? 'دختر اسطوخودوس' : 'Lavender Girl')); back.appendChild(bimg);
+        inner.appendChild(front); inner.appendChild(back); d.appendChild(inner);
+        return d;
+      }
       var img = document.createElement('img');
       img.setAttribute('src', resolveSrc(it.image)); img.setAttribute('alt', alt);
       d.appendChild(img);
@@ -97,6 +122,15 @@
     track.innerHTML = '';
     items.forEach(function (it) { track.appendChild(card(it, false)); });
     if (window.ccInitSecret) window.ccInitSecret();
+    if (!window._lavFlipBound) {
+      window._lavFlipBound = true;
+      document.addEventListener('click', function (e) {
+        var eye = e.target.closest && e.target.closest('.lav-eye');
+        if (eye) { e.preventDefault(); e.stopPropagation(); var c = eye.closest('.lav-flip'); if (c) c.classList.toggle('flipped'); return; }
+        var back = e.target.closest && e.target.closest('.lav-flip.flipped .lav-back');
+        if (back) { var c2 = back.closest('.lav-flip'); if (c2) c2.classList.remove('flipped'); }
+      }, true);
+    }
     setTimeout(initMarquees, 50);
   }
   /* Transform-based infinite marquee + manual drag, idle auto-resume (site-wide on .menu-band) */
