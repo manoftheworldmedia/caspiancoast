@@ -336,12 +336,7 @@ Add any event straight to your calendar.</p>
   if(navToggle){navToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false);});}
 
   /* ---- open/closed ---- */
-  function updateStatus(){
-    var el=document.getElementById('openStatus');var now=new Date(),h=now.getHours()+now.getMinutes()/60,d=now.getDay();
-    var open=(d>=1&&d<=4)?(h>=7&&h<17):(d===5||d===6)?(h>=7&&h<19):(h>=8&&h<16);
-    el.classList.toggle('open',open);el.classList.toggle('closed',!open);
-    var fa=evLang()==='fa';var t=el.querySelector('.txt');t.textContent=open?(fa?'باز':'Open'):(fa?'بسته':'Closed');t.setAttribute('dir',fa?'rtl':'ltr');
-  }
+  function updateStatus(){var HOURS=[[8,16],[7,17],[7,17],[7,17],[7,17],[7,19],[7,19]];var el=document.getElementById('openStatus');if(!el)return;var now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;var open=h>=HOURS[d][0]&&h<HOURS[d][1];el.classList.toggle('open',open);el.classList.toggle('closed',!open);var txt=el.querySelector('.txt');var fa=(typeof LANG!=='undefined'&&LANG==='fa')||document.documentElement.lang==='fa';function fmt(n){return n===12?'12PM':n>12?(n-12)+'PM':n+'AM';}var word=open?(fa?'باز':'Open'):(fa?'بسته':'Closed');var time=open?(fa?('بسته میشه '+fmt(HOURS[d][1])):('Closing '+fmt(HOURS[d][1]))):(fa?('باز میشه '+fmt(HOURS[(d+1)%7][0])):('Opening '+fmt(HOURS[(d+1)%7][0])));txt.innerHTML='<span class="st-word">'+word+'</span><span class="st-time"> · '+time+'</span>';txt.setAttribute('dir',fa?'rtl':'ltr');}
 
   /* ---- calendar helpers ---- */
   const pad2=n=>String(n).padStart(2,'0');
