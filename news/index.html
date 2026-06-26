@@ -365,7 +365,7 @@
   });
 
   // ---- fetch ----
-  fetch('../news.json').then(function(r){return r.json();}).then(function(d){NEWS=d;renderGrid();openFromHash();}).catch(function(){});
+  fetch('/news.json').then(function(r){return r.json();}).then(function(d){NEWS=d;renderGrid();openFromHash();}).catch(function(e){console.error('news.json fetch failed:',e);});
 
   // ---- hamburger ----
   (function(){
