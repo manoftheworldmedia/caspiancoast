@@ -157,21 +157,36 @@
   </div>
 </div>
 
-<header class="nav">
+<header class="nav" id="nav">
   <nav class="nav-left">
-    <a class="nav-link" href="../">Home</a>
-    <a class="nav-link" href="../menu/">Menu</a>
+    <a class="nav-link" href="../menu/" data-fa="منو">Menu</a>
+    <a class="nav-link" href="../events/" data-fa="رویدادها">Events</a>
+    <a class="nav-link" href="../shop/" data-fa="فروشگاه">Shop</a>
   </nav>
   <a class="brand" href="../" aria-label="Caspian Coast Coffee home">
-    <span class="name">CASPIAN COAST</span>
-    <span class="sub">Coffee &amp; Culture</span>
+    <span class="name" data-fa="کاسپین کوست">CASPIAN COAST</span>
+    <span class="sub" data-fa="قهوه و فرهنگ">Coffee &amp; Culture</span>
   </a>
   <nav class="nav-right">
-    <a class="nav-link" href="../shop/">Shop</a>
-    <a class="nav-link active" href="../news/">News</a>
-    <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener">Order</a>
+    <a class="nav-link" href="../#visit" data-fa="بازدید">Visit</a>
+    <a class="nav-link" href="../about/" data-fa="درباره ما">About</a>
+    <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
   </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <img class="mm-eye" src="../img/eye-mark.png" alt="" aria-hidden="true" />
+  <a href="../menu/" data-fa="منو">Menu</a>
+  <a href="../events/" data-fa="رویدادها">Events</a>
+  <a href="../shop/" data-fa="فروشگاه">Shop</a>
+  <a href="../#visit" data-fa="بازدید">Visit</a>
+  <a href="../about/" data-fa="درباره ما">About</a>
+  <a class="mm-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش دهید">Order Now</a>
+  <span class="mm-foot" data-fa="ونیس، کالیفرنیا">Venice, California</span>
+</div>
+
+<a class="float-order" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener" data-fa="سفارش">Order</a>
 
 <!-- HERO -->
 <section class="news-hero">
