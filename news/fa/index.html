@@ -91,9 +91,9 @@
 
   /* hero — RTL: wordmark right-justified */
   .news-hero{padding:clamp(120px,15vw,180px) 0 clamp(34px,4vw,54px);background:var(--cream);color:var(--ink);}
-  .news-hero .inner{display:flex;flex-direction:column;align-items:flex-end;text-align:right;}
-  .news-hero .eyebrow{color:var(--clay);}
-  .news-hero .nh-wordmark-fa{width:min(380px,62vw);height:auto;display:block;margin:14px 0 4px;}
+  .news-hero .inner{display:block;text-align:right;width:100%;}
+  .news-hero .eyebrow{display:block;}
+  .news-hero .nh-wordmark-fa{display:inline-block;width:min(380px,62vw);height:auto;margin:14px 0 4px;}
   .news-hero p{font-family:var(--body);font-size:clamp(17px,2vw,23px);color:var(--ink-soft);margin-top:10px;max-width:46ch;line-height:1.7;}
 
   /* tabs */
@@ -123,7 +123,7 @@
   .nc a.read-link{font-family:var(--body);font-size:11px;font-weight:700;color:var(--clay);}
 
   /* article view */
-  .article-wrap{max-width:740px;margin:0 auto;padding:clamp(56px,7vw,96px) 36px;text-align:right;}
+  .article-wrap{max-width:740px;margin:0 auto;padding:clamp(112px,13vw,150px) 36px clamp(56px,7vw,96px);text-align:right;}
   .article-header .eyebrow{color:var(--pine);}
   .article-header h1{font-size:clamp(26px,3.6vw,46px);margin-top:14px;line-height:1.1;}
   .article-header .lede{font-size:clamp(18px,2vw,24px);color:var(--ink-soft);margin-top:18px;line-height:1.55;}
@@ -137,6 +137,13 @@
   .article-body .ext-links a{font-size:11px;color:var(--clay);border-bottom:1px solid rgba(192,101,58,.4);}
   .article-back{margin-top:46px;padding-top:30px;border-top:1px solid var(--line);}
   .article-back a{font-size:11px;font-weight:700;color:var(--ink);}
+  .article-back.top{margin:0 0 26px;padding:0;border-top:0;}
+  .article-back.top a{color:var(--clay);}
+  .related{margin-top:54px;padding-top:36px;border-top:1px solid var(--line);}
+  .related-title{font-family:var(--body);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:22px;text-align:right;}
+  .related .news-grid{grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);}
+  .related .nc{cursor:pointer;}
+  @media (max-width:560px){.related .news-grid{grid-template-columns:1fr;}}
 
   /* no results */
   .no-items{text-align:center;padding:64px 0;font-size:19px;color:var(--ink-soft);}
@@ -154,7 +161,7 @@
   @media (max-width:600px){
     .wrap{padding:0 20px;}
     .news-grid{grid-template-columns:1fr;}
-    .article-wrap{padding:clamp(40px,6vw,70px) 20px;}
+    .article-wrap{padding:clamp(92px,22vw,110px) 20px 60px;}
   }
 </style>
 </head>
@@ -176,7 +183,6 @@
   <nav class="nav-left">
     <a class="nav-link" href="../../#visit">بازدید</a>
     <a class="nav-link" href="../../about/">درباره ما</a>
-    <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener">سفارش دهید</a>
   </nav>
   <a class="brand" href="../../" aria-label="Caspian Coast Coffee home">
     <span class="name">CASPIAN COAST</span>
@@ -186,6 +192,7 @@
     <a class="nav-link" href="../../menu/">منو</a>
     <a class="nav-link" href="../../events/">رویدادها</a>
     <a class="nav-link" href="../../shop/">فروشگاه</a>
+    <a class="order-btn" href="https://order.dripos.com/Caspian-Coast" target="_blank" rel="noopener">سفارش دهید</a>
   </nav>
   <button class="nav-toggle" id="navToggle" aria-label="باز کردن منو" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
@@ -297,6 +304,34 @@
   }
 
   // ---- inline article view ----
+  function setListingVisible(v){
+    ['.news-hero','.tab-bar','.news-section'].forEach(function(sel){
+      var el=document.querySelector(sel); if(el) el.style.display=v?'':'none';
+    });
+  }
+
+  function relatedHTML(current){
+    var pool=NEWS.items.filter(function(i){return i.id!==current.id;});
+    var feat=pool.filter(function(i){return i.featured;});
+    var rest=pool.filter(function(i){return !i.featured;});
+    var picks=feat.concat(rest).slice(0,3);
+    if(!picks.length) return '';
+    var cards=picks.map(function(item){
+      var typeLabel=TYPE_LABELS[item.type]||item.type||'';
+      var isExternal=item.url&&item.url.startsWith('http');
+      var href=isExternal?item.url:('#'+item.id);
+      return '<article class="nc rel-card" data-id="'+item.id+'">'
+        +'<div class="thumb"><img src="../../'+item.image+'" alt="'+item.title+'" loading="lazy"/></div>'
+        +'<div class="body"><span class="type-tag '+item.type+'">'+typeLabel+'</span>'
+        +'<h3>'+item.title+'</h3>'
+        +'<p class="excerpt">'+item.excerpt+'</p>'
+        +'<div class="meta"><span>'+dateStr(item.date)+'</span>'
+        +'<a class="read-link" href="'+href+'"'+(isExternal?' target="_blank" rel="noopener"':'')+'>بیشتر بخوانید ←</a>'
+        +'</div></div></article>';
+    }).join('');
+    return '<div class="related"><h2 class="related-title">داستان‌های بیشتر</h2><div class="news-grid">'+cards+'</div></div>';
+  }
+
   function showArticle(item){
     var av=document.getElementById('articleView');
     var ac=document.getElementById('articleContent');
@@ -305,7 +340,8 @@
     (c.body||[]).forEach(function(b){bodyHTML+='<h2>'+b.h+'</h2><p>'+b.p+'</p>';});
     var extLinks='';
     if(c.externalLinks&&c.externalLinks.length){extLinks='<div class="ext-links">'+c.externalLinks.map(function(l){return '<a href="'+l.url+'" target="_blank" rel="noopener">'+l.text+'</a>';}).join('')+'</div>';}
-    ac.innerHTML='<div class="article-header">'
+    ac.innerHTML='<div class="article-back top"><a href="#" class="backBtn">→ بازگشت به اخبار</a></div>'
+      +'<div class="article-header">'
       +'<span class="eyebrow">'+(TYPE_LABELS[item.type]||'')+'</span>'
       +'<h1>'+item.title+'</h1>'
       +'<p class="lede">'+item.excerpt+'</p>'
@@ -317,20 +353,37 @@
       +bodyHTML
       +(c.cta?'<p class="cta-line">'+c.cta+'</p>':'')
       +extLinks
-      +'<div class="article-back"><a href="#" id="backBtn">→ بازگشت به اخبار</a></div>'
-      +'</div>';
+      +'</div>'
+      +relatedHTML(item)
+      +'<div class="article-back"><a href="#" class="backBtn">→ بازگشت به اخبار</a></div>';
+    setListingVisible(false);
     av.style.display='block';
     if(window.history&&history.replaceState){history.replaceState(null,'','#'+item.id);}
-    document.getElementById('backBtn').addEventListener('click',function(e){e.preventDefault();av.style.display='none';if(window.history&&history.replaceState){history.replaceState(null,'',location.pathname+location.search);}});
+    ac.querySelectorAll('.backBtn').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();closeArticle();});});
+    ac.querySelectorAll('.rel-card').forEach(function(cardEl){
+      var rel=NEWS.items.filter(function(i){return i.id===cardEl.getAttribute('data-id');})[0];
+      if(rel&&rel.content){
+        cardEl.addEventListener('click',function(e){if(e.target.closest('a')&&!e.target.closest('.read-link'))return;e.preventDefault();showArticle(rel);});
+      }
+    });
+    window.scrollTo(0,0);
+  }
+
+  function closeArticle(){
+    var av=document.getElementById('articleView');
+    if(av) av.style.display='none';
+    setListingVisible(true);
+    if(window.history&&history.replaceState){history.replaceState(null,'',location.pathname+location.search);}
     window.scrollTo(0,0);
   }
 
   function openFromHash(){
     if(!NEWS) return;
     var id=(location.hash||'').replace(/^#/,'');
-    if(!id){var av=document.getElementById('articleView');if(av)av.style.display='none';return;}
+    if(!id){closeArticle();return;}
     var item=NEWS.items.filter(function(i){return i.id===id;})[0];
     if(item&&item.content){showArticle(item);}
+    else{setListingVisible(true);}
   }
   window.addEventListener('hashchange',openFromHash);
 
@@ -344,7 +397,10 @@
   });
 
   // ---- fetch ----
-  fetch('/news.json').then(function(r){return r.json();}).then(function(d){NEWS=d;renderGrid();openFromHash();}).catch(function(e){console.error('news.json fetch failed:',e);});
+  function loadNews(){
+    return fetch('/news.json').then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(){return fetch('../../news.json').then(function(r){return r.json();});});
+  }
+  loadNews().then(function(d){NEWS=d;renderGrid();openFromHash();}).catch(function(e){console.error('news.json fetch failed:',e);});
 
   // ---- hamburger ----
   (function(){
