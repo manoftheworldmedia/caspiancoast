@@ -113,6 +113,8 @@
   .nc:hover{transform:translateY(-5px);box-shadow:0 24px 50px -28px rgba(27,25,22,.5);}
   .nc .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--cream-2);}
   .nc .thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.16,1,.3,1);}
+  .nc .thumb img[src$="news-press-mural.jpg"]{transform:scale(1.5) translateY(-20%);transform-origin:50% 50%;}
+  .nc:hover .thumb img[src$="news-press-mural.jpg"]{transform:scale(1.55) translateY(-20%);transform-origin:50% 50%;}
   .nc:hover .thumb img{transform:scale(1.04);}
   .nc .body{padding:clamp(18px,2.4vw,26px);display:flex;flex-direction:column;flex:1;}
   .nc .type-tag{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:700;color:var(--clay);margin-bottom:10px;}
