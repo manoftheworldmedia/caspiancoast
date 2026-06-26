@@ -40,8 +40,8 @@
     {
       "q": "What are the hours at Caspian Coast?",
       "q_fa": "ساعات کاری کاسپین کوست چه زمانی است؟",
-      "a": "We're open daily:\nMon–Thu 7am–5pm\nFri & Sat 7am–7pm\nSun 8am–4pm",
-      "a_fa": "ما هر روز باز هستیم:\nدوشنبه تا پنجشنبه ۷ صبح–۵ عصر\nجمعه و شنبه ۷ صبح–۷ عصر\nیکشنبه ۸ صبح–۴ عصر"
+      "a": "We're open daily:\nMon–Wed 7am–5pm\nThurs–Sat 7am–7pm\nSun 8am–5pm",
+      "a_fa": "ما هر روز باز هستیم:\nدوشنبه تا چهارشنبه ۷ صبح–۵ عصر\nپنجشنبه تا شنبه ۷ صبح–۷ عصر\nیکشنبه ۸ صبح–۵ عصر"
     },
     {
       "q": "Do you have oat milk and plant-based options?",
