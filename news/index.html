@@ -225,6 +225,7 @@
     <button class="tab-btn" data-filter="blog">Blog</button>
     <button class="tab-btn" data-filter="partners">Partners</button>
     <button class="tab-btn" data-filter="community">Community</button>
+    <button class="tab-btn" data-filter="art">Art</button>
   </div>
 </div>
 
@@ -261,8 +262,8 @@
   updateStatus(); setInterval(updateStatus,60000);
 
   // ---- tag label helpers ----
-  var TYPE_LABELS={press:'Press',blog:'Blog',community:'Community',partners:'Partners'};
-  var TAG_MAP={press:['press'],blog:['blog'],partners:['partners','sightglass','kouzeh','parisa-parnian'],community:['community']};
+  var TYPE_LABELS={press:'Press',blog:'Blog',community:'Community',partners:'Partners',art:'Art'};
+  var TAG_MAP={press:['press'],blog:['blog'],partners:['partners','sightglass','kouzeh'],community:['community'],art:['art','parisa-parnian']};
   function matchesFilter(item,filter){if(filter==='all')return true;var tags=TAG_MAP[filter]||[filter];return (item.tags||[]).some(function(t){return tags.indexOf(t)>=0;});}
   function dateStr(d){var p=d?new Date(d):null;if(!p||isNaN(p))return '';return p.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});}
 

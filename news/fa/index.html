@@ -220,6 +220,7 @@
     <button class="tab-btn" data-filter="blog">وبلاگ</button>
     <button class="tab-btn" data-filter="partners">همکاری‌ها</button>
     <button class="tab-btn" data-filter="community">جامعه</button>
+    <button class="tab-btn" data-filter="art">هنر</button>
   </div>
 </div>
 
@@ -257,8 +258,8 @@
   updateStatus(); setInterval(updateStatus,60000);
 
   // ---- tag labels (Farsi) ----
-  var TYPE_LABELS={press:'رسانه',blog:'وبلاگ',community:'جامعه',partners:'همکاری'};
-  var TAG_MAP={press:['press'],blog:['blog'],partners:['partners','sightglass','kouzeh','parisa-parnian'],community:['community']};
+  var TYPE_LABELS={press:'رسانه',blog:'وبلاگ',community:'جامعه',partners:'همکاری',art:'هنر'};
+  var TAG_MAP={press:['press'],blog:['blog'],partners:['partners','sightglass','kouzeh'],community:['community'],art:['art','parisa-parnian']};
   function matchesFilter(item,filter){if(filter==='all')return true;var tags=TAG_MAP[filter]||[filter];return (item.tags||[]).some(function(t){return tags.indexOf(t)>=0;});}
   function dateStr(d){var p=d?new Date(d):null;if(!p||isNaN(p))return '';return p.toLocaleDateString('fa-IR',{year:'numeric',month:'long',day:'numeric'});}
 
