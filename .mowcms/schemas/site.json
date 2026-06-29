@@ -15,6 +15,38 @@
       "path": "content.json",
       "fields": [
         {
+          "name": "seo",
+          "label": "Page titles & meta descriptions (SEO)",
+          "type": "object",
+          "ui": { "group": "SEO" },
+          "fields": [
+            { "name": "home", "label": "Home page", "type": "object", "fields": [
+              { "name": "title", "label": "Title tag (EN)", "type": "string", "maxLength": 70 },
+              { "name": "title_fa", "label": "Title tag (فارسی)", "type": "string", "maxLength": 70 },
+              { "name": "description", "label": "Meta description (EN)", "type": "text", "maxLength": 160 },
+              { "name": "description_fa", "label": "Meta description (فارسی)", "type": "text", "maxLength": 160 }
+            ] },
+            { "name": "about", "label": "About page", "type": "object", "fields": [
+              { "name": "title", "label": "Title tag (EN)", "type": "string", "maxLength": 70 },
+              { "name": "title_fa", "label": "Title tag (فارسی)", "type": "string", "maxLength": 70 },
+              { "name": "description", "label": "Meta description (EN)", "type": "text", "maxLength": 160 },
+              { "name": "description_fa", "label": "Meta description (فارسی)", "type": "text", "maxLength": 160 }
+            ] },
+            { "name": "menu", "label": "Menu page", "type": "object", "fields": [
+              { "name": "title", "label": "Title tag (EN)", "type": "string", "maxLength": 70 },
+              { "name": "title_fa", "label": "Title tag (فارسی)", "type": "string", "maxLength": 70 },
+              { "name": "description", "label": "Meta description (EN)", "type": "text", "maxLength": 160 },
+              { "name": "description_fa", "label": "Meta description (فارسی)", "type": "text", "maxLength": 160 }
+            ] },
+            { "name": "shop", "label": "Shop page", "type": "object", "fields": [
+              { "name": "title", "label": "Title tag (EN)", "type": "string", "maxLength": 70 },
+              { "name": "title_fa", "label": "Title tag (فارسی)", "type": "string", "maxLength": 70 },
+              { "name": "description", "label": "Meta description (EN)", "type": "text", "maxLength": 160 },
+              { "name": "description_fa", "label": "Meta description (فارسی)", "type": "text", "maxLength": 160 }
+            ] }
+          ]
+        },
+        {
           "name": "hero",
           "label": "Hero",
           "type": "object",
