@@ -47,7 +47,7 @@
               "label": "Intro image",
               "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -77,7 +77,7 @@
               "label": "Bakery image 1",
               "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -87,7 +87,7 @@
               "label": "Bakery image 2",
               "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -122,7 +122,7 @@
           "of": {
             "type": "object",
             "fields": [
-              { "name": "image", "label": "Drink image", "type": "image" },
+              { "name": "image", "label": "Drink image", "type": "image", "ui": { "uploadFolder": "img" } },
               { "name": "alt", "label": "Alt text (EN)", "type": "string" },
               { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" },
               { "name": "secret", "label": "Secret menu item", "type": "boolean" },
@@ -175,7 +175,7 @@
             {
               "name": "heroInterior", "label": "Hero interior", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -183,7 +183,7 @@
             {
               "name": "spiceJars", "label": "Spice jars", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -191,7 +191,7 @@
             {
               "name": "bakeryBun", "label": "Bakery bun", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -199,7 +199,7 @@
             {
               "name": "bakerySpiral", "label": "Bakery spiral", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -207,7 +207,7 @@
             {
               "name": "vibeWindow", "label": "Vibe — window bench", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -215,7 +215,7 @@
             {
               "name": "vibeMural", "label": "Vibe — mural", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -223,7 +223,7 @@
             {
               "name": "nostalgiaWoman", "label": "Nostalgia — woman", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -231,7 +231,7 @@
             {
               "name": "nostalgiaRadio", "label": "Nostalgia — radio", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -239,7 +239,7 @@
             {
               "name": "cupCeramic", "label": "Ceramic cup", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -247,7 +247,7 @@
             {
               "name": "nostalgiaMercedes", "label": "Nostalgia — Mercedes", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -255,7 +255,7 @@
             {
               "name": "merchShirt", "label": "Merch shirt", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -263,7 +263,7 @@
             {
               "name": "laPostcard", "label": "LA postcard", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -271,7 +271,7 @@
             {
               "name": "aboutPoster", "label": "About — poster", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -279,7 +279,7 @@
             {
               "name": "ownerPhoto", "label": "About — owner photo", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -287,7 +287,7 @@
             {
               "name": "rahiMom", "label": "About — Rahi & mom", "type": "object",
               "fields": [
-                { "name": "src", "label": "Image", "type": "image" },
+                { "name": "src", "label": "Image", "type": "image", "ui": { "uploadFolder": "img" } },
                 { "name": "alt", "label": "Alt text (EN)", "type": "string" },
                 { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" }
               ]
@@ -351,7 +351,7 @@
             "fields": [
               { "name": "id", "label": "ID / slug", "type": "string" },
               { "name": "title", "label": "Title", "type": "string" },
-              { "name": "image", "label": "Board image", "type": "image" },
+              { "name": "image", "label": "Board image", "type": "image", "ui": { "uploadFolder": "img" } },
               { "name": "alt", "label": "Alt text", "type": "string" }
             ]
           }
@@ -406,7 +406,7 @@
                     { "name": "desc", "label": "Description (EN)", "type": "text" },
                     { "name": "desc_fa", "label": "Description (فارسی)", "type": "text" },
                     { "name": "price", "label": "Price (display text, e.g. $38)", "type": "string" },
-                    { "name": "image", "label": "Product image", "type": "image" },
+                    { "name": "image", "label": "Product image", "type": "image", "ui": { "uploadFolder": "img" } },
                     { "name": "badge", "label": "Badge (EN)", "type": "string" }
                   ]
                 }
@@ -436,7 +436,7 @@
               { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
               { "name": "tag", "label": "Tag (EN)", "type": "string" },
               { "name": "tag_fa", "label": "Tag (فارسی)", "type": "string" },
-              { "name": "image", "label": "Event image", "type": "image" },
+              { "name": "image", "label": "Event image", "type": "image", "ui": { "uploadFolder": "img" } },
               { "name": "date", "label": "Date (YYYY-MM-DD)", "type": "string" },
               { "name": "start", "label": "Start time (HH:MM)", "type": "string" },
               { "name": "end", "label": "End time (HH:MM)", "type": "string" },
@@ -482,7 +482,8 @@
         {
           "name": "cover",
           "label": "Cover image",
-          "type": "image"
+          "type": "image",
+          "ui": { "uploadFolder": "img/news" }
         },
         {
           "name": "featured",
