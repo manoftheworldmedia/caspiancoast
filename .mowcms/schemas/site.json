@@ -70,7 +70,7 @@
             { "name": "body2_fa", "label": "Paragraph 2 (فارسی, allows HTML)", "type": "richtext" },
             { "name": "bakerName", "label": "Baker name (EN)", "type": "string" },
             { "name": "bakerName_fa", "label": "Baker name (فارسی)", "type": "string" },
-            { "name": "bakerHandle", "label": "Baker Instagram handle", "type": "string" },
+            { "name": "bakerHandle", "label": "Baker Instagram handle", "type": "string", "help": "Handle without the @ symbol, e.g. caspiancoastcoffee" },
             { "name": "bakerInstagram", "label": "Baker Instagram URL", "type": "url" },
             {
               "name": "image1",
@@ -109,9 +109,9 @@
             { "name": "hoursDetail", "label": "Hours — detailed (EN, allows <br>)", "type": "richtext" },
             { "name": "hoursDetail_fa", "label": "Hours — detailed (فارسی, allows <br>)", "type": "richtext" },
             { "name": "instagram", "label": "Instagram URL", "type": "url" },
-            { "name": "instagramHandle", "label": "Instagram handle", "type": "string" },
-            { "name": "mapsUrl", "label": "Google Maps URL", "type": "url" },
-            { "name": "orderUrl", "label": "Online order URL", "type": "url" }
+            { "name": "instagramHandle", "label": "Instagram handle", "type": "string", "help": "Handle without the @ symbol" },
+            { "name": "mapsUrl", "label": "Google Maps URL", "type": "url", "help": "Paste the 'Share' link from Google Maps" },
+            { "name": "orderUrl", "label": "Online order URL", "type": "url", "help": "Link to your online ordering platform (Toast, Square, etc.)" }
           ]
         },
         {
@@ -125,10 +125,10 @@
               { "name": "image", "label": "Drink image", "type": "image" },
               { "name": "alt", "label": "Alt text (EN)", "type": "string" },
               { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" },
-              { "name": "secret", "label": "Secret menu item", "type": "boolean" },
+              { "name": "secret", "label": "Secret menu item", "type": "boolean", "help": "Shows a special 'secret menu' label on this slide instead of the regular alt text" },
               { "name": "secretLabel", "label": "Secret label (EN)", "type": "string" },
               { "name": "secretLabel_fa", "label": "Secret label (فارسی)", "type": "string" },
-              { "name": "show", "label": "Show in carousel", "type": "boolean" }
+              { "name": "show", "label": "Show in carousel", "type": "boolean", "help": "Uncheck to hide this slide without deleting it" }
             ]
           }
         },
@@ -160,10 +160,10 @@
           "type": "object",
           "ui": { "group": "Theme" },
           "fields": [
-            { "name": "fontDisplay", "label": "Display font (Google Fonts family)", "type": "string" },
-            { "name": "fontSerif", "label": "Serif font (Google Fonts family)", "type": "string" },
-            { "name": "fontBody", "label": "Body font (Google Fonts family)", "type": "string" },
-            { "name": "fontEditorial", "label": "Editorial font (Google Fonts family)", "type": "string" }
+            { "name": "fontDisplay", "label": "Display font (Google Fonts family)", "type": "string", "help": "Family name exactly as shown on fonts.google.com, e.g. Playfair Display" },
+            { "name": "fontSerif", "label": "Serif font (Google Fonts family)", "type": "string", "help": "Family name exactly as shown on fonts.google.com" },
+            { "name": "fontBody", "label": "Body font (Google Fonts family)", "type": "string", "help": "Family name exactly as shown on fonts.google.com" },
+            { "name": "fontEditorial", "label": "Editorial font (Google Fonts family)", "type": "string", "help": "Family name exactly as shown on fonts.google.com" }
           ]
         },
         {
@@ -202,11 +202,11 @@
           { "name": "logo", "label": "Logo", "type": "image" },
           { "name": "hero", "label": "Hero", "type": "image" },
           { "name": "spice_jars", "label": "Spice jars", "type": "image" },
-          { "name": "og_image", "label": "Social share image (OG)", "type": "image" }
+          { "name": "og_image", "label": "Social share image (OG)", "type": "image", "help": "Shown when the site is shared on Facebook, iMessage, etc. — 1200×630px recommended" }
         ] },
         { "name": "en", "label": "English — homepage text & SEO", "type": "object", "ui": { "group": "Homepage text — English" }, "fields": [
-          { "name": "seo_title", "label": "SEO title", "type": "string" },
-          { "name": "seo_description", "label": "SEO description", "type": "text" },
+          { "name": "seo_title", "label": "SEO title", "type": "string", "help": "Shown in the browser tab and Google search results — 50–60 characters recommended" },
+          { "name": "seo_description", "label": "SEO description", "type": "text", "help": "Google/social preview snippet — 150–160 characters recommended" },
           { "name": "hero_eyebrow", "label": "Hero eyebrow", "type": "string" },
           { "name": "hero_title", "label": "Hero title", "type": "string" },
           { "name": "hero_subhead", "label": "Hero subhead", "type": "text" },
@@ -219,8 +219,8 @@
           { "name": "about_lede", "label": "About lede", "type": "text" }
         ] },
         { "name": "fa", "label": "فارسی — homepage text & SEO", "type": "object", "ui": { "group": "Homepage text — فارسی" }, "fields": [
-          { "name": "seo_title", "label": "SEO title (فارسی)", "type": "string" },
-          { "name": "seo_description", "label": "SEO description (فارسی)", "type": "text" },
+          { "name": "seo_title", "label": "SEO title (فارسی)", "type": "string", "help": "Shown in the browser tab and Google search results — 50–60 characters recommended" },
+          { "name": "seo_description", "label": "SEO description (فارسی)", "type": "text", "help": "Google/social preview snippet — 150–160 characters recommended" },
           { "name": "hero_eyebrow", "label": "Hero eyebrow (فارسی)", "type": "string" },
           { "name": "hero_title", "label": "Hero title (فارسی)", "type": "string" },
           { "name": "hero_subhead", "label": "Hero subhead (فارسی)", "type": "text" },
@@ -235,6 +235,7 @@
         {
           "name": "faqs",
           "label": "FAQ items",
+          "help": "Homepage FAQ accordion — drag to reorder. English question and answer are required",
           "type": "list",
           "of": {
             "type": "object",
@@ -273,14 +274,15 @@
         {
           "name": "boards",
           "label": "Menu boards",
+          "help": "The menu board images displayed on the Menu page — drag to reorder",
           "type": "list",
           "ui": { "group": "Boards" },
           "of": {
             "type": "object",
             "fields": [
-              { "name": "id", "label": "ID / slug", "type": "string" },
+              { "name": "id", "label": "ID / slug", "type": "string", "help": "Short lowercase identifier used as an anchor ID — no spaces (e.g. drinks, pastries)" },
               { "name": "title", "label": "Title", "type": "string" },
-              { "name": "image", "label": "Board image", "type": "image" },
+              { "name": "image", "label": "Board image", "type": "image", "help": "Landscape orientation works best — 1200×800px minimum" },
               { "name": "alt", "label": "Alt text", "type": "string" }
             ]
           }
@@ -304,7 +306,8 @@
           "label": "Business type (for rich results)",
           "type": "select",
           "options": ["CafeOrCoffeeShop","Restaurant","Bakery","BarOrPub","FastFoodRestaurant","IceCreamShop","Winery","Brewery"],
-          "default": "CafeOrCoffeeShop"
+          "default": "CafeOrCoffeeShop",
+          "help": "Used for Google rich results (schema.org) — CafeOrCoffeeShop is correct for most cafés"
         },
         { "name": "businessName", "label": "Business name", "type": "string" },
         { "name": "url", "label": "Website URL", "type": "url" },
@@ -314,12 +317,14 @@
           "type": "select",
           "options": ["usd","eur","gbp","cad","aud"],
           "default": "usd",
-          "required": true
+          "required": true,
+          "help": "All item prices are displayed in this currency"
         },
         { "name": "image", "label": "Menu / hero image", "type": "image" },
         {
           "name": "sections",
           "label": "Menu sections (drag to reorder)",
+          "help": "Drag sections and their items to reorder — changes appear on the live menu page",
           "type": "list",
           "min": 1,
           "of": {
@@ -358,6 +363,7 @@
                       "name": "dietary",
                       "label": "Dietary tags",
                       "type": "list",
+                      "help": "Check any that apply — shown as icons on the menu",
                       "of": {
                         "type": "select",
                         "options": ["vegan","vegetarian","gluten-free","halal","kosher","low-calorie","low-fat","low-lactose","low-salt","diabetic"]
@@ -412,7 +418,7 @@
             { "name": "sub_fa", "label": "Sub-text (فارسی)", "type": "text" }
           ]
         },
-        { "name": "purchaseUrl", "label": "Default purchase URL", "type": "url", "ui": { "group": "Intro" } },
+        { "name": "purchaseUrl", "label": "Default purchase URL", "type": "url", "ui": { "group": "Intro" }, "help": "Fallback buy link used by products that don't have their own URL" },
         {
           "name": "sections",
           "label": "Product sections",
@@ -421,7 +427,7 @@
           "of": {
             "type": "object",
             "fields": [
-              { "name": "id", "label": "Section ID / slug", "type": "string" },
+              { "name": "id", "label": "Section ID / slug", "type": "string", "help": "Lowercase, no spaces — used as a URL anchor (e.g. merchandise, coffee)" },
               { "name": "title", "label": "Section title (EN)", "type": "string" },
               { "name": "title_fa", "label": "Section title (فارسی)", "type": "string" },
               { "name": "note", "label": "Section note (EN)", "type": "string" },
@@ -433,14 +439,14 @@
                 "of": {
                   "type": "object",
                   "fields": [
-                    { "name": "id", "label": "Product ID / slug", "type": "string" },
+                    { "name": "id", "label": "Product ID / slug", "type": "string", "help": "Unique identifier — lowercase, no spaces (e.g. ceramic-mug). Used in the product URL" },
                     { "name": "name", "label": "Name (EN)", "type": "string" },
                     { "name": "name_fa", "label": "Name (فارسی)", "type": "string" },
                     { "name": "desc", "label": "Description (EN)", "type": "text" },
                     { "name": "desc_fa", "label": "Description (فارسی)", "type": "text" },
-                    { "name": "price", "label": "Price (display text, e.g. $38)", "type": "string" },
+                    { "name": "price", "label": "Price (display text, e.g. $38)", "type": "string", "help": "Displayed as-is — use any format: $38, From $25, Free, etc." },
                     { "name": "image", "label": "Product image", "type": "image" },
-                    { "name": "badge", "label": "Badge (EN)", "type": "string" }
+                    { "name": "badge", "label": "Badge (EN)", "type": "string", "help": "Small label shown on the product card (e.g. New, Sold Out, Limited)" }
                   ]
                 }
               }
@@ -463,24 +469,24 @@
           "of": {
             "type": "object",
             "fields": [
-              { "name": "id", "label": "ID / slug", "type": "string" },
-              { "name": "featured", "label": "Featured", "type": "boolean" },
+              { "name": "id", "label": "ID / slug", "type": "string", "help": "Lowercase, no spaces — used as a URL anchor and identifier (e.g. sunday-brunch)" },
+              { "name": "featured", "label": "Featured", "type": "boolean", "help": "Tick to make this the featured event shown prominently at the top — only one at a time recommended" },
               { "name": "title", "label": "Title (EN)", "type": "string" },
               { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
               { "name": "tag", "label": "Tag (EN)", "type": "string" },
               { "name": "tag_fa", "label": "Tag (فارسی)", "type": "string" },
               { "name": "image", "label": "Event image", "type": "image" },
-              { "name": "date", "label": "Date (YYYY-MM-DD)", "type": "string" },
-              { "name": "start", "label": "Start time (HH:MM)", "type": "string" },
-              { "name": "end", "label": "End time (HH:MM)", "type": "string" },
-              { "name": "recurDay", "label": "Recurring weekday (0=Sun..6=Sat, optional)", "type": "number" },
-              { "name": "whenLabel", "label": "When label (EN)", "type": "string" },
+              { "name": "date", "label": "Date (YYYY-MM-DD)", "type": "string", "help": "For one-time events. Leave blank for recurring weekly events — past dated events archive automatically" },
+              { "name": "start", "label": "Start time (HH:MM)", "type": "string", "help": "24-hour format, e.g. 18:30 for 6:30 PM" },
+              { "name": "end", "label": "End time (HH:MM)", "type": "string", "help": "24-hour format, e.g. 21:00 for 9 PM" },
+              { "name": "recurDay", "label": "Recurring weekday (0=Sun..6=Sat, optional)", "type": "number", "help": "0=Sun 1=Mon 2=Tue 3=Wed 4=Thu 5=Fri 6=Sat — leave blank for one-time dated events" },
+              { "name": "whenLabel", "label": "When label (EN)", "type": "string", "help": "Override the auto-generated date/time display, e.g. 'Every Sunday 10am–2pm'" },
               { "name": "whenLabel_fa", "label": "When label (فارسی)", "type": "string" },
               { "name": "locationLabel", "label": "Location label (EN)", "type": "string" },
               { "name": "locationLabel_fa", "label": "Location label (فارسی)", "type": "string" },
-              { "name": "location", "label": "Location address (for calendar)", "type": "string" },
+              { "name": "location", "label": "Location address (for calendar)", "type": "string", "help": "Full address used when generating calendar invites — can differ from the display label" },
               { "name": "description", "label": "Description", "type": "text" },
-              { "name": "archived", "label": "Archived", "type": "boolean" }
+              { "name": "archived", "label": "Archived", "type": "boolean", "help": "Hide from the site without deleting — use to manually archive events that are no longer relevant" }
             ]
           }
         }
@@ -496,9 +502,9 @@
       "primaryField": "date",
       "fields": [
         { "name": "date", "label": "Date", "type": "date", "required": true },
-        { "name": "category", "label": "Type", "type": "select", "options": ["Thought Leadership","Blog","Article","News","Press Release"], "default": "Article" },
+        { "name": "category", "label": "Type", "type": "select", "options": ["Thought Leadership","Blog","Article","News","Press Release"], "default": "Article", "help": "Shown as the article tag/label on the news listing and article page" },
         { "name": "cover", "label": "Cover image", "type": "image" },
-        { "name": "featured", "label": "Featured", "type": "boolean", "default": false },
+        { "name": "featured", "label": "Featured", "type": "boolean", "default": false, "help": "Pin this article to the top of the news listing page" },
         {
           "name": "en",
           "label": "English",
@@ -506,7 +512,7 @@
           "ui": { "group": "Languages" },
           "fields": [
             { "name": "title", "label": "Title", "type": "string", "required": true },
-            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text" },
+            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text", "help": "Shown in article card previews and meta descriptions — 1–2 sentences" },
             { "name": "body", "label": "Body", "type": "richtext", "required": true }
           ]
         },
@@ -517,7 +523,7 @@
           "ui": { "group": "Languages" },
           "fields": [
             { "name": "title", "label": "Title", "type": "string", "required": true },
-            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text" },
+            { "name": "excerpt", "label": "Excerpt / standfirst", "type": "text", "help": "Shown in article card previews and meta descriptions — 1–2 sentences" },
             { "name": "body", "label": "Body", "type": "richtext", "required": true }
           ]
         }
