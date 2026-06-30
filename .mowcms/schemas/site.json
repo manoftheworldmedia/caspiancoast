@@ -47,6 +47,25 @@
           ]
         },
         {
+          "name": "carousel",
+          "label": "Drink carousel (homepage)",
+          "type": "list",
+          "ui": { "group": "Homepage — Drink carousel" },
+          "of": {
+            "type": "object",
+            "fields": [
+              { "name": "image", "label": "Drink image", "type": "image", "ui": { "uploadFolder": "img" } },
+              { "name": "alt", "label": "Alt text (EN)", "type": "string" },
+              { "name": "alt_fa", "label": "Alt text (فارسی)", "type": "string" },
+              { "name": "show", "label": "Show in carousel", "type": "boolean", "default": true },
+              { "name": "secret", "label": "Secret menu item", "type": "boolean", "default": false },
+              { "name": "secretLabel", "label": "Secret menu label (EN)", "type": "string" },
+              { "name": "secretLabel_fa", "label": "Secret menu label (فارسی)", "type": "string" },
+              { "name": "flipImage", "label": "Flip-card back image (optional)", "type": "image", "ui": { "uploadFolder": "img" } }
+            ]
+          }
+        },
+        {
           "name": "hero",
           "label": "Hero",
           "type": "object",
