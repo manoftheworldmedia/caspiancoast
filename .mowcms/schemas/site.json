@@ -631,6 +631,7 @@
       "folder": "content/articles",
       "extension": "json",
       "primaryField": "date",
+      "index": { "path": "content/articles.index.json", "sortBy": "date", "order": "desc" },
       "fields": [
         {
           "name": "date",
