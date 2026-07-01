@@ -1,7 +1,7 @@
 {
   "date": "2026-03-13",
   "category": "Press Release",
-  "cover": "img/news-press-mural.jpg",
+  "cover": "img/news/Caspian_Coast_Cafe_Venice_Los_Angeles_Artist_Parisa_signing-.png",
   "featured": true,
   "en": {
     "title": "As war returns to Iran, an Iranian American artist turns an LA café into a sanctuary of memory and culture",
@@ -9,8 +9,8 @@
     "body": "<p>Caspian Coast Coffee creates a diasporic bridge between the Caspian Sea and LA as Iranian Americans grapple with conflict and longing for a freer homeland.</p>\n<p>Read the full story at <a href=\"https://lapublicpress.org/2026/03/la-iran-war-artist-coffee-venice/\" target=\"_blank\" rel=\"noopener\">LA Public Press</a>.</p>"
   },
   "fa": {
-    "title": "",
-    "excerpt": "",
-    "body": ""
+    "title": "در حالی که جنگ به ایران بازمی‌گردد، یک هنرمند ایرانی-آمریکایی یک کافه در لس‌آنجلس را به پناهگاهی از حافظه و فرهنگ تبدیل می‌کند.",
+    "excerpt": "کاسپین کوست کافی پلی دیاسپوریک میان دریای خزر و لس‌آنجلس ایجاد می‌کند، در حالی که ایرانی-آمریکایی‌ها با درگیری‌ها و حس دلتنگی برای وطنی آزادتر مواجه هستند.",
+    "body": "<p>با تشدید جنگ در ایران، یک هنرمند ایرانی-آمریکایی یک کافه در لس‌آنجلس را به پناهگاهی از خاطره و فرهنگ تبدیل می‌کند.</p> <p>داستان کامل را در <a href=\"https://lapublicpress.org/2026/03/la-iran-war-artist-coffee-venice/\" target=\"_blank\" rel=\"noopener\">LA Public Press</a> بخوانید.</p>"
   }
 }
