@@ -623,6 +623,8 @@
               { "name": "featured", "label": "Featured", "type": "boolean" },
               { "name": "title", "label": "Title (EN)", "type": "string" },
               { "name": "title_fa", "label": "Title (فارسی)", "type": "string" },
+              { "name": "subtitle", "label": "Subtitle (EN)", "type": "string" },
+              { "name": "subtitle_fa", "label": "Subtitle (فارسی)", "type": "string" },
               { "name": "tag", "label": "Tag (EN)", "type": "string" },
               { "name": "tag_fa", "label": "Tag (فارسی)", "type": "string" },
               { "name": "image", "label": "Event image", "type": "image", "ui": { "uploadFolder": "img" } },
