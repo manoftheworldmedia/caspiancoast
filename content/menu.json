@@ -17,7 +17,7 @@
       "items": [
         {
           "price": 4,
-          "image": "uploads/Dish-Composition--16_9-1440x2560-watermarked--c66.jpg",
+          "image": "",
           "dietary": [
             "vegetarian",
             "vegan",
@@ -96,7 +96,7 @@
         },
         {
           "price": 7,
-          "image": "",
+          "image": "uploads/Espresso_Tonic--16_9-1440x2560-watermarked--634.jpg",
           "dietary": [
             "vegetarian",
             "vegan",
