@@ -447,24 +447,24 @@ Add any event straight to your calendar.</p>
         feat.innerHTML='<div class="ef-img"><img src="'+IMG(feature.image)+'" alt="'+(fa?feature.title_fa:feature.title)+'" /></div>'
           +'<div class="ef-body"><h3>'+(fa?feature.title_fa:feature.title)+'</h3>'+(feature.subtitle?'<p class="ef-sub">'+(fa?(feature.subtitle_fa||feature.subtitle):feature.subtitle)+'</p>':'')
           +'<div class="ef-meta">'+(feature.tag?'<span class="ef-tag">'+(fa?(feature.tag_fa||feature.tag):feature.tag)+'</span>':'')+'<span>'+(fa?feature.whenLabel_fa:feature.whenLabel||'')+'</span><span>'+(fa?feature.locationLabel_fa:feature.locationLabel||'')+'</span></div>'
-          +'<div class="ef-actions"><button class="cal-btn" type="button">'+ICON_G+(fa?'افزودن به تقویم':'Add to calendar')+'</button></div></div>';
+          +(feature._start?'<div class="ef-actions"><button class="cal-btn" type="button">'+ICON_G+(fa?'افزودن به تقویم':'Add to calendar')+'</button></div>':'')+'</div>';
         if(fa) feat.querySelector('.ef-body').setAttribute('dir','rtl'); else feat.querySelector('.ef-body').removeAttribute('dir');
-        feat.querySelector('.cal-btn').addEventListener('click',(e)=>{e.stopPropagation();openCal(feature,e.currentTarget.getBoundingClientRect());});
+        const calBtn=feat.querySelector('.cal-btn');if(calBtn)calBtn.addEventListener('click',(e)=>{e.stopPropagation();openCal(feature,e.currentTarget.getBoundingClientRect());});
       } else {feat.style.display='none';feat.innerHTML='';}
     }
     if(grid){
       grid.innerHTML='';
       gridEvents.forEach(ev=>{
         const a=document.createElement('article');a.className='ev';
-        a.innerHTML='<img src="'+IMG(ev.image)+'" alt="" /><button class="ev-add" type="button" aria-label="Add to calendar">'+ICON_G+'</button>'
+        const hasDate=!!ev._start;
+        a.innerHTML='<img src="'+IMG(ev.image)+'" alt="" />'+(hasDate?'<button class="ev-add" type="button" aria-label="Add to calendar">'+ICON_G+'</button>':'')
           +'<div class="ev-body"><h3>'+(fa?ev.title_fa:ev.title)+'</h3><div class="ev-meta">'
           +(ev.tag?'<span class="ev-tag">'+(fa?(ev.tag_fa||ev.tag):ev.tag)+'</span>':'')
           +'<div class="ev-when">'+(fa?ev.whenLabel_fa:ev.whenLabel||'')+'</div>'
           +(ev.locationLabel?'<div class="ev-where">'+(fa?ev.locationLabel_fa:ev.locationLabel)+'</div>':'')
           +'</div></div>';
         if(fa) a.querySelector('.ev-body').setAttribute('dir','rtl');
-        const open=(e)=>{e.stopPropagation();openCal(ev,(e.currentTarget.closest('.ev')||e.currentTarget).getBoundingClientRect());};
-        a.addEventListener('click',open);a.querySelector('.ev-add').addEventListener('click',open);
+        if(hasDate){const open=(e)=>{e.stopPropagation();openCal(ev,(e.currentTarget.closest('.ev')||e.currentTarget).getBoundingClientRect());};a.addEventListener('click',open);a.querySelector('.ev-add').addEventListener('click',open);}
         grid.appendChild(a);
       });
     }
