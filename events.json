@@ -89,9 +89,9 @@
       "archived": false
     },
     {
-      "id": "test",
+      "id": "Shab-e-Sher",
       "featured": false,
-      "title": "",
+      "title": "Shab-e-Sheh'r: Night of Music and Poetry",
       "title_fa": "",
       "subtitle": "",
       "subtitle_fa": "",
@@ -104,9 +104,9 @@
       "recurDay": null,
       "whenLabel": "",
       "whenLabel_fa": "",
-      "locationLabel": "",
-      "locationLabel_fa": "",
-      "location": "",
+      "locationLabel": "📍 Caspian Coast Coffee, Venice",
+      "locationLabel_fa": "📍 کافه، ونیس",
+      "location": "Caspian Coast Coffee, 1501 Main St Unit 103, Venice, CA 90291",
       "description": "",
       "archived": false
     }
